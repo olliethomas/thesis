@@ -1,5 +1,17 @@
-file: markdown
-sections:
-- file: content
-- file: intro
-- file: notebooks
+- file: content/index
+- header: Annual Review 2020
+- file: content/00_annual_review/statement
+- file: content/00_annual_review/activities_to_date
+  sections:
+    - file: content/00_annual_review/previous_years
+    - file: content/00_annual_review/this_year
+
+- header: Thesis
+- file: content/01_intro/intro
+  sections:
+    - file: content/01_intro/definitions
+
+- header: Example Files
+- file: content/99_examples/markdown
+- file: content/99_examples/cccontent
+- file: content/99_examples/notebooks
