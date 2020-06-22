@@ -1,3 +1,6 @@
 # Activities to date
+
+![](https://img.shields.io/badge/status-in%20progress-yellow)
+
 In previous years I worked on...
 This year I worked on....

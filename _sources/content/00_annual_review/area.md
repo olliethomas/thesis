@@ -1,5 +1,7 @@
 # Research Area
 
+![](https://img.shields.io/badge/status-in%20progress-yellow)
+
 Machine Learning has been successful at a number of applications, in a number of contexts.
 These applications include translation (in both image and natural-language domains), pattern recognition and decision making.
 And contexts include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
