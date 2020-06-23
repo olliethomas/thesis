@@ -29,14 +29,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="oliverthomas.ml/content/99_examples/markdown.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Content in Jupyter Book" href="cccontent.html" />
-    <link rel="prev" title="Definitions of fairness" href="../01_intro/definitions.html" />
+    <link rel="prev" title="Invisible Demographics" href="../09_appendix/invisible.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="oliverthomas.ml/content/99_examples/markdown.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Markdown Files" />
+<meta property="og:description" content="Markdown Files  Whether you write your book’s content in Jupyter Notebooks (.ipynb) or in regular markdown files (.md), you’ll write in the same flavor of markd" />
+<meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.png" />
+
+<meta name="twitter:card" content="summary">
 
 
   </head>
@@ -84,6 +94,21 @@
 </li>
   <li class="">
     <a href="../01_intro/intro.html">Introduction</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Appendix</p>
+</li>
+  <li class="">
+    <a href="../09_appendix/dfritdd.html">Discovering Fair Representations in the Data Domain</a>
+  </li>
+  <li class="">
+    <a href="../09_appendix/imagined.html">Imagined Examples for Fairness: Sampling Bias and Proxy Labels</a>
+  </li>
+  <li class="">
+    <a href="../09_appendix/nosinn.html">NoSINN</a>
+  </li>
+  <li class="">
+    <a href="../09_appendix/invisible.html">Invisible Demographics</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Example Files</p>
@@ -290,7 +315,7 @@ role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`c
 <h3>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
 <p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
 the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <a class="bibtex reference internal" href="#holdgraf-evidence-2014" id="id1">[HdHPK14]</a>.</p>
+this: <span class="bibtex" id="id1">[holdgraf_evidence_2014]</span>.</p>
 <p>Moreoever, you can insert a bibliography into your page with this syntax:
 The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
 render properly.
@@ -302,8 +327,242 @@ then the bibliography is inserted with:</p>
 </div>
 <p>Resulting in a rendered bibliography that looks like:</p>
 <p id="bibtex-bibliography-content/99_examples/markdown-0"><dl class="citation">
-<dt class="bibtex label" id="holdgraf-evidence-2014"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
+<dt class="bibtex label" id="ideal"><span class="brackets">ide</span></dt>
+<dd><p>Ai for recruiting software | high-volume hiring | maximize quality of hire. URL: <a class="reference external" href="https://ideal.com/">https://ideal.com/</a>.</p>
+</dd>
+<dt class="bibtex label" id="national-education-statistics"><span class="brackets">nat</span></dt>
+<dd><p>Mobile digest of education statistics, 2017. URL: <a class="reference external" href="https://nces.ed.gov/programs/digest/mobile/Enrollment_ES_Enrollment_by_Race_and_Ethnicity.aspx">https://nces.ed.gov/programs/digest/mobile/Enrollment_ES_Enrollment_by_Race_and_Ethnicity.aspx</a>.</p>
+</dd>
+<dt class="bibtex label" id="census-bureau"><span class="brackets">cen</span></dt>
+<dd><p>U.s. census bureau quickfacts: united states. URL: <a class="reference external" href="https://www.census.gov/quickfacts/fact/table/US/PST045217">https://www.census.gov/quickfacts/fact/table/US/PST045217</a>.</p>
+</dd>
+<dt class="bibtex label" id="adamski2018distributed"><span class="brackets">AAG+18</span></dt>
+<dd><p>Igor Adamski, Robert Adamski, Tomasz Grel, Adam Jędrych, Kamil Kaczmarek, and Henryk Michalewski. Distributed deep reinforcement learning: learn how to play atari games in 21 minutes. In <em>International Conference on High Performance Computing</em>, 370–388. Springer, 2018.</p>
+</dd>
+<dt class="bibtex label" id="adel2019one"><span class="brackets">AVGW19</span></dt>
+<dd><p>Tameem Adel, Isabel Valera, Zoubin Ghahramani, and Adrian Weller. One-network adversarial fairness. In <em>Thirty-Third AAAI Conference on Artificial Intelligence</em>. 2019.</p>
+</dd>
+<dt class="bibtex label" id="ananny2018seeing"><span class="brackets">AC18</span></dt>
+<dd><p>Mike Ananny and Kate Crawford. Seeing without knowing: limitations of the transparency ideal and its application to algorithmic accountability. <em>new media &amp; society</em>, 20(3):973–989, 2018.</p>
+</dd>
+<dt class="bibtex label" id="angwin2016machinebias"><span class="brackets">ALMK16a</span></dt>
+<dd><p>J. Angwin, J. Larson, S. Mattu, and L. Kirchner. Machine bias: there’s software used across the country to predict future criminals, and it’s biased against blacks. <em>ProPublica</em>, 2016.</p>
+</dd>
+<dt class="bibtex label" id="angwin-larson-kirchner-mattu"><span class="brackets">ALKM</span></dt>
+<dd><p>Julia Angwin, Jeff Larson, Lauren Kirchner, and Surya Mattu. Machine bias. URL: <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing</a>.</p>
+</dd>
+<dt class="bibtex label" id="angwin2016machineblacks"><span class="brackets">ALMK16</span></dt>
+<dd><p>Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. Machine Bias: There?s Software Used Across the Country to Predict Future Criminals. And it?s Biased Against Blacks. 2016.</p>
+</dd>
+<dt class="bibtex label" id="asuncion-newman-2007"><span class="brackets">AN07</span></dt>
+<dd><p>A. Asuncion and D.J. Newman. UCI machine learning repository. 2007. URL: <a class="reference external" href="http://www.ics.uci.edu/$\sim$mlearn/{MLR}epository.html">http://www.ics.uci.edu/$\sim$mlearn/{MLR}epository.html</a>.</p>
+</dd>
+<dt class="bibtex label" id="barocas-hardt"><span class="brackets">BH</span></dt>
+<dd><p>S Barocas and M Hardt. Fairness in machine learning. URL: <a class="reference external" href="https://nips.cc/Conferences/2017/Schedule?showEvent=8734">https://nips.cc/Conferences/2017/Schedule?showEvent=8734</a>.</p>
+</dd>
+<dt class="bibtex label" id="barocas-hardt-narayanan"><span class="brackets">BHN18</span></dt>
+<dd><p>Solon Barocas, Moritz Hardt, and Arvind Narayanan. <em>Fairness and Machine Learning</em>. fairmlbook.org, 2018.</p>
+</dd>
+<dt class="bibtex label" id="beutel2017data"><span class="brackets">BCZC17</span></dt>
+<dd><p>Alex Beutel, Jilin Chen, Zhe Zhao, and Ed H Chi. Data decisions and theoretical implications when adversarially learning fair representations. <em>arXiv preprint arXiv:1707.00075</em>, 2017.</p>
+</dd>
+<dt class="bibtex label" id="bolukbasi2016nlpbias"><span class="brackets">BCZ+16a</span></dt>
+<dd><p>Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 4349–4357. 2016.</p>
+</dd>
+<dt class="bibtex label" id="bolukbasi2016man"><span class="brackets">BCZ+16</span></dt>
+<dd><p>Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In <em>Advances in neural information processing systems</em>, 4349–4357. 2016.</p>
+</dd>
+<dt class="bibtex label" id="brown-sandholm2018"><span class="brackets">BS18</span></dt>
+<dd><p>N. Brown and T. Sandholm. Superhuman AI for heads-up no-limit poker: Libratus beats top professionals. <em>Science</em>, 359:418–424, January 2018. <a class="reference external" href="https://doi.org/10.1126/science.aao1733">doi:10.1126/science.aao1733</a>.</p>
+</dd>
+<dt class="bibtex label" id="burke2018balancedrecommendation"><span class="brackets">BSOG18</span></dt>
+<dd><p>Robin Burke, Nasim Sonboli, and Aldo Ordonez-Gauger. Balanced Neighborhoods for Multi-sided Fairness in Recommendation. <em>Proceedings of the 1st Conference on Fairness, Accountability and Transparency</em>, 81(2008):202–214, 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v81/burke18a.html">http://proceedings.mlr.press/v81/burke18a.html</a>.</p>
+</dd>
+<dt class="bibtex label" id="chiappa2019path"><span class="brackets">Chi19</span></dt>
+<dd><p>Silvia Chiappa. Path-specific counterfactual fairness. In <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, volume 33, 7801–7808. 2019.</p>
+</dd>
+<dt class="bibtex label" id="chouldechova2017tradeoff"><span class="brackets">Cho17</span></dt>
+<dd><p>A. Chouldechova. Fair prediction with disparate impact: a study of bias in recidivism prediction instruments. <em>Big data</em>, 2017.</p>
+</dd>
+<dt class="bibtex label" id="citron2014scored"><span class="brackets">CP14</span></dt>
+<dd><p>Danielle Keats Citron and Frank Pasquale. The scored society: due process for automated predictions. <em>Wash. L. Rev.</em>, 89:1, 2014.</p>
+</dd>
+<dt class="bibtex label" id="corbett-davies-goel"><span class="brackets">CDG</span></dt>
+<dd><p>S Corbett-Davies and S Goel. Defining and designing fair algorithms. URL: <a class="reference external" href="https://icml.cc/Conferences/2018/Schedule?showEvent=1862">https://icml.cc/Conferences/2018/Schedule?showEvent=1862</a>.</p>
+</dd>
+<dt class="bibtex label" id="dedeo2014wrong"><span class="brackets">DeD14</span></dt>
+<dd><p>Simon DeDeo. Wrong side of the tracks: big data and protected categories. <em>arXiv preprint arXiv:1412.4643</em>, 2014.</p>
+</dd>
+<dt class="bibtex label" id="diakopoulos2014algorithmic"><span class="brackets">Dia14</span></dt>
+<dd><p>Nicholas Diakopoulos. Algorithmic accountability reporting: on the investigation of black boxes. <em>NA</em>, 2014.</p>
+</dd>
+<dt class="bibtex label" id="dwork2012fairness"><span class="brackets">DHP+12</span></dt>
+<dd><p>Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. Fairness through awareness. In <em>Proceedings of the 3rd innovations in theoretical computer science conference</em>, 214–226. 2012.</p>
+</dd>
+<dt class="bibtex label" id="edwards2015censoring"><span class="brackets">ES15</span></dt>
+<dd><p>Harrison Edwards and Amos Storkey. Censoring representations with an adversary. <em>arXiv preprint arXiv:1511.05897</em>, 2015.</p>
+</dd>
+<dt class="bibtex label" id="elazar2018adversarial"><span class="brackets">EG18</span></dt>
+<dd><p>Yanai Elazar and Yoav Goldberg. Adversarial removal of demographic attributes from text data. <em>arXiv preprint arXiv:1808.06640</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="elzayn2019fair"><span class="brackets">EJJ+19</span></dt>
+<dd><p>Hadi Elzayn, Shahin Jabbari, Christopher Jung, Michael Kearns, Seth Neel, Aaron Roth, and Zachary Schutzman. Fair algorithms for learning in allocation problems. In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>, 170–179. 2019.</p>
+</dd>
+<dt class="bibtex label" id="farnadi2018fairness"><span class="brackets">FKT+18</span></dt>
+<dd><p>Golnoosh Farnadi, Pigi Kouki, Spencer K Thompson, Sriram Srinivasan, and Lise Getoor. A fairness-aware hybrid recommender system. <em>arXiv preprint arXiv:1809.09030</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="feldman2015certifying"><span class="brackets">FFM+15</span></dt>
+<dd><p>Michael Feldman, Sorelle A Friedler, John Moeller, Carlos Scheidegger, and Suresh Venkatasubramanian. Certifying and removing disparate impact. In <em>proceedings of the 21th ACM SIGKDD international conference on knowledge discovery and data mining</em>, 259–268. 2015.</p>
+</dd>
+<dt class="bibtex label" id="fouldsjamesandpan2018anfairness"><span class="brackets">FP18</span></dt>
+<dd><p>James Foulds and Shimei Pan. An Intersectional Definition of Fairness. 2018.</p>
+</dd>
+<dt class="bibtex label" id="ganin2016domain"><span class="brackets">GUA+16a</span></dt>
+<dd><p>Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario Marchand, and Victor Lempitsky. Domain-adversarial training of neural networks. <em>The Journal of Machine Learning Research</em>, 17(1):2096–2030, 2016.</p>
+</dd>
+<dt class="bibtex label" id="ganin2016domain-adversarialnetworks"><span class="brackets">GUA+16</span></dt>
+<dd><p>Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario Marchand, Victor Lempitsky, Urun Dogan, Marius Kloft, Francesco Orabona, and Tatiana Tommasi. Domain-Adversarial Training of Neural Networks. <em>Journal of Machine Learning Research</em>, 17:1–35, 2016.</p>
+</dd>
+<dt class="bibtex label" id="garnelo2018neural"><span class="brackets">GSR+18</span></dt>
+<dd><p>Marta Garnelo, Jonathan Schwarz, Dan Rosenbaum, Fabio Viola, Danilo J Rezende, SM Eslami, and Yee Whye Teh. Neural processes. <em>arXiv preprint arXiv:1807.01622</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="gupta2018proxy"><span class="brackets">GCFW18</span></dt>
+<dd><p>Maya Gupta, Andrew Cotter, Mahdi Milani Fard, and Serena Wang. Proxy fairness. <em>arXiv preprint arXiv:1806.11212</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="hardt2016equality"><span class="brackets">HPS+16</span></dt>
+<dd><p>Moritz Hardt, Eric Price, Nati Srebro, and others. Equality of opportunity in supervised learning. In <em>Advances in neural information processing systems</em>, 3315–3323. 2016.</p>
+</dd>
+<dt class="bibtex label" id="hinnefeld2018evaluating"><span class="brackets">HCMD18</span></dt>
+<dd><p>J Henry Hinnefeld, Peter Cooman, Nat Mammo, and Rupert Deese. Evaluating fairness metrics in the presence of dataset bias. <em>arXiv preprint arXiv:1809.09245</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="holmstrom2016machine"><span class="brackets">HLV16</span></dt>
+<dd><p>Mark Holmstrom, Dylan Liu, and Christopher Vo. Machine learning applied to weather forecasting. <em>Stanford University</em>, pages 2–4, 2016.</p>
+</dd>
+<dt class="bibtex label" id="house2018select"><span class="brackets">HOU18</span></dt>
+<dd><p>OF LORDS HOUSE. Select committee on artificial intelligence. <em>AI in the UK: ready, willing and able</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="hwang2018computational"><span class="brackets">Hwa18</span></dt>
+<dd><p>Tim Hwang. Computational power and the social impact of artificial intelligence. <em>Available at SSRN 3147971</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="kallus2018residual"><span class="brackets">KZ18</span></dt>
+<dd><p>Nathan Kallus and Angela Zhou. Residual unfairness in fair machine learning from prejudiced data. In <em>International Conference on Machine Learning</em>, 2444–2453. 2018.</p>
+</dd>
+<dt class="bibtex label" id="kamiran2009"><span class="brackets">KC09</span></dt>
+<dd><p>Faisal Kamiran and Toon Calders. Classifying without discriminating. In <em>2009 2nd International Conference on Computer, Control and Communication, IC4 2009</em>. 2009. <a class="reference external" href="https://doi.org/10.1109/IC4.2009.4909197">doi:10.1109/IC4.2009.4909197</a>.</p>
+</dd>
+<dt class="bibtex label" id="kamiran2012data"><span class="brackets">KC12a</span></dt>
+<dd><p>Faisal Kamiran and Toon Calders. Data preprocessing techniques for classification without discrimination. <em>Knowledge and Information Systems</em>, 33(1):1–33, 2012.</p>
+</dd>
+<dt class="bibtex label" id="kamiran2012"><span class="brackets">KC12</span></dt>
+<dd><p>Faisal Kamiran and Toon Calders. Data preprocessing techniques for classification without discrimination. <em>Knowledge and Information Systems</em>, 2012. <a class="reference external" href="https://doi.org/10.1007/s10115-011-0463-8">doi:10.1007/s10115-011-0463-8</a>.</p>
+</dd>
+<dt class="bibtex label" id="kehrenberg2018interpretable"><span class="brackets">KCQ18</span></dt>
+<dd><p>Thomas Kehrenberg, Zexun Chen, and Novi Quadrianto. Interpretable fairness via target labels in gaussian process models. <em>arXiv preprint arXiv:1810.05598</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="kilbalkusweletal19"><span class="brackets">KBK+19</span></dt>
+<dd><p>Niki Kilbertus, Philip J. Ball, Matt J. Kusner, Adrian Weller, and Ricardo Silva. The sensitivity of counterfactual fairness to unmeasured confounding. In <em>Proceedings of the Thirty-Fifth Conference on Uncertainty in Artificial Intelligence, UAI</em>. 2019.</p>
+</dd>
+<dt class="bibtex label" id="kleinberg2017tradeoff"><span class="brackets">KMR17</span></dt>
+<dd><p>Jon M. Kleinberg, Sendhil Mullainathan, and Manish Raghavan. Inherent trade-offs in the fair determination of risk scores. In <em>Innovations in Theoretical Computer Science Conference</em>, 43:1–43:23. 2017.</p>
+</dd>
+<dt class="bibtex label" id="kusner2017counterfactual"><span class="brackets">KLRS17</span></dt>
+<dd><p>Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. Counterfactual fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 30</em>, 4066–4076. 2017.</p>
+</dd>
+<dt class="bibtex label" id="liu2018delayed"><span class="brackets">LDR+18</span></dt>
+<dd><p>Lydia T Liu, Sarah Dean, Esther Rolf, Max Simchowitz, and Moritz Hardt. Delayed impact of fair machine learning. <em>arXiv preprint arXiv:1803.04383</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="louizos2019functional"><span class="brackets">LSSW19</span></dt>
+<dd><p>Christos Louizos, Xiahan Shi, Klamer Schutte, and Max Welling. The functional neural process. <em>arXiv preprint arXiv:1906.08324</em>, 2019.</p>
+</dd>
+<dt class="bibtex label" id="vfae"><span class="brackets">LSL+15</span></dt>
+<dd><p>Christos Louizos, Kevin Swersky, Yujia Li, Max Welling, and Richard Zemel. The variational fair autoencoder. <em>arXiv preprint arXiv:1511.00830</em>, 2015.</p>
+</dd>
+<dt class="bibtex label" id="luong2011k-nnprevention"><span class="brackets">LRT11</span></dt>
+<dd><p>Binh Thanh Luong, Salvatore Ruggieri, and Franco Turini. k-NN as an implementation of situation testing for discrimination discovery and prevention. <em>Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD ‘11</em>, pages 502, 2011. URL: <a class="reference external" href="http://dl.acm.org/citation.cfm?doid=2020408.2020488">http://dl.acm.org/citation.cfm?doid=2020408.2020488</a>, <a class="reference external" href="https://doi.org/10.1145/2020408.2020488">doi:10.1145/2020408.2020488</a>.</p>
+</dd>
+<dt class="bibtex label" id="madras2018learning"><span class="brackets">MCPZ18</span></dt>
+<dd><p>David Madras, Elliot Creager, Toniann Pitassi, and Richard Zemel. Learning adversarially fair and transferable representations. <em>arXiv preprint arXiv:1802.06309</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="miller2019explanation"><span class="brackets">Mil19</span></dt>
+<dd><p>Tim Miller. Explanation in artificial intelligence: insights from the social sciences. <em>Artificial Intelligence</em>, 267:1–38, 2019.</p>
+</dd>
+<dt class="bibtex label" id="molnar"><span class="brackets">Mol18</span></dt>
+<dd><p>Christoph Molnar. <em>Interpretable Machine Learning</em>. https://christophm.github.io/interpretable-ml-book/, 2018.</p>
+</dd>
+<dt class="bibtex label" id="munoz2016bigrights"><span class="brackets">MSP16</span></dt>
+<dd><p>Cecilia Munoz, Megan Smith, and DJ Patil. Big Data : A Report on Algorithmic Systems , Opportunity , and Civil Rights Big Data : A Report on Algorithmic Systems , Opportunity , and Civil Rights. <em>Executive Office of the President of USA</em>, 2016. URL: <a class="reference external" href="https://www.whitehouse.gov/sites/default/files/microsites/ostp/2016_0504_data_discrimination.pdf">https://www.whitehouse.gov/sites/default/files/microsites/ostp/2016_0504_data_discrimination.pdf</a>, <a class="reference external" href="https://doi.org/10.1177/0162243915598056">doi:10.1177/0162243915598056</a>.</p>
+</dd>
+<dt class="bibtex label" id="nabi2018fair"><span class="brackets">NS18</span></dt>
+<dd><p>Razieh Nabi and Ilya Shpitser. Fair inference on outcomes. In <em>Thirty-Second AAAI Conference on Artificial Intelligence</em>. 2018.</p>
+</dd>
+<dt class="bibtex label" id="pearl-2009-cmr-1642718"><span class="brackets">Pea09</span></dt>
+<dd><p>Judea Pearl. <em>Causality: Models, Reasoning and Inference</em>. Cambridge University Press, New York, NY, USA, 2nd edition, 2009. ISBN 052189560X, 9780521895606.</p>
+</dd>
+<dt class="bibtex label" id="pedreshi2008discrimination-awaremining"><span class="brackets">PRT08</span></dt>
+<dd><p>Dino Pedreshi, Salvatore Ruggieri, and Franco Turini. Discrimination-aware data mining. In <em>Proceeding of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD 08</em>. 2008. <a class="reference external" href="https://doi.org/10.1145/1401890.1401959">doi:10.1145/1401890.1401959</a>.</p>
+</dd>
+<dt class="bibtex label" id="quadrianto2017recyclingfairness"><span class="brackets">QS17</span></dt>
+<dd><p>Novi Quadrianto and Viktoriia Sharmanska. Recycling Privileged Learning and Distribution Matching for Fairness. <em>Nips2017</em>, 2017. URL: <a class="reference external" href="http://papers.nips.cc/paper/6670-recycling-for-fairness-learning-with-conditional-distribution-matching-constraints.pdf">http://papers.nips.cc/paper/6670-recycling-for-fairness-learning-with-conditional-distribution-matching-constraints.pdf</a>.</p>
+</dd>
+<dt class="bibtex label" id="quadrianto2019discovering"><span class="brackets">QST19</span></dt>
+<dd><p>Novi Quadrianto, Viktoriia Sharmanska, and Oliver Thomas. Discovering fair representations in the data domain. In <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>, 8227–8236. 2019.</p>
+</dd>
+<dt class="bibtex label" id="ribeiro2016should"><span class="brackets">RSG16</span></dt>
+<dd><p>Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. ” why should i trust you?” explaining the predictions of any classifier. In <em>Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining</em>, 1135–1144. 2016.</p>
+</dd>
+<dt class="bibtex label" id="roth1988shapley"><span class="brackets">Rot88</span></dt>
+<dd><p>Alvin E Roth. <em>The Shapley value: essays in honor of Lloyd S. Shapley</em>. Cambridge University Press, 1988.</p>
+</dd>
+<dt class="bibtex label" id="russell2017collide"><span class="brackets">RKLS17</span></dt>
+<dd><p>Chris Russell, Matt J Kusner, Joshua Loftus, and Ricardo Silva. When worlds collide: integrating different counterfactual assumptions in fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 30</em>, 6414–6423. 2017.</p>
+</dd>
+<dt class="bibtex label" id="sattigeri2018fairness"><span class="brackets">SHCV18</span></dt>
+<dd><p>Prasanna Sattigeri, Samuel C Hoffman, Vijil Chenthamarakshan, and Kush R Varshney. Fairness gan. <em>arXiv preprint arXiv:1805.09910</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="cite-key"><span class="brackets">SSS+17</span></dt>
+<dd><p>David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis Antonoglou, Aja Huang, Arthur Guez, Thomas Hubert, Lucas Baker, Matthew Lai, Adrian Bolton, Yutian Chen, Timothy Lillicrap, Fan Hui, Laurent Sifre, George van den Driessche, Thore Graepel, and Demis Hassabis. Mastering the game of go without human knowledge. <em>Nature</em>, 550:354 EP –, 10 2017. URL: <a class="reference external" href="http://dx.doi.org/10.1038/nature24270">http://dx.doi.org/10.1038/nature24270</a>.</p>
+</dd>
+<dt class="bibtex label" id="singh2016110"><span class="brackets">SGSS16</span></dt>
+<dd><p>Arti Singh, Baskar Ganapathysubramanian, Asheesh Kumar Singh, and Soumik Sarkar. Machine learning for high-throughput stress phenotyping in plants. <em>Trends in Plant Science</em>, 21(2):110 – 124, 2016. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1360138515002630">http://www.sciencedirect.com/science/article/pii/S1360138515002630</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.tplants.2015.10.015">doi:https://doi.org/10.1016/j.tplants.2015.10.015</a>.</p>
+</dd>
+<dt class="bibtex label" id="sweeney2013discriminationdelivery"><span class="brackets">Swe13</span></dt>
+<dd><p>L Sweeney. Discrimination in online ad delivery. <em>Communications of the ACM</em>, 2013. <a class="reference external" href="https://doi.org/10.1145/2460276.2460278">doi:10.1145/2460276.2460278</a>.</p>
+</dd>
+<dt class="bibtex label" id="tol19"><span class="brackets">Tol19</span></dt>
+<dd><p>Songül Tolan. Fair and unbiased algorithmic decision making: current state and future challenges. <em>arXiv:1901.04730</em>, 2019.</p>
+</dd>
+<dt class="bibtex label" id="vincent-2017"><span class="brackets">Vin17</span></dt>
+<dd><p>James Vincent. Deepmind’s ai became a superhuman chess player in a few hours, just for fun. Dec 2017. URL: <a class="reference external" href="https://www.theverge.com/2017/12/6/16741106/deepmind-ai-chess-alphazero-shogi-go">https://www.theverge.com/2017/12/6/16741106/deepmind-ai-chess-alphazero-shogi-go</a>.</p>
+</dd>
+<dt class="bibtex label" id="wachter2017transparent"><span class="brackets">WMF17</span></dt>
+<dd><p>Sandra Wachter, Brent Mittelstadt, and Luciano Floridi. Transparent, explainable, and accountable ai for robotics. <em>NA</em>, 2017.</p>
+</dd>
+<dt class="bibtex label" id="wadsworth2018achieving"><span class="brackets">WVP18</span></dt>
+<dd><p>Christina Wadsworth, Francesca Vera, and Chris Piech. Achieving fairness through adversarial learning: an application to recidivism prediction. <em>arXiv preprint arXiv:1807.00199</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="xu2018fairgan"><span class="brackets">XYZW18</span></dt>
+<dd><p>Depeng Xu, Shuhan Yuan, Lu Zhang, and Xintao Wu. Fairgan: fairness-aware generative adversarial networks. In <em>2018 IEEE International Conference on Big Data (Big Data)</em>, 570–575. IEEE, 2018.</p>
+</dd>
+<dt class="bibtex label" id="yao2017beyond"><span class="brackets">YH17</span></dt>
+<dd><p>Sirui Yao and Bert Huang. Beyond parity: fairness objectives for collaborative filtering. In <em>Advances in Neural Information Processing Systems</em>, 2921–2930. 2017.</p>
+</dd>
+<dt class="bibtex label" id="yeom"><span class="brackets">YT18a</span></dt>
+<dd><p>Samuel Yeom and Michael Carl Tschantz. Discriminative but not discriminatory: a comparison of fairness definitions under different worldviews. <em>arXiv preprint arXiv:1808.08619</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="yeom2018discriminative"><span class="brackets">YT18</span></dt>
+<dd><p>Samuel Yeom and Michael Carl Tschantz. Discriminative but not discriminatory: a comparison of fairness definitions under different worldviews. <em>arXiv preprint arXiv:1808.08619</em>, 2018.</p>
+</dd>
+<dt class="bibtex label" id="zafar2015fairness"><span class="brackets">ZVRG15</span></dt>
+<dd><p>Muhammad Bilal Zafar, Isabel Valera, Manuel Gomez Rodriguez, and Krishna P Gummadi. Fairness constraints: mechanisms for fair classification. <em>arXiv preprint arXiv:1507.05259</em>, 2015.</p>
+</dd>
+<dt class="bibtex label" id="zehlike2017fa"><span class="brackets">ZBC+17</span></dt>
+<dd><p>Meike Zehlike, Francesco Bonchi, Carlos Castillo, Sara Hajian, Mohamed Megahed, and Ricardo Baeza-Yates. Fa* ir: a fair top-k ranking algorithm. In <em>Proceedings of the 2017 ACM on Conference on Information and Knowledge Management</em>, 1569–1578. 2017.</p>
+</dd>
+<dt class="bibtex label" id="zemel2013learning"><span class="brackets">ZWS+13</span></dt>
+<dd><p>Rich Zemel, Yu Wu, Kevin Swersky, Toni Pitassi, and Cynthia Dwork. Learning fair representations. In <em>International Conference on Machine Learning</em>, 325–333. 2013.</p>
+</dd>
+<dt class="bibtex label" id="zhang2018mitigating"><span class="brackets">ZLM18</span></dt>
+<dd><p>Brian Hu Zhang, Blake Lemoine, and Margaret Mitchell. Mitigating unwanted biases with adversarial learning. In <em>Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society</em>, 335–340. 2018.</p>
 </dd>
 </dl>
 </p>
@@ -343,7 +602,7 @@ see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyS
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../01_intro/definitions.html" title="previous page">Definitions of fairness</a>
+    <a class='left-prev' id="prev-link" href="../09_appendix/invisible.html" title="previous page">Invisible Demographics</a>
     <a class='right-next' id="next-link" href="cccontent.html" title="next page">Content in Jupyter Book</a>
 
     </div>
