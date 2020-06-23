@@ -1,6 +1,8 @@
 # Definitions of fairness
 
-![](https://img.shields.io/badge/status-DRAFT-critical)
+```{warning}
+This content is very much under construction. This text should be considered PRE-first draft.
+```
 
 Fairness is a hard thing to define as it is contextual.
 It is a word that is often used, without strictly thinking about its meaning.

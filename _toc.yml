@@ -8,11 +8,19 @@
   sections:
     - file: content/00_annual_review/previous_years
     - file: content/00_annual_review/this_year
+    - file: content/00_annual_review/lit_review
 
 - header: Thesis
 - file: content/01_intro/intro
   sections:
     - file: content/01_intro/definitions
+
+- header: Appendix
+- file: content/09_appendix/dfritdd
+- file: content/09_appendix/imagined
+- file: content/09_appendix/nosinn
+- file: content/09_appendix/invisible
+
 
 - header: Example Files
 - file: content/99_examples/markdown

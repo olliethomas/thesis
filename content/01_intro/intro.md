@@ -1,9 +1,8 @@
 # Introduction
 
-![](https://img.shields.io/badge/status-DRAFT-critical)
-
-From here onwards is a bit of a ramble, and very much WIP.
-Please don't read too much into anything beyond this point.
+```{warning}
+This content is very much under construction. This text should be considered PRE-first draft.
+```
 
 ## Fair Representations
 

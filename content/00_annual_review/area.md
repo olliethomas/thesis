@@ -4,7 +4,7 @@
 
 Machine Learning has been successful at a number of applications, in a number of contexts.
 These applications include translation (in both image and natural-language domains), pattern recognition and decision making.
-And contexts include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
+With contexts including Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
 Because of this success there is a desire to incorporate these systems in more and more situations, including situations directly applicable to people.
 For example, Machine Learing systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
 The promise is that instead of many human decision makers, each one biased with their own prejudices, heuristics and experience, we can have a uniform approach.
