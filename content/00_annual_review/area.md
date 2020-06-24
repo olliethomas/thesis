@@ -1,6 +1,9 @@
 # Research Area
 
-![](https://img.shields.io/badge/status-in%20progress-yellow)
+```{admonition} WIP
+:class: Tip
+This content is work in progress.
+```
 
 Machine Learning has been successful at a number of applications, in a number of contexts.
 These applications include translation (in both image and natural-language domains), pattern recognition and decision making.
@@ -12,8 +15,7 @@ The hope is that by treating everybody the same, then unequal, biased behaviour 
 
 Unfortunately, that's not always the case.
 
-```{admonition} Perspective
-:class: tip
+```{note}
 There is a parallel to the Database saying "Garbage In, Garbage Out".
 It's "Bias In, Bias Out".
 ```

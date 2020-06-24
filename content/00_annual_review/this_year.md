@@ -1,6 +1,9 @@
 # This Year
 
-![](https://img.shields.io/badge/status-in%20progress-yellow)
+```{admonition} WIP
+:class: Tip
+This content is work in progress.
+```
 
 ## 2019-2020: Full-Time
 
