@@ -1,6 +1,9 @@
 # Summary
 
-![](https://img.shields.io/badge/status-in%20progress-yellow)
+```{admonition} WIP
+:class: Tip
+This content is work in progress.
+```
 
 This annual review section is comprised of the following sections.
 

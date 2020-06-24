@@ -1,6 +1,9 @@
 # Activities to date
 
-![](https://img.shields.io/badge/status-in%20progress-yellow)
+```{admonition} WIP
+:class: Tip
+This content is work in progress.
+```
 
 In previous years I worked on...
 This year I worked on....
