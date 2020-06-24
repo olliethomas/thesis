@@ -14,35 +14,31 @@ as well as dedicated tracks at prestigious conferences such as NIPS
 The reason for this increase in activity is simple.
 Machine Learning models reflect underlying data.
 This has enabled them to be incredibly successful, performing to a superhuman standard for many tasks
-{cite}`vincent_2017,brown-sandholm2018,cite-key`. Typically these tend
-to be objective problems such as predicting the weather
-{cite}`holmstrom2016machine`, playing Atari games
-{cite}`adamski2018distributed` or distinguishing between plant phenotypes
-{cite}`SINGH2016110`. In fact, the success and high performance of machine
+{cite}`vincent_2017,brown-sandholm2018,cite-key`.
+Typically these tend to be objective problems such as predicting the weather
+{cite}`holmstrom2016machine`, playing Atari games {cite}`adamski2018distributed` or distinguishing between plant phenotypes
+{cite}`SINGH2016110`.
+In fact, the success and high performance of machine
 learning techniques in these areas has led to the desire to apply these
 same techniques to more subjective areas, such as advertising
 {cite}`Sweeney2013DiscriminationDelivery`, parole hearings
-{cite}`Angwin2016MachineBlacks` or CV screening {cite}`ideal`. However, this
-presents a problem, described in the paper "Residual Unfairness in Fair
+{cite}`Angwin2016MachineBlacks` or CV screening {cite}`ideal`.
+However, this presents a problem, described in the paper "Residual Unfairness in Fair
 Machine Learning from Prejudiced Data" {cite}`kallus2018residual` as
-?Bias In, Bias Out?. This refers to training a model on biased data and
-(unwittingly) approximating a biased function. It is analogous to the
-database mantra ?Garbage In, Garbage Out?. In principle, this short
-description is appealing, but it leaves us with hard questions to face,
-such as defining bias in this context and how to rectify it. In section
-[3](#definitions){reference-type="ref" reference="definitions"}, we?ll
-review the current trends in bias definitions and give some firmer
-definitions of the counterbalance, fairness, with regard to unfairness
-in data. This is followed by section [4](#impl){reference-type="ref"
-reference="impl"}, an overview of how fairness constraints are being
-added to existing models.
+"Bias In, Bias Out".
+This refers to training a model on biased data and (unwittingly) approximating a biased function.
+It is analogous to the database mantra "Garbage In, Garbage Out".
+In principle, this short description is appealing, but it leaves us with hard questions to face,
+such as defining bias in this context and how to rectify it.
+In {ref}`definitions`, we'll review the current trends in bias definitions and give some firmer
+definitions of the counterbalance, fairness, with regard to unfairness in data.
+This is followed by {ref}`impl`, an overview of how fairness constraints are being added to existing models.
 
-The predominant discussion in this review is around fairness, as this
-has received the most attention within the machine learning community.
-The other areas, interpretability and accountability, which comprise the
-greater 'ethical' category have received far less attention[^1].
-Although, we'll discuss them briefly in the related work section
-[2](#background){reference-type="ref" reference="background"}.
+The predominant discussion in this review is around fairness, as this has received the most attention within the machine
+learning community.
+The other areas, interpretability and accountability, which comprise the greater 'ethical' category have received far
+less attention[^1].
+Although, we'll discuss them briefly in the related work section {ref}`background`.
 
 One area that has received little exploration, is the difference between
 transparency and interpretability. These terms are often used as
@@ -53,8 +49,7 @@ intermediate representation. This is the concept of learned "fair"
 representations which have proved to be a popular approach to remove
 bias from the feature space. However, whilst transparent (to a degree),
 the lack of interpretability may ultimately become their downfall. An
-overview of learned representations and more of this discussion is in
-section [4.3](#impl_repr){reference-type="ref" reference="impl_repr"}.
+overview of learned representations and more of this discussion is in {ref}`impl_repr`.
 
 An over-arching theme throughout this review is that these problems are
 not just complicated, they are complex. There's a major challenge that a
@@ -68,8 +63,7 @@ Unwanted Biases with Adversarial Learning"
 Attributes from Text Data" {cite}`elazar2018adversarial` proposing techniques
 based on adversarial learning and a warning against this approach
 respectively. The adversarial approach to combating this problem is
-discussed in section [4.2.2](#impl_adv){reference-type="ref"
-reference="impl_adv"}.
+discussed in {ref}`impl_adv`.
 
 As these problems are complex, simply analysing correlations may not be
 enough to solve them without understanding the causal relationship
@@ -80,15 +74,13 @@ an important, non-discriminatory feature in a diagnosis system, but
 would be considered discriminatory by a bank to determine if you should
 receive a loan. Due to this, causal inference as a method to understand
 relationships between attributes is gaining in popularity. A brief
-summation of this activity is covered in section
-[5](#causal){reference-type="ref" reference="causal"}.
+summation of this activity is covered in {ref}`causal`.
 
 Finally, we note that the predominant body of fairness literature is
 based around classification, though this needn't be the case. There are
 a small number of papers that apply fairness criteria to other tasks,
 such as reinforcement learning, recommendations and resource allocation.
-A brief overview of some of this work is given in section
-[6](#other){reference-type="ref" reference="other"} before the future
+A brief overview of some of this work is given in {ref}`other` before the future
 works and conclusion sections of this review.
 
 ### Why are we doing this?
@@ -238,7 +230,7 @@ Sciences" {cite}`miller2019explanation`, Interpretability is the degree
 to which a human can understand the cause of a decision. The book
 "Interpretable Machine Learning" {cite}`molnar` frames that statement in a
 slightly different way, describing interpretability is "the degree to
-which a human can consistently predict the model?s result". In this
+which a human can consistently predict the model's result". In this
 review we have already distinguished between transparency and
 interpretability, but {cite}`molnar` distinguishes further between
 interpretability and explanation. Miller {cite}`miller2019explanation`
@@ -325,14 +317,20 @@ _Sufficiency_. This pattern is adopted in this section.
 The most intuitive notion of fairness is _Independence_. This is the
 notion that given a prediction ($\hat{Y}$) and a protected sensitive
 attribute ($S$), then the prediction should be independent of the
-sensitive attribute $$P(\hat{Y}) \perp S$$ In fact, one of the first
+sensitive attribute 
+
+$$P(\hat{Y}) \perp S$$ 
+
+In fact, one of the first
 papers in this area by Kamiran and Calders {cite}`Kamiran2009` use this as
 their discrimination measure. Although written in a different form, they
 later use the notation latterly adopted in fairness literature during
 their journal article {cite}`Kamiran2012` expanding on their previous work
 {cite}`Kamiran2009,kamiran2011`
 
-$$disc = P(\hat{y}|s=0) - P(\hat{y}|s=1)$$ Statistical Parity (or
+$$disc = P(\hat{y}|s=0) - P(\hat{y}|s=1)$$ 
+
+Statistical Parity (or
 Demographic Parity as it often known) appeals to an intuitive sense of
 group fairness, namely that the outcome of the model should be
 independent of some sensitive attribute(s). For example, the probability
@@ -390,10 +388,14 @@ considers all values of $Y$, and the looser constraint Equality of
 Opportunity {cite}`hardt2016equality`, which only constrains independence given the
 outcome is positive .
 
-Equalised Odds $$\begin{aligned}
+Equalised Odds 
+```{math}
+\begin{align*}
     P(\hat{Y}|s=0, y=0) &= P(\hat{Y}|s=1, y=0) \\
     \& \\
-    P(\hat{Y}|s=0, y=1) &= P(\hat{Y}|s=1, y=1)    \end{aligned}$$
+    P(\hat{Y}|s=0, y=1) &= P(\hat{Y}|s=1, y=1)    
+\end{align*}
+```
 
 Equality of Opportunity $$P(\hat{Y}|s=0, y=1) = P(\hat{Y}|s=1, y=1)$$
 
@@ -443,7 +445,9 @@ Independence is $\hat{Y} \perp S$, sufficiency is $Y \perp S | \hat{Y}$.
 By simply claiming both of these statements to be true, we then have
 
 $$
-\Rightarrow S \perp Y$$
+S \perp \hat{Y} \textbf{ and } S \perp Y | \hat{Y} 
+\Rightarrow S \perp Y
+$$
 
 This shows that independence and sufficiency can only hold when we
 contradict our assumption.
@@ -451,9 +455,11 @@ contradict our assumption.
 Similarly, for separation and sufficiency if we assume that again we
 have data where $Y \not \perp S$ we can show that for both to hold we
 would have
-$$
 
-\Rightarrow S \perp Y\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+$$
+S \perp \hat{Y} | Y \textbf{ and } S \perp Y | \hat{Y}
+\Rightarrow S \perp Y
+$$
 
 which again is contradictory to our assumption, demonstrating that we
 can't have both sufficiency and separation based notions of fairness
@@ -481,19 +487,16 @@ points of potential discrimination, being concerned with whether
 discrimination occurs in any, some, or if only with all attributes
 present.
 
----
-
-Demographic Parity $P(\hat{Y} | S = 0) = P(\hat{Y} | S = 1)$ Independence
-Equal Opportunity $P(\hat{Y} = 1 | Y = 1, S = 0) = P(\hat{Y} = 1 | Y = 1, S = 1)$ Separation
-Equalised Odds $P(\hat{Y} = 1 | Y = y, S = 0) = P(\hat{Y} = 1 | Y = y, S = 1) \forall y \in Y$ Separation
-Equal Accuracy $P(\hat{Y} = Y | S = 0) = P(\hat{Y} = Y | S = 1)$ Independence
-Accurate Coverage $P(\hat{Y} = 1 | S = s) = P(Y = 1 | S = s) \forall s \in S$ Sufficiency
-Not Worse Off / No Lost Accuracy $P(\hat{Y}_{\text{new}} = Y | S = 1) \geq P(\hat{Y}_{\text{current}} = Y | S = 1)$ Separation
-No Lost Benefits / No Lost Coverage $P(\hat{Y}_{\text{new}} = 1 | S = 1) \geq P(\hat{Y}_{\text{current}} = 1 | S = 1)$ Independence
-
----
-
-: Differing Fairness Criterion and their categorisation
+| Fairness Goal                         | Definition                                                                                              | Example of   | 
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------ |
+| Demographic Parity                    | $P(\hat{Y} \| S = 0) = P(\hat{Y} \| S = 1)$                                                             | Independence |
+| Equal Opportunity                     | $P(\hat{Y} = 1 \| Y = 1, S = 0) = P(\hat{Y} = 1 \| Y = 1, S = 1)$                                       | Separation   |
+| Equalised Odds                        | $P(\hat{Y} = 1 \| Y = y, S = 0) = P(\hat{Y} = 1 \| Y = y, S = 1) \forall y \in Y$                       | Separation   |
+| Equal Accuracy                        | $P(\hat{Y} = Y \| S = 0) = P(\hat{Y} = Y \| S = 1)$                                                     | Independence |
+| Accurate Coverage                     | $P(\hat{Y} = 1 \| S = s) = P(Y = 1 \| S = s) \forall s \in S$                                           | Sufficiency  |
+| Not Worse Off / No Lost Accuracy      | $P(\hat{Y}_{\text{new}} = Y \| S = 1) \geq P(\hat{Y}_{\text{current}} = Y \| S = 1)$ | Separation   |
+| No Lost Benefits / No Lost Coverage   | $P(\hat{Y}_{\text{new}} = 1 \| S = 1) \geq P(\hat{Y}_{\text{current}} = 1 \| S = 1)$ | Independence |
+Differing Fairness Criterion and their categorisation
 
 Which fairness definition (or family of definitions) should one be
 using? This is a more complex question to answer. Some, such as
@@ -521,21 +524,27 @@ which they use to create 4 datasets, with combinations of Sample Bias,
 No Sample Bias, Label Bias and No Label Bias. They consider a binary
 race attribute (Black, White) where White race is $s=0$ and Black race
 is $s=1$. Label Bias is where there are different label thresholds based
-on race, in this case $$\hat{Y} = 
+on race, in this case 
+
+$$
+\hat{Y} = 
 \begin{cases}
 1 \text{ if score} \geq 0.3, \text{else } 0 & \text{if race = white} \\
 1 \text{ if score} \geq 0.7, \text{else } 0 & \text{if race = black}
-\end{cases}$$
+\end{cases}
+$$
 
 Sample Bias is where one group (in this case White race) has people
 selected at a higher rate, in this case
 
 $$
+\tilde{P}(x \in \mathcal{X}) = 
 \begin{cases}
 0.8 & \text{if race = white and score} \geq 0.5 \\
 0.2 & \text{if race = white and score} < 0.5 \\
 1   & \text{if race = black}
-\end{cases}$$
+\end{cases}
+$$
 
 This paper demonstrates that no single fairness metric is able to pick
 up all discrimination and that all fairness metrics require "a healthy
@@ -615,6 +624,9 @@ explicitly change the input features, such as "Certifying and Removing
 Disparate Impact" {cite}`feldman2015certifying`. This paper compares
 the probability distributions of features across protected groups and
 seeks to rectify this. Enforcing
+
+$$
+P(\bar{x}|s=0) = P(\bar{x}|s=1)
 $$
 
 where $\bar{x}$ is a modified version of the original feature $x$.
@@ -624,7 +636,7 @@ then shifted so as to retain the same rank whilst having an identical
 distribution for each sub-group such that $P(s|\bar{x}) = 0.5$.
 
 The concept of changing the input space is an intriguing one. On one
-hand, a person?s features are not discriminatory in themselves, after
+hand, a person's features are not discriminatory in themselves, after
 all, discriminatory features are _usually_ qualitative. That said, some
 features are due to the disparate impact of previous unfair decisions.
 An example of this may be disproportionate wealth distribution in the US
@@ -834,24 +846,37 @@ sensitive attribute _along the unfair pathways_ were different". They
 achieve this by measuring the effect of $s$ along unfair pathways and
 disregarding it. In the simple case below
 
+```{figure} assets/path-specific.png
+---
+height: 200px
+name: path-specific
+---
+```
+
 where the direct effect of $s$ on $y$ is fair, but the effect of $s$ via
 $m$ is unfair, then we can think of each variable being created of it's
 own characteristic $\theta^{\text{variable}}$, plus the effect of its
 parents $\theta^{\text{variable}}_{\text{induced by}}$, plus noise
 $\epsilon_{\text{variable}}$, so
 
-$$
+```{math}
+\begin{align*}
 S &= \theta^s + \epsilon_s \\
 M &= \theta^m + \theta^m_s + \epsilon_m \\
-Y &= \theta^y + \theta^y_s + \theta^y_m + \epsilon_y\end{aligned}$$
+Y &= \theta^y + \theta^y_s + \theta^y_m + \epsilon_y
+\end{align*}
+```
 
 our goal would be to remove the effect of $s$ along unfair pathways,
 giving
-$$
 
-S &= \theta^s + \epsilon\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*s \\
-M\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*{\text{fair}} &= \theta^m + \cancel{\theta^m\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*s} + \epsilon_m \\
-Y\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*{\text{fair}} &= \theta^y + \theta^y\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*s + \theta^y\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*{m\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_\text{fair}} + \epsilon_y\end{aligned}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$\$
+```{math}
+\begin{align*}
+S &= \theta^s + \epsilon_s \\
+M_{\text{fair}} &= \theta^m + \epsilon_m \\
+Y_{\text{fair}} &= \theta^y + \theta^y_s + \theta^y_{m_\text{fair}} + \epsilon_y
+\end{align*}
+```
 
 In this case, (and in the case of "Counterfactual Fairness"
 {cite}`kusner2017counterfactual`). The goal is to achieve fairness in
@@ -923,8 +948,8 @@ captured in this dataset (though could be inferred using prior knowledge
 and the nationality feature), you will not be able to claim fairness
 with regard to that non-captured attribute, despite Freedom of
 Religion[^9] being enshrined in most modern democratic countries. There
-has been an attempt to address this problem in the paper 'Proxy
-Fairness'' {cite}`gupta2018proxy` which finds potential proxy groups
+has been an attempt to address this problem in the paper Proxy
+Fairness {cite}`gupta2018proxy` which finds potential proxy groups
 that could potentially be discriminated against, though this is a first
 foray into this particularly difficult problem.
 
@@ -939,36 +964,17 @@ may not use these features within our models, but if not captured, we
 stand little chance of calming ethical concerns about the application of
 our field to subjective areas.
 
-[^1]:
-  Certainly from the ethical perspective, although interpretability
-  of machine learning models is a research area in it's own right
-
-[^2]:
-  And alternatively, we may be able to interpret some stages of the
-  decision making process but the process to obtain these may be
-  opaque to us
-
-[^3]:
-  For more on this paper, see section
-  [5](#causal){reference-type="ref" reference="causal"}
-
-[^4]:
-  Throughout this section we consider a binary sensitive attribute,
-  though all definitions can be extended to accommodate a sensitive
-  attribute with $n$ categories
-
-[^5]: Which due to contractual reasons they are unable to release
-[^6]: In this case, with regard to demographic parity
-[^7]: The CelebA, Soccer Player and Quickdraw datasets were used
-[^8]:
-  Given the arbitrariness of many 'fairness' rules in the U.S. that
-  have led to claims of disparate treatment (i.e. Ricci vs DeStefano
-  or Texas House Bill 588) this objective may have a large impact.
-
-[^9]:
-  And consequently the expectation to be free of discrimination
-  based on that religion
+[^1]: Certainly from the ethical perspective, although interpretability of machine learning models is a research area in it's own right.
+[^2]: And alternatively, we may be able to interpret some stages of the decision making process but the process to obtain these may be opaque to us.
+[^3]: For more on this paper, see {ref}`causal`.
+[^4]: Throughout this section we consider a binary sensitive attribute, though all definitions can be extended to accommodate a sensitive attribute with $n$ categories.
+[^5]: Which due to contractual reasons they are unable to release.
+[^6]: In this case, with regard to demographic parity.
+[^7]: The CelebA, Soccer Player and Quickdraw datasets were used.
+[^8]: Given the arbitrariness of many 'fairness' rules in the U.S. that have led to claims of disparate treatment (i.e. Ricci vs DeStefano or Texas House Bill 588) this objective may have a large impact.
+[^9]: And consequently the expectation to be free of discrimination based on that religion.
 
 ```{bibliography} ../../references.bib
 
 ```
+$$
