@@ -362,7 +362,7 @@ We take inspiration from this research area and try to emulate a subset of the b
 <h2>Imagined Examples Model<a class="headerlink" href="#imagined-examples-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="gcm">
 <a class="reference internal image-reference" href="../../_images/gm.png"><img alt="../../_images/gm.png" src="../../_images/gm.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Left</strong>: Graphical Model of our approach. <strong>Right</strong>: Our model in practice.</span><a class="headerlink" href="#gcm" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text"><strong>Left</strong>: Graphical Model of our approach. <strong>Right</strong>: Our model in practice.</span><a class="headerlink" href="#gcm" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -370,15 +370,15 @@ We take inspiration from this research area and try to emulate a subset of the b
 </div>
 <div class="figure align-default" id="resampling-a">
 <a class="reference internal image-reference" href="../../_images/resampling_a.png"><img alt="../../_images/resampling_a.png" src="../../_images/resampling_a.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Removing sampling bias as the source of unfairness.</span><a class="headerlink" href="#resampling-a" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Removing sampling bias as the source of unfairness.</span><a class="headerlink" href="#resampling-a" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="resampling-b">
 <a class="reference internal image-reference" href="../../_images/resampling_b.png"><img alt="../../_images/resampling_b.png" src="../../_images/resampling_b.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Removing proxy labels as the source of unfairness</span><a class="headerlink" href="#resampling-b" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Removing proxy labels as the source of unfairness</span><a class="headerlink" href="#resampling-b" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>How do imagined examples work? In Figure <a class="reference internal" href="#resampling-a"><span class="std std-numref">Fig. 2</span></a>, we intervene on the protected characteristic and
+<p>How do imagined examples work? In Figure <a class="reference internal" href="#resampling-a"><span class="std std-numref">Fig. 3</span></a>, we intervene on the protected characteristic and
 observe the effect on the features producing <span class="math notranslate nohighlight">\(X^{\text{Imagined}}\)</span> (see Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">recons</span></code> for a visualisation of
 this effect).
 We can then use these imagined examples to augment the original dataset creating a balanced dataset in terms of group
@@ -394,11 +394,11 @@ training examples</em> in the dataset, which will be ignored by the classifier.<
 </div>
 <p>While prior works have focused on recreating the protected characteristic solely from the input features, recent work has also shown that the class labels themselves can be a source of bias <a class="bibtex reference internal" href="../99_examples/markdown.html#yeom" id="id25">[YT18a]</a><a class="bibtex reference internal" href="../99_examples/markdown.html#tol19" id="id26">[Tol19]</a>.
 In this context, if we had a set of features that were completely invariant to the protected characteristic, the model would either perform poorly, or have to learn to be biased to accommodate the biased labels.
-To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder <a class="bibtex reference internal" href="../99_examples/markdown.html#vfae" id="id27">[LSL+15]</a> to acknowledge that bias can also exist within the class labels (see figure <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — left).
+To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder <a class="bibtex reference internal" href="../99_examples/markdown.html#vfae" id="id27">[LSL+15]</a> to acknowledge that bias can also exist within the class labels (see figure <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 2</span></a> — left).
 In doing this, we explicitly model two latent embeddings that are disentangled from the protected characteristic for both the features and the decision outcome.
 We refer to these latent representations as <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span>; while they could be modelled in the same space as the respective observed data, that need not be the case.</p>
 <p>In practice however if we generate samples of <span class="math notranslate nohighlight">\(\x\)</span> and <span class="math notranslate nohighlight">\(\y\)</span>, where both have been intervened on by the same variable, this is akin to na”ively upsampling the underrepresented groups.
-This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases <a class="bibtex reference internal" href="../99_examples/markdown.html#kamiran2012data" id="id28">[KC12a]</a>. Instead, we ‘split’ the protected characteristic into two independent variables during decoding (Fig. <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — right).
+This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases <a class="bibtex reference internal" href="../99_examples/markdown.html#kamiran2012data" id="id28">[KC12a]</a>. Instead, we ‘split’ the protected characteristic into two independent variables during decoding (Fig. <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 2</span></a> — right).
 One variable (<span class="math notranslate nohighlight">\(\s_1\)</span>) affects the reconstruction of the features and another (<span class="math notranslate nohighlight">\(\s_2\)</span>) that affects the reconstruction of the class labels.
 However, during encoding we only consider the observed protected characteristic.</p>
 <p>This allows us to intervene separately, either remedying the problem of under-represented samples in the data, or diagnosing that a task is not suitable to be learned given the data.</p>
@@ -669,7 +669,7 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </div>
 <div class="figure align-default" id="id31">
 <a class="reference internal image-reference" href="../../_images/diff_all.png"><img alt="../../_images/diff_all.png" src="../../_images/diff_all.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>However, if the features are entwined with the protected characteristic, then a significant amount of this information will be removed during the transformation to <span class="math notranslate nohighlight">\(\zx\)</span>.
 The decoder network will then rely on the protected characteristic to reconstruct the features.
