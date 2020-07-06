@@ -116,7 +116,7 @@
     <a href="../09_appendix/imagined.html">Imagined Examples for Fairness: Sampling Bias and Proxy Labels</a>
   </li>
   <li class="">
-    <a href="../09_appendix/nosinn.html">NoSINN</a>
+    <a href="../09_appendix/nosinn.html">Null-Sampling for Invariant and Interpretable Representations</a>
   </li>
   <li class="">
     <a href="../09_appendix/invisible.html">Invisible Demographics</a>
@@ -218,7 +218,27 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#full-time" class="nav-link">2019-2020: Full-Time</a>
+            <a href="#full-time" class="nav-link">2019-2020: Full-Time</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#imagined-examples" class="nav-link">Imagined Examples</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#intervene" class="nav-link">Intervene</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#causal-modelling" class="nav-link">Causal Modelling</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#management" class="nav-link">Management</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -253,14 +273,51 @@
 <h2>2019-2020: Full-Time<a class="headerlink" href="#full-time" title="Permalink to this headline">¶</a></h2>
 <p>Since the last annual review, I worked on 3 papers</p>
 <ol class="simple">
-<li><p><em>Imagined Examples:</em> We use a Variational Autoencoder model to produce a model that not only considers the features, but also the reported outcomes, as a source of bias.
+<li><p><em><a class="reference internal" href="../09_appendix/imagined.html"><span class="doc std std-doc">Imagined Examples</span></a>:</em> We use a Variational Autoencoder model to produce a model that not only considers the features,
+but also the reported outcomes, as a source of bias.
 We use this model to generate likely counterfactual samples but without the need for a causal model.</p></li>
-<li><p><em>NoSINN:</em> We use the bijective property of invertible neural networks in conjunction with an adversarial network to <em>disentangle</em> a sensitive attribute’s effect on other features.
-We then generate samples that are neutral with respect to a sensitive attribute, using these neutral images as our representation of the data we can investigate how the model has made the data “fairer”.</p></li>
-<li><p><em>Invisible Demographics:</em> Training data doesn’t always reflect the deployment setting, with some demographic groups either mis-represented, or simply missing.
-We use a</p></li>
+<li><p><em><a class="reference internal" href="../09_appendix/nosinn.html"><span class="doc std std-doc">Null-sampling for Invariant and Interpretable Representations</span></a>:</em> We use the bijective property of invertible neural networks in conjunction with an adversarial network
+to <em>disentangle</em> a sensitive attribute’s effect on other features.
+We then generate samples that are neutral with respect to a sensitive attribute, using these neutral images as our
+representation of the data we can investigate how the model has made the data “fairer”.</p></li>
+<li><p><em><a class="reference internal" href="../09_appendix/invisible.html"><span class="doc std std-doc">Invisible Demographics</span></a>:</em> Training data doesn’t always reflect the deployment setting, with some demographic groups
+either mis-represented, or simply missing.
+We use unlabelled, but representative, data to guide our learned representations.</p></li>
 </ol>
 <p>In addition I managed the Surgo reseach project for 7 months to produce the causal modelling tool <a class="reference external" href="https://github.com/predictive-analytics-lab/Intervene">Intervene</a>.</p>
+<div class="section" id="imagined-examples">
+<h3>Imagined Examples<a class="headerlink" href="#imagined-examples" title="Permalink to this headline">¶</a></h3>
+<p>Full text can be found in the <a class="reference internal" href="../09_appendix/imagined.html"><span class="doc std std-doc">appendix</span></a>.</p>
+<p>Learning a fair representation of data is a popular approach to mitigate unfair decisions by addressing a root problem
+of learning from biased data.</p>
+<p>However, almost every approach considers that the class labels are infallible.
+The assumption is that bias exists only in the features our model takes as input.
+This is however, not the case.
+Proxy labels are a source of bias and are not addressed in previous works.</p>
+</div>
+<div class="section" id="intervene">
+<h3>Intervene<a class="headerlink" href="#intervene" title="Permalink to this headline">¶</a></h3>
+<p>As part of the Surgo research project we created the tool Intervene.
+This tool has 3 core functionalities:</p>
+<ol class="simple">
+<li><p>Creating data</p></li>
+<li><p>Fitting a Casual Model to data.</p></li>
+<li><p>Evaluating the performance of the learned model.</p></li>
+</ol>
+<div class="section" id="causal-modelling">
+<h4>Causal Modelling<a class="headerlink" href="#causal-modelling" title="Permalink to this headline">¶</a></h4>
+<p>Whilst the topic of causality is a research topic in it’s own rite, there are clearly parallels between this area and
+the broad category of my research area - algorithmic fairness, accountability and transparency.</p>
+<p>If we are able to accuractely model the causal relationships within the data, then we can ask fundamental questions,
+interrogating the underlying frameworks that introduce bias into pur observations.
+However, <strong>accurate</strong> causal modelling is not a solved problem.
+My hope when beginning this research project was to</p>
+</div>
+<div class="section" id="management">
+<h4>Management<a class="headerlink" href="#management" title="Permalink to this headline">¶</a></h4>
+<p>Falls outside of my research area, but happy to talk about this experience on request.</p>
+</div>
+</div>
 </div>
 <div class="section" id="other-works">
 <h2>Other works<a class="headerlink" href="#other-works" title="Permalink to this headline">¶</a></h2>
