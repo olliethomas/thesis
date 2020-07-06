@@ -977,4 +977,3 @@ our field to subjective areas.
 ```{bibliography} ../../references.bib
 
 ```
-$$

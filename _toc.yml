@@ -4,6 +4,7 @@
   sections:
     - file: content/00_annual_review/area
     - file: content/00_annual_review/question
+    - file: content/00_annual_review/structure
 - file: content/00_annual_review/activities_to_date
   sections:
     - file: content/00_annual_review/previous_years
