@@ -1,9 +1,11 @@
-# Research Area
+# Research Area & Question
 
 ```{admonition} WIP
 :class: Tip
 This content is work in progress.
 ```
+
+## Research Area
 
 Machine Learning has been successful at a number of applications, in a number of contexts.
 These applications include translation (in both image and natural-language domains), pattern recognition and decision making.
@@ -40,3 +42,7 @@ This work focuses on working with data, which is imperfect, but readily availabl
 
 1. Given biased data, can we train a model to produce a fair representation of data from which an unencumbered downstream model would produce fair decisions?
 2. If so, can we understand _what_ it was about the data that needed to change so that fair decisions can be made.
+
+## Research Question
+1. Can we learn a representation of data that makes downstream tasks **fair**?
+   1. If so, can we understand what the representation **changed**?
