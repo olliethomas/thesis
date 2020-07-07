@@ -3,18 +3,20 @@
 - file: content/00_annual_review/summary
   sections:
     - file: content/00_annual_review/area
-    - file: content/00_annual_review/question
-    - file: content/00_annual_review/structure
-- file: content/00_annual_review/activities_to_date
-  sections:
-    - file: content/00_annual_review/previous_years
-    - file: content/00_annual_review/this_year
-    - file: content/00_annual_review/lit_review
+#    - file: content/00_annual_review/question
 
-- header: Thesis
-- file: content/01_intro/intro
-  sections:
-    - file: content/01_intro/definitions
+- file: content/00_annual_review/activities_to_date
+#  sections:
+#    - file: content/00_annual_review/previous_years
+#    - file: content/00_annual_review/this_year
+#    - file: content/00_annual_review/lit_review
+
+- file: content/00_annual_review/structure
+
+#- header: Thesis
+#- file: content/01_intro/intro
+#  sections:
+#    - file: content/01_intro/definitions
 
 - header: Appendix
 - file: content/09_appendix/dfritdd
@@ -23,7 +25,7 @@
 - file: content/09_appendix/invisible
 
 
-- header: Example Files
-- file: content/99_examples/markdown
-- file: content/99_examples/cccontent
-- file: content/99_examples/notebooks
+#- header: Example Files
+#- file: content/99_examples/markdown
+#- file: content/99_examples/cccontent
+#- file: content/99_examples/notebooks
