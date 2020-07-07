@@ -7,11 +7,6 @@ This content is work in progress.
 
 ## Previous Years
 
-```{admonition} WIP
-:class: Tip
-This content is work in progress.
-```
-
 ### 2017-2018: Part-Time
 
 #### Work
@@ -43,11 +38,6 @@ This content is work in progress.
 - Taught several lectures on Fairness in Machine Learning.
 
 ## This Year
-
-```{admonition} WIP
-:class: Tip
-This content is work in progress.
-```
 
 ### 2019-2020: Full-Time
 
@@ -109,12 +99,18 @@ comparison possible.
 Falls outside of my research area, but happy to talk about this experience on request.  
 
 
-
 ### Other works
 Gave a [presentation](https://predictive-analytics-lab.github.io/presentations/toronto2019.html#/) on fairness in machine learning 
 at [Conference on Data Science and Optimization](http://www.fields.utoronto.ca/talks/Transparency-fairness) in Toronto.
+
+Presented at the PAL reading group 5 times.
 
 #### Training Courses Attended
 - Preparing for your Viva. Organised by the Doctoral School.
 - How to Edit Your Own Writing. Organised by the Doctoral School.
 - Master Your Workload. Organised by the Doctoral School.
+
+## 2020 onwards: Continuing Work
+
+- Investigating the use of Active Learning to model changing demographics.
+- Characterising the relationship between fair learnt representations and counterfactual samples.
