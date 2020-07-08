@@ -84,8 +84,8 @@ This tool has 3 core functionalities:
 Whilst the topic of causality is a research topic in it's own rite, there are clearly parallels between this area and 
 the broad category of my research area - algorithmic fairness, accountability and transparency.
 
-If we are able to accuractely model the causal relationships within the data, then we can ask fundamental questions,
-interrogating the underlying frameworks that introduce bias into pur observations.
+If we were able to accurately model the causal relationships within the data, then we could ask fundamental questions,
+interrogating the underlying frameworks that introduce bias into our observations.
 However, **accurate** causal modelling is not a solved problem.
 My hope when beginning this research project was to investigate the effect of the learned causal relationship between
 raw data and fair representations. 
