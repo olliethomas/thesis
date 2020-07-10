@@ -23,9 +23,3 @@
 - file: content/09_appendix/imagined
 - file: content/09_appendix/nosinn
 - file: content/09_appendix/invisible
-
-
-#- header: Example Files
-#- file: content/99_examples/markdown
-#- file: content/99_examples/cccontent
-#- file: content/99_examples/notebooks

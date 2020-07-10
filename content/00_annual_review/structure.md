@@ -5,10 +5,37 @@
 This content is work in progress.
 ```
 
-A two page outline of your thesis structure
-
+````{margin}
+```{note}
+The title is not completely settled on. 
+```
+````
 ## Title
-Fair Representations in the Data Domain
+Fair Representations of Biased Data
+
+## Table of Contents
+1. Introduction
+    1. Overview.
+    2. Fair Machine Learning.
+    3. Challenges.
+2. Background
+    1. Adversarial approaches.
+    2. Distribution matching.
+    3. Counterfactual Fairness.
+    4. (possibly) Active Learning.
+        1. types of uncertainty.
+        2. model uncertainty.
+        3. active learning.
+3. Chapter 1
+    1. Discovering Fair Representations in the Data Domain.
+    2. Null-Sampling for Invariant and Interpretable Representations.
+4. Chapter 2
+    1. Imagined Examples for Fairness: Sampling Bias and Proxy Labels.
+5. Chapter 3
+    - Possibility 1
+        1. Fair Representations in the Data Domain and Counterfactuals.
+    - Possibility 2
+        1. Active Learning to reduce model uncertainty.
 
 ## Introduction
 Discussion of research area, before focussing in on the research question.

@@ -7,23 +7,30 @@ This content is work in progress.
 
 ## Research Area
 
-Machine Learning has been successful at a number of applications, in a number of contexts.
+Machine Learning is a tool that is growing in popularity.
+There have been a number of high profile successes, and new applications are being regularly identified.
 These applications include translation (in both image and natural-language domains), pattern recognition and decision making.
-With contexts including Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
-Because of this success there is a desire to incorporate these systems in more and more situations, including situations directly applicable to people.
+Contexts for these applications include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
+
+Because of this success there is a desire to incorporate these systems in more and more situations, including those directly applicable to people.
 For example, Machine Learing systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
+
+On top of the benefits of automated decision making (speed, scale, etc) there is an additional promise to automated decisions.
 The promise is that instead of many human decision makers, each one biased with their own prejudices, heuristics and experience, we can have a uniform approach.
 The hope is that by treating everybody the same, then unequal, biased behaviour can be removed.
 
 Unfortunately, that's not always the case.
 
-```{note}
-There is a parallel to the Database saying "Garbage In, Garbage Out".
-It's "Bias In, Bias Out".
-```
+Recent headlines include
+- **Wrongfully Accused by an Algorithm**: In what may be the first known case of its kind, a faulty facial recognition match 
+led to a Michigan man’s arrest for a crime he did not commit. -- NYTimes {cite}`hill_2020`
+- **Amazon ditched AI recruiting tool that favored men for technical jobs**. -- The Guardian {cite}`reuters_2018`
+- **Police officers raise concerns about 'biased' AI data**. -- BBC News {cite}`bbc_news_2019`
 
-There are a number of potential problems.
-Examples of these problems include (but not limited to):
+But how does this happen?
+A prediction model has to be designed and there are a number of legal and moral obstacles to prevent a group/individual from purposefully designing a biased system.
+However, even for the best intentioned there are a number of potential problems.
+Examples of these problems include (but are not limited to):
 
 - _The tyranny of the majority:_ We optimise to be right for the many, at the expense of minority groups.
 - _Sampling bias:_ We don't have representative data of our population.
@@ -32,17 +39,82 @@ Examples of these problems include (but not limited to):
 
 And unfortunately these aren't mutually exclusive.
 
-To make matters more complicated, bias isn't just a property of data, it can also exist in model choice.
-Whilst it's true to say that [a logistic regression model isn't biased](https://twitter.com/ylecun/status/1204008802086817792?s=20) the decisions around these models are made by people.
-As such they may be affected by the decision maker's own biases.
-There are also concerns of deployment setting, pre and post-processing and interpretation of the results.
-However, these go beyond the scope of this work.
+An unconstrained machine learning model is susceptible to all of these problems.
+To face this challenge, the machine learning community has focused on creating a class of learning models that are constrained 
+to exhibit less bias than an unconstrained model.
+Typically these are referred to as "Fair Machine Learning Models".
 
-This work focuses on working with data, which is imperfect, but readily available, and asks two questions.
+### Fair Machine Learning
 
-1. Given biased data, can we train a model to produce a fair representation of data from which an unencumbered downstream model would produce fair decisions?
-2. If so, can we understand _what_ it was about the data that needed to change so that fair decisions can be made.
+Fair Machine Learning, in general, aims to resolve "unfairness" (or the effect of bias) by affecting a model in one of 
+three places in the general learning pipeline.
+1. Pre-model training.
+    - Using a model to reduce bias in the underlying data, so that an unconstrained downstream classifier will exhibit fairer outcomes.  
+2. During model training.
+    - Adding constraints to a model so that breaches in these constraints are heavily penalised during training.
+3. Post-model training.
+    - Adjusting the output of an unconstrained model so that the adjusted outputs don't breach a given constraint.
 
+````{margin}
+```{note}
+This comparison is of course a little over-simplistic.
+This will be expanded on in the introduction to my thesis.
+``` 
+````
+| Approach      | Multi-task support    | Task model Agnostic   | Pareto-optimal | Constraints guaranteed to be enforced | 
+| :---          | :---:                 | :---:                 | :---:          | :---:                                 |
+| Pre-process   | X                     |  X                    |                |                                       |
+| During        |                       |                       | X              |                                       |
+| Post-process  |                       |  X                    |                | X                                     |
+
+In my work I focus on removing bias in the 'pre-processing' stage. 
+This is an exciting and active research area with spotlight tutorials at top conferences such as NeurIPS[^footnote] {cite}`foundation`.
+Part of the reason for the excitement in this area is that the underlying data itself is a major source of bias.
+After all, this is what a model is using to determine "correct" behaviour.
+If we are able to understand and counteract bias that exists in the underlying data, then we can use an unconstrained 
+classifier (which may already have been heavily invested in) for a task.
+Crucially, we may be potentially able to use the same data for performing _multiple fair tasks_.
+
+Ultimately though, even a model counteracting bias will not be fully trusted without being able to interpret the actions 
+that it has taken to counteract bias.
+Simply off-loading a problem from one black-box to another only masks the issue.
+My work specifically deals with _this_ problem.
+
+% This isn't to discount bias entering in other manners.
+% Bias isn't just a property of data, it can also exist in model choice.
+% Whilst it's true to say that [a logistic regression model isn't biased](https://twitter.com/ylecun/status/1204008802086817792?s=20) 
+% the decisions around these models are made by people.
+% As such they may be affected by the decision maker's own biases.
+% There are also concerns of deployment setting, data collection and interpretation of the results.
+% However, these go beyond the scope of this work.
+% 
+% ```{note}
+% There is a parallel to the Database saying "Garbage In, Garbage Out".
+% In Machine Learning we have "Bias In, Bias Out".
+% ```
+
+This work focuses on working with data, which is imperfect, but readily available, and asks:
+
+Given some data, can we use machine learning to understand what changes need to made to counteract a specific bias?
+
+[^footnote]: http://sanmi.cs.illinois.edu/documents/Representation_Learning_Fairness_NeurIPS19_Tutorial.pdf
+
+````{margin}
+```{note}
+I'm aware that this research question isn't firm enough, but I'm having trouble articulating it. 
+Advice on this would be appreciated.
+```
+````
 ## Research Question
+
 1. Can we learn a representation of data that makes downstream tasks **fair**?
    1. If so, can we understand what the representation **changed**?
+   
+I will answer this question by: 
+- demonstrating that fair representations of data can be built in the original data domain without loss of performance with regard to both utility and fairness criterion.
+- demonstrating qualitatively that representations in the data domain provide feedback as to what is required to make data "fair".
+ 
+
+```{bibliography} ../../area_references.bib
+
+```
