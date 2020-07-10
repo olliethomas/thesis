@@ -43,7 +43,7 @@
 <meta property="og:url"         content="oliverthomas.ml/content/00_annual_review/area.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Research Area & Question" />
-<meta property="og:description" content="Research Area & Question  WIP  This content is work in progress.  Research Area  Machine Learning has been successful at a number of applications, in a number o" />
+<meta property="og:description" content="Research Area & Question  WIP  This content is work in progress.  Research Area  Machine Learning is a tool that is growing in popularity. There have been a num" />
 <meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -197,7 +197,13 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#research-area" class="nav-link">Research Area</a>
+            <a href="#research-area" class="nav-link">Research Area</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#fair-machine-learning" class="nav-link">Fair Machine Learning</a>
+        </li>
+    
+            </ul>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -230,21 +236,27 @@
 </div>
 <div class="section" id="research-area">
 <h2>Research Area<a class="headerlink" href="#research-area" title="Permalink to this headline">¶</a></h2>
-<p>Machine Learning has been successful at a number of applications, in a number of contexts.
+<p>Machine Learning is a tool that is growing in popularity.
+There have been a number of high profile successes, and new applications are being regularly identified.
 These applications include translation (in both image and natural-language domains), pattern recognition and decision making.
-With contexts including Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
-Because of this success there is a desire to incorporate these systems in more and more situations, including situations directly applicable to people.
-For example, Machine Learing systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
+Contexts for these applications include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.</p>
+<p>Because of this success there is a desire to incorporate these systems in more and more situations, including those directly applicable to people.
+For example, Machine Learing systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.</p>
+<p>On top of the benefits of automated decision making (speed, scale, etc) there is an additional promise to automated decisions.
 The promise is that instead of many human decision makers, each one biased with their own prejudices, heuristics and experience, we can have a uniform approach.
 The hope is that by treating everybody the same, then unequal, biased behaviour can be removed.</p>
 <p>Unfortunately, that’s not always the case.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There is a parallel to the Database saying “Garbage In, Garbage Out”.
-It’s “Bias In, Bias Out”.</p>
-</div>
-<p>There are a number of potential problems.
-Examples of these problems include (but not limited to):</p>
+<p>Recent headlines include</p>
+<ul class="simple">
+<li><p><strong>Wrongfully Accused by an Algorithm</strong>: In what may be the first known case of its kind, a faulty facial recognition match
+led to a Michigan man’s arrest for a crime he did not commit. – NYTimes <a class="bibtex reference internal" href="../09_appendix/imagined.html#hill-2020" id="id1">[Hil20]</a></p></li>
+<li><p><strong>Amazon ditched AI recruiting tool that favored men for technical jobs</strong>. – The Guardian <a class="bibtex reference internal" href="#reuters-2018" id="id2">[Reu18]</a></p></li>
+<li><p><strong>Police officers raise concerns about ‘biased’ AI data</strong>. – BBC News <a class="bibtex reference internal" href="#bbc-news-2019" id="id3">[bbc19]</a></p></li>
+</ul>
+<p>But how does this happen?
+A prediction model has to be designed and there are a number of legal and moral obstacles to prevent a group/individual from purposefully designing a biased system.
+However, even for the best intentioned there are a number of potential problems.
+Examples of these problems include (but are not limited to):</p>
 <ul class="simple">
 <li><p><em>The tyranny of the majority:</em> We optimise to be right for the many, at the expense of minority groups.</p></li>
 <li><p><em>Sampling bias:</em> We don’t have representative data of our population.</p></li>
@@ -252,16 +264,91 @@ Examples of these problems include (but not limited to):</p>
 <li><p><em>Biased data:</em> The recorded human decision was just plain biased.</p></li>
 </ul>
 <p>And unfortunately these aren’t mutually exclusive.</p>
-<p>To make matters more complicated, bias isn’t just a property of data, it can also exist in model choice.
-Whilst it’s true to say that <a class="reference external" href="https://twitter.com/ylecun/status/1204008802086817792?s=20">a logistic regression model isn’t biased</a> the decisions around these models are made by people.
-As such they may be affected by the decision maker’s own biases.
-There are also concerns of deployment setting, pre and post-processing and interpretation of the results.
-However, these go beyond the scope of this work.</p>
-<p>This work focuses on working with data, which is imperfect, but readily available, and asks two questions.</p>
+<p>An unconstrained machine learning model is susceptible to all of these problems.
+To face this challenge, the machine learning community has focused on creating a class of learning models that are constrained
+to exhibit less bias than an unconstrained model.
+Typically these are referred to as “Fair Machine Learning Models”.</p>
+<div class="section" id="fair-machine-learning">
+<h3>Fair Machine Learning<a class="headerlink" href="#fair-machine-learning" title="Permalink to this headline">¶</a></h3>
+<p>Fair Machine Learning, in general, aims to resolve “unfairness” (or the effect of bias) by affecting a model in one of
+three places in the general learning pipeline.</p>
 <ol class="simple">
-<li><p>Given biased data, can we train a model to produce a fair representation of data from which an unencumbered downstream model would produce fair decisions?</p></li>
-<li><p>If so, can we understand <em>what</em> it was about the data that needed to change so that fair decisions can be made.</p></li>
+<li><p>Pre-model training.</p>
+<ul class="simple">
+<li><p>Using a model to reduce bias in the underlying data, so that an unconstrained downstream classifier will exhibit fairer outcomes.</p></li>
+</ul>
+</li>
+<li><p>During model training.</p>
+<ul class="simple">
+<li><p>Adding constraints to a model so that breaches in these constraints are heavily penalised during training.</p></li>
+</ul>
+</li>
+<li><p>Post-model training.</p>
+<ul class="simple">
+<li><p>Adjusting the output of an unconstrained model so that the adjusted outputs don’t breach a given constraint.</p></li>
+</ul>
+</li>
 </ol>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This comparison is of course a little over-simplistic.
+This will be expanded on in the introduction to my thesis.</p>
+</div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Approach</p></th>
+<th class="text-align:center head"><p>Multi-task support</p></th>
+<th class="text-align:center head"><p>Task model Agnostic</p></th>
+<th class="text-align:center head"><p>Pareto-optimal</p></th>
+<th class="text-align:center head"><p>Constraints guaranteed to be enforced</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Pre-process</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>During</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Post-process</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>X</p></td>
+</tr>
+</tbody>
+</table>
+<p>In my work I focus on removing bias in the ‘pre-processing’ stage.
+This is an exciting and active research area with spotlight tutorials at top conferences such as NeurIPS<a class="footnote-reference brackets" href="#footnote" id="id4">1</a> <a class="bibtex reference internal" href="#foundation" id="id5">[Fou]</a>.
+Part of the reason for the excitement in this area is that the underlying data itself is a major source of bias.
+After all, this is what a model is using to determine “correct” behaviour.
+If we are able to understand and counteract bias that exists in the underlying data, then we can use an unconstrained
+classifier (which may already have been heavily invested in) for a task.
+Crucially, we may be potentially able to use the same data for performing <em>multiple fair tasks</em>.</p>
+<p>Ultimately though, even a model counteracting bias will not be fully trusted without being able to interpret the actions
+that it has taken to counteract bias.
+Simply off-loading a problem from one black-box to another only masks the issue.
+My work specifically deals with <em>this</em> problem.</p>
+<p>This work focuses on working with data, which is imperfect, but readily available, and asks:</p>
+<p>Given some data, can we use machine learning to understand what changes need to made to counteract a specific bias?</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I’m aware that this research question isn’t firm enough, but I’m having trouble articulating it.
+Advice on this would be appreciated.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="research-question">
 <h2>Research Question<a class="headerlink" href="#research-question" title="Permalink to this headline">¶</a></h2>
@@ -272,6 +359,32 @@ However, these go beyond the scope of this work.</p>
 </ol>
 </li>
 </ol>
+<p>I will answer this question by:</p>
+<ul class="simple">
+<li><p>demonstrating that fair representations of data can be built in the original data domain without loss of performance with regard to both utility and fairness criterion.</p></li>
+<li><p>demonstrating qualitatively that representations in the data domain provide feedback as to what is required to make data “fair”.</p></li>
+</ul>
+<p id="bibtex-bibliography-content/00_annual_review/area-0"><dl class="citation">
+<dt class="bibtex label" id="bbc-news-2019"><span class="brackets"><a class="fn-backref" href="#id3">bbc19</a></span></dt>
+<dd><p>Police officers raise concerns about ‘biased’ ai data. Sep 2019. URL: <a class="reference external" href="https://www.bbc.co.uk/news/technology-49717378">https://www.bbc.co.uk/news/technology-49717378</a>.</p>
+</dd>
+<dt class="bibtex label" id="foundation"><span class="brackets"><a class="fn-backref" href="#id5">Fou</a></span></dt>
+<dd><p>Neural Information Processing Systems Foundation. URL: <a class="reference external" href="https://neurips.cc/Conferences/2019/Schedule?showEvent=13212">https://neurips.cc/Conferences/2019/Schedule?showEvent=13212</a>.</p>
+</dd>
+<dt class="bibtex label" id="hill-2020"><span class="brackets"><a class="fn-backref" href="#id1">Hil20</a></span></dt>
+<dd><p>Kashmir Hill. Wrongfully accused by an algorithm. Jun 2020. URL: <a class="reference external" href="https://www.nytimes.com/2020/06/24/technology/facial-recognition-arrest.html">https://www.nytimes.com/2020/06/24/technology/facial-recognition-arrest.html</a>.</p>
+</dd>
+<dt class="bibtex label" id="reuters-2018"><span class="brackets"><a class="fn-backref" href="#id2">Reu18</a></span></dt>
+<dd><p>Reuters. Amazon ditched ai recruiting tool that favored men for technical jobs. Oct 2018. URL: <a class="reference external" href="https://www.theguardian.com/technology/2018/oct/10/amazon-hiring-ai-gender-bias-recruiting-engine">https://www.theguardian.com/technology/2018/oct/10/amazon-hiring-ai-gender-bias-recruiting-engine</a>.</p>
+</dd>
+</dl>
+</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="footnote"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>http://sanmi.cs.illinois.edu/documents/Representation_Learning_Fairness_NeurIPS19_Tutorial.pdf</p>
+</dd>
+</dl>
 </div>
 </div>
 
