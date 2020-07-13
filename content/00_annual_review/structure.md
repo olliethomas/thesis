@@ -35,6 +35,7 @@ Fair Representations of Biased Data
 5. Chapter 3 (2 possibilities - need to determine which to pursue)
     - Fair Representations in the Data Domain and Counterfactuals.
     - Active Learning to reduce model uncertainty.
+6. Conclusion
 
 ## Introduction
 Discussion of research area, before focusing in on the research question.
