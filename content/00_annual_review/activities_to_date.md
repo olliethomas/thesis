@@ -145,7 +145,7 @@ at [Conference on Data Science and Optimization](http://www.fields.utoronto.ca/t
 
 - Expand the CVPR '19 paper to a journal entry (see [thesis structure section](./structure.md#discovering-fair-representations-in-the-data-domain)).
 - Imagined examples paper.
-- Depending on chapter 3 (see [thesis structure](./structure.md#chapter-3)).
+- Depending on choice of chapter 3 (see [thesis structure](./structure.md#chapter-3)).
     - Investigating the use of Active Learning to model changing demographics.
     - Characterising the relationship between fair learnt representations and counterfactual samples.
 - Writing Introduction and Background for thesis. 
