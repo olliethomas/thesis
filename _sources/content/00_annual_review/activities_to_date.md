@@ -1,12 +1,5 @@
 # Activities to date
 
-```{admonition} WIP
-:class: Tip
-This content is work in progress.
-```
-
-
-
 ## Previous Years
 
 ### 2017-2018: Part-Time

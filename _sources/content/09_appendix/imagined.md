@@ -1,8 +1,6 @@
 # Imagined Examples for Fairness: Sampling Bias and Proxy Labels
 
-Oliver Thomas: University of Sussex
-
-Novi Quadrianto: University of Sussex, HSE Moscow
+Authors: O. Thomas, N. Quadrianto
 
 ---
 

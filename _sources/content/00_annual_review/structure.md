@@ -1,10 +1,5 @@
 # Thesis Structure
 
-```{admonition} WIP
-:class: Tip
-This content is work in progress.
-```
-
 ````{margin}
 ```{note}
 The title is not completely settled on. 
