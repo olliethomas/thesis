@@ -2,6 +2,8 @@
 
 Authors: N.Quadrianto, V. Sharmanska, O. Thomas
 
+---
+
 Published at IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2019
 
 [landing page](http://openaccess.thecvf.com/content_CVPR_2019/papers/Quadrianto_Discovering_Fair_Representations_in_the_Data_Domain_CVPR_2019_paper)

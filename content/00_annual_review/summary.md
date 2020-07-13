@@ -1,10 +1,5 @@
 # Summary
 
-```{admonition} WIP
-:class: Tip
-This content is work in progress.
-```
-
 % A short summary of activities to date (no more than two pages, you might like to articulate this as part of a slide 
 % presentation), focusing in particular on the period since your last review. Discuss to what extent you met your plan 
 % for the year.

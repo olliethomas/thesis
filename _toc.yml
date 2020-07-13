@@ -3,14 +3,8 @@
 - file: content/00_annual_review/summary
   sections:
     - file: content/00_annual_review/area
-#    - file: content/00_annual_review/question
 
 - file: content/00_annual_review/activities_to_date
-#  sections:
-#    - file: content/00_annual_review/previous_years
-#    - file: content/00_annual_review/this_year
-#    - file: content/00_annual_review/lit_review
-
 - file: content/00_annual_review/structure
 
 #- header: Thesis
@@ -23,3 +17,4 @@
 - file: content/09_appendix/imagined
 - file: content/09_appendix/nosinn
 - file: content/09_appendix/invisible
+- file: content/09_appendix/lit_review

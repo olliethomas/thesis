@@ -1,19 +1,14 @@
 # Research Area & Question
 
-```{admonition} WIP
-:class: Tip
-This content is work in progress.
-```
-
 ## Research Area
 
 Machine Learning is a tool that is growing in popularity.
 There have been a number of high profile successes, and new applications are being regularly identified.
-These applications include translation (in both image and natural-language domains), pattern recognition and decision making.
+These applications include translation (in both image and natural-language domains), pattern recognition and decision-making.
 Contexts for these applications include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
 
 Because of this success there is a desire to incorporate these systems in more and more situations, including those directly applicable to people.
-For example, Machine Learing systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
+For example, Machine Learning systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
 
 On top of the benefits of automated decision making (speed, scale, etc) there is an additional promise to automated decisions.
 The promise is that instead of many human decision makers, each one biased with their own prejudices, heuristics and experience, we can have a uniform approach.
@@ -21,7 +16,7 @@ The hope is that by treating everybody the same, then unequal, biased behaviour 
 
 Unfortunately, that's not always the case.
 
-Recent headlines include
+Recent headlines include:
 - **Wrongfully Accused by an Algorithm**: In what may be the first known case of its kind, a faulty facial recognition match 
 led to a Michigan man’s arrest for a crime he did not commit. -- NYTimes {cite}`hill_2020`
 - **Amazon ditched AI recruiting tool that favored men for technical jobs**. -- The Guardian {cite}`reuters_2018`
@@ -42,7 +37,7 @@ And unfortunately these aren't mutually exclusive.
 An unconstrained machine learning model is susceptible to all of these problems.
 To face this challenge, the machine learning community has focused on creating a class of learning models that are constrained 
 to exhibit less bias than an unconstrained model.
-Typically these are referred to as "Fair Machine Learning Models".
+Typically, these are referred to as “Fair Machine Learning Models”.
 
 ### Fair Machine Learning
 
@@ -112,7 +107,7 @@ Advice on this would be appreciated.
    
 I will answer this question by: 
 - demonstrating that fair representations of data can be built in the original data domain without loss of performance with regard to both utility and fairness criterion.
-- demonstrating qualitatively that representations in the data domain provide feedback as to what is required to make data "fair".
+- demonstrating qualitatively that representations in the data domain provide feedback as to what is required to make data “fair”.
  
 
 ```{bibliography} ../../area_references.bib
