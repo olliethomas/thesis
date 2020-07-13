@@ -56,7 +56,7 @@ This comparison is of course a little over-simplistic.
 This will be expanded on in the introduction to my thesis.
 ``` 
 ````
-| Approach      | Multi-task support    | Task model Agnostic   | Pareto-optimal | Constraints guaranteed to be enforced | 
+| Approach      | Multi-task support    | Task model agnostic   | Pareto-optimal | Constraints guaranteed to be enforced | 
 | :---          | :---:                 | :---:                 | :---:          | :---:                                 |
 | Pre-process   | X                     |  X                    |                |                                       |
 | During        |                       |                       | X              |                                       |

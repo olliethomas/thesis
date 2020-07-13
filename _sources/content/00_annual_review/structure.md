@@ -87,7 +87,7 @@ This allows the learnt representation and the original input to be directly comp
 In this work, I will compare the learnt causal model trained on the original data against the learnt causal model trained
 on the fair representation of the data to test our hypothesis.
 
-### Active Learning to reduce model uncertainty
+### Active Learning to Reduce Model Uncertainty
 In previous works we have considered the representation of the data.
 One of the motivating factors why we often have to use biased on mis-representative data in the first place is that 
 demographics change over time.
