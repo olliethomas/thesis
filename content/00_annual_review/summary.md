@@ -27,9 +27,10 @@ This content is work in progress.
 This annual review summary is comprised of the following sections.
 
 1. An overview of my research area and research question.
-2. A summary of activities from previous years.
-3. A summary of activity from this last year.
-4. Summary of current/continuing work.
-5. Outline of thesis structure
+2. A summary of activities 
+    1. from previous years.
+    2. from this last year.
+    3. of current/continuing work.
+3. Outline of thesis structure
 
 Published/submitted works can be found in the appendix.
