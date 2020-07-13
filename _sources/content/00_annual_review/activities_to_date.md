@@ -135,6 +135,7 @@ This is a challenging problem as most fair representations occupy some latent sp
 data lies.
 However, my previous research has been specific to learning a fair representation in the data domain, making such a 
 comparison possible. 
+Investigating this will (possibly) form chapter 3 of of my thesis.
 
 
 ### Other works
@@ -149,5 +150,31 @@ at [Conference on Data Science and Optimization](http://www.fields.utoronto.ca/t
 
 ## 2020 onwards: Continuing Work
 
-- Investigating the use of Active Learning to model changing demographics.
-- Characterising the relationship between fair learnt representations and counterfactual samples.
+- Expand the CVPR '19 paper to a journal entry (see [thesis structure section](./structure.md#discovering-fair-representations-in-the-data-domain)).
+- Imagined examples paper.
+- Depending on chapter 3 (see [thesis structure](./structure.md#chapter-3)).
+    - Investigating the use of Active Learning to model changing demographics.
+    - Characterising the relationship between fair learnt representations and counterfactual samples.
+- Writing Introduction and Background for thesis. 
+
+## Plan
+
+### Last year's activity plan
+
+| Activity | Q3 '19 | Q4 '19 | Q1 '20 | Q2 '20 | Q3 '20 | Q4 '20 | Q1 '21 | Q2 '21 |
+| :------: | :--------: | :-----------: | :---------: | :----------: | :----------: | :---------: | :----------: | :-------: |
+| Imagined Examples re-submission | X |  |  |  |  |  |  |  |
+| Intervene |  | X | X | X |  |  |  |  |
+| Causality & Fairness |  |  |  | X | X | X |  |  |
+| Thesis |  |  |  |  |  | X | X | X |
+
+
+### This year's update of activity plan
+
+| Activity | August '20 | September '20 | October '20 | November '20 | December '20 | January '21 | February '21 | March '22 | April '21 | May '21 | June '21 | July '21 |
+| :------: | :--------: | :-----------: | :---------: | :----------: | :----------: | :---------: | :----------: | :-------: | :-------: | :-----: | :------: | :------: |
+| Journal submission based on Discovering Fair Representations CVPR paper | X | X | X |  |  |  |  |  |  |  |  |  |
+| Imagined Examples re-submission |  | X | X |  |  |  |  |  |  |  |  |  |
+| Chapter 3 work |  |  |  | X | X | X |  |  |  |  |  |  |
+| Thesis Writing |  |  |  |  |  |  |  | X | X | X | X |  |
+
