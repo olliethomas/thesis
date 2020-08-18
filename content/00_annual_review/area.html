@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Research Area &amp; Question &#8212; Fair Representations of Biased Data</title>
+    <title>1.1. Research Area &amp; Question &#8212; Fair Representations of Biased Data</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
@@ -29,11 +30,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="oliverthomas.ml/content/00_annual_review/area.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Activities to date" href="activities_to_date.html" />
-    <link rel="prev" title="Summary" href="summary.html" />
+    <link rel="next" title="2. Activities to date" href="activities_to_date.html" />
+    <link rel="prev" title="1. Summary" href="summary.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -42,11 +50,11 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="oliverthomas.ml/content/00_annual_review/area.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Research Area & Question" />
-<meta property="og:description" content="Research Area & Question  Research Area  Machine Learning is a tool that is growing in popularity. There have been a number of high profile successes, and new a" />
+<meta property="og:title"       content="Research Area &amp; Question" />
+<meta property="og:description" content="Research Area &amp; Question  Research Area  Machine Learning is a tool that is growing in popularity. There have been a number of high profile successes, and new a" />
 <meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.png" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -75,47 +83,87 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../index.html">Fair Representations of Biased Data</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Annual Review 2020</p>
-</li>
-  <li class="active">
-    <a href="summary.html">Summary</a>
-  <ul class="nav sidenav_l2">
-    <li class="active">
-      <a href="">Research Area & Question</a>
-    </li>
-  </ul>
-  </li>
-  <li class="">
-    <a href="activities_to_date.html">Activities to date</a>
-  </li>
-  <li class="">
-    <a href="structure.html">Thesis Structure</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Appendix</p>
-</li>
-  <li class="">
-    <a href="../09_appendix/dfritdd.html">Discovering Fair Representations in the Data Domain</a>
-  </li>
-  <li class="">
-    <a href="../09_appendix/imagined.html">Imagined Examples for Fairness: Sampling Bias and Proxy Labels</a>
-  </li>
-  <li class="">
-    <a href="../09_appendix/nosinn.html">Null-Sampling for Invariant and Interpretable Representations</a>
-  </li>
-  <li class="">
-    <a href="../09_appendix/invisible.html">Invisible Demographics</a>
-  </li>
-  <li class="">
-    <a href="../09_appendix/lit_review.html">Literature Review (Year 1 Annual Review)</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Fair Representations of Biased Data
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Annual Review 2020
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="summary.html">
+   1. Summary
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.1. Research Area &amp; Question
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activities_to_date.html">
+   2. Activities to date
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="structure.html">
+   3. Thesis Structure
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Imagined Examples WIP
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_imagined/xbar_problems.html">
+   1. What’s wrong with Fair Representations of input data?
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09_appendix/dfritdd.html">
+   1. Discovering Fair Representations in the Data Domain
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09_appendix/imagined.html">
+   2. Imagined Examples for Fairness: Sampling Bias and Proxy Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09_appendix/nosinn.html">
+   3. Null-Sampling for Invariant and Interpretable Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09_appendix/invisible.html">
+   4. Invisible Demographics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09_appendix/lit_review.html">
+   5. Literature Review (Year 1 Annual Review)
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -191,39 +239,34 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#research-area" class="nav-link">Research Area</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#fair-machine-learning" class="nav-link">Fair Machine Learning</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#research-question" class="nav-link">Research Question</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
-
-<div class="tocsection editthispage">
-    <a href="https://github.com/olliethomas/thesis/edit/master/content/00_annual_review/area.md">
-        <i class="fas fa-pencil-alt"></i> Edit this page
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#research-area">
+   1.1.1. Research Area
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fair-machine-learning">
+     1.1.1.1. Fair Machine Learning
     </a>
-</div>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#research-question">
+   1.1.2. Research Question
+  </a>
+ </li>
+</ul>
 
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -232,9 +275,9 @@
               <div>
                 
   <div class="section" id="research-area-question">
-<h1>Research Area &amp; Question<a class="headerlink" href="#research-area-question" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1.1. </span>Research Area &amp; Question<a class="headerlink" href="#research-area-question" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="research-area">
-<h2>Research Area<a class="headerlink" href="#research-area" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1.1. </span>Research Area<a class="headerlink" href="#research-area" title="Permalink to this headline">¶</a></h2>
 <p>Machine Learning is a tool that is growing in popularity.
 There have been a number of high profile successes, and new applications are being regularly identified.
 These applications include translation (in both image and natural-language domains), pattern recognition and decision-making.
@@ -268,7 +311,7 @@ To face this challenge, the machine learning community has focused on creating a
 to exhibit less bias than an unconstrained model.
 Typically, these are referred to as “Fair Machine Learning Models”.</p>
 <div class="section" id="fair-machine-learning">
-<h3>Fair Machine Learning<a class="headerlink" href="#fair-machine-learning" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.1.1. </span>Fair Machine Learning<a class="headerlink" href="#fair-machine-learning" title="Permalink to this headline">¶</a></h3>
 <p>Fair Machine Learning, in general, aims to resolve “unfairness” (or the effect of bias) by affecting a model in one of
 three places in the general learning pipeline.</p>
 <ol class="simple">
@@ -350,7 +393,7 @@ Advice on this would be appreciated.</p>
 </div>
 </div>
 <div class="section" id="research-question">
-<h2>Research Question<a class="headerlink" href="#research-question" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1.2. </span>Research Question<a class="headerlink" href="#research-question" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Can we learn a representation of data that makes downstream tasks <strong>fair</strong>?</p>
 <ol class="simple">
@@ -387,6 +430,25 @@ Advice on this would be appreciated.</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/00_annual_review"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -396,8 +458,8 @@ Advice on this would be appreciated.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="summary.html" title="previous page">Summary</a>
-    <a class='right-next' id="next-link" href="activities_to_date.html" title="next page">Activities to date</a>
+    <a class='left-prev' id="prev-link" href="summary.html" title="previous page"><span class="section-number">1. </span>Summary</a>
+    <a class='right-next' id="next-link" href="activities_to_date.html" title="next page"><span class="section-number">2. </span>Activities to date</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

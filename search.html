@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
@@ -36,6 +37,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="_static/searchtools.js"></script>
     <link rel="canonical" href="oliverthomas.ml/search.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -54,7 +62,7 @@
 <meta property="og:description" content="" />
 <meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.png" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -84,42 +92,80 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="content/index.html">Fair Representations of Biased Data</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Annual Review 2020</p>
-</li>
-  <li class="">
-    <a href="content/00_annual_review/summary.html">Summary</a>
-  </li>
-  <li class="">
-    <a href="content/00_annual_review/activities_to_date.html">Activities to date</a>
-  </li>
-  <li class="">
-    <a href="content/00_annual_review/structure.html">Thesis Structure</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Appendix</p>
-</li>
-  <li class="">
-    <a href="content/09_appendix/dfritdd.html">Discovering Fair Representations in the Data Domain</a>
-  </li>
-  <li class="">
-    <a href="content/09_appendix/imagined.html">Imagined Examples for Fairness: Sampling Bias and Proxy Labels</a>
-  </li>
-  <li class="">
-    <a href="content/09_appendix/nosinn.html">Null-Sampling for Invariant and Interpretable Representations</a>
-  </li>
-  <li class="">
-    <a href="content/09_appendix/invisible.html">Invisible Demographics</a>
-  </li>
-  <li class="">
-    <a href="content/09_appendix/lit_review.html">Literature Review (Year 1 Annual Review)</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/index.html">
+   Fair Representations of Biased Data
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Annual Review 2020
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/00_annual_review/summary.html">
+   1. Summary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/00_annual_review/activities_to_date.html">
+   2. Activities to date
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/00_annual_review/structure.html">
+   3. Thesis Structure
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Imagined Examples WIP
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/02_imagined/xbar_problems.html">
+   1. What’s wrong with Fair Representations of input data?
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/09_appendix/dfritdd.html">
+   1. Discovering Fair Representations in the Data Domain
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/09_appendix/imagined.html">
+   2. Imagined Examples for Fairness: Sampling Bias and Proxy Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/09_appendix/nosinn.html">
+   3. Null-Sampling for Invariant and Interpretable Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/09_appendix/invisible.html">
+   4. Invisible Demographics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/09_appendix/lit_review.html">
+   5. Literature Review (Year 1 Annual Review)
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -181,15 +227,12 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
+        <nav id="bd-toc-nav">
+            
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
