@@ -4,3 +4,4 @@ matplotlib
 numpy
 scikit-learn
 sphinx-tabs
+torch
