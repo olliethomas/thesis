@@ -1,5 +1,5 @@
 - file: content/index
-- header: Annual Review 2020
+- part: Annual Review 2020
 - file: content/00_annual_review/summary
   sections:
     - file: content/00_annual_review/area
@@ -7,7 +7,7 @@
 - file: content/00_annual_review/activities_to_date
 - file: content/00_annual_review/structure
 
-- header: Imagined Examples WIP
+- part: Imagined Examples WIP
 - file: content/02_imagined/xbar_problems
 
 #- header: Thesis
@@ -15,7 +15,7 @@
 #  sections:
 #    - file: content/01_intro/definitions
 
-- header: Appendix
+- part: Appendix
 - file: content/09_appendix/dfritdd
 - file: content/09_appendix/imagined
 - file: content/09_appendix/nosinn
