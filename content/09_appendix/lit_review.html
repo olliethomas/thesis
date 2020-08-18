@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>5. Literature Review (Year 1 Annual Review) &#8212; Fair Representations of Biased Data</title>
+    <title>Literature Review (Year 1 Annual Review) &#8212; Fair Representations of Biased Data</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -40,7 +40,7 @@
     <link rel="canonical" href="oliverthomas.ml/content/09_appendix/lit_review.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="4. Invisible Demographics" href="invisible.html" />
+    <link rel="prev" title="Invisible Demographics" href="invisible.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -97,17 +97,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00_annual_review/summary.html">
-   1. Summary
+   Summary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../00_annual_review/activities_to_date.html">
-   2. Activities to date
+   Activities to date
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../00_annual_review/structure.html">
-   3. Thesis Structure
+   Thesis Structure
   </a>
  </li>
 </ul>
@@ -119,7 +119,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../02_imagined/xbar_problems.html">
-   1. What’s wrong with Fair Representations of input data?
+   What’s wrong with Fair Representations of input data?
   </a>
  </li>
 </ul>
@@ -131,27 +131,27 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="dfritdd.html">
-   1. Discovering Fair Representations in the Data Domain
+   Discovering Fair Representations in the Data Domain
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imagined.html">
-   2. Imagined Examples for Fairness: Sampling Bias and Proxy Labels
+   Imagined Examples for Fairness: Sampling Bias and Proxy Labels
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="nosinn.html">
-   3. Null-Sampling for Invariant and Interpretable Representations
+   Null-Sampling for Invariant and Interpretable Representations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="invisible.html">
-   4. Invisible Demographics
+   Invisible Demographics
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   5. Literature Review (Year 1 Annual Review)
+   Literature Review (Year 1 Annual Review)
   </a>
  </li>
 </ul>
@@ -241,151 +241,151 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   5.1. Introduction
+   Introduction
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#why-are-we-doing-this">
-     5.1.1. Why are we doing this?
+     Why are we doing this?
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#initial-experiments-in-fairness-and-related-work">
-   5.2. Initial Experiments in Fairness and Related Work
+   Initial Experiments in Fairness and Related Work
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fairness">
-     5.2.1. Fairness
+     Fairness
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#accountability">
-     5.2.2. Accountability
+     Accountability
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpretability">
-     5.2.3. Interpretability
+     Interpretability
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions-of-discrimination-fairness">
-   5.3. Definitions of Discrimination &amp; Fairness
+   Definitions of Discrimination &amp; Fairness
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#types-of-fairness">
-     5.3.1. Types of Fairness
+     Types of Fairness
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#independence">
-       5.3.1.1. Independence
+       Independence
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#separation">
-       5.3.1.2. Separation
+       Separation
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#sufficiency">
-       5.3.1.3. Sufficiency
+       Sufficiency
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#balancing-the-types">
-       5.3.1.4. Balancing the Types
+       Balancing the Types
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#similarity-measures">
-     5.3.2. Similarity Measures
+     Similarity Measures
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implementing">
-   5.4. Implementing
+   Implementing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#pre-processing">
-     5.4.1. Pre-processing
+     Pre-processing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#during-training">
-     5.4.2. During Training
+     During Training
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#minimising-fairness-criteria">
-       5.4.2.1. Minimising Fairness criteria
+       Minimising Fairness criteria
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#adversarial-learning">
-       5.4.2.2. Adversarial Learning
+       Adversarial Learning
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fair-representations">
-     5.4.3. Fair Representations
+     Fair Representations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#post-processing">
-     5.4.4. Post Processing
+     Post Processing
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#causal-inference">
-   5.5. Causal Inference
+   Causal Inference
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#other-areas">
-   5.6. Other Areas
+   Other Areas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#recommendation">
-     5.6.1. Recommendation
+     Recommendation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ranking">
-     5.6.2. Ranking
+     Ranking
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#resource-allocation">
-     5.6.3. Resource Allocation
+     Resource Allocation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#future-works">
-   5.7. Future works
+   Future works
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#discussion-conclusion">
-   5.8. Discussion / Conclusion
+   Discussion / Conclusion
   </a>
  </li>
 </ul>
@@ -399,9 +399,9 @@
               <div>
                 
   <div class="section" id="literature-review-year-1-annual-review">
-<h1><span class="section-number">5. </span>Literature Review (Year 1 Annual Review)<a class="headerlink" href="#literature-review-year-1-annual-review" title="Permalink to this headline">¶</a></h1>
+<h1>Literature Review (Year 1 Annual Review)<a class="headerlink" href="#literature-review-year-1-annual-review" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<span id="intro"></span><h2><span class="section-number">5.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<span id="intro"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This literature review aims to give a summary of research to date in the area of <em>Ethical Machine Learning</em>.
 This is a broad topic which includes fairness, interpretability and ultimately, accountability in automated decision making.
 Whilst this is a relatively new area of research, there is a growing body of work, which is highlighted at conferences such as
@@ -475,7 +475,7 @@ such as reinforcement learning, recommendations and resource allocation.
 A brief overview of some of this work is given in <a class="reference internal" href="#other"><span class="std std-ref">Other Areas</span></a> before the future
 works and conclusion sections of this review.</p>
 <div class="section" id="why-are-we-doing-this">
-<h3><span class="section-number">5.1.1. </span>Why are we doing this?<a class="headerlink" href="#why-are-we-doing-this" title="Permalink to this headline">¶</a></h3>
+<h3>Why are we doing this?<a class="headerlink" href="#why-are-we-doing-this" title="Permalink to this headline">¶</a></h3>
 <p>The area of bias and discrimination isn’t a new one. Legal scholars have
 been writing about this problem for decades. As such, there are a number
 of regulations around the world that make it illegal to discriminate. In
@@ -502,9 +502,9 @@ complex real-world problems.</p>
 </div>
 </div>
 <div class="section" id="initial-experiments-in-fairness-and-related-work">
-<span id="background"></span><h2><span class="section-number">5.2. </span>Initial Experiments in Fairness and Related Work<a class="headerlink" href="#initial-experiments-in-fairness-and-related-work" title="Permalink to this headline">¶</a></h2>
+<span id="background"></span><h2>Initial Experiments in Fairness and Related Work<a class="headerlink" href="#initial-experiments-in-fairness-and-related-work" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="fairness">
-<h3><span class="section-number">5.2.1. </span>Fairness<a class="headerlink" href="#fairness" title="Permalink to this headline">¶</a></h3>
+<h3>Fairness<a class="headerlink" href="#fairness" title="Permalink to this headline">¶</a></h3>
 <p>As mentioned, the predominant body of literature with regard to fairness
 is based around classification, which is an inherently discriminative
 task. This is in the Latin sense that we are trying to discriminate
@@ -566,7 +566,7 @@ interpretability, have received far less attention, though now we give a
 brief overview.</p>
 </div>
 <div class="section" id="accountability">
-<h3><span class="section-number">5.2.2. </span>Accountability<a class="headerlink" href="#accountability" title="Permalink to this headline">¶</a></h3>
+<h3>Accountability<a class="headerlink" href="#accountability" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Transparent, Explainable, and Accountable AI for Robotics
 <a class="bibtex reference internal" href="#wachter2017transparent" id="id26">[WMF17]</a>: Leaves open questions; Can
@@ -601,7 +601,7 @@ will be the ones to determine the ethics of more complicated models.</p></li>
 </ul>
 </div>
 <div class="section" id="interpretability">
-<h3><span class="section-number">5.2.3. </span>Interpretability<a class="headerlink" href="#interpretability" title="Permalink to this headline">¶</a></h3>
+<h3>Interpretability<a class="headerlink" href="#interpretability" title="Permalink to this headline">¶</a></h3>
 <p>Interpretability is the degree to which a human can understand the cause
 of a decision. Some models are inherently interpretable, such as
 Decision Trees, or to a lesser extent linear models. There are also
@@ -643,7 +643,7 @@ balconies.</p></li>
 </div>
 </div>
 <div class="section" id="definitions-of-discrimination-fairness">
-<span id="definitions"></span><h2><span class="section-number">5.3. </span>Definitions of Discrimination &amp; Fairness<a class="headerlink" href="#definitions-of-discrimination-fairness" title="Permalink to this headline">¶</a></h2>
+<span id="definitions"></span><h2>Definitions of Discrimination &amp; Fairness<a class="headerlink" href="#definitions-of-discrimination-fairness" title="Permalink to this headline">¶</a></h2>
 <p>Discrimination and fairness are not the same thing. One is the problem,
 and the other is the remedy. Because of this, typically we describe
 measures of discrimination and fairness constraints, which are used to
@@ -677,14 +677,14 @@ discrimination measures are</p>
 where <span class="math notranslate nohighlight">\(H(Y) = - \sum_{y \in Y}P(y) \log P(y)\)</span></p></li>
 </ul>
 <div class="section" id="types-of-fairness">
-<h3><span class="section-number">5.3.1. </span>Types of Fairness<a class="headerlink" href="#types-of-fairness" title="Permalink to this headline">¶</a></h3>
+<h3>Types of Fairness<a class="headerlink" href="#types-of-fairness" title="Permalink to this headline">¶</a></h3>
 <p>Fairness constraints on the other hand have three forms. In the
 currently unfinished book on Fairness in Machine Learning
 <a class="bibtex reference internal" href="#barocas-hardt-narayanan" id="id39">[BHN18]</a> the definitions of fairness are described as
 belonging to one of three groups, <em>Independence</em>, <em>Separation</em> or
 <em>Sufficiency</em>. This pattern is adopted in this section.</p>
 <div class="section" id="independence">
-<h4><span class="section-number">5.3.1.1. </span>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h4>
+<h4>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h4>
 <p>The most intuitive notion of fairness is <em>Independence</em>. This is the
 notion that given a prediction (<span class="math notranslate nohighlight">\(\hat{Y}\)</span>) and a protected sensitive
 attribute (<span class="math notranslate nohighlight">\(S\)</span>), then the prediction should be independent of the
@@ -743,7 +743,7 @@ group is within 80% of the ‘privileged’ group, then it is fair enough.
 Though critics of this point out that 80% was chosen arbitrarily.</p>
 </div>
 <div class="section" id="separation">
-<h4><span class="section-number">5.3.1.2. </span>Separation<a class="headerlink" href="#separation" title="Permalink to this headline">¶</a></h4>
+<h4>Separation<a class="headerlink" href="#separation" title="Permalink to this headline">¶</a></h4>
 <p>A more complex definition of fairness is <em>separation</em>, which is
 independence given the actual outcome (<span class="math notranslate nohighlight">\(Y\)</span>) <span class="math notranslate nohighlight">\($\hat{Y} \perp S | Y\)</span>$</p>
 <p>This has been formalised by the metric Equalised Odds <a class="bibtex reference internal" href="#hardt2016equality" id="id46">[HPS+16]</a> which
@@ -778,7 +778,7 @@ notions of fairness are incompatible with separation based notions of
 fairness.</p>
 </div>
 <div class="section" id="sufficiency">
-<h4><span class="section-number">5.3.1.3. </span>Sufficiency<a class="headerlink" href="#sufficiency" title="Permalink to this headline">¶</a></h4>
+<h4>Sufficiency<a class="headerlink" href="#sufficiency" title="Permalink to this headline">¶</a></h4>
 <p>There is a less well utilised general area of fairness criteria called
 <em>sufficiency</em>. This is the concept that the true outcome, given the
 predicted score is independent of <span class="math notranslate nohighlight">\(s\)</span>.</p>
@@ -818,7 +818,7 @@ balancing tension is a common one throughout fair machine learning, and
 certainly one that we will come back to.</p>
 </div>
 <div class="section" id="balancing-the-types">
-<h4><span class="section-number">5.3.1.4. </span>Balancing the Types<a class="headerlink" href="#balancing-the-types" title="Permalink to this headline">¶</a></h4>
+<h4>Balancing the Types<a class="headerlink" href="#balancing-the-types" title="Permalink to this headline">¶</a></h4>
 <p>The above is a useful framework for viewing fairness constraints and
 helps us to categorise various definitions of fairness, such as those in
 table 1, but that shouldn’t diminish work that seeks to make novel
@@ -925,7 +925,7 @@ dose of human judgement”.</p>
 </div>
 </div>
 <div class="section" id="similarity-measures">
-<h3><span class="section-number">5.3.2. </span>Similarity Measures<a class="headerlink" href="#similarity-measures" title="Permalink to this headline">¶</a></h3>
+<h3>Similarity Measures<a class="headerlink" href="#similarity-measures" title="Permalink to this headline">¶</a></h3>
 <p>All definitions of fairness that we’ve looked at so far consider
 proportions of groups, called <em>group fairness</em>. There is another
 approach, called <em>individual fairness</em>. This is the idea that regardless
@@ -967,7 +967,7 @@ reference=”impl_repr”}.</p>
 </div>
 </div>
 <div class="section" id="implementing">
-<span id="impl"></span><h2><span class="section-number">5.4. </span>Implementing<a class="headerlink" href="#implementing" title="Permalink to this headline">¶</a></h2>
+<span id="impl"></span><h2>Implementing<a class="headerlink" href="#implementing" title="Permalink to this headline">¶</a></h2>
 <p>As with all areas, the lines between the various points that fairness
 constraints have been injected isn’t an easy thing to split. For
 example, at what point does pre-processing the data become learning a
@@ -982,7 +982,7 @@ adversarially removing sensitive attributes and learning fair
 representations and <em>post-processing</em> - which hasn’t been well utilised,
 but is still a valid point to insert fairness constraints.</p>
 <div class="section" id="pre-processing">
-<span id="impl-pre"></span><h3><span class="section-number">5.4.1. </span>Pre-processing<a class="headerlink" href="#pre-processing" title="Permalink to this headline">¶</a></h3>
+<span id="impl-pre"></span><h3>Pre-processing<a class="headerlink" href="#pre-processing" title="Permalink to this headline">¶</a></h3>
 <p>This can form in two approaches. On one hand, the features can be
 pre-processed, or the labels can be pre-processed. There is a general
 trend to transforming the features to a new space, called learning a
@@ -1023,9 +1023,9 @@ is changing the labels, as discussed in section
 Kamiran and Calders paper <a class="bibtex reference internal" href="#kamiran2009" id="id66">[KC09]</a>.</p>
 </div>
 <div class="section" id="during-training">
-<h3><span class="section-number">5.4.2. </span>During Training<a class="headerlink" href="#during-training" title="Permalink to this headline">¶</a></h3>
+<h3>During Training<a class="headerlink" href="#during-training" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="minimising-fairness-criteria">
-<h4><span class="section-number">5.4.2.1. </span>Minimising Fairness criteria<a class="headerlink" href="#minimising-fairness-criteria" title="Permalink to this headline">¶</a></h4>
+<h4>Minimising Fairness criteria<a class="headerlink" href="#minimising-fairness-criteria" title="Permalink to this headline">¶</a></h4>
 <p>One of the more direct ways to enforce fairness is to follow Quadrianto
 et al <a class="bibtex reference internal" href="#quadrianto2017recyclingfairness" id="id67">[QS17]</a> who noticed that enforcing
 fairness constraints is an application of Distribution Matching. They
@@ -1039,7 +1039,7 @@ accountability into automated decision making is an important though
 overlooked addition.</p>
 </div>
 <div class="section" id="adversarial-learning">
-<span id="imple-adv"></span><h4><span class="section-number">5.4.2.2. </span>Adversarial Learning<a class="headerlink" href="#adversarial-learning" title="Permalink to this headline">¶</a></h4>
+<span id="imple-adv"></span><h4>Adversarial Learning<a class="headerlink" href="#adversarial-learning" title="Permalink to this headline">¶</a></h4>
 <p>Given the success of Generative Adversarial Networks (GANs), there has
 been an excitement to use this adversarial approach in other areas. In
 the GAN framework, a generator produces some representation and a
@@ -1089,7 +1089,7 @@ commonly used in nearly all fairness literature), they use use images
 </div>
 </div>
 <div class="section" id="fair-representations">
-<span id="impl-repr"></span><h3><span class="section-number">5.4.3. </span>Fair Representations<a class="headerlink" href="#fair-representations" title="Permalink to this headline">¶</a></h3>
+<span id="impl-repr"></span><h3>Fair Representations<a class="headerlink" href="#fair-representations" title="Permalink to this headline">¶</a></h3>
 <p>Work in this field was pioneered by Zemel
 <a class="bibtex reference internal" href="#zemel2013learning" id="id77">[ZWS+13]</a> and was followed up by Madras
 <a class="bibtex reference internal" href="#madras2018learning" id="id78">[MCPZ18]</a> who suggested that these could be
@@ -1126,13 +1126,13 @@ as they do not know what the vendor intends to do with the data. This is
 the motivation for learning a fair, transferable representation.</p>
 </div>
 <div class="section" id="post-processing">
-<h3><span class="section-number">5.4.4. </span>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h3>
+<h3>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h3>
 <p>This area isn’t as well explored, but <a class="bibtex reference internal" href="#hardt2016equality" id="id83">[HPS+16]</a> use it in their
 paper.</p>
 </div>
 </div>
 <div class="section" id="causal-inference">
-<span id="causal"></span><h2><span class="section-number">5.5. </span>Causal Inference<a class="headerlink" href="#causal-inference" title="Permalink to this headline">¶</a></h2>
+<span id="causal"></span><h2>Causal Inference<a class="headerlink" href="#causal-inference" title="Permalink to this headline">¶</a></h2>
 <p>With the acknowledgement that fairness is difficult to solve
 arithmetically, methods to incorporate subject matter expertise are
 being explored. Causal models are appealing in this regard because they
@@ -1230,12 +1230,12 @@ distance measure. Clearly there are strengths and weaknesses to both
 approaches.</p>
 </div>
 <div class="section" id="other-areas">
-<span id="other"></span><h2><span class="section-number">5.6. </span>Other Areas<a class="headerlink" href="#other-areas" title="Permalink to this headline">¶</a></h2>
+<span id="other"></span><h2>Other Areas<a class="headerlink" href="#other-areas" title="Permalink to this headline">¶</a></h2>
 <p>This section is about fairness outside of classification. Fairness
 criteria have been applied with success to recommendations, ranking and
 resource allocation.</p>
 <div class="section" id="recommendation">
-<h3><span class="section-number">5.6.1. </span>Recommendation<a class="headerlink" href="#recommendation" title="Permalink to this headline">¶</a></h3>
+<h3>Recommendation<a class="headerlink" href="#recommendation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>“A Fairness-aware Hybrid Recommender System” <a class="bibtex reference internal" href="#farnadi2018fairness" id="id93">[FKT+18]</a>:
 Gives recommendations such that item ratings are indifferent to
@@ -1251,7 +1251,7 @@ constraints on collaborative filtering.</p></li>
 </ul>
 </div>
 <div class="section" id="ranking">
-<h3><span class="section-number">5.6.2. </span>Ranking<a class="headerlink" href="#ranking" title="Permalink to this headline">¶</a></h3>
+<h3>Ranking<a class="headerlink" href="#ranking" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>“FA*IR: A Fair Top-k Ranking Algorithm”
 <a class="bibtex reference internal" href="#zehlike2017fa" id="id97">[ZBC+17]</a>: A ranking algorithm that aims to
@@ -1259,7 +1259,7 @@ preserve utility whilst maintaining group fairness.<a class="footnote-reference 
 </ul>
 </div>
 <div class="section" id="resource-allocation">
-<h3><span class="section-number">5.6.3. </span>Resource Allocation<a class="headerlink" href="#resource-allocation" title="Permalink to this headline">¶</a></h3>
+<h3>Resource Allocation<a class="headerlink" href="#resource-allocation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>“Fair Algorithms for Learning in Allocation Problems”
 <a class="bibtex reference internal" href="#elzayn2019fair" id="id99">[EJJ+19]</a>: Allocate resources such that members of
@@ -1269,7 +1269,7 @@ members of a protected group.</p></li>
 </div>
 </div>
 <div class="section" id="future-works">
-<span id="future"></span><h2><span class="section-number">5.7. </span>Future works<a class="headerlink" href="#future-works" title="Permalink to this headline">¶</a></h2>
+<span id="future"></span><h2>Future works<a class="headerlink" href="#future-works" title="Permalink to this headline">¶</a></h2>
 <p>The number of works involving fairness has exploded recently, but there
 are still a number of avenues to be explored, particularly around
 consolidating existing works. Whilst there are 3 broad categories of
@@ -1280,7 +1280,7 @@ be done on explainability and accountability, and until these are also
 addressed, discrimination can still lurk within an algorithm.</p>
 </div>
 <div class="section" id="discussion-conclusion">
-<h2><span class="section-number">5.8. </span>Discussion / Conclusion<a class="headerlink" href="#discussion-conclusion" title="Permalink to this headline">¶</a></h2>
+<h2>Discussion / Conclusion<a class="headerlink" href="#discussion-conclusion" title="Permalink to this headline">¶</a></h2>
 <p>A concern with following any purely statistical route in knowing in
 advance some attribute that you wish to be fair to. If we consider the
 UCI Adult Dataset (a popular dataset for benchmarking fairness
@@ -1608,7 +1608,7 @@ our field to subjective areas.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="invisible.html" title="previous page"><span class="section-number">4. </span>Invisible Demographics</a>
+    <a class='left-prev' id="prev-link" href="invisible.html" title="previous page">Invisible Demographics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

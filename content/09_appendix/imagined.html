@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2. Imagined Examples for Fairness: Sampling Bias and Proxy Labels &#8212; Fair Representations of Biased Data</title>
+    <title>Imagined Examples for Fairness: Sampling Bias and Proxy Labels &#8212; Fair Representations of Biased Data</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -46,8 +46,8 @@
     <link rel="canonical" href="oliverthomas.ml/content/09_appendix/imagined.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Null-Sampling for Invariant and Interpretable Representations" href="nosinn.html" />
-    <link rel="prev" title="1. Discovering Fair Representations in the Data Domain" href="dfritdd.html" />
+    <link rel="next" title="Null-Sampling for Invariant and Interpretable Representations" href="nosinn.html" />
+    <link rel="prev" title="Discovering Fair Representations in the Data Domain" href="dfritdd.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -104,17 +104,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00_annual_review/summary.html">
-   1. Summary
+   Summary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../00_annual_review/activities_to_date.html">
-   2. Activities to date
+   Activities to date
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../00_annual_review/structure.html">
-   3. Thesis Structure
+   Thesis Structure
   </a>
  </li>
 </ul>
@@ -126,7 +126,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../02_imagined/xbar_problems.html">
-   1. What’s wrong with Fair Representations of input data?
+   What’s wrong with Fair Representations of input data?
   </a>
  </li>
 </ul>
@@ -138,27 +138,27 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="dfritdd.html">
-   1. Discovering Fair Representations in the Data Domain
+   Discovering Fair Representations in the Data Domain
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Imagined Examples for Fairness: Sampling Bias and Proxy Labels
+   Imagined Examples for Fairness: Sampling Bias and Proxy Labels
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="nosinn.html">
-   3. Null-Sampling for Invariant and Interpretable Representations
+   Null-Sampling for Invariant and Interpretable Representations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="invisible.html">
-   4. Invisible Demographics
+   Invisible Demographics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lit_review.html">
-   5. Literature Review (Year 1 Annual Review)
+   Literature Review (Year 1 Annual Review)
   </a>
  </li>
 </ul>
@@ -248,32 +248,32 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#abstract">
-   2.1. Abstract
+   Abstract
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   2.2. Introduction
+   Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#related-work">
-   2.3. Related Work
+   Related Work
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#imagined-examples-model">
-   2.4. Imagined Examples Model
+   Imagined Examples Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#results">
-   2.5. Results
+   Results
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#discussion-and-conclusion">
-   2.6. Discussion and Conclusion
+   Discussion and Conclusion
   </a>
  </li>
 </ul>
@@ -287,7 +287,7 @@
               <div>
                 
   <div class="section" id="imagined-examples-for-fairness-sampling-bias-and-proxy-labels">
-<h1><span class="section-number">2. </span>Imagined Examples for Fairness: Sampling Bias and Proxy Labels<a class="headerlink" href="#imagined-examples-for-fairness-sampling-bias-and-proxy-labels" title="Permalink to this headline">¶</a></h1>
+<h1>Imagined Examples for Fairness: Sampling Bias and Proxy Labels<a class="headerlink" href="#imagined-examples-for-fairness-sampling-bias-and-proxy-labels" title="Permalink to this headline">¶</a></h1>
 <p>Authors: O. Thomas, N. Quadrianto</p>
 <hr class="docutils" />
 <div class="math notranslate nohighlight">
@@ -308,7 +308,7 @@
 \newcommand{\zy}{\mathbf{z_y}}
 \newcommand\myeq{\mkern1.5mu{=}\mkern1.5mu}\]</div>
 <div class="section" id="abstract">
-<h2><span class="section-number">2.1. </span>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
 <p>Group notions of fairness such as demographic parity and equality of opportunity have been the focus of a growing body of work.
 However, the intuitive notion of individual fairness, that similar individuals should be treated similarly has received less attention given the inherent obstacles in determining similar individuals.
 We use generative modelling to produce an <em>imagined</em> version for each individual example, to expand our dataset during downstream training.
@@ -318,7 +318,7 @@ These imagined examples are produced by intervening on the protected characteris
 Experiments on four common fairness datasets show that by augmenting the entire training set with our generated interventions, we can identify and address the underlying cause of bias.</p>
 </div>
 <div class="section" id="introduction">
-<h2><span class="section-number">2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>We address the problem of <em>unfair</em> behaviour in machine learning decision systems.
 Such decision system tasks include determining whether an applicant is likely to commit a crime while on bail, or whether a loan will be likely be repaid, amongst others.
 The research community has responded to concerns that otherwise similar people, different only in a protected characteristic, are not treated similarly <a class="bibtex reference internal" href="lit_review.html#bolukbasi2016nlpbias" id="id1">[BCZ+16]</a><a class="bibtex reference internal" href="lit_review.html#angwin2016machinebias" id="id2">[ALMK16]</a>.
@@ -376,7 +376,7 @@ If the intervention on the feature causes little to no change, then we note that
 If the intervention on the class label causes little to no change, then we note that the dataset is fair with regard to proxy label bias.</p>
 </div>
 <div class="section" id="related-work">
-<h2><span class="section-number">2.3. </span>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
 <p>Most related to our work is the reweighing approach of Kamiran and Calders <a class="bibtex reference internal" href="lit_review.html#kamiran2012data" id="id18">[KC12]</a> which applies an instance weight for every group (Y,S) <span class="math notranslate nohighlight">\(\forall y \in Y\)</span> and <span class="math notranslate nohighlight">\(s \in S\)</span> so that the group is scaled to match the expected proportion of the groups in the data.
 Doing so downweights members of the over-represented group while simultaneously upweighting those of under-represented groups.
 Consequently, fairness criteria are improved without explicitly optimising for fairness.
@@ -390,10 +390,10 @@ This work is extremely encouraging, however requires specific application domain
 We take inspiration from this research area and try to emulate a subset of the behaviour of these counterfactual models.</p>
 </div>
 <div class="section" id="imagined-examples-model">
-<h2><span class="section-number">2.4. </span>Imagined Examples Model<a class="headerlink" href="#imagined-examples-model" title="Permalink to this headline">¶</a></h2>
+<h2>Imagined Examples Model<a class="headerlink" href="#imagined-examples-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="gcm">
 <a class="reference internal image-reference" href="../../_images/gm.png"><img alt="../../_images/gm.png" src="../../_images/gm.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><strong>Left</strong>: Graphical Model of our approach. <strong>Right</strong>: Our model in practice.</span><a class="headerlink" href="#gcm" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Left</strong>: Graphical Model of our approach. <strong>Right</strong>: Our model in practice.</span><a class="headerlink" href="#gcm" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -401,15 +401,15 @@ We take inspiration from this research area and try to emulate a subset of the b
 </div>
 <div class="figure align-default" id="resampling-a">
 <a class="reference internal image-reference" href="../../_images/resampling_a.png"><img alt="../../_images/resampling_a.png" src="../../_images/resampling_a.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Removing sampling bias as the source of unfairness.</span><a class="headerlink" href="#resampling-a" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Removing sampling bias as the source of unfairness.</span><a class="headerlink" href="#resampling-a" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="resampling-b">
 <a class="reference internal image-reference" href="../../_images/resampling_b.png"><img alt="../../_images/resampling_b.png" src="../../_images/resampling_b.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Removing proxy labels as the source of unfairness</span><a class="headerlink" href="#resampling-b" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Removing proxy labels as the source of unfairness</span><a class="headerlink" href="#resampling-b" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>How do imagined examples work? In Figure <a class="reference internal" href="#resampling-a"><span class="std std-numref">Fig. 2.2</span></a>, we intervene on the protected characteristic and
+<p>How do imagined examples work? In Figure <a class="reference internal" href="#resampling-a"><span class="std std-numref">Fig. 2</span></a>, we intervene on the protected characteristic and
 observe the effect on the features producing <span class="math notranslate nohighlight">\(X^{\text{Imagined}}\)</span> (see Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">recons</span></code> for a visualisation of
 this effect).
 We can then use these imagined examples to augment the original dataset creating a balanced dataset in terms of group
@@ -425,11 +425,11 @@ training examples</em> in the dataset, which will be ignored by the classifier.<
 </div>
 <p>While prior works have focused on recreating the protected characteristic solely from the input features, recent work has also shown that the class labels themselves can be a source of bias <a class="bibtex reference internal" href="lit_review.html#yeom" id="id25">[YT18]</a><a class="bibtex reference internal" href="lit_review.html#tol19" id="id26">[Tol19]</a>.
 In this context, if we had a set of features that were completely invariant to the protected characteristic, the model would either perform poorly, or have to learn to be biased to accommodate the biased labels.
-To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder <a class="bibtex reference internal" href="lit_review.html#vfae" id="id27">[LSL+15]</a> to acknowledge that bias can also exist within the class labels (see figure <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 2.1</span></a> — left).
+To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder <a class="bibtex reference internal" href="lit_review.html#vfae" id="id27">[LSL+15]</a> to acknowledge that bias can also exist within the class labels (see figure <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — left).
 In doing this, we explicitly model two latent embeddings that are disentangled from the protected characteristic for both the features and the decision outcome.
 We refer to these latent representations as <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span>; while they could be modelled in the same space as the respective observed data, that need not be the case.</p>
 <p>In practice however if we generate samples of <span class="math notranslate nohighlight">\(\x\)</span> and <span class="math notranslate nohighlight">\(\y\)</span>, where both have been intervened on by the same variable, this is akin to na”ively upsampling the underrepresented groups.
-This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases <a class="bibtex reference internal" href="lit_review.html#kamiran2012data" id="id28">[KC12]</a>. Instead, we ‘split’ the protected characteristic into two independent variables during decoding (Fig. <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 2.1</span></a> — right).
+This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases <a class="bibtex reference internal" href="lit_review.html#kamiran2012data" id="id28">[KC12]</a>. Instead, we ‘split’ the protected characteristic into two independent variables during decoding (Fig. <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — right).
 One variable (<span class="math notranslate nohighlight">\(\s_1\)</span>) affects the reconstruction of the features and another (<span class="math notranslate nohighlight">\(\s_2\)</span>) that affects the reconstruction of the class labels.
 However, during encoding we only consider the observed protected characteristic.</p>
 <p>This allows us to intervene separately, either remedying the problem of under-represented samples in the data, or diagnosing that a task is not suitable to be learned given the data.</p>
@@ -700,7 +700,7 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </div>
 <div class="figure align-default" id="id31">
 <a class="reference internal image-reference" href="../../_images/diff_all.png"><img alt="../../_images/diff_all.png" src="../../_images/diff_all.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>However, if the features are entwined with the protected characteristic, then a significant amount of this information will be removed during the transformation to <span class="math notranslate nohighlight">\(\zx\)</span>.
 The decoder network will then rely on the protected characteristic to reconstruct the features.
@@ -709,7 +709,7 @@ We exploit this relationship by reconstructing an imagined counterfactual by sup
 We also perform these interventions on the reconstruction of the class label, which equates to asking if the same outcome would have been observed if you were of (for example) another gender.</p>
 </div>
 <div class="section" id="results">
-<h2><span class="section-number">2.5. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>We evaluate the performance of <span class="math notranslate nohighlight">\(3\)</span> augmentation strategies on <span class="math notranslate nohighlight">\(4\)</span> commonly used fairness datasets.</p>
 <p><strong>UCI Adult Income</strong><a class="bibtex reference internal" href="lit_review.html#asuncion-newman-2007" id="id32">[AN07]</a>. A dataset of 45,222 samples, from the 1994 U.S. census.
 The binary classification task is predicting whether an individual’s salary is greater than $<span class="math notranslate nohighlight">\(50,000\)</span> USD; the binary sensitive attribute is whether an individual’s sex is Male or not.</p>
@@ -746,7 +746,7 @@ In addition we train a Logistic Regression model on our augmented samples.</p>
 <p>In all experiments, to account for uncertainty in the reconstruction we draw three samples from the feature embedding space with which to condition our decoder.
 An example of this is given is fig. <code class="xref std std-numref docutils literal notranslate"><span class="pre">recons</span></code>.
 For the prediction encoder we model the latent space as the `true’ label prior to conditioning on the sensitive attribute, as such we only draw one sample as we use the probability directly.</p>
-<p>The results of all experiments are shown in table <a class="reference internal" href="#table"><span class="std std-numref">Listing 2.1</span></a>.
+<p>The results of all experiments are shown in table <a class="reference internal" href="#table"><span class="std std-numref">Listing 1</span></a>.
 Across <span class="math notranslate nohighlight">\(4\)</span> datasets we observe that the effect of intervening on either the reconstruction of the feature, or the class label has differing results.
 We attribute this to two phenomenon, sampling bias and proxy labels.
 In the case of the UCI Adult dataset and the German Credit dataset, the performance across (almost) all metrics is increased by intervening on the reconstruction of the <em>features</em>, including individual measures of fairness.
@@ -759,7 +759,7 @@ We use arrest data to determine if a crime has been committed, regardless of the
 Unfortunately, many crimes are not recorded as the perpetrator is not caught.</p>
 </div>
 <div class="section" id="discussion-and-conclusion">
-<h2><span class="section-number">2.6. </span>Discussion and Conclusion<a class="headerlink" href="#discussion-and-conclusion" title="Permalink to this headline">¶</a></h2>
+<h2>Discussion and Conclusion<a class="headerlink" href="#discussion-and-conclusion" title="Permalink to this headline">¶</a></h2>
 <blockquote class="epigraph">
 <div><p>Imagine all the people, sharing all the world</p>
 <p class="attribution">—John Lennon</p>
@@ -875,8 +875,8 @@ We aim to characterise this relationship in greater detail, investigating if bot
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="dfritdd.html" title="previous page"><span class="section-number">1. </span>Discovering Fair Representations in the Data Domain</a>
-    <a class='right-next' id="next-link" href="nosinn.html" title="next page"><span class="section-number">3. </span>Null-Sampling for Invariant and Interpretable Representations</a>
+    <a class='left-prev' id="prev-link" href="dfritdd.html" title="previous page">Discovering Fair Representations in the Data Domain</a>
+    <a class='right-next' id="next-link" href="nosinn.html" title="next page">Null-Sampling for Invariant and Interpretable Representations</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
