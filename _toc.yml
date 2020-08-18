@@ -1,5 +1,5 @@
 - file: content/index
-  numbered: True
+  numbered: False
 
 - part: Annual Review 2020
   chapters:
