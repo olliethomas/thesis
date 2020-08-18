@@ -1,14 +1,17 @@
 - file: content/index
-- part: Annual Review 2020
-- file: content/00_annual_review/summary
-  sections:
-    - file: content/00_annual_review/area
+  numbered: True
 
-- file: content/00_annual_review/activities_to_date
-- file: content/00_annual_review/structure
+- part: Annual Review 2020
+  chapters:
+  - file: content/00_annual_review/summary
+    sections:
+      - file: content/00_annual_review/area
+  - file: content/00_annual_review/activities_to_date
+  - file: content/00_annual_review/structure
 
 - part: Imagined Examples WIP
-- file: content/02_imagined/xbar_problems
+  chapters:
+  - file: content/02_imagined/xbar_problems
 
 #- header: Thesis
 #- file: content/01_intro/intro
@@ -16,8 +19,9 @@
 #    - file: content/01_intro/definitions
 
 - part: Appendix
-- file: content/09_appendix/dfritdd
-- file: content/09_appendix/imagined
-- file: content/09_appendix/nosinn
-- file: content/09_appendix/invisible
-- file: content/09_appendix/lit_review
+  chapters:
+  - file: content/09_appendix/dfritdd
+  - file: content/09_appendix/imagined
+  - file: content/09_appendix/nosinn
+  - file: content/09_appendix/invisible
+  - file: content/09_appendix/lit_review
