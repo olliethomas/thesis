@@ -1,4 +1,6 @@
+EthicML
 jupyter-book>=0.7.0
 matplotlib
 numpy
+scikit-learn
 sphinx-tabs
