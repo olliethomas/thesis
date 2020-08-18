@@ -1,4 +1,4 @@
-EthicML
+EthicML@git+https://github.com/predictive-analytics-lab/EthicML.git
 jupyter-book>=0.7.0
 matplotlib
 numpy
