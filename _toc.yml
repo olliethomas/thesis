@@ -12,6 +12,11 @@
 - part: Imagined Examples WIP
   chapters:
   - file: content/02_imagined/xbar_problems
+    sections:
+      - file: content/02_imagined/scenario_1
+      - file: content/02_imagined/scenario_2
+      - file: content/02_imagined/scenario_3
+      - file: content/02_imagined/scenario_4
 
 #- header: Thesis
 #- file: content/01_intro/intro
