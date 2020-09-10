@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['datasets = []', 'scalers = []', 'data = []', 'train = []', 'test = []']
 ...
-['    # save_2d_plot(_train[target], f"./plots/train_scenario_{scenario}_target_{target}.png")', '    save_2d_plot(DataTuple(x=train[target-1].x[["x1", "x2"]], s=train[target-1].s, y=train[target-1].y), f"./plots/train_priv_scenario_{scenario}_target_{target}.png")', '    save_jointplot(train[target-1], f"./plots/train_joint_scenario_{scenario}_target_{target}.png")', '    save_multijointplot(train[target-1], f"./plots/train_multijoint_scenario_{scenario}_target_{target}.png")', '    save_label_plot(train[target-1], f"./plots/train_labels_scenario_{scenario}_target_{target}.png")']
+['    save_2d_plot(DataTuple(x=train[target-1].x[["x1", "x2"]], s=train[target-1].s, y=train[target-1].y), f"./plots/train_priv_scenario_{scenario}_target_{target}.png")', '    save_jointplot(train[target-1].replace(x=train[target-1].x), f"./plots/train_joint_scenario_{scenario}_target_{target}.png")', '    save_multijointplot(train[target-1].replace(x=train[target-1].x), f"./plots/train_multijoint_scenario_{scenario}_target_{target}.png")', '    save_label_plot(train[target-1], f"./plots/train_labels_scenario_{scenario}_target_{target}.png")', "    plt.close('all')"]
 -------------------
 
