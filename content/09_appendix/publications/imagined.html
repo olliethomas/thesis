@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagined Examples for Fairness: Sampling Bias and Proxy Labels &#8212; Fair Representations of Biased Data</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="../../../_static/sphinx_tabs/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="oliverthomas.ml/content/09_appendix/publications/imagined.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Null-Sampling for Invariant and Interpretable Representations" href="nosinn.html" />
+    <link rel="prev" title="Discovering Fair Representations in the Data Domain" href="dfritdd.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="oliverthomas.ml/content/09_appendix/publications/imagined.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Imagined Examples for Fairness: Sampling Bias and Proxy Labels" />
+<meta property="og:description" content="Imagined Examples for Fairness: Sampling Bias and Proxy Labels  Authors: O. Thomas, N. Quadrianto    \newcommand{\kl}{D_{\text{KL}}} \newcommand{\N}{\mathcal{N}" />
+<meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.svg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/pal-logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Fair Representations of Biased Data</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Fair Representations of Biased Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Thesis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_introduction/intro.html">
+   Introduction
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../01_introduction/overview.html">
+     Overview
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../../01_introduction/fair_ml.html">
+       Fair Machine Learning
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01_introduction/definitions.html">
+         Definitions
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01_introduction/challenges.html">
+       Challenges
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../01_introduction/background.html">
+     Background
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01_introduction/adversarial_methods.html">
+       Adversarial Methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01_introduction/dist_matching.html">
+       Distribution Matching
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01_introduction/counterfactual_fairness.html">
+       Counterfactual Fairness
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02_fair_representations/intro.html">
+   Fair Representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../03_data_domain_fairness/intro.html">
+   Data Domain Fairness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../04_identifying/intro.html">
+   Identifying At-Risk Individuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../08_conclusion/conclusion.html">
+   Conclusion
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Annual Review 2020
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../00_annual_review/summary.html">
+   Summary
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../00_annual_review/area.html">
+     Research Area &amp; Question
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_annual_review/activities_to_date.html">
+   Activities to date
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_annual_review/structure.html">
+   Thesis Structure
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../published.html">
+   Publications
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="dfritdd.html">
+     Discovering Fair Representations in the Data Domain
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Imagined Examples for Fairness: Sampling Bias and Proxy Labels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nosinn.html">
+     Null-Sampling for Invariant and Interpretable Representations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="invisible.html">
+     Invisible Demographics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lit_review.html">
+     Literature Review (Year 1 Annual Review)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software.html">
+   Software
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/09_appendix/publications/imagined.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/olliethomas/thesis/issues/new?title=Issue%20on%20page%20%2Fcontent/09_appendix/publications/imagined.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/olliethomas/thesis/edit/master/content/09_appendix/publications/imagined.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-work">
+   Related Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imagined-examples-model">
+   Imagined Examples Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion-and-conclusion">
+   Discussion and Conclusion
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="imagined-examples-for-fairness-sampling-bias-and-proxy-labels">
+<h1>Imagined Examples for Fairness: Sampling Bias and Proxy Labels<a class="headerlink" href="#imagined-examples-for-fairness-sampling-bias-and-proxy-labels" title="Permalink to this headline">¶</a></h1>
+<p>Authors: O. Thomas, N. Quadrianto</p>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[\newcommand{\kl}{D_{\text{KL}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\xb}{\bar{x}}
+\newcommand{\xbb}{\mathbf{\bar{x}}}
+\newcommand{\yb}{\bar{y}}
+\newcommand{\ybb}{\mathbf{\bar{y}}}
+\newcommand{\0}{\mathbf{0}}
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\s}{\mathbf{s}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\zx}{\mathbf{z_x}}
+\newcommand{\zy}{\mathbf{z_y}}
+\newcommand\myeq{\mkern1.5mu{=}\mkern1.5mu}\]</div>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>Group notions of fairness such as demographic parity and equality of opportunity have been the focus of a growing body of work.
+However, the intuitive notion of individual fairness, that similar individuals should be treated similarly has received less attention given the inherent obstacles in determining similar individuals.
+We use generative modelling to produce an <em>imagined</em> version for each individual example, to expand our dataset during downstream training.
+Unlike other approaches, we explicitly view the reported labels, as well as the input features, to be a source bias.
+This models known causes of unfairness in datasets, sample bias and proxy labels.
+These imagined examples are produced by intervening on the protected characteristic and observing the affect on both the features and labels.
+Experiments on four common fairness datasets show that by augmenting the entire training set with our generated interventions, we can identify and address the underlying cause of bias.</p>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We address the problem of <em>unfair</em> behaviour in machine learning decision systems.
+Such decision system tasks include determining whether an applicant is likely to commit a crime while on bail, or whether a loan will be likely be repaid, amongst others.
+The research community has responded to concerns that otherwise similar people, different only in a protected characteristic, are not treated similarly <a class="bibtex reference internal" href="lit_review.html#bolukbasi2016nlpbias" id="id1">[BCZ+16a]</a><a class="bibtex reference internal" href="lit_review.html#angwin2016machinebias" id="id2">[ALMK16a]</a>.
+This has led to a growing body of work influenced by inter-disciplinary scholars to understand what is required to satisfy legal and ethical concerns about the deployment of machine learning models that reason about human behaviour.</p>
+<p>It is generally understood that bias in machine learning systems arise as a reflection of the underlying biases in the training data.
+This occurs when the training data implies a relationship between a protected characteristic, which we denote as <span class="math notranslate nohighlight">\(S\)</span> and the observed outcome, <span class="math notranslate nohighlight">\(Y\)</span>.
+That is, within the training dataset, the class label is not independent of a protected characteristic, <span class="math notranslate nohighlight">\(P(Y,S) \neq P(Y)P(S)\)</span>.</p>
+<p>A simple and successful approach to redressing this problem is to re-weigh our training dataset so that this is no longer the case <a class="bibtex reference internal" href="lit_review.html#kamiran2012data" id="id3">[KC12a]</a>.
+This technique has, as a by-product, a useful property being that, in creating independence between <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(S\)</span>, two at-odds notions of group fairness, Demographic Parity (DP) and Equality of Opportunity (EqOp) can both hold.
+Demographic Parity requires that the probability of a positive prediction be equal across all groups that share a protected characteristic.
+In the case that both class label and protected characteristic are binary attributes, for example a loan approval system with a binarised gender value as the protected characteristic, so <span class="math notranslate nohighlight">\(Y=\mathrm{Approved}(1)\)</span> or <span class="math notranslate nohighlight">\(Y=\lnot\mathrm{Approved}(0)\)</span> and <span class="math notranslate nohighlight">\(S=\mathrm{Female}(1)\)</span> or <span class="math notranslate nohighlight">\(S=\lnot\mathrm{Female}(0)\)</span>, DP would require that the prediction of the class label <span class="math notranslate nohighlight">\(\hat{Y}\)</span> satisfy the following
+\begin{equation*}
+P(\hat{Y}=1 | S=1) = P(\hat{Y}=1 | S=0)
+\end{equation*}</p>
+<p>EqOp is similar to DP, but the probability of a positive prediction is also conditioned on the class label being positive.
+This is equivalent to balancing the True Positive Rate across protected characteristic sub-groups
+\begin{equation*}
+P(\hat{Y}=1 | S=1, Y=1) = P(\hat{Y}=1 | S=0, Y=1)
+\end{equation*}</p>
+<p>It has recently been shown by Kleinberg et al. <a class="bibtex reference internal" href="lit_review.html#kleinberg2017tradeoff" id="id4">[KMR17]</a> and Chouldechova et al. <a class="bibtex reference internal" href="lit_review.html#chouldechova2017tradeoff" id="id5">[Cho17]</a> that unless certain conditions hold (we have a perfect dataset, the base acceptance rate is the same for both groups, i.e. class label is independent of the protected characteristic), demographic parity and equal opportunity cannot both hold.
+Fortunately, by enforcing that the dataset has independence between the class label and the protected characteristic, both notions of fairness can be achieved.</p>
+<p>While this is a welcome improvement, it has been proposed that this does not go far enough.
+Recent works in Counterfactual Fairness <a class="bibtex reference internal" href="lit_review.html#kusner2017counterfactual" id="id6">[KLRS17]</a><a class="bibtex reference internal" href="lit_review.html#russell2017collide" id="id7">[RKLS17]</a> propose that notions of fairness that seek to balance outcomes across sub-groups are not strict enough and that we should instead view fairness at an individual level.
+Counterfactual fairness is a form of individual fairness based on causal inference.
+Individual fairness requires that similar individuals be treated similarly.
+This is difficult to quantify as the notion of ‘similar’ is not a rigid definition. Counterfactual fairness assumes we have a causal model that can generate our data samples. We can then generate a counterfactual example of a data sample obtained by amending a protected characteristic to another (valid) value. This is akin to asking the question, “What if I had been born another race?”, or in the context of the loan decision example, “Would the same decision have been made if I had been born of a different gender?”
+This can be modelled as</p>
+<p>\begin{equation*}
+P(\hat{Y}=1 | C(x, S=0)) = P(\hat{Y}=1 | C(x, S=1))
+\end{equation*}</p>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is a function that generates the counterfactual example of an individual <span class="math notranslate nohighlight">\(X\)</span> with a specified protected characteristic.</p>
+<p>Obtaining causal models however, is difficult and expensive.
+Furthermore, as we rarely have access to the ground truth causal model, there is often uncertainty among domain experts as to which causal model best characterises the data.
+Recent work advocates taking samples from multiple causal models to obtain the most likely effect <a class="bibtex reference internal" href="lit_review.html#russell2017collide" id="id8">[RKLS17]</a>.
+Concurrently, works in Neural Processes have successfully emulated the behaviour of stochastic processes <a class="bibtex reference internal" href="lit_review.html#garnelo2018neural" id="id9">[GSR+18]</a><a class="bibtex reference internal" href="lit_review.html#louizos2019functional" id="id10">[LSSW19]</a>.
+We draw on this and propose a stochastic process that emulates the behaviour of the counterfactual intervention function <span class="math notranslate nohighlight">\(C(\cdot)\)</span>.
+That is, we propose a function that emulates a causal model that can only be intervened on with regard to a specific, pre-determined variable.
+We set the variable which we will condition on to be the protected characteristic and observe the affect on the reconstructed counterfactual.\footnote{Code to reproduce results will be available}</p>
+<p>Before we can remedy the problem however, we must understand how unfairness came to be included in our data.
+Work to identify these sources has been conducted by <a class="bibtex reference internal" href="lit_review.html#tol19" id="id11">[Tol19]</a> who identifies that two of the ways bias can form in the data are either <em>sampling bias</em> or, <em>proxy labels</em>.
+Sampling bias occurs when the data is not representative of the population at large.
+It may be that that task is legitimate, but there are not enough samples of particular subgroups in the data.
+This can particularly be a concern when addressing intersectional fairness, when the numbers of individuals can be particularly small.
+Proxy labels are used when the direct task label is not available and instead an alternative class label is given as a proxy for the outcome.
+Unfairness occurs when this label is correlated with a particular subgroup.
+The example of this is in predictive policing, where the data on which individuals have committed a crime is unavailable.
+Instead, the closest we have is the details of those who have charged on suspicion of committing a crime.
+If this proxy class label leads to a higher share of one protected group over another being targeted for arrest then we say the proxy label is biased.</p>
+<p>This idea that bias may exist in the class label is corroborated by recent work by <a class="bibtex reference internal" href="lit_review.html#kehrenberg2018interpretable" id="id12">[KCQ18]</a><a class="bibtex reference internal" href="lit_review.html#yeom" id="id13">[YT18a]</a> identifying that class labels themselves can be a source of bias.
+This is in addition to work which seeks to remedy fairness by intervening on the features to create fair representations <a class="bibtex reference internal" href="lit_review.html#edwards2015censoring" id="id14">[ES15]</a><a class="bibtex reference internal" href="lit_review.html#adel2019one" id="id15">[AVGW19]</a><a class="bibtex reference internal" href="lit_review.html#vfae" id="id16">[LSL+15]</a><a class="bibtex reference internal" href="lit_review.html#zemel2013learning" id="id17">[ZWS+13]</a>.
+Our approach is to acknowledge that both the class labels and the features are a potential source of bias and intervene to identify and combat this bias.</p>
+<p>In terms of a counterfactual model, if we had a sufficiently representative causal model, sampling bias can be identified by intervening on the causal model that recreates the features.
+Identifying proxy labels can be identified by intervening in a causal model and observing the effect on the outcome.
+If the intervention on the feature causes little to no change, then we note that the dataset is fair with regard to sampling bias.
+If the intervention on the class label causes little to no change, then we note that the dataset is fair with regard to proxy label bias.</p>
+</div>
+<div class="section" id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<p>Most related to our work is the reweighing approach of Kamiran and Calders <a class="bibtex reference internal" href="lit_review.html#kamiran2012data" id="id18">[KC12a]</a> which applies an instance weight for every group (Y,S) <span class="math notranslate nohighlight">\(\forall y \in Y\)</span> and <span class="math notranslate nohighlight">\(s \in S\)</span> so that the group is scaled to match the expected proportion of the groups in the data.
+Doing so downweights members of the over-represented group while simultaneously upweighting those of under-represented groups.
+Consequently, fairness criteria are improved without explicitly optimising for fairness.
+This is similar to our approach in that we are not explicitly optimising to improve the fairness of our model.
+Instead, we are trying to characterise and account for different types of bias within our data.
+In doing so we aim to address the underlying cause of bias manifesting in the data as opposed to enforcing fairness on a biased dataset.</p>
+<p>Our approach to <em>“imagining”</em> is similar to that of Generative Adversarial Networks (GANs), which have achieved successes in a number of applications. Given their success there have been a number of variations of the framework. One popular approach <a class="bibtex reference internal" href="lit_review.html#edwards2015censoring" id="id19">[ES15]</a>is to make a latent embedding invarient to a protected characteristic and use this as the model input for a downstream task. Whilst this approach is successful in removing bias on the input features, bias in the class labels is not accounted for. In addition, recent works by <a class="bibtex reference internal" href="lit_review.html#quadrianto2019discovering" id="id20">[QST19]</a> demonstrate the inherent <em>uninterpretability</em> of latent embeddings.
+By reconstructing our imagined examples in the original input space we are able to determine which features are most connected to the protected charcteristic.</p>
+<p>Counterfactual models have been the basis of a number of investigations into fairness <a class="bibtex reference internal" href="lit_review.html#kusner2017counterfactual" id="id21">[KLRS17]</a><a class="bibtex reference internal" href="lit_review.html#nabi2018fair" id="id22">[NS18]</a><a class="bibtex reference internal" href="lit_review.html#chiappa2019path" id="id23">[Chi19]</a><a class="bibtex reference internal" href="lit_review.html#kilbalkusweletal19" id="id24">[KBK+19]</a>.
+This work is extremely encouraging, however requires specific application domain expertise in creating a causal model in which to intervene.
+We take inspiration from this research area and try to emulate a subset of the behaviour of these counterfactual models.</p>
+</div>
+<div class="section" id="imagined-examples-model">
+<h2>Imagined Examples Model<a class="headerlink" href="#imagined-examples-model" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="gcm">
+<a class="reference internal image-reference" href="../../../_images/gm.png"><img alt="../../../_images/gm.png" src="../../../_images/gm.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Left</strong>: Graphical Model of our approach. <strong>Right</strong>: Our model in practice.</span><a class="headerlink" href="#gcm" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In practice, we split the effect of <span class="math notranslate nohighlight">\(s\)</span> into two intervention points. This allows us to condition the reconstruction of both the features <span class="math notranslate nohighlight">\(\x\)</span> and class labels <span class="math notranslate nohighlight">\(\y\)</span> individually. In the case that the features are invariant to the protected characteristic, the reconstruction will `ignore’ the conditioning protected characteristic as <span class="math notranslate nohighlight">\(\zx\)</span> will be sufficient for reconstruction. Similarly, if the class label is invariant to the protected characteristic then conditioning the class label decoder on the protected characteristic will not effect the reconstruction as sufficient information will be retained in <span class="math notranslate nohighlight">\(\zy\)</span>.</p>
+</div>
+<div class="figure align-default" id="resampling-a">
+<a class="reference internal image-reference" href="../../../_images/resampling_a.png"><img alt="../../../_images/resampling_a.png" src="../../../_images/resampling_a.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Removing sampling bias as the source of unfairness.</span><a class="headerlink" href="#resampling-a" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="resampling-b">
+<a class="reference internal image-reference" href="../../../_images/resampling_b.png"><img alt="../../../_images/resampling_b.png" src="../../../_images/resampling_b.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Removing proxy labels as the source of unfairness</span><a class="headerlink" href="#resampling-b" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>How do imagined examples work? In Figure <a class="reference internal" href="#resampling-a"><span class="std std-numref">Fig. 2</span></a>, we intervene on the protected characteristic and
+observe the effect on the features producing <span class="math notranslate nohighlight">\(X^{\text{Imagined}}\)</span> (see Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">recons</span></code> for a visualisation of
+this effect).
+We can then use these imagined examples to augment the original dataset creating a balanced dataset in terms of group
+proportions.
+Since the imagined examples modify several features of the original examples, there will be several
+<em>inconsistent features</em> in the dataset, which will be ignored by the classifier.
+Note that the procedure does not change the class label proportions.
+In Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">resampling_b</span></code>, we intervene on the proected characteristic and observe the effect on the class labels
+producing <span class="math notranslate nohighlight">\(Y^{\text{Imagined}}\)</span>.
+Here, the class label proportions will change.
+Since the imagined examples copy the exact features of the original examples, there will be several <em>inconsistent
+training examples</em> in the dataset, which will be ignored by the classifier.</p>
+</div>
+<p>While prior works have focused on recreating the protected characteristic solely from the input features, recent work has also shown that the class labels themselves can be a source of bias <a class="bibtex reference internal" href="lit_review.html#yeom" id="id25">[YT18a]</a><a class="bibtex reference internal" href="lit_review.html#tol19" id="id26">[Tol19]</a>.
+In this context, if we had a set of features that were completely invariant to the protected characteristic, the model would either perform poorly, or have to learn to be biased to accommodate the biased labels.
+To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder <a class="bibtex reference internal" href="lit_review.html#vfae" id="id27">[LSL+15]</a> to acknowledge that bias can also exist within the class labels (see figure <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — left).
+In doing this, we explicitly model two latent embeddings that are disentangled from the protected characteristic for both the features and the decision outcome.
+We refer to these latent representations as <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span>; while they could be modelled in the same space as the respective observed data, that need not be the case.</p>
+<p>In practice however if we generate samples of <span class="math notranslate nohighlight">\(\x\)</span> and <span class="math notranslate nohighlight">\(\y\)</span>, where both have been intervened on by the same variable, this is akin to na”ively upsampling the underrepresented groups.
+This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases <a class="bibtex reference internal" href="lit_review.html#kamiran2012data" id="id28">[KC12a]</a>. Instead, we ‘split’ the protected characteristic into two independent variables during decoding (Fig. <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — right).
+One variable (<span class="math notranslate nohighlight">\(\s_1\)</span>) affects the reconstruction of the features and another (<span class="math notranslate nohighlight">\(\s_2\)</span>) that affects the reconstruction of the class labels.
+However, during encoding we only consider the observed protected characteristic.</p>
+<p>This allows us to intervene separately, either remedying the problem of under-represented samples in the data, or diagnosing that a task is not suitable to be learned given the data.</p>
+<p>This generative process can be formally defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+&amp;\mathbf{z_x} \sim p(\mathbf{z_X}); &amp; \mathbf{x} \sim p_{\theta x}(\mathbf{x} | \mathbf{z_x}, \mathbf{s_1}); \\
+&amp;\mathbf{z_y} \sim p(\mathbf{\mathbf{z_Y}|\x}); &amp; \mathbf{y} \sim p_{\theta y}(\mathbf{y} | \mathbf{z_y}, \mathbf{s_2}) \\
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_{\theta x}(\mathbf{x} | \mathbf{z_x}, \mathbf{s})\)</span> and <span class="math notranslate nohighlight">\(p_{\theta y}(\mathbf{y} | \mathbf{z_y}, \mathbf{s})\)</span> are distributions that reflect the data modelled.
+As <span class="math notranslate nohighlight">\(\s_1\)</span> and <span class="math notranslate nohighlight">\(\s_2\)</span> are marginally independent of <span class="math notranslate nohighlight">\(\mathbf{z_x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{z_y}\)</span> respectively we follow <a class="bibtex reference internal" href="lit_review.html#vfae" id="id29">[LSL+15]</a> and cast the problem of finding an invariant representation as performing inference on the graphical model and obtaining the posterior distributions of <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span> by <span class="math notranslate nohighlight">\(p(\zx|\x,\s)\)</span> and <span class="math notranslate nohighlight">\(p(\zy|\x,\s)\)</span>.</p>
+<p>We parameterize the generative models (decoders) <span class="math notranslate nohighlight">\(p_{\theta_x} (\x|\zx, \s_1)\)</span> and <span class="math notranslate nohighlight">\(p_{\theta_y} (\y|\zy, \s_2)\)</span> and the variational posteriors (encoders) <span class="math notranslate nohighlight">\(q_{\phi_x} (\zx|\x, \s)\)</span> and <span class="math notranslate nohighlight">\(q_{\phi_y} (\zy|\x)\)</span> with neural networks, giving the following lower bound</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\begin{split}
+\sum_{n=1}^N &amp;\log p(x_n|s_n) \geq \\
+\sum_{n=1}^{N} &amp; \kl(q_{\phi x} (\zx_n|\mathbf{x}\_n,\mathbf{s}\_n) || p (\zx_n)) \\
++&amp; \kl(q_{\phi y} (\zy_n|\mathbf{x}\_n) ||p (\zy_n)) \\
+-&amp; \log q_{\phi y} (\y_n|\x_n) \\
++&amp; \mathbb{E}_{q_\phi(\zy_n, \zx_n|\x_n, \s_n)}[- \log p_{\theta x} (\x_n|\zx_n, \s_{1n}) \\
++&amp;\kl(p_{\theta y} (\mathbf{y}\_n|\mathbf{x}\_n) || q_{\phi y) (\mathbf{y}|\zy_n, \mathbf{s}\_n)} \\
+-&amp; \log p_{\theta y} (\y_n|\zy_n, \s_n)] \\
+= &amp;\mathcal{F}(\theta, \phi, \x_n, \s_n)
+\end{split}
+\end{align}\end{split}\]</div>
+<p>We assume the posterior <span class="math notranslate nohighlight">\(q(\zx, \zy|\x, \s, \y)\)</span> factorizes to <span class="math notranslate nohighlight">\(\frac{q(\zx|\x,\s)q(\zy|\x)q(\y|\zy,\s)}{q(\y|\x,\s)}\)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+p(\zx) \triangleq &amp;\: \N(\zx|\0, \I) \\
+p*\theta(\x|\zx, \s) \triangleq &amp;\: f*\theta(\zx, \s) \\
+p*\theta(\zy|\x) \triangleq &amp;\: \mathrm{Cat}(\zy|\pi*\theta(\x)) \\
+p*\theta(\y|\zy, \s) \triangleq &amp;\: \mathrm{Cat}(\y | \pi*\phi(\zy, \s)) \\
+q(\zy) \triangleq &amp;\: \mathcal{U}(\zy) \\
+q*\phi(\zx|\x, \s) \triangleq &amp;\: \N(\zx|\mu*\phi(\x, \s), \sigma*\phi(\x, \s)) \\
+p*\theta(\y|\x) \triangleq &amp;\: \mathrm{Cat}(\y|\pi\_\phi(\x))
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_\theta(\zx, \s)\)</span> is a distribution suited to the data.</p>
+<p>To encourage <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span> to be invariant to <span class="math notranslate nohighlight">\(\s\)</span>, we use adversarial network heads to predict the sensitive attribute from the latent distributions.
+These are trained using the gradient reversal layer (GRL) of Domain Adversarial Neural Networks <a class="bibtex reference internal" href="lit_review.html#ganin2016domain" id="id30">[GUA+16a]</a>, such that a min-max game is played out between the adversarial heads and the encoders.</p>
+<p>This produces a <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span> that are invariant to <span class="math notranslate nohighlight">\(\s\)</span>, yet retain as much information as possible in order to be useful in reconstructing <span class="math notranslate nohighlight">\(\x\)</span> and <span class="math notranslate nohighlight">\(\y\)</span>, respectively.
+To accommodate the representation being invariant to the protected characteristic, during reconstruction we additionally supply the protected characteristic label to the decoder.
+This allows the decoder to be as accurate as possible and allows the encoder to remove more information regarding <span class="math notranslate nohighlight">\(\s\)</span> as this information is added later.
+When reconstructing our data, we can then “test” how sensitive our reconstructions are to the protected characteristic.
+Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dataset that has little correlation between the features and the protected characteristic will not result in the loss of much information information in the transformation to <span class="math notranslate nohighlight">\(\zx\)</span>, while decoding will also not be reliant on conditioning the decoder on <span class="math notranslate nohighlight">\(\s\)</span>.</p>
+<div class="sphinx-tabs docutils container" id="table">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+<p>UCI Adult Dataset</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+<p>German Credit</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-2 docutils container">
+<div class="docutils container">
+<p>ProPublica COMPAS</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-3 docutils container">
+<div class="docutils container">
+<p>NYC SQF</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
+<th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
+<th class="text-align:center head"><p>DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>No Intervention</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(83.909 \pm 0.311\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(18.278 \pm 0.787\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(13.518 \pm 3.481\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(16.270 \pm 0.473\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(30.918 \pm 1.585\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Reweighing</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(83.409 \pm 0.138\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(9.219 \pm 0.513\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(10.019 \pm 2.386\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(18.330 \pm 0.584\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(32.344 \pm 0.923\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(X\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(83.318 \pm 0.253\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(12.498 \pm 0.258\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(5.312 \pm 2.603\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(11.446 \pm 0.294\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(23.530 \pm 0.271\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(Y\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(82.351 \pm 0.384\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(2.771 \pm 0.856\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(22.276 \pm 1.996\)</span></p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Augment with both</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(82.131 \pm 0.512\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.120 \pm 1.027\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(17.294 \pm 2.689\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(14.159 \pm 0.246\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(28.336 \pm 0.633\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
+<th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
+<th class="text-align:center head"><p>DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>No Intervention</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(73.293 \pm 2.731\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.429 \pm 5.307\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(8.445 \pm 8.095\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(28.743 \pm 4.888\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(43.983 \pm 4.082\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Reweighing</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(73.772 \pm 2.624\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(6.344 \pm 6.170\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(11.434 \pm 7.799\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(28.323 \pm 3.689\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(43.765 \pm 3.795\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(X\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(74.551 \pm 2.117\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.225 \pm 3.236\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(5.560 \pm 3.497\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(24.790 \pm 4.843\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(43.632 \pm 4.514\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(Y\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(73.293 \pm 1.764\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.758 \pm 5.459\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(7.445 \pm 7.204\)</span></p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Augment with both</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(73.892 \pm 2.046\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(5.060 \pm 3.413\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(5.350 \pm 3.880\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(26.707 \pm 4.145\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(44.561 \pm 4.300\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-2 docutils container">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
+<th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
+<th class="text-align:center head"><p>DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>No Intervention</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(67.004 \pm 0.717\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(14.921 \pm 1.263\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(16.000 \pm 2.018\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(28.220 \pm 0.966\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(34.238 \pm 1.723\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Reweighing</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(66.819 \pm 0.569\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(14.017 \pm 1.460\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(15.044 \pm 2.248\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(27.354 \pm 0.929\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(34.013 \pm 2.284\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(X\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(66.313 \pm 0.724\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(15.306 \pm 0.475\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(16.705 \pm 1.377\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(24.300 \pm 0.667\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(29.527 \pm 1.579\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(Y\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(65.817 \pm 0.655\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(11.321 \pm 3.365\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(12.305 \pm 5.262\)</span></p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Augment with both</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(66.313 \pm 0.921\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(13.036 \pm 2.224\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(14.624 \pm 3.590\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(25.671 \pm 0.964\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(32.044 \pm 2.229\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-3 docutils container">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
+<th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
+<th class="text-align:center head"><p>DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.DP <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+<th class="text-align:center head"><p>Ind.EqOp <span class="math notranslate nohighlight">\(\downarrow\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>No Intervention</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(91.948 \pm 0.548\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(0.980 \pm 0.613\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.467 \pm 3.075\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(6.103 \pm 1.878\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(33.118 \pm 1.332\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Reweighing</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(91.958 \pm 0.546\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(0.961 \pm 0.578\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.286 \pm 2.730\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(5.865 \pm 1.111\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(34.591 \pm 1.411\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(X\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(91.939 \pm 0.598\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(0.761 \pm 0.381\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.129 \pm 2.522\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.976 \pm 0.316\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(26.733 \pm 1.652\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Intervene on <span class="math notranslate nohighlight">\(Y\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(92.065 \pm 0.458\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(0.810 \pm 0.280\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(3.912 \pm 1.931\)</span></p></td>
+<td class="text-align:center"><p>—</p></td>
+<td class="text-align:center"><p>—</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Augment with both</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(91.973 \pm 0.492\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(0.729 \pm 0.334\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.602 \pm 2.735\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(5.952 \pm 0.327\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(28.017 \pm 1.508\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="figure align-default" id="id31">
+<a class="reference internal image-reference" href="../../../_images/diff_all.png"><img alt="../../../_images/diff_all.png" src="../../../_images/diff_all.png" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>However, if the features are entwined with the protected characteristic, then a significant amount of this information will be removed during the transformation to <span class="math notranslate nohighlight">\(\zx\)</span>.
+The decoder network will then rely on the protected characteristic to reconstruct the features.
+We exploit this relationship by reconstructing an imagined counterfactual by supplying a “flipped” sensitive attribute and augment our dataset with these additional examples.</p>
+<p>In terms of the features, this is similar to asking in what ways you would likely be different if you were of (for example) another gender.
+We also perform these interventions on the reconstruction of the class label, which equates to asking if the same outcome would have been observed if you were of (for example) another gender.</p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>We evaluate the performance of <span class="math notranslate nohighlight">\(3\)</span> augmentation strategies on <span class="math notranslate nohighlight">\(4\)</span> commonly used fairness datasets.</p>
+<p><strong>UCI Adult Income</strong><a class="bibtex reference internal" href="lit_review.html#asuncion-newman-2007" id="id32">[AN07]</a>. A dataset of 45,222 samples, from the 1994 U.S. census.
+The binary classification task is predicting whether an individual’s salary is greater than $<span class="math notranslate nohighlight">\(50,000\)</span> USD; the binary sensitive attribute is whether an individual’s sex is Male or not.</p>
+<p><strong>UCI German Credit</strong><a class="bibtex reference internal" href="lit_review.html#asuncion-newman-2007" id="id33">[AN07]</a>. A dataset of 1000 samples from the UCI Repository of Machine Learning Databases of data used to evaluate credit applications in Germany.
+The binary classification task is predicting if an individual’s credit label is positive or not; the binary sensitive attribute the individual’s sex.</p>
+<p><strong>COMPAS</strong>. A dataset of 6,167 samples, released by ProPublica following their investigation into recidivism prediction.
+The binary classification task is predicting if an individual is charged with an act of recidivism within <span class="math notranslate nohighlight">\(2\)</span> years of being released, and the binary sensitive attribute is whether an individual’s race is White or not.</p>
+<p><strong>NYC SQF</strong>. A dataset of 12,347 samples, from 2016 of data on individuals stopped as part of New York City’s Stop, Question, Frisk initiative.
+The binary classification task is predicting if a stopped individual is found to be carrying a weapon or not, and the binary sensitive attribute is whether an individual’s race is White or not.</p>
+<p>The augmentation strategies are <strong>Intervene on <span class="math notranslate nohighlight">\(X\)</span></strong> The original data is augmented with examples that are produced by intervening on <span class="math notranslate nohighlight">\(\s_1\)</span> during decoding. To emulate the behaviour of uncertainty over causal models <a class="bibtex reference internal" href="lit_review.html#russell2017collide" id="id34">[RKLS17]</a> we draw <span class="math notranslate nohighlight">\(3\)</span> samples from <span class="math notranslate nohighlight">\(\zx\)</span> with which to condition our decoder. The dataset then contains the original data tuple <span class="math notranslate nohighlight">\((\x, \s, \y)\)</span> three times and three `imagined’ examples <span class="math notranslate nohighlight">\((\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)\)</span>.
+<strong>Intervene on <span class="math notranslate nohighlight">\(Y\)</span></strong> We make a similar intervention, but on the class label reconstruction, augmenting the original dataset <span class="math notranslate nohighlight">\((\x, \s, \y)\)</span> with <span class="math notranslate nohighlight">\((\x, \s_\mathrm{flip}, \y_\mathrm{imagined})\)</span>
+<strong>Augment with both</strong> We make both of the previous interventions and augment the dataset with both so that the new dataset comprises of examples from <span class="math notranslate nohighlight">\((\x, \s, \y)\)</span>, <span class="math notranslate nohighlight">\((\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)\)</span> and <span class="math notranslate nohighlight">\((\x, \s_\mathrm{flip}, \y_\mathrm{imagined})\)</span>.</p>
+<p>All values in the dataset are one-hot encoded, including continuous values which are split into <span class="math notranslate nohighlight">\(5\)</span> bins.
+The exception to this is the ProPublica COMPAS Recidivism dataset where performance is largely determined by the continuous values,
+In this dataset we scale the values to be in the range <span class="math notranslate nohighlight">\([0, 1]\)</span>.
+The data is split into a train and test set using a two-thirds, one-third split.
+All results are reported on the same test set per repeat.
+Dataset augmentation only occurs in the training set.
+A cross-validated logistic regression model is used in each experiment.
+We use <span class="math notranslate nohighlight">\(3\)</span>-fold cross-validation over a range of regularisation parameters <span class="math notranslate nohighlight">\(10^{-i}\)</span> <span class="math notranslate nohighlight">\(\forall i \in [0, \dots, 6]\)</span>.
+We repeat each experiment <span class="math notranslate nohighlight">\(5\)</span> times, using a different seed to split the data for each repeat.</p>
+<p>The value reported for DP is the absolute difference in the positive prediction rate between the protected characteristic subgroups.
+Similarly, the value reported for EqOp is the absolute difference in the True Positive Rates across subgroups.
+Ind. DP. is measured as the mean absolute difference in the probability of a positive prediction conditioned on <span class="math notranslate nohighlight">\(X\)</span> generated with <span class="math notranslate nohighlight">\(S=0\)</span> and <span class="math notranslate nohighlight">\(X\)</span> generated when <span class="math notranslate nohighlight">\(S=1\)</span>.
+\begin{equation*}
+\lvert P(\hat{Y}=1 | f(Z_x, S_0)) - P(\hat{Y}=1 | f(Z_x, S_1)) \rvert
+\end{equation*}
+Ind. EqOp. is Ind. DP., but also conditioned on the observed class label being positive.</p>
+<p>\begin{equation*}
+\lvert P(\hat{Y}=1 | f(Z_x, S_0), Y\myeq{}1) - P(\hat{Y}=1 | f(Z_x, S_1), Y\myeq{}1) \rvert
+\end{equation*}</p>
+<p>We compare our model against an unconstrained Logistic Regression model, and one to which the instance weighting scheme of <a class="bibtex reference internal" href="lit_review.html#kamiran2012data" id="id35">[KC12a]</a> is applied.
+In addition we train a Logistic Regression model on our augmented samples.</p>
+<p>In all experiments, to account for uncertainty in the reconstruction we draw three samples from the feature embedding space with which to condition our decoder.
+An example of this is given is fig. <code class="xref std std-numref docutils literal notranslate"><span class="pre">recons</span></code>.
+For the prediction encoder we model the latent space as the `true’ label prior to conditioning on the sensitive attribute, as such we only draw one sample as we use the probability directly.</p>
+<p>The results of all experiments are shown in table <code class="xref std std-numref docutils literal notranslate"><span class="pre">table</span></code>.
+Across <span class="math notranslate nohighlight">\(4\)</span> datasets we observe that the effect of intervening on either the reconstruction of the feature, or the class label has differing results.
+We attribute this to two phenomenon, sampling bias and proxy labels.
+In the case of the UCI Adult dataset and the German Credit dataset, the performance across (almost) all metrics is increased by intervening on the reconstruction of the <em>features</em>, including individual measures of fairness.
+Intervening on the class label however, has either a negligible or erratic effect.
+We conjecture that this is due to Adult Income and German Credit datasets suffer from sampling bias but not proxy labels problems.</p>
+<p>Conversely, in the crime-related dataset, the ProPublica COMPAS Recidivism dataset and the NYC Stop, Question, Frisk dataset better results are obtained by intervening on the class label.
+We attribute this to bias caused by proxy labels.
+In both these datasets we are using a label to emulate another.
+We use arrest data to determine if a crime has been committed, regardless of the fact that only those who have been stopped can be arrested.
+Unfortunately, many crimes are not recorded as the perpetrator is not caught.</p>
+</div>
+<div class="section" id="discussion-and-conclusion">
+<h2>Discussion and Conclusion<a class="headerlink" href="#discussion-and-conclusion" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><p>Imagine all the people, sharing all the world</p>
+<p class="attribution">—John Lennon</p>
+</div></blockquote>
+<p>We have used generative modelling to ‘imagine’ likely counterfactual examples. Unlike previous work, we explicitly consider both the features and the class label to potentially be a source of bias. We make separate interventions on a protected characteristic in both of these spaces and observe the effect of the intervention on reconstruction. We then augment our training set for a downstream task with these imagined examples. In the case that the data is not particularly representative of individual groups sharing a protected characteristic, this can be attributed to <em>sampling bias</em>. We propose that by`imagining’ examples of the underrepresented group, we can improve the robustness of a classifier, giving fairer results in terms of group and individual fairness metrics for free despite not explicitly constraining a learning model for the downstream task.
+This is achieved by providing examples of inconsistent features within the data.</p>
+<p>In the case where the labels are a source of bias, we attribute this to an indirect <em>proxy label</em> which is correlated with a sensitive attribute.
+Intervening just on the class label and augmenting our training set with these labels tend to produce fair results by ignoring samples which are contradictory (inconsistent samples).</p>
+<p>We perform experiments on four commonly used datasets in the fairness literature: Adult Income, German Credit, Propublica COMPAS, and NYC SQF. Our results point to the conclusion that the two financial-related datasets (Adult Income and German Credit) suffer from sampling bias, while the crime-related datasets (Propublica COMPAS and NYC SQF) suffer from proxy label.</p>
+<p>As future work, we will study the interaction between sampling bias and proxy labels.
+The results imply that the relationship between them is more complex than can be resolved simply by intervening on both the features and the class label at the same time, or jointly but separately.
+We aim to characterise this relationship in greater detail, investigating if both inconsistent features and inconsistent samples can be handled together within our framework.</p>
+<p id="bibtex-bibliography-content/09_appendix/publications/imagined-0"></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/09_appendix/publications"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="dfritdd.html" title="previous page">Discovering Fair Representations in the Data Domain</a>
+    <a class='right-next' id="next-link" href="nosinn.html" title="next page">Null-Sampling for Invariant and Interpretable Representations</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Oliver Thomas<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-170288604-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
