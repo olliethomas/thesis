@@ -974,6 +974,6 @@ our field to subjective areas.
 [^8]: Given the arbitrariness of many 'fairness' rules in the U.S. that have led to claims of disparate treatment (i.e. Ricci vs DeStefano or Texas House Bill 588) this objective may have a large impact.
 [^9]: And consequently the expectation to be free of discrimination based on that religion.
 
-```{bibliography} ../../references.bib
+```{bibliography} ../../../references.bib
 
 ```

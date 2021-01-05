@@ -1,6 +1,28 @@
 - file: content/index
   numbered: False
 
+- part: Thesis
+  chapters:
+  - file: content/01_introduction/intro
+    sections:
+      - file: content/01_introduction/overview
+        sections:
+        - file: content/01_introduction/fair_ml
+          sections:
+            - file: content/01_introduction/definitions
+        - file: content/01_introduction/challenges
+      - file: content/01_introduction/background
+        sections:
+          - file: content/01_introduction/adversarial_methods
+          - file: content/01_introduction/dist_matching
+          - file: content/01_introduction/counterfactual_fairness
+  - file: content/02_fair_representations/intro
+  - file: content/03_data_domain_fairness/intro
+  - file: content/04_identifying/intro
+  - file: content/08_conclusion/conclusion
+
+
+
 - part: Annual Review 2020
   chapters:
   - file: content/00_annual_review/summary
@@ -9,24 +31,13 @@
   - file: content/00_annual_review/activities_to_date
   - file: content/00_annual_review/structure
 
-- part: Imagined Examples WIP
-  chapters:
-  - file: content/02_imagined/xbar_problems
-    sections:
-      - file: content/02_imagined/scenario_1
-      - file: content/02_imagined/scenario_2
-      - file: content/02_imagined/scenario_3
-      - file: content/02_imagined/scenario_4
-
-#- header: Thesis
-#- file: content/01_intro/intro
-#  sections:
-#    - file: content/01_intro/definitions
-
 - part: Appendix
   chapters:
-  - file: content/09_appendix/dfritdd
-  - file: content/09_appendix/imagined
-  - file: content/09_appendix/nosinn
-  - file: content/09_appendix/invisible
-  - file: content/09_appendix/lit_review
+  - file: content/09_appendix/published
+    sections:
+      - file: content/09_appendix/publications/dfritdd
+      - file: content/09_appendix/publications/imagined
+      - file: content/09_appendix/publications/nosinn
+      - file: content/09_appendix/publications/invisible
+      - file: content/09_appendix/publications/lit_review
+  - file: content/09_appendix/software

@@ -45,7 +45,7 @@ This review will focus more specifically on learned representations.
 The first chapter will be formed of 2 sections.
 
 ### Discovering Fair Representations in the Data Domain
-This section will be formed of a journal submission based on expanding the [CVPR '19 paper](../09_appendix/dfritdd.md).
+This section will be formed of a journal submission based on expanding the [CVPR '19 paper](../09_appendix/publications/dfritdd.md).
 In this paper we decompose an image into a fair component ($\hat{x}$) and an unfair component ($\tilde{x}$).
 We assume a decomposition of $\phi(x) = \phi(\hat{x}) + \phi(\tilde{x})$, where $\phi$ is a pre-trained feature map.
 The expansion will be based on comparing HSIC (the independence measure used in the paper) to enforce independence vs 
@@ -53,7 +53,7 @@ adversarial learning and distribution matching.
 In addition, results will be included experimenting with non-binary sensitive and class labels.
 
 ### Null-Sampling for Invariant and Interpretable Representations
-This section will be based on our [ECCV '20](../09_appendix/nosinn.md) paper.
+This section will be based on our [ECCV '20](../09_appendix/publications/nosinn.md) paper.
 A natural successor to the CVPR '19 paper, we build on the previous work, but instead of a decomposition assumed as 
 $\phi(x) = \phi(\hat{x}) + \phi(\tilde{x})$, we try to learn some decomposition function $d$, $x=d(\hat{x}, \tilde{x})$.
 This work will be expended to include analysis of the interpretability of the representation in the data domain.  
