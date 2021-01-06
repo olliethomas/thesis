@@ -1,1 +1,4 @@
 # Definitions
+
+## Competing Definitions
+
