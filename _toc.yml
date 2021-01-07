@@ -3,33 +3,33 @@
 
 - part: Thesis
   chapters:
-  - file: content/01_introduction/intro
+  - file: content/00_introduction/intro
     sections:
-      - file: content/01_introduction/overview
+      - file: content/00_introduction/00-1_overview/overview
         sections:
-        - file: content/01_introduction/fair_ml
+        - file: content/00_introduction/00-1_overview/fair_ml
           sections:
-            - file: content/01_introduction/definitions
-        - file: content/01_introduction/challenges
-      - file: content/01_introduction/background
+            - file: content/00_introduction/00-1_overview/definitions
+        - file: content/00_introduction/00-1_overview/challenges
+      - file: content/00_introduction/00-2_background/background
         sections:
-          - file: content/01_introduction/adversarial_methods
-          - file: content/01_introduction/dist_matching
-          - file: content/01_introduction/counterfactual_fairness
-  - file: content/02_fair_representations/intro
-  - file: content/03_data_domain_fairness/intro
-  - file: content/04_identifying/intro
+          - file: content/00_introduction/00-2_background/adversarial_methods
+          - file: content/00_introduction/00-2_background/dist_matching
+          - file: content/00_introduction/00-2_background/counterfactual_fairness
+  - file: content/01_fair_representations/intro
+  - file: content/02_data_domain_fairness/intro
+  - file: content/03_identifying/intro
   - file: content/08_conclusion/conclusion
 
 
 
 - part: Annual Review 2020
   chapters:
-  - file: content/00_annual_review/summary
+  - file: content/10_annual_review/summary
     sections:
-      - file: content/00_annual_review/area
-  - file: content/00_annual_review/activities_to_date
-  - file: content/00_annual_review/structure
+      - file: content/10_annual_review/area
+  - file: content/10_annual_review/activities_to_date
+  - file: content/10_annual_review/structure
 
 - part: Appendix
   chapters:
