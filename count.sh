@@ -8,6 +8,6 @@ for file in $(find $dir -name "*.$ext"); do
   totalNumberOfWords=$((totalNumberOfWords + wordCount))
 done  
 
-today=$(date +%Y-%m-%d-%H-%M)
+today=$(date +%Y-%m-%d)
 
 echo "${today}, ${totalNumberOfWords}" >> ~/Development/thesis/content/thesis_wc.csv
