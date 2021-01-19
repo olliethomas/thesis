@@ -380,13 +380,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#feedback-loops">
-     Feedback Loops
+    <a class="reference internal nav-link" href="#simpson-s-paradox">
+     Simpson’s Paradox
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simpson-s-paradox">
-     Simpson’s Paradox
+    <a class="reference internal nav-link" href="#feedback-loops">
+     Feedback Loops
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -422,17 +422,36 @@
 </div>
 <div class="section" id="human-biases">
 <h2>Human Biases<a class="headerlink" href="#human-biases" title="Permalink to this headline">¶</a></h2>
+<p>People can make inconsistent decisions.
+Sometimes these are not based on an objective measure.
+Large number of decision-makers, then of course you will have a greater number of inconsistent decisions.
+The promise of an automated decision-maker is that the decisions should be consistent.
+New instances of the decision-making system can be spun-up as required to handle large numbers of decisions.
+The system, once running, is cheaper than hiring many people.</p>
 </div>
 <div class="section" id="accuracy-as-an-objective">
 <h2>Accuracy as an objective<a class="headerlink" href="#accuracy-as-an-objective" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="feedback-loops">
-<h3>Feedback Loops<a class="headerlink" href="#feedback-loops" title="Permalink to this headline">¶</a></h3>
-</div>
+<p>Goodhart’s Law: When a measure becomes a target, it ceases to be a good measure.
+If we optimise just for accuracy, then we will get a model that is overly narrow.
+It is good at that specific-thing.
+It will not necessarily capture the values of our organisation during the decision-making process.</p>
 <div class="section" id="simpson-s-paradox">
 <h3>Simpson’s Paradox<a class="headerlink" href="#simpson-s-paradox" title="Permalink to this headline">¶</a></h3>
+<p>A trend can exist in subgroups of the data, but the trend can be reversed when these groups are combined.
+In relation to the previous section, when acuracy is improved overall, it can be that the accuracy for certain seubgroups is actually reduced.</p>
+</div>
+<div class="section" id="feedback-loops">
+<h3>Feedback Loops<a class="headerlink" href="#feedback-loops" title="Permalink to this headline">¶</a></h3>
+<p>We should consider systems over time.
+Humans aren’t static and the result of a decision system can have an effect on an individual.
+Consider a credit decision system.
+If an applicant is rejected for a loan, then this will affect their credit rating, making it harder in the future to pass a credit decision-making step.</p>
 </div>
 <div class="section" id="pareto-optimality">
 <h3>Pareto Optimality<a class="headerlink" href="#pareto-optimality" title="Permalink to this headline">¶</a></h3>
+<p>When there are competing objectives, it’s often that the “correct” answer is not obvious.
+In fact, there can be multiple “correct” answers.
+The Pareto Frontier is collection of outputs, where each is the optimal output for that speicific balance between $<span class="math notranslate nohighlight">\(n\)</span>$ outcomes.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
