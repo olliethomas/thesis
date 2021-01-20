@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invisible Demographics &#8212; Fair Representations of Biased Data</title>
+    <title>EthicML &#8212; Fair Representations of Biased Data</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -59,21 +59,21 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="oliverthomas.ml/content/09_appendix/publications/invisible.html" />
+    <link rel="canonical" href="oliverthomas.ml/content/09_appendix/software/ethicml.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Literature Review (Year 1 Annual Review)" href="lit_review.html" />
-    <link rel="prev" title="Null-Sampling for Invariant and Interpretable Representations" href="nosinn.html" />
+    <link rel="next" title="Casual Discovery Tool" href="intervene.html" />
+    <link rel="prev" title="Software" href="../software.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="oliverthomas.ml/content/09_appendix/publications/invisible.html" />
+<meta property="og:url"         content="oliverthomas.ml/content/09_appendix/software/ethicml.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Invisible Demographics" />
-<meta property="og:description" content="Invisible Demographics  Authors: T. Kehrenberg, V. Sharmanska, M.Bartlett, O. Thomas, N.Quadrianto    Manuscript available on request." />
+<meta property="og:title"       content="EthicML" />
+<meta property="og:description" content="EthicML  Created a researcher’s toolkit for investigating fairness interventions.  Documentation" />
 <meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.svg" />
 
 <meta name="twitter:card" content="summary" />
@@ -234,33 +234,28 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../published.html">
    Publications
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="dfritdd.html">
+    <a class="reference internal" href="../publications/dfritdd.html">
      Discovering Fair Representations in the Data Domain
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="imagined.html">
+    <a class="reference internal" href="../publications/imagined.html">
      Imagined Examples for Fairness: Sampling Bias and Proxy Labels
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="nosinn.html">
+    <a class="reference internal" href="../publications/nosinn.html">
      Null-Sampling for Invariant and Interpretable Representations
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Invisible Demographics
-    </a>
-   </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lit_review.html">
+    <a class="reference internal" href="../publications/lit_review.html">
      Literature Review (Year 1 Annual Review)
     </a>
    </li>
@@ -268,10 +263,24 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../software.html">
    Software
   </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     EthicML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intervene.html">
+     Casual Discovery Tool
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 
@@ -309,7 +318,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/09_appendix/publications/invisible.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/content/09_appendix/software/ethicml.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -326,10 +335,10 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/olliethomas/thesis/issues/new?title=Issue%20on%20page%20%2Fcontent/09_appendix/publications/invisible.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/olliethomas/thesis/issues/new?title=Issue%20on%20page%20%2Fcontent/09_appendix/software/ethicml.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/olliethomas/thesis/edit/master/content/09_appendix/publications/invisible.md"><button
+        <a class="edit-button" href="https://github.com/olliethomas/thesis/edit/master/content/09_appendix/software/ethicml.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -356,11 +365,10 @@
         
               <div>
                 
-  <div class="section" id="invisible-demographics">
-<h1>Invisible Demographics<a class="headerlink" href="#invisible-demographics" title="Permalink to this headline">¶</a></h1>
-<p>Authors: T. Kehrenberg, V. Sharmanska, M.Bartlett, O. Thomas, N.Quadrianto</p>
-<hr class="docutils" />
-<p>Manuscript available on request.</p>
+  <div class="section" id="ethicml">
+<h1>EthicML<a class="headerlink" href="#ethicml" title="Permalink to this headline">¶</a></h1>
+<p>Created a researcher’s toolkit for investigating fairness interventions.</p>
+<p><a class="reference external" href="https://wearepal.ai/EthicML/">Documentation</a></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -376,7 +384,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/09_appendix/publications"
+            path: "./content/09_appendix/software"
         },
         predefinedOutput: true
     }
@@ -391,8 +399,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="nosinn.html" title="previous page">Null-Sampling for Invariant and Interpretable Representations</a>
-    <a class='right-next' id="next-link" href="lit_review.html" title="next page">Literature Review (Year 1 Annual Review)</a>
+    <a class='left-prev' id="prev-link" href="../software.html" title="previous page">Software</a>
+    <a class='right-next' id="next-link" href="intervene.html" title="next page">Casual Discovery Tool</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

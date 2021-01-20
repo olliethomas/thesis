@@ -1,4 +1,6 @@
 # Definitions
+Broadly, definitions of fairness can bve split into two sections: Group and Individual notions of fairness.
+
 
 ## Group Notions of Fairness
 
