@@ -38,6 +38,8 @@
       - file: content/09_appendix/publications/dfritdd
       - file: content/09_appendix/publications/imagined
       - file: content/09_appendix/publications/nosinn
-      - file: content/09_appendix/publications/invisible
       - file: content/09_appendix/publications/lit_review
   - file: content/09_appendix/software
+    sections:
+      - file: content/09_appendix/software/ethicml
+      - file: content/09_appendix/software/intervene
