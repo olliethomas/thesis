@@ -31,10 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -47,8 +44,7 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
-    <script src="../../../_static/sphinx_tabs/tabs.js"></script>
+    <script src="../../../_static/tabs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -595,30 +591,7 @@ This allows the decoder to be as accurate as possible and allows the encoder to 
 When reconstructing our data, we can then “test” how sensitive our reconstructions are to the protected characteristic.
 Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dataset that has little correlation between the features and the protected characteristic will not result in the loss of much information information in the transformation to <span class="math notranslate nohighlight">\(\zx\)</span>, while decoding will also not be reliant on conditioning the decoder on <span class="math notranslate nohighlight">\(\s\)</span>.</p>
 <div class="sphinx-tabs docutils container" id="table">
-<div class="ui top attached tabular menu sphinx-menu docutils container">
-<div class="active item sphinx-data-tab-0-0 docutils container">
-<div class="docutils container">
-<p>UCI Adult Dataset</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-0-1 docutils container">
-<div class="docutils container">
-<p>German Credit</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-0-2 docutils container">
-<div class="docutils container">
-<p>ProPublica COMPAS</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-0-3 docutils container">
-<div class="docutils container">
-<p>NYC SQF</p>
-</div>
-</div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
-<table class="colwidths-auto table">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">UCI Adult Dataset</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">German Credit</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">ProPublica COMPAS</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">NYC SQF</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -666,9 +639,7 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
-<table class="colwidths-auto table">
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -716,9 +687,7 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-2 docutils container">
-<table class="colwidths-auto table">
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -766,9 +735,7 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-3 docutils container">
-<table class="colwidths-auto table">
+</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -816,8 +783,7 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 <div class="figure align-default" id="id31">
 <a class="reference internal image-reference" href="../../../_images/diff_all.png"><img alt="../../../_images/diff_all.png" src="../../../_images/diff_all.png" style="height: 250px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
