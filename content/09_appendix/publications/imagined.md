@@ -40,14 +40,14 @@ Experiments on four common fairness datasets show that by augmenting the entire 
 
 We address the problem of _unfair_ behaviour in machine learning decision systems.
 Such decision system tasks include determining whether an applicant is likely to commit a crime while on bail, or whether a loan will be likely be repaid, amongst others.
-The research community has responded to concerns that otherwise similar people, different only in a protected characteristic, are not treated similarly {cite}`Bolukbasi2016nlpbias,angwin2016machinebias`.
+The research community has responded to concerns that otherwise similar people, different only in a protected characteristic, are not treated similarly {cite}`BolChaZouSalKal16,AngLarMatKir16`.
 This has led to a growing body of work influenced by inter-disciplinary scholars to understand what is required to satisfy legal and ethical concerns about the deployment of machine learning models that reason about human behaviour.
 
 It is generally understood that bias in machine learning systems arise as a reflection of the underlying biases in the training data.
 This occurs when the training data implies a relationship between a protected characteristic, which we denote as $S$ and the observed outcome, $Y$.
 That is, within the training dataset, the class label is not independent of a protected characteristic, $P(Y,S) \neq P(Y)P(S)$.
 
-A simple and successful approach to redressing this problem is to re-weigh our training dataset so that this is no longer the case {cite}`kamiran2012data`.
+A simple and successful approach to redressing this problem is to re-weigh our training dataset so that this is no longer the case {cite}`KamCal12`.
 This technique has, as a by-product, a useful property being that, in creating independence between $Y$ and $S$, two at-odds notions of group fairness, Demographic Parity (DP) and Equality of Opportunity (EqOp) can both hold.
 Demographic Parity requires that the probability of a positive prediction be equal across all groups that share a protected characteristic.
 In the case that both class label and protected characteristic are binary attributes, for example a loan approval system with a binarised gender value as the protected characteristic, so $Y=\mathrm{Approved}(1)$ or $Y=\lnot\mathrm{Approved}(0)$ and $S=\mathrm{Female}(1)$ or $S=\lnot\mathrm{Female}(0)$, DP would require that the prediction of the class label $\hat{Y}$ satisfy the following
@@ -61,11 +61,11 @@ This is equivalent to balancing the True Positive Rate across protected characte
 P(\hat{Y}=1 | S=1, Y=1) = P(\hat{Y}=1 | S=0, Y=1)
 \end{equation*}
 
-It has recently been shown by Kleinberg et al. {cite}`Kleinberg2017tradeoff` and Chouldechova et al. {cite}`Chouldechova2017tradeoff` that unless certain conditions hold (we have a perfect dataset, the base acceptance rate is the same for both groups, i.e. class label is independent of the protected characteristic), demographic parity and equal opportunity cannot both hold.
+It has recently been shown by Kleinberg et al. {cite}`KleMulRag17` and Chouldechova et al. {cite}`Cho17` that unless certain conditions hold (we have a perfect dataset, the base acceptance rate is the same for both groups, i.e. class label is independent of the protected characteristic), demographic parity and equal opportunity cannot both hold.
 Fortunately, by enforcing that the dataset has independence between the class label and the protected characteristic, both notions of fairness can be achieved.
 
 While this is a welcome improvement, it has been proposed that this does not go far enough.
-Recent works in Counterfactual Fairness {cite}`kusner2017counterfactual,Russell2017collide` propose that notions of fairness that seek to balance outcomes across sub-groups are not strict enough and that we should instead view fairness at an individual level.
+Recent works in Counterfactual Fairness {cite}`KusLofRusSil17,RusKusLofSil17` propose that notions of fairness that seek to balance outcomes across sub-groups are not strict enough and that we should instead view fairness at an individual level.
 Counterfactual fairness is a form of individual fairness based on causal inference.
 Individual fairness requires that similar individuals be treated similarly.
 This is difficult to quantify as the notion of 'similar' is not a rigid definition. Counterfactual fairness assumes we have a causal model that can generate our data samples. We can then generate a counterfactual example of a data sample obtained by amending a protected characteristic to another (valid) value. This is akin to asking the question, "What if I had been born another race?", or in the context of the loan decision example, "Would the same decision have been made if I had been born of a different gender?"
@@ -79,8 +79,8 @@ where $C$ is a function that generates the counterfactual example of an individu
 
 Obtaining causal models however, is difficult and expensive.
 Furthermore, as we rarely have access to the ground truth causal model, there is often uncertainty among domain experts as to which causal model best characterises the data.
-Recent work advocates taking samples from multiple causal models to obtain the most likely effect {cite}`Russell2017collide`.
-Concurrently, works in Neural Processes have successfully emulated the behaviour of stochastic processes {cite}`garnelo2018neural,louizos2019functional`.
+Recent work advocates taking samples from multiple causal models to obtain the most likely effect {cite}`RusKusLofSil17`.
+Concurrently, works in Neural Processes have successfully emulated the behaviour of stochastic processes {cite}`GarSchRosVioRezEslTeh18,LouShiSchWel19`.
 We draw on this and propose a stochastic process that emulates the behaviour of the counterfactual intervention function $C(\cdot)$.
 That is, we propose a function that emulates a causal model that can only be intervened on with regard to a specific, pre-determined variable.
 We set the variable which we will condition on to be the protected characteristic and observe the affect on the reconstructed counterfactual.\footnote{Code to reproduce results will be available}
@@ -96,8 +96,8 @@ The example of this is in predictive policing, where the data on which individua
 Instead, the closest we have is the details of those who have charged on suspicion of committing a crime.
 If this proxy class label leads to a higher share of one protected group over another being targeted for arrest then we say the proxy label is biased.
 
-This idea that bias may exist in the class label is corroborated by recent work by {cite}`kehrenberg2018interpretable,yeom` identifying that class labels themselves can be a source of bias.
-This is in addition to work which seeks to remedy fairness by intervening on the features to create fair representations {cite}`edwards2015censoring,adel2019one,vfae,zemel2013learning`.
+This idea that bias may exist in the class label is corroborated by recent work by {cite}`KehCheQua18,YeoTsc21` identifying that class labels themselves can be a source of bias.
+This is in addition to work which seeks to remedy fairness by intervening on the features to create fair representations {cite}`EdwSto16,AdeValGhaWel29,LouSweLiWelZem15,ZemWuSwePitDwo13`.
 Our approach is to acknowledge that both the class labels and the features are a potential source of bias and intervene to identify and combat this bias.
 
 In terms of a counterfactual model, if we had a sufficiently representative causal model, sampling bias can be identified by intervening on the causal model that recreates the features.
@@ -107,17 +107,17 @@ If the intervention on the class label causes little to no change, then we note 
 
 ## Related Work
 
-Most related to our work is the reweighing approach of Kamiran and Calders {cite}`kamiran2012data` which applies an instance weight for every group (Y,S) $\forall y \in Y$ and $s \in S$ so that the group is scaled to match the expected proportion of the groups in the data.
+Most related to our work is the reweighing approach of Kamiran and Calders {cite}`KamCal12` which applies an instance weight for every group (Y,S) $\forall y \in Y$ and $s \in S$ so that the group is scaled to match the expected proportion of the groups in the data.
 Doing so downweights members of the over-represented group while simultaneously upweighting those of under-represented groups.
 Consequently, fairness criteria are improved without explicitly optimising for fairness.
 This is similar to our approach in that we are not explicitly optimising to improve the fairness of our model.
 Instead, we are trying to characterise and account for different types of bias within our data.
 In doing so we aim to address the underlying cause of bias manifesting in the data as opposed to enforcing fairness on a biased dataset.
 
-Our approach to _"imagining"_ is similar to that of Generative Adversarial Networks (GANs), which have achieved successes in a number of applications. Given their success there have been a number of variations of the framework. One popular approach {cite}`edwards2015censoring`is to make a latent embedding invarient to a protected characteristic and use this as the model input for a downstream task. Whilst this approach is successful in removing bias on the input features, bias in the class labels is not accounted for. In addition, recent works by {cite}`quadrianto2019discovering` demonstrate the inherent _uninterpretability_ of latent embeddings.
+Our approach to _"imagining"_ is similar to that of Generative Adversarial Networks (GANs), which have achieved successes in a number of applications. Given their success there have been a number of variations of the framework. One popular approach {cite}`EdwSto16`is to make a latent embedding invarient to a protected characteristic and use this as the model input for a downstream task. Whilst this approach is successful in removing bias on the input features, bias in the class labels is not accounted for. In addition, recent works by {cite}`QuaShaTho19` demonstrate the inherent _uninterpretability_ of latent embeddings.
 By reconstructing our imagined examples in the original input space we are able to determine which features are most connected to the protected charcteristic.
 
-Counterfactual models have been the basis of a number of investigations into fairness {cite}`kusner2017counterfactual,nabi2018fair,chiappa2019path,KilBalKusWeletal19`.
+Counterfactual models have been the basis of a number of investigations into fairness {cite}`KusLofRusSil17,NabShp18,Chi19,KilBalKusWeletal19`.
 This work is extremely encouraging, however requires specific application domain expertise in creating a causal model in which to intervene.
 We take inspiration from this research area and try to emulate a subset of the behaviour of these counterfactual models.
 
@@ -167,14 +167,14 @@ Since the imagined examples copy the exact features of the original examples, th
 training examples_ in the dataset, which will be ignored by the classifier.
 ```
 
-While prior works have focused on recreating the protected characteristic solely from the input features, recent work has also shown that the class labels themselves can be a source of bias {cite}`yeom,Tol19`.
+While prior works have focused on recreating the protected characteristic solely from the input features, recent work has also shown that the class labels themselves can be a source of bias {cite}`YeoTsc21,Tol19`.
 In this context, if we had a set of features that were completely invariant to the protected characteristic, the model would either perform poorly, or have to learn to be biased to accommodate the biased labels.
-To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder {cite}`vfae` to acknowledge that bias can also exist within the class labels (see figure {numref}`gcm` --- left).
+To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder {cite}`LouSweLiWelZem15` to acknowledge that bias can also exist within the class labels (see figure {numref}`gcm` --- left).
 In doing this, we explicitly model two latent embeddings that are disentangled from the protected characteristic for both the features and the decision outcome.
 We refer to these latent representations as $\zx$ and $\zy$; while they could be modelled in the same space as the respective observed data, that need not be the case.
 
 In practice however if we generate samples of $\x$ and $\y$, where both have been intervened on by the same variable, this is akin to na\"ively upsampling the underrepresented groups.
-This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases {cite}`kamiran2012data`. Instead, we 'split' the protected characteristic into two independent variables during decoding (Fig. {numref}`gcm` --- right).
+This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases {cite}`KamCal12`. Instead, we 'split' the protected characteristic into two independent variables during decoding (Fig. {numref}`gcm` --- right).
 One variable ($\s_1$) affects the reconstruction of the features and another ($\s_2$) that affects the reconstruction of the class labels.
 However, during encoding we only consider the observed protected characteristic.
 
@@ -190,7 +190,7 @@ This generative process can be formally defined as
 ```
 
 where $p_{\theta x}(\mathbf{x} | \mathbf{z_x}, \mathbf{s})$ and $p_{\theta y}(\mathbf{y} | \mathbf{z_y}, \mathbf{s})$ are distributions that reflect the data modelled.
-As $\s_1$ and $\s_2$ are marginally independent of $\mathbf{z_x}$ and $\mathbf{z_y}$ respectively we follow {cite}`vfae` and cast the problem of finding an invariant representation as performing inference on the graphical model and obtaining the posterior distributions of $\zx$ and $\zy$ by $p(\zx|\x,\s)$ and $p(\zy|\x,\s)$.
+As $\s_1$ and $\s_2$ are marginally independent of $\mathbf{z_x}$ and $\mathbf{z_y}$ respectively we follow {cite}`LouSweLiWelZem15` and cast the problem of finding an invariant representation as performing inference on the graphical model and obtaining the posterior distributions of $\zx$ and $\zy$ by $p(\zx|\x,\s)$ and $p(\zy|\x,\s)$.
 
 We parameterize the generative models (decoders) $p_{\theta_x} (\x|\zx, \s_1)$ and $p_{\theta_y} (\y|\zy, \s_2)$ and the variational posteriors (encoders) $q_{\phi_x} (\zx|\x, \s)$ and $q_{\phi_y} (\zy|\x)$ with neural networks, giving the following lower bound
 
@@ -226,7 +226,7 @@ p*\theta(\y|\x) \triangleq &\: \mathrm{Cat}(\y|\pi\_\phi(\x))
 where $f_\theta(\zx, \s)$ is a distribution suited to the data.
 % Practically, $\mathrm{Cat}(\ybb| \y, \s)$ can be modelled with a Categorical distribution that is uniformly certain about all possible values.
 To encourage $\zx$ and $\zy$ to be invariant to $\s$, we use adversarial network heads to predict the sensitive attribute from the latent distributions.
-These are trained using the gradient reversal layer (GRL) of Domain Adversarial Neural Networks {cite}`ganin2016domain`, such that a min-max game is played out between the adversarial heads and the encoders.
+These are trained using the gradient reversal layer (GRL) of Domain Adversarial Neural Networks {cite}`GanUstAjaGerLarLavMarLem16`, such that a min-max game is played out between the adversarial heads and the encoders.
 
 This produces a $\zx$ and $\zy$ that are invariant to $\s$, yet retain as much information as possible in order to be useful in reconstructing $\x$ and $\y$, respectively.
 To accommodate the representation being invariant to the protected characteristic, during reconstruction we additionally supply the protected characteristic label to the decoder.
@@ -234,11 +234,8 @@ This allows the decoder to be as accurate as possible and allows the encoder to 
 When reconstructing our data, we can then "test" how sensitive our reconstructions are to the protected characteristic.
 Reconstructing $\x$ on a dataset that has little correlation between the features and the protected characteristic will not result in the loss of much information information in the transformation to $\zx$, while decoding will also not be reliant on conditioning the decoder on $\s$.
 
-(table)=
-
-````{tabs}
-
-```{tab} UCI Adult Dataset
+````{tabbed} UCI Adult Dataset
+:name: table-ref
 
 | Strategy          | Accuracy $\uparrow$ | DP $\downarrow$    | EqOp $\downarrow$  | Ind.DP $\downarrow$ | Ind.EqOp $\downarrow$ |
 | :---------------: | :-----------------: | :----------------: | :----------------: | :-----------------: | :-------------------: |
@@ -247,8 +244,9 @@ Reconstructing $\x$ on a dataset that has little correlation between the feature
 | Intervene on $X$  | $83.318 \pm 0.253$  | $12.498 \pm 0.258$ | $5.312 \pm 2.603$  | $11.446 \pm 0.294$  | $23.530 \pm 0.271$    |
 | Intervene on $Y$  | $82.351 \pm 0.384$  | $2.771 \pm 0.856$  | $22.276 \pm 1.996$ | \-\-\-              | \-\-\-                |
 | Augment with both | $82.131 \pm 0.512$  | $4.120 \pm 1.027$  | $17.294 \pm 2.689$ | $14.159 \pm 0.246$  | $28.336 \pm 0.633$    |
-```
-```{tab} German Credit
+````
+
+```{tabbed} German Credit
 
 | Strategy          | Accuracy $\uparrow$ | DP $\downarrow$    | EqOp $\downarrow$  | Ind.DP $\downarrow$ | Ind.EqOp $\downarrow$ |
 | :---------------: | :-----------------: | :----------------: | :----------------: | :-----------------: | :-------------------: |
@@ -258,7 +256,8 @@ Reconstructing $\x$ on a dataset that has little correlation between the feature
 | Intervene on $Y$  | $73.293 \pm 1.764$  | $4.758 \pm 5.459$  | $7.445 \pm 7.204$  | \-\-\-              | \-\-\-                |
 | Augment with both | $73.892 \pm 2.046$  | $5.060 \pm 3.413$  | $5.350 \pm 3.880$  | $26.707 \pm 4.145$  | $44.561 \pm 4.300$    |
 ```
-```{tab} ProPublica COMPAS
+
+```{tabbed} ProPublica COMPAS
 
 | Strategy          | Accuracy $\uparrow$ | DP $\downarrow$    | EqOp $\downarrow$  | Ind.DP $\downarrow$ | Ind.EqOp $\downarrow$ |
 | :---------------: | :-----------------: | :----------------: | :----------------: | :-----------------: | :-------------------: |
@@ -268,7 +267,8 @@ Reconstructing $\x$ on a dataset that has little correlation between the feature
 | Intervene on $Y$  | $65.817 \pm 0.655$  | $11.321 \pm 3.365$ | $12.305 \pm 5.262$ | \-\-\-              | \-\-\-                |
 | Augment with both | $66.313 \pm 0.921$  | $13.036 \pm 2.224$ | $14.624 \pm 3.590$ | $25.671 \pm 0.964$  | $32.044 \pm 2.229$    |
 ```
-```{tab} NYC SQF
+
+```{tabbed} NYC SQF
 
 | Strategy          | Accuracy $\uparrow$ | DP $\downarrow$    | EqOp $\downarrow$  | Ind.DP $\downarrow$ | Ind.EqOp $\downarrow$ |
 | :---------------: | :-----------------: | :----------------: | :----------------: | :-----------------: | :-------------------: |
@@ -278,12 +278,11 @@ Reconstructing $\x$ on a dataset that has little correlation between the feature
 | Intervene on $Y$  | $92.065 \pm 0.458$  | $0.810 \pm 0.280$  | $3.912 \pm 1.931$  | \-\-\-              | \-\-\-                |
 | Augment with both | $91.973 \pm 0.492$  | $0.729 \pm 0.334$  | $4.602 \pm 2.735$  | $5.952 \pm 0.327$   | $28.017 \pm 1.508$    |
 ```
-````
 
 ```{figure} assets/imagined/diff_all.png
 ---
 height: 250px
-name: resampling_b
+name: recons
 ---
 The first $100$ reconstructed samples of one random repeat from the UCI Adult Income dataset drawn $3$ times. Each image corresponds to the difference in reconstructions given a sample from $\zx$ and $S=s, \forall s\in \{0,1 \}$. Features that we do not believe to be related to the sensitive attribute _sex_, such as _race_ remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the _relationship_ status attribute value _husband_, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained _education_ level and _hours per week_ worked are more inconsistent in their behaviour.
 ```
@@ -299,10 +298,10 @@ We also perform these interventions on the reconstruction of the class label, wh
 
 We evaluate the performance of $3$ augmentation strategies on $4$ commonly used fairness datasets.
 
-**UCI Adult Income**{cite}`Asuncion+Newman:2007`. A dataset of 45,222 samples, from the 1994 U.S. census.
+**UCI Adult Income**{cite}`DuaGra17`. A dataset of 45,222 samples, from the 1994 U.S. census.
 The binary classification task is predicting whether an individual's salary is greater than \$$50,000$ USD; the binary sensitive attribute is whether an individual's sex is Male or not.
 
-**UCI German Credit**{cite}`Asuncion+Newman:2007`. A dataset of 1000 samples from the UCI Repository of Machine Learning Databases of data used to evaluate credit applications in Germany.
+**UCI German Credit**{cite}`DuaGra17`. A dataset of 1000 samples from the UCI Repository of Machine Learning Databases of data used to evaluate credit applications in Germany.
 The binary classification task is predicting if an individual's credit label is positive or not; the binary sensitive attribute the individual's sex.
 
 **COMPAS**. A dataset of 6,167 samples, released by ProPublica following their investigation into recidivism prediction.
@@ -311,7 +310,7 @@ The binary classification task is predicting if an individual is charged with an
 **NYC SQF**. A dataset of 12,347 samples, from 2016 of data on individuals stopped as part of New York City's Stop, Question, Frisk initiative.
 The binary classification task is predicting if a stopped individual is found to be carrying a weapon or not, and the binary sensitive attribute is whether an individual's race is White or not.
 
-The augmentation strategies are **Intervene on $X$** The original data is augmented with examples that are produced by intervening on $\s_1$ during decoding. To emulate the behaviour of uncertainty over causal models {cite}`Russell2017collide` we draw $3$ samples from $\zx$ with which to condition our decoder. The dataset then contains the original data tuple $(\x, \s, \y)$ three times and three `imagined' examples $(\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)$.
+The augmentation strategies are **Intervene on $X$** The original data is augmented with examples that are produced by intervening on $\s_1$ during decoding. To emulate the behaviour of uncertainty over causal models {cite}`RusKusLofSil17` we draw $3$ samples from $\zx$ with which to condition our decoder. The dataset then contains the original data tuple $(\x, \s, \y)$ three times and three `imagined' examples $(\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)$.
 **Intervene on $Y$** We make a similar intervention, but on the class label reconstruction, augmenting the original dataset $(\x, \s, \y)$ with $(\x, \s_\mathrm{flip}, \y_\mathrm{imagined})$
 **Augment with both** We make both of the previous interventions and augment the dataset with both so that the new dataset comprises of examples from $(\x, \s, \y)$, $(\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)$ and $(\x, \s_\mathrm{flip}, \y_\mathrm{imagined})$.
 
@@ -337,14 +336,14 @@ Ind. EqOp. is Ind. DP., but also conditioned on the observed class label being p
 \lvert P(\hat{Y}=1 | f(Z_x, S_0), Y\myeq{}1) - P(\hat{Y}=1 | f(Z_x, S_1), Y\myeq{}1) \rvert
 \end{equation*}
 
-We compare our model against an unconstrained Logistic Regression model, and one to which the instance weighting scheme of {cite}`kamiran2012data` is applied.
+We compare our model against an unconstrained Logistic Regression model, and one to which the instance weighting scheme of {cite}`KamCal12` is applied.
 In addition we train a Logistic Regression model on our augmented samples.
 
 In all experiments, to account for uncertainty in the reconstruction we draw three samples from the feature embedding space with which to condition our decoder.
 An example of this is given is fig. {numref}`recons`.
 For the prediction encoder we model the latent space as the `true' label prior to conditioning on the sensitive attribute, as such we only draw one sample as we use the probability directly.
 
-The results of all experiments are shown in table {numref}`table`.
+The results of all experiments are shown in the [results table](table-ref).
 Across $4$ datasets we observe that the effect of intervening on either the reconstruction of the feature, or the class label has differing results.
 We attribute this to two phenomenon, sampling bias and proxy labels.
 In the case of the UCI Adult dataset and the German Credit dataset, the performance across (almost) all metrics is increased by intervening on the reconstruction of the _features_, including individual measures of fairness.
@@ -377,6 +376,6 @@ As future work, we will study the interaction between sampling bias and proxy la
 The results imply that the relationship between them is more complex than can be resolved simply by intervening on both the features and the class label at the same time, or jointly but separately.
 We aim to characterise this relationship in greater detail, investigating if both inconsistent features and inconsistent samples can be handled together within our framework.
 
-```{bibliography} ../../references.bib
-
+```{bibliography}
+:filter: docname in docnames
 ```

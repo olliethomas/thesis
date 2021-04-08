@@ -5,6 +5,7 @@ Given inputs $x \in \mathcal{X}$ and a target $y \in \mathcal{Y}$, the goal is t
 
 ## Attributes and Features
 
+Stratified sampling?
 
 ## Sensitive Attributes
 Not all attributes are equally valid.

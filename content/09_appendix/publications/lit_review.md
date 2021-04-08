@@ -9,22 +9,22 @@ This is a broad topic which includes fairness, interpretability and ultimately, 
 Whilst this is a relatively new area of research, there is a growing body of work, which is highlighted at conferences such as
 FAT/ML (Fairness, Accountability and Transparency in Machine Learning)
 as well as dedicated tracks at prestigious conferences such as NIPS
-{cite}`barocas_hardt` and ICML {cite}`corbett-davies_goel`.
+{cite}`BarHar17` and ICML {cite}`CorGoe18`.
 
 The reason for this increase in activity is simple.
 Machine Learning models reflect underlying data.
 This has enabled them to be incredibly successful, performing to a superhuman standard for many tasks
-{cite}`vincent_2017,brown-sandholm2018,cite-key`.
+{cite}`Vin17,BroSan18,SilSchSim17`.
 Typically these tend to be objective problems such as predicting the weather
-{cite}`holmstrom2016machine`, playing Atari games {cite}`adamski2018distributed` or distinguishing between plant phenotypes
-{cite}`SINGH2016110`.
+{cite}`HolLiuVo16`, playing Atari games {cite}`AdaAdaGreJedKacMic18` or distinguishing between plant phenotypes
+{cite}`SinGanSinSar16`.
 In fact, the success and high performance of machine
 learning techniques in these areas has led to the desire to apply these
 same techniques to more subjective areas, such as advertising
-{cite}`Sweeney2013DiscriminationDelivery`, parole hearings
-{cite}`Angwin2016MachineBlacks` or CV screening {cite}`ideal`.
+{cite}`Swe13`, parole hearings
+{cite}`AngLarMatKir16` or CV screening {cite}`Ideal`.
 However, this presents a problem, described in the paper "Residual Unfairness in Fair
-Machine Learning from Prejudiced Data" {cite}`kallus2018residual` as
+Machine Learning from Prejudiced Data" {cite}`KalZho18` as
 "Bias In, Bias Out".
 This refers to training a model on biased data and (unwittingly) approximating a biased function.
 It is analogous to the database mantra "Garbage In, Garbage Out".
@@ -56,11 +56,11 @@ not just complicated, they are complex. There's a major challenge that a
 lot of biases are ingrained into our culture. An example of this is the
 everyday words that we use as highlighted by the paper "Man is to
 Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings"
-{cite}`bolukbasi2016man`. The exercise of debiasing word embeddings
+{cite}`BolChaZouSalKal16`. The exercise of debiasing word embeddings
 is appealing, and has sparked debate, with recent papers "Mitigating
 Unwanted Biases with Adversarial Learning"
-{cite}`zhang2018mitigating` and "Adversarial Removal of Demographic
-Attributes from Text Data" {cite}`elazar2018adversarial` proposing techniques
+{cite}`ZhaLemMit18` and "Adversarial Removal of Demographic
+Attributes from Text Data" {cite}`ElaGol18` proposing techniques
 based on adversarial learning and a warning against this approach
 respectively. The adversarial approach to combating this problem is
 discussed in {ref}`impl_adv`.
@@ -95,9 +95,9 @@ Act 2010, let alone other protections within specific domains. As such,
 the problem about automated bias has been highlighted by researchers for
 a number of years and institutions are starting to pay attention.
 Governments around the world are saying that this is an issue. Both the
-House of Lords {cite}`house2018select` and the Whitehouse
-{cite}`Munoz2016BigRights` say that this issue should be addressed.
-Propublica's 'Machine Bias' {cite}`angwin_larson_kirchner_mattu` article
+House of Lords {cite}`HOL18` and the Whitehouse
+{cite}`MunSmiPat16` say that this issue should be addressed.
+Propublica's 'Machine Bias' {cite}`AngLarMatKir16` article
 sparked debate and raised concerns that needed to be addressed by the
 community after demonstrating that (at least on the surface) recidivism
 prediction software produced by Northpointe advised that black people in
@@ -124,7 +124,7 @@ to reduce discrimination referring to unfair treatment of a person, or a
 group of people based on membership of a category, with no regard to
 individual merit. This is an important distinction and was first raised
 in the now seminal 2008 paper "Discrimination Aware Data Mining"
-{cite}`Pedreshi2008Discrimination-awareMining`. The membership of the
+{cite}`PedRugTur08`. The membership of the
 category that we are conscious of not discriminating against is referred
 to as a _potentially discriminatory_ attribute. This paper argues that
 this is different to being a _sensitive attribute_ giving the example
@@ -133,7 +133,7 @@ discriminatory. In general, later work has adopted that both sensitive
 attributes and potentially discriminatory attributes are both referred
 to as sensitive attributes, though more recent works, such as
 "Path-Specific Counterfactual
-Fairness"{cite}`chiappa2019path`[^3] go back to this
+Fairness"{cite}`Chi19`[^3] go back to this
 original view that they are different. The predominant take-away from
 this paper is that it is simply not enough to not directly capture a
 sensitive attribute. The reason for this is that a sensitive attribute
@@ -146,7 +146,7 @@ from NYC". This may seem harmless, but if you asked a subject matter
 expert who advised that the vast majority of people in NYC area 10451
 were black, then the learned rule is equivalent to "rarely give credit
 to black-race applicants in neighbourhood 10451 in NYC", which is
-evidently discriminatory {cite}`Pedreshi2008Discrimination-awareMining`. The
+evidently discriminatory {cite}`PedRugTur08`. The
 paper is set in the field of data-mining and the aim is to find rules
 that discriminate in some way. The authors distinguish between direct
 discrimination, which uses a sensitive attribute directly, and indirect
@@ -154,7 +154,7 @@ discrimination which uses a non-sensitive feature (or combination of
 features) as a proxy for the sensitive feature and then use this proxy
 in the rule.
 
-Independently, Kamiran and Calders {cite}`Kamiran2009` started investigating
+Independently, Kamiran and Calders {cite}`KamCal09` started investigating
 fairness with regards to classification. Their approach hinges around
 the notion that the bias isn't captured in the features of an
 individual, but within the label $y$. Their approach involves measuring
@@ -181,14 +181,14 @@ brief overview.
 ### Accountability
 
 - Transparent, Explainable, and Accountable AI for Robotics
-  {cite}`wachter2017transparent`: Leaves open questions; Can
+  {cite}`WacMitFlo17`: Leaves open questions; Can
   human-interpretable systems be designed without sacrificing
   performance? How can transparency and accountability be achieved in
   inscrutable systems? and How can parallels between emerging systems
   be identified to set accountability requirements?
 
 - The Scored Society : Due Process for Automated Predictions
-  {cite}`citron2014scored`: The concern in this paper is "arbitrariness
+  {cite}`CitPas14`: The concern in this paper is "arbitrariness
   by algorithm" and the effect that this may have on society. They
   suggest that individuals assessed by predictive models should be
   notified that they have been assessed, along with the opportunity to
@@ -197,7 +197,7 @@ brief overview.
 
 - Seeing without knowing : Limitations of the transparency ideal and
   its application to algorithmic accountability
-  {cite}`ananny2018seeing`: Transparency alone cannot create
+  {cite}`AnaCra18`: Transparency alone cannot create
   accountable systems. Accountability is about about addressing power
   imbalance and transparency is limited in it's ability to deal with
   this. As models are complex, transparency is unlikely to be a binary
@@ -205,12 +205,12 @@ brief overview.
   reveals, but also what is not revealed.
 
 - Algorithmic accountability reporting : On the investigation of black
-  boxes {cite}`diakopoulos2014algorithmic`: Journalistic approaches should
+  boxes {cite}`Dia14`: Journalistic approaches should
   be taken to try and interrogate the semantic behaviour of a decision
   system.
 
 - Computational power and the social impact of artificial intelligence
-  {cite}`hwang2018computational`: Computational decision processes
+  {cite}`Hwa18`: Computational decision processes
   are in part determined by the computational power available. As
   such, regions with the greatest access to computational resource
   will be the ones to determine the ethics of more complicated models.
@@ -222,23 +222,23 @@ of a decision. Some models are inherently interpretable, such as
 Decision Trees, or to a lesser extent linear models. There are also
 model agnostic interpretability techniques such as local surrogate
 models such as "Local Interpretable Model-agnostic Explanations (LIME)"
-{cite}`ribeiro2016should`, or game-theory approaches to explanation
-such as the Shapley Value {cite}`roth1988shapley`.
+{cite}`RibSinGue16`, or game-theory approaches to explanation
+such as the Shapley Value {cite}`Roth88`.
 
 From "Explanation in Artificial Intelligence : Insights from the Social
-Sciences" {cite}`miller2019explanation`, Interpretability is the degree
+Sciences" {cite}`Miller19`, Interpretability is the degree
 to which a human can understand the cause of a decision. The book
-"Interpretable Machine Learning" {cite}`molnar` frames that statement in a
+"Interpretable Machine Learning" {cite}`Mol18` frames that statement in a
 slightly different way, describing interpretability is "the degree to
 which a human can consistently predict the model's result". In this
 review we have already distinguished between transparency and
-interpretability, but {cite}`molnar` distinguishes further between
-interpretability and explanation. Miller {cite}`miller2019explanation`
+interpretability, but {cite}`Mol18` distinguishes further between
+interpretability and explanation. Miller {cite}`Miller19`
 argues that even if we are capable of interpreting the results of a
 model, unless we receive an explanation of how that model came to make a
 decision, then we will be unable to reliably reproduce the results. not
 only that, but as humans, any old explanation will not do, we require a
-_good explanation_. According to Miller {cite}`miller2019explanation`,
+_good explanation_. According to Miller {cite}`Miller19`,
 good explanations are:-
 
 - **contrastive**. We tend to think in a counterfactual way i.e. would
@@ -308,7 +308,7 @@ discrimination measures are
 
 Fairness constraints on the other hand have three forms. In the
 currently unfinished book on Fairness in Machine Learning
-{cite}`barocas-hardt-narayanan` the definitions of fairness are described as
+{cite}`BarHarNar19` the definitions of fairness are described as
 belonging to one of three groups, _Independence_, _Separation_ or
 _Sufficiency_. This pattern is adopted in this section.
 
@@ -322,11 +322,11 @@ sensitive attribute
 $$P(\hat{Y}) \perp S$$ 
 
 In fact, one of the first
-papers in this area by Kamiran and Calders {cite}`Kamiran2009` use this as
+papers in this area by Kamiran and Calders {cite}`KamCal09` use this as
 their discrimination measure. Although written in a different form, they
 later use the notation latterly adopted in fairness literature during
-their journal article {cite}`Kamiran2012` expanding on their previous work
-{cite}`Kamiran2009,kamiran2011`
+their journal article {cite}`KamCal12` expanding on their previous work
+{cite}`KamCal09,kamiran2011`
 
 $$disc = P(\hat{y}|s=0) - P(\hat{y}|s=1)$$ 
 
@@ -364,7 +364,7 @@ the population would have to be accepted at random to be 'fair', whilst
 
 To counter this, yet keeping within the frame of _independence_,
 relaxations of this criterion have also been suggested to include parity
-up to some threshold, $\epsilon$. {cite}`zafar2015fairness`
+up to some threshold, $\epsilon$. {cite}`ZafValGomKri19`
 
 $$P(\hat{Y}|s=a) \geq P(\hat{Y}|s=b) - \epsilon$$
 
@@ -373,7 +373,7 @@ or via a ratio
 $$\frac{P(\hat{Y}|s=a)}{P(\hat{Y}|s=b)} \geq 1 - \epsilon$$
 
 When set to $\epsilon = 0.2$, this is seen as comparable to the _80%
-rule_ mentioned in disparate impact law {cite}`feldman2015certifying`.
+rule_ mentioned in disparate impact law {cite}`FelFriMoeSchVen15`.
 This rule suggests that as long as the selection rate of the 'harmed'
 group is within 80% of the 'privileged' group, then it is fair enough.
 Though critics of this point out that 80% was chosen arbitrarily.
@@ -383,9 +383,9 @@ Though critics of this point out that 80% was chosen arbitrarily.
 A more complex definition of fairness is _separation_, which is
 independence given the actual outcome ($Y$) $$\hat{Y} \perp S | Y$$
 
-This has been formalised by the metric Equalised Odds {cite}`hardt2016equality` which
+This has been formalised by the metric Equalised Odds {cite}`HarPriSre16` which
 considers all values of $Y$, and the looser constraint Equality of
-Opportunity {cite}`hardt2016equality`, which only constrains independence given the
+Opportunity {cite}`HarPriSre16`, which only constrains independence given the
 outcome is positive .
 
 Equalised Odds 
@@ -417,7 +417,7 @@ positive rate. In our example, the selection rate would be $46.4\%$ for
 males and $53.6\%$ for females.
 
 But could an algorithm satisfy both independence and separation?
-Unfortunately not, it is shown in {cite}`hardt2016equality` that independence based
+Unfortunately not, it is shown in {cite}`HarPriSre16` that independence based
 notions of fairness are incompatible with separation based notions of
 fairness.
 
@@ -474,7 +474,7 @@ helps us to categorise various definitions of fairness, such as those in
 table 1, but that shouldn't diminish work that seeks to make novel
 strides within each of the areas. For example, the work in "An
 Intersectional Definition of Fairness"
-{cite}`FouldsJamesandPan2018AnFairness` expands the independence notion of
+{cite}`FouIslKeyPan20` expands the independence notion of
 fairness. Their inspiration comes from third-wave feminism and
 intersectional privacy, and is trying to expand beyond binary sensitive
 groups and measuring an unfairness value at each intersect. For example,
@@ -500,14 +500,14 @@ Differing Fairness Criterion and their categorisation
 
 Which fairness definition (or family of definitions) should one be
 using? This is a more complex question to answer. Some, such as
-{cite}`yeom2018discriminative,heidari2018` make the assumption the the choice of which
+{cite}`YeoTsc21,HeiLoiGumKra19` make the assumption the the choice of which
 to apply should come from the designer's moral perspective, arguing that
 this is a task outside of the expertise of computer scientists and
 instead should be debated by philosophers.
 
 However, not everyone is agreed. Recently there has started to be work
 investigating the delayed impact that fair interventions in machine
-learning have on society {cite}`liu2018delayed`. This work looks to determine the
+learning have on society {cite}`LiuDeaRolSimetal18`. This work looks to determine the
 impact that different notions of fairness have on the groups involved,
 recognising that there is more than the initial 'accepted for a loan' or
 'rejected for a loan' dichotomy, but that this has an impact in terms of
@@ -518,7 +518,7 @@ the suggestion that maybe we should be using statistical models to
 underpin moral assumptions.
 
 A recent paper "Evaluating Fairness Metrics in the Presence of Dataset
-Bias" {cite}`hinnefeld2018evaluating` looked into the problem of
+Bias" {cite}`HinCooMamDee18` looked into the problem of
 determining which fairness criteria to apply. They look at a dataset[^5]
 which they use to create 4 datasets, with combinations of Sample Bias,
 No Sample Bias, Label Bias and No Label Bias. They consider a binary
@@ -558,8 +558,8 @@ proportions of groups, called *group fairness*. There is another
 approach, called *individual fairness*. This is the idea that regardless
 of any groups as a whole, similar individuals should be treated
 similarly. This idea was proposed by Luong et al.
-{cite}`Luong2011K-NNPrevention` in the context of k-NN and later refined by
-Dwork et al. {cite}`dwork2012fairness`.
+{cite}`LuoRugTur11` in the context of k-NN and later refined by
+Dwork et al. {cite}`DwoHarPitReiZem12`.
 
 Luong et al. use a Manhattan distance of z-scores for interval-scaled
 attributes, and percentage of mismatching values for nominal attributes
@@ -571,7 +571,7 @@ where they are confident that some discrimination has occurred, then the
 class-label for that point should be amended. This data should then be
 used to train subsequent models.
 
-A seminal paper in the field, Dwork et al. {cite}`dwork2012fairness`
+A seminal paper in the field, Dwork et al. {cite}`DwoHarPitReiZem12`
 continued with the concept of a distance measure. They propose again
 that individual fairness should be the goal. They suggest that given
 some *task-specific* similarity metric, $\delta$, then
@@ -586,11 +586,11 @@ each gaining a reputation as an expert within their own right and covers
 themes that have been spun into more fleshed out ideas. Examples of this
 are Demographic Parity, the predominant fairness measure at the time,
 being weak in some situations which has been explored in
-{cite}`hardt2016equality,liu2018delayed`, and noting that it there is a differentiation
+{cite}`HarPriSre16,LiuDeaRolSimetal18`, and noting that it there is a differentiation
 between a data-provider (who obtains the data) and a vendor (who uses
 the data to make decisions). It's discussed that the vendor may not care
 about fairness and this is explored further by two of the authors in
-{cite}`zemel2013learning,madras2018learning`. This is
+{cite}`ZemWuSwePitDwo13,MadCrePitZem18`. This is
 discussed in section [4.3](#impl_repr){reference-type="ref"
 reference="impl_repr"}.
 
@@ -603,7 +603,7 @@ example, at what point does pre-processing the data become learning a
 new representation for the data? As such, some of these methods blur
 boundaries. However, in general, we can think of fairness interventions
 occurring before, during, or after the training of the model as
-suggested in {cite}`barocas-hardt-narayanan`.
+suggested in {cite}`BarHarNar19`.
 
 In this section we'll look onto the broad categories *pre-processing* -
 which includes feature selection and feature adjustment, *during
@@ -621,7 +621,7 @@ trend to transforming the features to a new space, called learning a
 fair representation of the data. This is covered under the 'During
 Training' section. This section is reserved for those papers which
 explicitly change the input features, such as "Certifying and Removing
-Disparate Impact" {cite}`feldman2015certifying`. This paper compares
+Disparate Impact" {cite}`FelFriMoeSchVen15`. This paper compares
 the probability distributions of features across protected groups and
 seeks to rectify this. Enforcing
 
@@ -642,7 +642,7 @@ features are due to the disparate impact of previous unfair decisions.
 An example of this may be disproportionate wealth distribution in the US
 manifesting itself as an unusually small number of white people
 receiving public schooling
-{cite}`census_bureau,national_education_statistics`. Modifying this feature
+{cite}`USCBQ,USNCES`. Modifying this feature
 to correct for previous biases may have merit. It may also be useful to
 consider that amending the input space allows us to interpret what has
 changed about an individual to make them appear less worthy of being
@@ -655,14 +655,14 @@ work experience, it may be that there should be a policy change to
 encourage people into apprenticeships or internships. The other approach
 is changing the labels, as discussed in section
 [2](#background){reference-type="ref" reference="background"} about the
-Kamiran and Calders paper {cite}`Kamiran2009`.
+Kamiran and Calders paper {cite}`KamCal09`.
 
 ### During Training
 
 #### Minimising Fairness criteria
 
 One of the more direct ways to enforce fairness is to follow Quadrianto
-et al {cite}`Quadrianto2017RecyclingFairness` who noticed that enforcing
+et al {cite}`QuaSha17` who noticed that enforcing
 fairness constraints is an application of Distribution Matching. They
 use a modified SVM from the Learning Using Privileged Information (LUPI)
 paradigm to ensure the sensitive feature is not used during test time,
@@ -673,8 +673,7 @@ fairness (within a legal limit) to apply. This concept of bringing
 accountability into automated decision making is an important though
 overlooked addition.
 
-(imple_adv)=
-
+(impl_adv)=
 #### Adversarial Learning
 
 Given the success of Generative Adversarial Networks (GANs), there has
@@ -700,40 +699,39 @@ cannot make an accurate prediction of $s$ from the representation
 There are parallels between what we're trying to achieve with fairness
 constraints and the work that is being progressed in Domain adaptation.
 One of the major breakthroughs in this work was adding a gradient
-reversal layer {cite}`Ganin2016Domain-AdversarialNetworks`. This has been
+reversal layer {cite}`GanUstAjaGerLarLavMarLem16`. This has been
 applied in many fields including Fairness. The gradient reversal layer
 is applied to the adversary and allows the _min-max_ game to become a
 direct minimisation, as minimising the adversary now directly maximises
 the adversary's loss.
 
 This framework was then used by Edwards and Storkey
-{cite}`edwards2015censoring` on making a representation that
+{cite}`EdwSto16` on making a representation that
 censored a sensitive attribute. Beutel et al
-{cite}`beutel2017data` then built on this and applied the
+{cite}`BeuCheZhaChi17` then built on this and applied the
 technique explicitly to fairness, demonstrating that this method is
 particularly useful even with very small amounts of data. Other papers
 have tried to build on this work, such as
-{cite}`wadsworth2018achieving` who instead of using a
+{cite}`WadVerPie18` who instead of using a
 representation as the input to the adversary, use the soft output from
 the predictor.
 
 Other GAN approaches have followed the more traditional route of
 generating data. Fairness is applied by making the generated data fair
-to a specific attribute. "FairGAN" {cite}`xu2018fairgan` use a regular
+to a specific attribute. "FairGAN" {cite}`XuYuaZhaWu18` use a regular
 GAN set-up, but have an additional discriminator to not just determine
 if the data is real or not, but to also query whether the data generated
-is fair[^6]. A second paper, "FairnessGAN" {cite}`sattigeri2018fairness` use a
+is fair[^6]. A second paper, "FairnessGAN" {cite}`SatHofCheVar18` use a
 similar approach, but instead of the UCI Adult dataset (which is
 commonly used in nearly all fairness literature), they use use images
-[^7] and achieve "generally positive" {cite}`sattigeri2018fairness` results.
+[^7] and achieve "generally positive" {cite}`SatHofCheVar18` results.
 
 (impl_repr)=
-
 ### Fair Representations
 
 Work in this field was pioneered by Zemel
-{cite}`zemel2013learning` and was followed up by Madras
-{cite}`madras2018learning` who suggested that these could be
+{cite}`ZemWuSwePitDwo13` and was followed up by Madras
+{cite}`MadCrePitZem18` who suggested that these could be
 applied to transfer learning.
 
 Zemel argues that fairness can be achieved through representation
@@ -745,17 +743,17 @@ of $\mathcal{S}$ and that $\mathcal{Z}$ should retain enough information
 to maintain the same mapping from $\mathcal{Z} \rightarrow \mathcal{Y}$
 as $\mathcal{X} \rightarrow \mathcal{Y}$. In this way, similar people
 are treated similarly, a notion suggested by Dwork et al
-{cite}`dwork2012fairness`. A surprising effect of this fair
+{cite}`DwoHarPitReiZem12`. A surprising effect of this fair
 representation is that it allows for transfer learning. Although
 $\mathcal{Z}$ was selected to retain the mapping to $\mathcal{Y}$ whilst
 preserving as much information about $\mathcal{X}$ as possible, they
 show that $\mathcal{Z}$ is still capable of predicting other features
 not selected to be in $\mathcal{X}$.
 
-Madras et al. {cite}`madras2018learning` explored this idea of
+Madras et al. {cite}`MadCrePitZem18` explored this idea of
 transfer learning further, but used the framework of Beutel et al
-{cite}`beutel2017data`, which in turn is based on Edwards and
-Storkey {cite}`edwards2015censoring`, both discussed in the section
+{cite}`BeuCheZhaChi17`, which in turn is based on Edwards and
+Storkey {cite}`EdwSto16`, both discussed in the section
 above. Madras demonstrate that fair representations can indeed be used
 to predict other features and give a more robust set of experiments than
 presented in the Zemel paper (which mentioned transfer learning as an
@@ -770,11 +768,10 @@ the motivation for learning a fair, transferable representation.
 
 ### Post Processing
 
-This area isn't as well explored, but {cite}`hardt2016equality` use it in their
+This area isn't as well explored, but {cite}`HarPriSre16` use it in their
 paper.
 
 (causal)=
-
 ## Causal Inference
 
 With the acknowledgement that fairness is difficult to solve
@@ -783,14 +780,14 @@ being explored. Causal models are appealing in this regard because they
 allow for an explicit causal relationship to be accounted for rather
 than relying on correlation.
 
-DeDeo {cite}`dedeo2014wrong` argues that without understanding the
+DeDeo {cite}`DeDeo14` argues that without understanding the
 causal relationship between attributes, then it becomes particularly
 difficult to differentiate between innocent relationships, and those
 which at first glance may appear innocent, but when you understand the
 socio-economic background of those attributes, they might infer a less
 innocent relationship.
 
-Stemming from the work of Pearl {cite}`Pearl:2009:CMR:1642718`, causal models
+Stemming from the work of Pearl {cite}`Pearl09`, causal models
 are an attempt to model cause and effect. An example would be
 atmospheric pressure and the position of the needle on a barometer
 reading. We know that the two are linked and our data about this will
@@ -817,7 +814,7 @@ intensive approach. In many ways, if this approach is fully realised, it
 is the gold standard for ethical models.
 
 A recent paper, "Path-Specific Counterfactual Fairness"
-{cite}`chiappa2019path` poses some thought provoking
+{cite}`Chi19` poses some thought provoking
 questions. They note that not all affects of a sensitive attribute on
 the outcome are potentially discriminatory. They give the example of the
 Berkley admissions data that was suggested to be discriminatory to
@@ -825,18 +822,18 @@ women. They note that women were applying with greater proportions to
 classes with low acceptance rates, thus the influence of gender on the
 class applied for is not discriminatory and should be taken into account
 to learn a highly predictive model. This is similar to the idea first
-mentioned in Pedreschi et al. {cite}`Pedreshi2008Discrimination-awareMining`
+mentioned in Pedreschi et al. {cite}`PedRugTur08`
 that there is a difference between sensitive attributes and potentially
-discriminatory attributes. In {cite}`chiappa2019path` they
+discriminatory attributes. In {cite}`Chi19` they
 use the power of a causal model to isolate this to effects along
 specific pathways noting "approaches based on statistical relations
 among observations are in danger of not discerning correlation from
 causation, and are unable to distinguish the different ways in which the
 sensitive attribute might influence the decision"
-{cite}`chiappa2019path`. This paper views unfairness as the
+{cite}`Chi19`. This paper views unfairness as the
 presence of an unfair causal effect of $S$ on $\hat{Y}$. This idea is
 not new. In fact it is specifically mentioned in "Counterfactual
-Fairness" {cite}`kusner2017counterfactual` that "a decision is unfair
+Fairness" {cite}`KusLofRusSil17` that "a decision is unfair
 toward an individual if it coincides with the one that would have been
 taken in a counterfactual world in which the sensitive attribute were
 different". This assumes that the entire effect of $S$ on $\hat{Y}$ is
@@ -879,10 +876,10 @@ Y_{\text{fair}} &= \theta^y + \theta^y_s + \theta^y_{m_\text{fair}} + \epsilon_y
 ```
 
 In this case, (and in the case of "Counterfactual Fairness"
-{cite}`kusner2017counterfactual`). The goal is to achieve fairness in
+{cite}`KusLofRusSil17`). The goal is to achieve fairness in
 a counterfactual world as described above. This is a form of individual
 fairness, and is often linked to the other seminal work in this area of
-Dwork et al. {cite}`dwork2012fairness`. Whilst one uses a causal
+Dwork et al. {cite}`DwoHarPitReiZem12`. Whilst one uses a causal
 model to determine the effect of group membership, the other uses a
 distance measure. Clearly there are strengths and weaknesses to both
 approaches.
@@ -897,30 +894,30 @@ resource allocation.
 
 ### Recommendation
 
-- "A Fairness-aware Hybrid Recommender System" {cite}`farnadi2018fairness`:
+- "A Fairness-aware Hybrid Recommender System" {cite}`FarKouThoSriGet18`:
   Gives recommendations such that item ratings are indifferent to
   whether a user is a member of a protected group or not.
 
 - "Balanced Neighborhoods for Multi-sided Fairness in Recommendation"
-  {cite}`Burke2018BalancedRecommendation`: Gives recommendations after
+  {cite}`BurSonOrd08`: Gives recommendations after
   transforming users into a 'fair neighbourhood' that is conceptually
   similar to the fair representation of Zemel
-  {cite}`zemel2013learning`.
+  {cite}`ZemWuSwePitDwo13`.
 
 - "Beyond Parity: Fairness Objectives for Collaborative Filtering"
-  {cite}`yao2017beyond`: Explores the effect of different fairness
+  {cite}`YaoHua17`: Explores the effect of different fairness
   constraints on collaborative filtering.
 
 ### Ranking
 
 - "FA\*IR: A Fair Top-k Ranking Algorithm"
-  {cite}`zehlike2017fa`: A ranking algorithm that aims to
+  {cite}`ZehBonCasHajMegBae17`: A ranking algorithm that aims to
   preserve utility whilst maintaining group fairness.[^8]
 
 ### Resource Allocation
 
 - "Fair Algorithms for Learning in Allocation Problems"
-  {cite}`elzayn2019fair`: Allocate resources such that members of
+  {cite}`ElzJabJunKeaNeeRotSch19`: Allocate resources such that members of
   an unprotected group are no more likely to receive a resource than
   members of a protected group.
 
@@ -949,7 +946,7 @@ and the nationality feature), you will not be able to claim fairness
 with regard to that non-captured attribute, despite Freedom of
 Religion[^9] being enshrined in most modern democratic countries. There
 has been an attempt to address this problem in the paper Proxy
-Fairness {cite}`gupta2018proxy` which finds potential proxy groups
+Fairness {cite}`GupCotFarWan18` which finds potential proxy groups
 that could potentially be discriminated against, though this is a first
 foray into this particularly difficult problem.
 
@@ -974,6 +971,6 @@ our field to subjective areas.
 [^8]: Given the arbitrariness of many 'fairness' rules in the U.S. that have led to claims of disparate treatment (i.e. Ricci vs DeStefano or Texas House Bill 588) this objective may have a large impact.
 [^9]: And consequently the expectation to be free of discrimination based on that religion.
 
-```{bibliography} ../../../references.bib
-
+```{bibliography}
+:filter: docname in docnames
 ```

@@ -1,5 +1,8 @@
 - file: content/index
-  numbered: False
+
+- part: Overview
+  chapters:
+  - file: content/content
 
 - part: Thesis
   chapters:
@@ -20,8 +23,7 @@
   - file: content/02_data_domain_fairness/intro
   - file: content/03_identifying/intro
   - file: content/08_conclusion/conclusion
-
-
+  - file: content/bib
 
 - part: Annual Review 2020
   chapters:
@@ -36,6 +38,7 @@
   - file: content/09_appendix/published
     sections:
       - file: content/09_appendix/publications/dfritdd
+      - file: content/09_appendix/publications/framework_for_positive_action
       - file: content/09_appendix/publications/imagined
       - file: content/09_appendix/publications/nosinn
       - file: content/09_appendix/publications/lit_review
