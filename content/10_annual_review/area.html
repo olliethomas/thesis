@@ -97,10 +97,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Fair Representations of Biased Data
+  <a class="reference internal" href="../content.html">
+   Content
   </a>
  </li>
 </ul>
@@ -191,6 +196,11 @@
    Conclusion
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bib.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -237,6 +247,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../09_appendix/publications/dfritdd.html">
      Discovering Fair Representations in the Data Domain
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_appendix/publications/framework_for_positive_action.html">
+     An Algorithmic Framework for Positive Action
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_appendix/publications/framework_for_positive_action.html#demonstration">
+     Demonstration
     </a>
    </li>
    <li class="toctree-l2">
@@ -405,9 +425,9 @@ The hope is that by treating everybody the same, then unequal, biased behaviour 
 <p>Recent headlines include:</p>
 <ul class="simple">
 <li><p><strong>Wrongfully Accused by an Algorithm</strong>: In what may be the first known case of its kind, a faulty facial recognition match
-led to a Michigan man’s arrest for a crime he did not commit. – NYTimes <a href="#id1"><span class="problematic" id="id2">:cite:`hill_2020`</span></a></p></li>
-<li><p><strong>Amazon ditched AI recruiting tool that favored men for technical jobs</strong>. – The Guardian <a href="#id3"><span class="problematic" id="id4">:cite:`reuters_2018`</span></a></p></li>
-<li><p><strong>Police officers raise concerns about ‘biased’ AI data</strong>. – BBC News <a href="#id5"><span class="problematic" id="id6">:cite:`bbc_news_2019`</span></a></p></li>
+led to a Michigan man’s arrest for a crime he did not commit. – NYTimes <span id="id1">[<a class="reference internal" href="../bib.html#id63"><span>Hil20</span></a>]</span></p></li>
+<li><p><strong>Amazon ditched AI recruiting tool that favored men for technical jobs</strong>. – The Guardian <span id="id2">[<a class="reference internal" href="../bib.html#id64"><span>Reu18</span></a>]</span></p></li>
+<li><p><strong>Police officers raise concerns about ‘biased’ AI data</strong>. – BBC News <span id="id3">[<a class="reference internal" href="../bib.html#id65"><span>BBC19</span></a>]</span></p></li>
 </ul>
 <p>But how does this happen?
 A prediction model has to be designed and there are a number of legal and moral obstacles to prevent a group/individual from purposefully designing a biased system.
@@ -484,7 +504,7 @@ This will be expanded on in the introduction to my thesis.</p>
 </tbody>
 </table>
 <p>In my work I focus on removing bias in the ‘pre-processing’ stage.
-This is an exciting and active research area with spotlight tutorials at top conferences such as NeurIPS<a class="footnote-reference brackets" href="#footnote" id="id7">1</a> <a href="#id8"><span class="problematic" id="id9">:cite:`foundation`</span></a>.
+This is an exciting and active research area with spotlight tutorials at top conferences such as NeurIPS<a class="footnote-reference brackets" href="#footnote" id="id4">1</a> <span id="id5">[<a class="reference internal" href="../bib.html#id66"><span>CK</span></a>]</span>.
 Part of the reason for the excitement in this area is that the underlying data itself is a major source of bias.
 After all, this is what a model is using to determine “correct” behaviour.
 If we are able to understand and counteract bias that exists in the underlying data, then we can use an unconstrained
@@ -520,9 +540,24 @@ Advice on this would be appreciated.</p>
 <li><p>demonstrating that fair representations of data can be built in the original data domain without loss of performance with regard to both utility and fairness criterion.</p></li>
 <li><p>demonstrating qualitatively that representations in the data domain provide feedback as to what is required to make data “fair”.</p></li>
 </ul>
+<p id="id6"><dl class="citation">
+<dt class="label" id="id70"><span class="brackets"><a class="fn-backref" href="#id3">BBC19</a></span></dt>
+<dd><p>Police officers raise concerns about 'biased' ai data. Sep 2019. URL: <a class="reference external" href="https://www.bbc.co.uk/news/technology-49717378">https://www.bbc.co.uk/news/technology-49717378</a>.</p>
+</dd>
+<dt class="label" id="id71"><span class="brackets"><a class="fn-backref" href="#id5">CK</a></span></dt>
+<dd><p>Moustapha Cisse and Sanmi Koyejo. Representation learning and fairness. NeurIPS 2019 Tutorial. URL: <a class="reference external" href="https://neurips.cc/Conferences/2019/Schedule?showEvent=13212">https://neurips.cc/Conferences/2019/Schedule?showEvent=13212</a>.</p>
+</dd>
+<dt class="label" id="id68"><span class="brackets"><a class="fn-backref" href="#id1">Hil20</a></span></dt>
+<dd><p>Kashmir Hill. Wrongfully accused by an algorithm. June 2020. URL: <a class="reference external" href="https://www.nytimes.com/2020/06/24/technology/facial-recognition-arrest.html">https://www.nytimes.com/2020/06/24/technology/facial-recognition-arrest.html</a>.</p>
+</dd>
+<dt class="label" id="id69"><span class="brackets"><a class="fn-backref" href="#id2">Reu18</a></span></dt>
+<dd><p>Reuters. Amazon ditched ai recruiting tool that favored men for technical jobs. Oct 2018. URL: <a class="reference external" href="https://www.theguardian.com/technology/2018/oct/10/amazon-hiring-ai-gender-bias-recruiting-engine">https://www.theguardian.com/technology/2018/oct/10/amazon-hiring-ai-gender-bias-recruiting-engine</a>.</p>
+</dd>
+</dl>
+</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="footnote"><span class="brackets"><a class="fn-backref" href="#id7">1</a></span></dt>
+<dt class="label" id="footnote"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
 <dd><p><a class="reference external" href="http://sanmi.cs.illinois.edu/documents/Representation_Learning_Fairness_NeurIPS19_Tutorial.pdf">http://sanmi.cs.illinois.edu/documents/Representation_Learning_Fairness_NeurIPS19_Tutorial.pdf</a></p>
 </dd>
 </dl>

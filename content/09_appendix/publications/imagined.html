@@ -44,7 +44,6 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/tabs.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -61,7 +60,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Null-Sampling for Invariant and Interpretable Representations" href="nosinn.html" />
-    <link rel="prev" title="Discovering Fair Representations in the Data Domain" href="dfritdd.html" />
+    <link rel="prev" title="An Algorithmic Framework for Positive Action" href="framework_for_positive_action.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,10 +99,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Fair Representations of Biased Data
+  <a class="reference internal" href="../../content.html">
+   Content
   </a>
  </li>
 </ul>
@@ -194,6 +198,11 @@
    Conclusion
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bib.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -240,6 +249,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="dfritdd.html">
      Discovering Fair Representations in the Data Domain
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="framework_for_positive_action.html">
+     An Algorithmic Framework for Positive Action
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="framework_for_positive_action.html#demonstration">
+     Demonstration
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -439,12 +458,12 @@ Experiments on four common fairness datasets show that by augmenting the entire 
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>We address the problem of <em>unfair</em> behaviour in machine learning decision systems.
 Such decision system tasks include determining whether an applicant is likely to commit a crime while on bail, or whether a loan will be likely be repaid, amongst others.
-The research community has responded to concerns that otherwise similar people, different only in a protected characteristic, are not treated similarly <a href="#id1"><span class="problematic" id="id2">:cite:`Bolukbasi2016nlpbias,angwin2016machinebias`</span></a>.
+The research community has responded to concerns that otherwise similar people, different only in a protected characteristic, are not treated similarly <span id="id1">[<a class="reference internal" href="../../bib.html#id5"><span>BCZ+16</span></a>,<a class="reference internal" href="../../bib.html#id21"><span>ALMK16</span></a>]</span>.
 This has led to a growing body of work influenced by inter-disciplinary scholars to understand what is required to satisfy legal and ethical concerns about the deployment of machine learning models that reason about human behaviour.</p>
 <p>It is generally understood that bias in machine learning systems arise as a reflection of the underlying biases in the training data.
 This occurs when the training data implies a relationship between a protected characteristic, which we denote as <span class="math notranslate nohighlight">\(S\)</span> and the observed outcome, <span class="math notranslate nohighlight">\(Y\)</span>.
 That is, within the training dataset, the class label is not independent of a protected characteristic, <span class="math notranslate nohighlight">\(P(Y,S) \neq P(Y)P(S)\)</span>.</p>
-<p>A simple and successful approach to redressing this problem is to re-weigh our training dataset so that this is no longer the case <a href="#id3"><span class="problematic" id="id4">:cite:`kamiran2012data`</span></a>.
+<p>A simple and successful approach to redressing this problem is to re-weigh our training dataset so that this is no longer the case <span id="id2">[<a class="reference internal" href="../../bib.html#id10"><span>KC12</span></a>]</span>.
 This technique has, as a by-product, a useful property being that, in creating independence between <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(S\)</span>, two at-odds notions of group fairness, Demographic Parity (DP) and Equality of Opportunity (EqOp) can both hold.
 Demographic Parity requires that the probability of a positive prediction be equal across all groups that share a protected characteristic.
 In the case that both class label and protected characteristic are binary attributes, for example a loan approval system with a binarised gender value as the protected characteristic, so <span class="math notranslate nohighlight">\(Y=\mathrm{Approved}(1)\)</span> or <span class="math notranslate nohighlight">\(Y=\lnot\mathrm{Approved}(0)\)</span> and <span class="math notranslate nohighlight">\(S=\mathrm{Female}(1)\)</span> or <span class="math notranslate nohighlight">\(S=\lnot\mathrm{Female}(0)\)</span>, DP would require that the prediction of the class label <span class="math notranslate nohighlight">\(\hat{Y}\)</span> satisfy the following
@@ -456,10 +475,10 @@ This is equivalent to balancing the True Positive Rate across protected characte
 \begin{equation*}
 P(\hat{Y}=1 | S=1, Y=1) = P(\hat{Y}=1 | S=0, Y=1)
 \end{equation*}</p>
-<p>It has recently been shown by Kleinberg et al. <a href="#id5"><span class="problematic" id="id6">:cite:`Kleinberg2017tradeoff`</span></a> and Chouldechova et al. <a href="#id7"><span class="problematic" id="id8">:cite:`Chouldechova2017tradeoff`</span></a> that unless certain conditions hold (we have a perfect dataset, the base acceptance rate is the same for both groups, i.e. class label is independent of the protected characteristic), demographic parity and equal opportunity cannot both hold.
+<p>It has recently been shown by Kleinberg et al. <span id="id3">[<a class="reference internal" href="../../bib.html#id6"><span>KMR17</span></a>]</span> and Chouldechova et al. <span id="id4">[<a class="reference internal" href="../../bib.html#id7"><span>Cho17</span></a>]</span> that unless certain conditions hold (we have a perfect dataset, the base acceptance rate is the same for both groups, i.e. class label is independent of the protected characteristic), demographic parity and equal opportunity cannot both hold.
 Fortunately, by enforcing that the dataset has independence between the class label and the protected characteristic, both notions of fairness can be achieved.</p>
 <p>While this is a welcome improvement, it has been proposed that this does not go far enough.
-Recent works in Counterfactual Fairness <a href="#id9"><span class="problematic" id="id10">:cite:`kusner2017counterfactual,Russell2017collide`</span></a> propose that notions of fairness that seek to balance outcomes across sub-groups are not strict enough and that we should instead view fairness at an individual level.
+Recent works in Counterfactual Fairness <span id="id5">[<a class="reference internal" href="../../bib.html#id69"><span>KLRS17</span></a>,<a class="reference internal" href="../../bib.html#id8"><span>RKLS17</span></a>]</span> propose that notions of fairness that seek to balance outcomes across sub-groups are not strict enough and that we should instead view fairness at an individual level.
 Counterfactual fairness is a form of individual fairness based on causal inference.
 Individual fairness requires that similar individuals be treated similarly.
 This is difficult to quantify as the notion of ‘similar’ is not a rigid definition. Counterfactual fairness assumes we have a causal model that can generate our data samples. We can then generate a counterfactual example of a data sample obtained by amending a protected characteristic to another (valid) value. This is akin to asking the question, “What if I had been born another race?”, or in the context of the loan decision example, “Would the same decision have been made if I had been born of a different gender?”
@@ -470,13 +489,13 @@ P(\hat{Y}=1 | C(x, S=0)) = P(\hat{Y}=1 | C(x, S=1))
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a function that generates the counterfactual example of an individual <span class="math notranslate nohighlight">\(X\)</span> with a specified protected characteristic.</p>
 <p>Obtaining causal models however, is difficult and expensive.
 Furthermore, as we rarely have access to the ground truth causal model, there is often uncertainty among domain experts as to which causal model best characterises the data.
-Recent work advocates taking samples from multiple causal models to obtain the most likely effect <a href="#id11"><span class="problematic" id="id12">:cite:`Russell2017collide`</span></a>.
-Concurrently, works in Neural Processes have successfully emulated the behaviour of stochastic processes <a href="#id13"><span class="problematic" id="id14">:cite:`garnelo2018neural,louizos2019functional`</span></a>.
+Recent work advocates taking samples from multiple causal models to obtain the most likely effect <span id="id6">[<a class="reference internal" href="../../bib.html#id8"><span>RKLS17</span></a>]</span>.
+Concurrently, works in Neural Processes have successfully emulated the behaviour of stochastic processes <span id="id7">[<a class="reference internal" href="../../bib.html#id2"><span>GSR+18</span></a>,<a class="reference internal" href="../../bib.html#id14"><span>LSSW19</span></a>]</span>.
 We draw on this and propose a stochastic process that emulates the behaviour of the counterfactual intervention function <span class="math notranslate nohighlight">\(C(\cdot)\)</span>.
 That is, we propose a function that emulates a causal model that can only be intervened on with regard to a specific, pre-determined variable.
 We set the variable which we will condition on to be the protected characteristic and observe the affect on the reconstructed counterfactual.\footnote{Code to reproduce results will be available}</p>
 <p>Before we can remedy the problem however, we must understand how unfairness came to be included in our data.
-Work to identify these sources has been conducted by <a href="#id15"><span class="problematic" id="id16">:cite:`Tol19`</span></a> who identifies that two of the ways bias can form in the data are either <em>sampling bias</em> or, <em>proxy labels</em>.
+Work to identify these sources has been conducted by <span id="id8">[<a class="reference internal" href="../../bib.html#id103"><span>Tol19</span></a>]</span> who identifies that two of the ways bias can form in the data are either <em>sampling bias</em> or, <em>proxy labels</em>.
 Sampling bias occurs when the data is not representative of the population at large.
 It may be that that task is legitimate, but there are not enough samples of particular subgroups in the data.
 This can particularly be a concern when addressing intersectional fairness, when the numbers of individuals can be particularly small.
@@ -485,8 +504,8 @@ Unfairness occurs when this label is correlated with a particular subgroup.
 The example of this is in predictive policing, where the data on which individuals have committed a crime is unavailable.
 Instead, the closest we have is the details of those who have charged on suspicion of committing a crime.
 If this proxy class label leads to a higher share of one protected group over another being targeted for arrest then we say the proxy label is biased.</p>
-<p>This idea that bias may exist in the class label is corroborated by recent work by <a href="#id17"><span class="problematic" id="id18">:cite:`kehrenberg2018interpretable,yeom`</span></a> identifying that class labels themselves can be a source of bias.
-This is in addition to work which seeks to remedy fairness by intervening on the features to create fair representations <a href="#id19"><span class="problematic" id="id20">:cite:`edwards2015censoring,adel2019one,vfae,zemel2013learning`</span></a>.
+<p>This idea that bias may exist in the class label is corroborated by recent work by <span id="id9">[<a class="reference internal" href="../../bib.html#id3"><span>KCQ18</span></a>,<a class="reference internal" href="../../bib.html#id97"><span>YT21</span></a>]</span> identifying that class labels themselves can be a source of bias.
+This is in addition to work which seeks to remedy fairness by intervening on the features to create fair representations <span id="id10">[<a class="reference internal" href="../../bib.html#id78"><span>ES16</span></a>,<a class="reference internal" href="../../bib.html#id11"><span>AVGW19</span></a>,<a class="reference internal" href="../../bib.html#id80"><span>LSL+16</span></a>,<a class="reference internal" href="../../bib.html#id77"><span>ZWS+13</span></a>]</span>.
 Our approach is to acknowledge that both the class labels and the features are a potential source of bias and intervene to identify and combat this bias.</p>
 <p>In terms of a counterfactual model, if we had a sufficiently representative causal model, sampling bias can be identified by intervening on the causal model that recreates the features.
 Identifying proxy labels can be identified by intervening in a causal model and observing the effect on the outcome.
@@ -495,15 +514,15 @@ If the intervention on the class label causes little to no change, then we note 
 </div>
 <div class="section" id="related-work">
 <h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
-<p>Most related to our work is the reweighing approach of Kamiran and Calders <a href="#id21"><span class="problematic" id="id22">:cite:`kamiran2012data`</span></a> which applies an instance weight for every group (Y,S) <span class="math notranslate nohighlight">\(\forall y \in Y\)</span> and <span class="math notranslate nohighlight">\(s \in S\)</span> so that the group is scaled to match the expected proportion of the groups in the data.
+<p>Most related to our work is the reweighing approach of Kamiran and Calders <span id="id11">[<a class="reference internal" href="../../bib.html#id10"><span>KC12</span></a>]</span> which applies an instance weight for every group (Y,S) <span class="math notranslate nohighlight">\(\forall y \in Y\)</span> and <span class="math notranslate nohighlight">\(s \in S\)</span> so that the group is scaled to match the expected proportion of the groups in the data.
 Doing so downweights members of the over-represented group while simultaneously upweighting those of under-represented groups.
 Consequently, fairness criteria are improved without explicitly optimising for fairness.
 This is similar to our approach in that we are not explicitly optimising to improve the fairness of our model.
 Instead, we are trying to characterise and account for different types of bias within our data.
 In doing so we aim to address the underlying cause of bias manifesting in the data as opposed to enforcing fairness on a biased dataset.</p>
-<p>Our approach to <em>“imagining”</em> is similar to that of Generative Adversarial Networks (GANs), which have achieved successes in a number of applications. Given their success there have been a number of variations of the framework. One popular approach <a href="#id23"><span class="problematic" id="id24">:cite:`edwards2015censoring`</span></a>is to make a latent embedding invarient to a protected characteristic and use this as the model input for a downstream task. Whilst this approach is successful in removing bias on the input features, bias in the class labels is not accounted for. In addition, recent works by <a href="#id25"><span class="problematic" id="id26">:cite:`quadrianto2019discovering`</span></a> demonstrate the inherent <em>uninterpretability</em> of latent embeddings.
+<p>Our approach to <em>“imagining”</em> is similar to that of Generative Adversarial Networks (GANs), which have achieved successes in a number of applications. Given their success there have been a number of variations of the framework. One popular approach <span id="id12">[<a class="reference internal" href="../../bib.html#id78"><span>ES16</span></a>]</span>is to make a latent embedding invarient to a protected characteristic and use this as the model input for a downstream task. Whilst this approach is successful in removing bias on the input features, bias in the class labels is not accounted for. In addition, recent works by <span id="id13">[<a class="reference internal" href="../../bib.html#id15"><span>QST19</span></a>]</span> demonstrate the inherent <em>uninterpretability</em> of latent embeddings.
 By reconstructing our imagined examples in the original input space we are able to determine which features are most connected to the protected charcteristic.</p>
-<p>Counterfactual models have been the basis of a number of investigations into fairness <a href="#id27"><span class="problematic" id="id28">:cite:`kusner2017counterfactual,nabi2018fair,chiappa2019path,KilBalKusWeletal19`</span></a>.
+<p>Counterfactual models have been the basis of a number of investigations into fairness <span id="id14">[<a class="reference internal" href="../../bib.html#id69"><span>KLRS17</span></a>,<a class="reference internal" href="../../bib.html#id72"><span>NS18</span></a>,<a class="reference internal" href="../../bib.html#id73"><span>Chi19</span></a>,<a class="reference internal" href="../../bib.html#id16"><span>KBK+19</span></a>]</span>.
 This work is extremely encouraging, however requires specific application domain expertise in creating a causal model in which to intervene.
 We take inspiration from this research area and try to emulate a subset of the behaviour of these counterfactual models.</p>
 </div>
@@ -528,26 +547,26 @@ We take inspiration from this research area and try to emulate a subset of the b
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>How do imagined examples work? In Figure <a class="reference internal" href="#resampling-a"><span class="std std-numref">Fig. 2</span></a>, we intervene on the protected characteristic and
-observe the effect on the features producing <span class="math notranslate nohighlight">\(X^{\text{Imagined}}\)</span> (see Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">recons</span></code> for a visualisation of
+observe the effect on the features producing <span class="math notranslate nohighlight">\(X^{\text{Imagined}}\)</span> (see Figure <a class="reference internal" href="#recons"><span class="std std-numref">Fig. 4</span></a> for a visualisation of
 this effect).
 We can then use these imagined examples to augment the original dataset creating a balanced dataset in terms of group
 proportions.
 Since the imagined examples modify several features of the original examples, there will be several
 <em>inconsistent features</em> in the dataset, which will be ignored by the classifier.
 Note that the procedure does not change the class label proportions.
-In Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">resampling_b</span></code>, we intervene on the proected characteristic and observe the effect on the class labels
+In Figure <a class="reference internal" href="#resampling-b"><span class="std std-numref">Fig. 3</span></a>, we intervene on the proected characteristic and observe the effect on the class labels
 producing <span class="math notranslate nohighlight">\(Y^{\text{Imagined}}\)</span>.
 Here, the class label proportions will change.
 Since the imagined examples copy the exact features of the original examples, there will be several <em>inconsistent
 training examples</em> in the dataset, which will be ignored by the classifier.</p>
 </div>
-<p>While prior works have focused on recreating the protected characteristic solely from the input features, recent work has also shown that the class labels themselves can be a source of bias <a href="#id29"><span class="problematic" id="id30">:cite:`yeom,Tol19`</span></a>.
+<p>While prior works have focused on recreating the protected characteristic solely from the input features, recent work has also shown that the class labels themselves can be a source of bias <span id="id15">[<a class="reference internal" href="../../bib.html#id97"><span>YT21</span></a>,<a class="reference internal" href="../../bib.html#id103"><span>Tol19</span></a>]</span>.
 In this context, if we had a set of features that were completely invariant to the protected characteristic, the model would either perform poorly, or have to learn to be biased to accommodate the biased labels.
-To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder <a href="#id31"><span class="problematic" id="id32">:cite:`vfae`</span></a> to acknowledge that bias can also exist within the class labels (see figure <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — left).
+To account for this we extend the graphical model of the unsupervised Variational Fair Autoencoder <span id="id16">[<a class="reference internal" href="../../bib.html#id80"><span>LSL+16</span></a>]</span> to acknowledge that bias can also exist within the class labels (see figure <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — left).
 In doing this, we explicitly model two latent embeddings that are disentangled from the protected characteristic for both the features and the decision outcome.
 We refer to these latent representations as <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span>; while they could be modelled in the same space as the respective observed data, that need not be the case.</p>
 <p>In practice however if we generate samples of <span class="math notranslate nohighlight">\(\x\)</span> and <span class="math notranslate nohighlight">\(\y\)</span>, where both have been intervened on by the same variable, this is akin to na”ively upsampling the underrepresented groups.
-This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases <a href="#id33"><span class="problematic" id="id34">:cite:`kamiran2012data`</span></a>. Instead, we ‘split’ the protected characteristic into two independent variables during decoding (Fig. <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — right).
+This causes over-representation of the minority groups and their observed outcomes and only exacerbates existing biases <span id="id17">[<a class="reference internal" href="../../bib.html#id10"><span>KC12</span></a>]</span>. Instead, we ‘split’ the protected characteristic into two independent variables during decoding (Fig. <a class="reference internal" href="#gcm"><span class="std std-numref">Fig. 1</span></a> — right).
 One variable (<span class="math notranslate nohighlight">\(\s_1\)</span>) affects the reconstruction of the features and another (<span class="math notranslate nohighlight">\(\s_2\)</span>) that affects the reconstruction of the class labels.
 However, during encoding we only consider the observed protected characteristic.</p>
 <p>This allows us to intervene separately, either remedying the problem of under-represented samples in the data, or diagnosing that a task is not suitable to be learned given the data.</p>
@@ -558,7 +577,7 @@ However, during encoding we only consider the observed protected characteristic.
 &amp;\mathbf{z_y} \sim p(\mathbf{\mathbf{z_Y}|\x}); &amp; \mathbf{y} \sim p_{\theta y}(\mathbf{y} | \mathbf{z_y}, \mathbf{s_2}) \\
 \end{align*}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_{\theta x}(\mathbf{x} | \mathbf{z_x}, \mathbf{s})\)</span> and <span class="math notranslate nohighlight">\(p_{\theta y}(\mathbf{y} | \mathbf{z_y}, \mathbf{s})\)</span> are distributions that reflect the data modelled.
-As <span class="math notranslate nohighlight">\(\s_1\)</span> and <span class="math notranslate nohighlight">\(\s_2\)</span> are marginally independent of <span class="math notranslate nohighlight">\(\mathbf{z_x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{z_y}\)</span> respectively we follow <a href="#id35"><span class="problematic" id="id36">:cite:`vfae`</span></a> and cast the problem of finding an invariant representation as performing inference on the graphical model and obtaining the posterior distributions of <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span> by <span class="math notranslate nohighlight">\(p(\zx|\x,\s)\)</span> and <span class="math notranslate nohighlight">\(p(\zy|\x,\s)\)</span>.</p>
+As <span class="math notranslate nohighlight">\(\s_1\)</span> and <span class="math notranslate nohighlight">\(\s_2\)</span> are marginally independent of <span class="math notranslate nohighlight">\(\mathbf{z_x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{z_y}\)</span> respectively we follow <span id="id18">[<a class="reference internal" href="../../bib.html#id80"><span>LSL+16</span></a>]</span> and cast the problem of finding an invariant representation as performing inference on the graphical model and obtaining the posterior distributions of <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span> by <span class="math notranslate nohighlight">\(p(\zx|\x,\s)\)</span> and <span class="math notranslate nohighlight">\(p(\zy|\x,\s)\)</span>.</p>
 <p>We parameterize the generative models (decoders) <span class="math notranslate nohighlight">\(p_{\theta_x} (\x|\zx, \s_1)\)</span> and <span class="math notranslate nohighlight">\(p_{\theta_y} (\y|\zy, \s_2)\)</span> and the variational posteriors (encoders) <span class="math notranslate nohighlight">\(q_{\phi_x} (\zx|\x, \s)\)</span> and <span class="math notranslate nohighlight">\(q_{\phi_y} (\zy|\x)\)</span> with neural networks, giving the following lower bound</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -586,14 +605,17 @@ p*\theta(\y|\x) \triangleq &amp;\: \mathrm{Cat}(\y|\pi\_\phi(\x))
 \end{align*}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f_\theta(\zx, \s)\)</span> is a distribution suited to the data.</p>
 <p>To encourage <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span> to be invariant to <span class="math notranslate nohighlight">\(\s\)</span>, we use adversarial network heads to predict the sensitive attribute from the latent distributions.
-These are trained using the gradient reversal layer (GRL) of Domain Adversarial Neural Networks <a href="#id37"><span class="problematic" id="id38">:cite:`ganin2016domain`</span></a>, such that a min-max game is played out between the adversarial heads and the encoders.</p>
+These are trained using the gradient reversal layer (GRL) of Domain Adversarial Neural Networks <span id="id19">[<a class="reference internal" href="../../bib.html#id79"><span>GUA+16</span></a>]</span>, such that a min-max game is played out between the adversarial heads and the encoders.</p>
 <p>This produces a <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(\zy\)</span> that are invariant to <span class="math notranslate nohighlight">\(\s\)</span>, yet retain as much information as possible in order to be useful in reconstructing <span class="math notranslate nohighlight">\(\x\)</span> and <span class="math notranslate nohighlight">\(\y\)</span>, respectively.
 To accommodate the representation being invariant to the protected characteristic, during reconstruction we additionally supply the protected characteristic label to the decoder.
 This allows the decoder to be as accurate as possible and allows the encoder to remove more information regarding <span class="math notranslate nohighlight">\(\s\)</span> as this information is added later.
 When reconstructing our data, we can then “test” how sensitive our reconstructions are to the protected characteristic.
 Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dataset that has little correlation between the features and the protected characteristic will not result in the loss of much information information in the transformation to <span class="math notranslate nohighlight">\(\zx\)</span>, while decoding will also not be reliant on conditioning the decoder on <span class="math notranslate nohighlight">\(\s\)</span>.</p>
-<div class="sphinx-tabs docutils container" id="table">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">UCI Adult Dataset</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">German Credit</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">ProPublica COMPAS</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">NYC SQF</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
+<div class="tabbed-set docutils">
+<input checked="checked" id="f58a3982-bfec-4f97-9e38-83c97b7d176a" name="cc073bb9-8890-4852-a1a3-4d7401f1e0be" type="radio">
+</input><label class="tabbed-label" for="f58a3982-bfec-4f97-9e38-83c97b7d176a">
+UCI Adult Dataset</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -641,7 +663,11 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
+</div>
+<input id="e1f187af-1f54-47dc-97aa-69be11b1ee50" name="cc073bb9-8890-4852-a1a3-4d7401f1e0be" type="radio">
+</input><label class="tabbed-label" for="e1f187af-1f54-47dc-97aa-69be11b1ee50">
+German Credit</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -689,7 +715,11 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
+</div>
+<input id="fb8d9ba0-9c55-4a97-8a57-78096fe2144a" name="cc073bb9-8890-4852-a1a3-4d7401f1e0be" type="radio">
+</input><label class="tabbed-label" for="fb8d9ba0-9c55-4a97-8a57-78096fe2144a">
+ProPublica COMPAS</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -737,7 +767,11 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><table class="colwidths-auto table">
+</div>
+<input id="4b53e73c-730b-4bdb-b698-95732c764d3e" name="cc073bb9-8890-4852-a1a3-4d7401f1e0be" type="radio">
+</input><label class="tabbed-label" for="4b53e73c-730b-4bdb-b698-95732c764d3e">
+NYC SQF</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Strategy</p></th>
 <th class="text-align:center head"><p>Accuracy <span class="math notranslate nohighlight">\(\uparrow\)</span></p></th>
@@ -785,10 +819,11 @@ Reconstructing <span class="math notranslate nohighlight">\(\x\)</span> on a dat
 </tr>
 </tbody>
 </table>
-</div></div>
-<div class="figure align-default" id="id39">
+</div>
+</div>
+<div class="figure align-default" id="recons">
 <a class="reference internal image-reference" href="../../../_images/diff_all.png"><img alt="../../../_images/diff_all.png" src="../../../_images/diff_all.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The first <span class="math notranslate nohighlight">\(100\)</span> reconstructed samples of one random repeat from the UCI Adult Income dataset drawn <span class="math notranslate nohighlight">\(3\)</span> times. Each image corresponds to the difference in reconstructions given a sample from <span class="math notranslate nohighlight">\(\zx\)</span> and <span class="math notranslate nohighlight">\(S=s, \forall s\in \{0,1 \}\)</span>. Features that we do not believe to be related to the sensitive attribute <em>sex</em>, such as <em>race</em> remain unchanged, while features we believe are strongly related to the sensitive attribute, such as the <em>relationship</em> status attribute value <em>husband</em>, consistently change when the sensitive attribute is altered. Features that we are more uncertain about, such as highest attained <em>education</em> level and <em>hours per week</em> worked are more inconsistent in their behaviour.</span><a class="headerlink" href="#recons" title="Permalink to this image">¶</a></p>
 </div>
 <p>However, if the features are entwined with the protected characteristic, then a significant amount of this information will be removed during the transformation to <span class="math notranslate nohighlight">\(\zx\)</span>.
 The decoder network will then rely on the protected characteristic to reconstruct the features.
@@ -799,15 +834,15 @@ We also perform these interventions on the reconstruction of the class label, wh
 <div class="section" id="results">
 <h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
 <p>We evaluate the performance of <span class="math notranslate nohighlight">\(3\)</span> augmentation strategies on <span class="math notranslate nohighlight">\(4\)</span> commonly used fairness datasets.</p>
-<p><strong>UCI Adult Income</strong><a href="#id40"><span class="problematic" id="id41">:cite:`Asuncion+Newman:2007`</span></a>. A dataset of 45,222 samples, from the 1994 U.S. census.
+<p><strong>UCI Adult Income</strong><span id="id20">[<a class="reference internal" href="../../bib.html#id17"><span>DG17</span></a>]</span>. A dataset of 45,222 samples, from the 1994 U.S. census.
 The binary classification task is predicting whether an individual’s salary is greater than $<span class="math notranslate nohighlight">\(50,000\)</span> USD; the binary sensitive attribute is whether an individual’s sex is Male or not.</p>
-<p><strong>UCI German Credit</strong><a href="#id42"><span class="problematic" id="id43">:cite:`Asuncion+Newman:2007`</span></a>. A dataset of 1000 samples from the UCI Repository of Machine Learning Databases of data used to evaluate credit applications in Germany.
+<p><strong>UCI German Credit</strong><span id="id21">[<a class="reference internal" href="../../bib.html#id17"><span>DG17</span></a>]</span>. A dataset of 1000 samples from the UCI Repository of Machine Learning Databases of data used to evaluate credit applications in Germany.
 The binary classification task is predicting if an individual’s credit label is positive or not; the binary sensitive attribute the individual’s sex.</p>
 <p><strong>COMPAS</strong>. A dataset of 6,167 samples, released by ProPublica following their investigation into recidivism prediction.
 The binary classification task is predicting if an individual is charged with an act of recidivism within <span class="math notranslate nohighlight">\(2\)</span> years of being released, and the binary sensitive attribute is whether an individual’s race is White or not.</p>
 <p><strong>NYC SQF</strong>. A dataset of 12,347 samples, from 2016 of data on individuals stopped as part of New York City’s Stop, Question, Frisk initiative.
 The binary classification task is predicting if a stopped individual is found to be carrying a weapon or not, and the binary sensitive attribute is whether an individual’s race is White or not.</p>
-<p>The augmentation strategies are <strong>Intervene on <span class="math notranslate nohighlight">\(X\)</span></strong> The original data is augmented with examples that are produced by intervening on <span class="math notranslate nohighlight">\(\s_1\)</span> during decoding. To emulate the behaviour of uncertainty over causal models <a href="#id44"><span class="problematic" id="id45">:cite:`Russell2017collide`</span></a> we draw <span class="math notranslate nohighlight">\(3\)</span> samples from <span class="math notranslate nohighlight">\(\zx\)</span> with which to condition our decoder. The dataset then contains the original data tuple <span class="math notranslate nohighlight">\((\x, \s, \y)\)</span> three times and three `imagined’ examples <span class="math notranslate nohighlight">\((\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)\)</span>.
+<p>The augmentation strategies are <strong>Intervene on <span class="math notranslate nohighlight">\(X\)</span></strong> The original data is augmented with examples that are produced by intervening on <span class="math notranslate nohighlight">\(\s_1\)</span> during decoding. To emulate the behaviour of uncertainty over causal models <span id="id22">[<a class="reference internal" href="../../bib.html#id8"><span>RKLS17</span></a>]</span> we draw <span class="math notranslate nohighlight">\(3\)</span> samples from <span class="math notranslate nohighlight">\(\zx\)</span> with which to condition our decoder. The dataset then contains the original data tuple <span class="math notranslate nohighlight">\((\x, \s, \y)\)</span> three times and three `imagined’ examples <span class="math notranslate nohighlight">\((\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)\)</span>.
 <strong>Intervene on <span class="math notranslate nohighlight">\(Y\)</span></strong> We make a similar intervention, but on the class label reconstruction, augmenting the original dataset <span class="math notranslate nohighlight">\((\x, \s, \y)\)</span> with <span class="math notranslate nohighlight">\((\x, \s_\mathrm{flip}, \y_\mathrm{imagined})\)</span>
 <strong>Augment with both</strong> We make both of the previous interventions and augment the dataset with both so that the new dataset comprises of examples from <span class="math notranslate nohighlight">\((\x, \s, \y)\)</span>, <span class="math notranslate nohighlight">\((\x_\mathrm{imagined}, \s_\mathrm{flip}, \y)\)</span> and <span class="math notranslate nohighlight">\((\x, \s_\mathrm{flip}, \y_\mathrm{imagined})\)</span>.</p>
 <p>All values in the dataset are one-hot encoded, including continuous values which are split into <span class="math notranslate nohighlight">\(5\)</span> bins.
@@ -829,12 +864,12 @@ Ind. EqOp. is Ind. DP., but also conditioned on the observed class label being p
 <p>\begin{equation*}
 \lvert P(\hat{Y}=1 | f(Z_x, S_0), Y\myeq{}1) - P(\hat{Y}=1 | f(Z_x, S_1), Y\myeq{}1) \rvert
 \end{equation*}</p>
-<p>We compare our model against an unconstrained Logistic Regression model, and one to which the instance weighting scheme of <a href="#id46"><span class="problematic" id="id47">:cite:`kamiran2012data`</span></a> is applied.
+<p>We compare our model against an unconstrained Logistic Regression model, and one to which the instance weighting scheme of <span id="id23">[<a class="reference internal" href="../../bib.html#id10"><span>KC12</span></a>]</span> is applied.
 In addition we train a Logistic Regression model on our augmented samples.</p>
 <p>In all experiments, to account for uncertainty in the reconstruction we draw three samples from the feature embedding space with which to condition our decoder.
-An example of this is given is fig. <code class="xref std std-numref docutils literal notranslate"><span class="pre">recons</span></code>.
+An example of this is given is fig. <a class="reference internal" href="#recons"><span class="std std-numref">Fig. 4</span></a>.
 For the prediction encoder we model the latent space as the `true’ label prior to conditioning on the sensitive attribute, as such we only draw one sample as we use the probability directly.</p>
-<p>The results of all experiments are shown in table <code class="xref std std-numref docutils literal notranslate"><span class="pre">table</span></code>.
+<p>The results of all experiments are shown in the <a class="reference internal" href="#table-ref"><span class="std std-ref">results table</span></a>.
 Across <span class="math notranslate nohighlight">\(4\)</span> datasets we observe that the effect of intervening on either the reconstruction of the feature, or the class label has differing results.
 We attribute this to two phenomenon, sampling bias and proxy labels.
 In the case of the UCI Adult dataset and the German Credit dataset, the performance across (almost) all metrics is increased by intervening on the reconstruction of the <em>features</em>, including individual measures of fairness.
@@ -860,6 +895,75 @@ Intervening just on the class label and augmenting our training set with these l
 <p>As future work, we will study the interaction between sampling bias and proxy labels.
 The results imply that the relationship between them is more complex than can be resolved simply by intervening on both the features and the class label at the same time, or jointly but separately.
 We aim to characterise this relationship in greater detail, investigating if both inconsistent features and inconsistent samples can be handled together within our framework.</p>
+<p id="id24"><dl class="citation">
+<dt class="label" id="id34"><span class="brackets"><a class="fn-backref" href="#id10">AVGW19</a></span></dt>
+<dd><p>Tameem Adel, Isabel Valera, Zoubin Ghahramani, and Adrian Weller. One-network adversarial fairness. In <em>Thirty-Third AAAI Conference on Artificial Intelligence</em>. 2019.</p>
+</dd>
+<dt class="label" id="id44"><span class="brackets"><a class="fn-backref" href="#id1">ALMK16</a></span></dt>
+<dd><p>Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. Machine bias. <em>ProPublica, May</em>, 23(2016):139–159, 2016.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets"><a class="fn-backref" href="#id1">BCZ+16</a></span></dt>
+<dd><p>Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 4349–4357. 2016.</p>
+</dd>
+<dt class="label" id="id96"><span class="brackets"><a class="fn-backref" href="#id14">Chi19</a></span></dt>
+<dd><p>Silvia Chiappa. Path-specific counterfactual fairness. In <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, volume 33, 7801–7808. 2019.</p>
+</dd>
+<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id4">Cho17</a></span></dt>
+<dd><p>Alexandra Chouldechova. Fair prediction with disparate impact: a study of bias in recidivism prediction instruments. <em>Big Data</em>, 5(2):153–163, 2017. PMID: 28632438. URL: <a class="reference external" href="https://doi.org/10.1089/big.2016.0047">https://doi.org/10.1089/big.2016.0047</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1089/big.2016.0047">arXiv:https://doi.org/10.1089/big.2016.0047</a>, <a class="reference external" href="https://doi.org/10.1089/big.2016.0047">doi:10.1089/big.2016.0047</a>.</p>
+</dd>
+<dt class="label" id="id40"><span class="brackets">DG17</span><span class="fn-backref">(<a href="#id20">1</a>,<a href="#id21">2</a>)</span></dt>
+<dd><p>Dheeru Dua and Casey Graff. UCI machine learning repository. 2017. URL: <a class="reference external" href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a>.</p>
+</dd>
+<dt class="label" id="id101"><span class="brackets">ES16</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id12">2</a>)</span></dt>
+<dd><p>Harrison Edwards and Amos J. Storkey. Censoring representations with an adversary. In Yoshua Bengio and Yann LeCun, editors, <em>4th International Conference on Learning Representations, ICLR 2016, San Juan, Puerto Rico, May 2-4, 2016, Conference Track Proceedings</em>. 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1511.05897">http://arxiv.org/abs/1511.05897</a>.</p>
+</dd>
+<dt class="label" id="id102"><span class="brackets"><a class="fn-backref" href="#id19">GUA+16</a></span></dt>
+<dd><p>Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario March, and Victor Lempitsky. Domain-adversarial training of neural networks. <em>Journal of Machine Learning Research</em>, 17(59):1–35, 2016. URL: <a class="reference external" href="http://jmlr.org/papers/v17/15-239.html">http://jmlr.org/papers/v17/15-239.html</a>.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id7">GSR+18</a></span></dt>
+<dd><p>Marta Garnelo, Jonathan Schwarz, Dan Rosenbaum, Fabio Viola, Danilo J Rezende, SM Eslami, and Yee Whye Teh. Neural processes. <em>arXiv preprint arXiv:1807.01622</em>, 2018.</p>
+</dd>
+<dt class="label" id="id33"><span class="brackets">KC12</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id11">2</a>,<a href="#id17">3</a>,<a href="#id23">4</a>)</span></dt>
+<dd><p>Faisal Kamiran and Toon Calders. Data preprocessing techniques for classification without discrimination. <em>Knowledge and Information Systems</em>, 33(1):1–33, 2012. <a class="reference external" href="https://doi.org/10.1007/s10115-011-0463-8">doi:10.1007/s10115-011-0463-8</a>.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id9">KCQ18</a></span></dt>
+<dd><p>Thomas Kehrenberg, Zexun Chen, and Novi Quadrianto. Interpretable fairness via target labels in gaussian process models. <em>arXiv preprint arXiv:1810.05598</em>, 2018.</p>
+</dd>
+<dt class="label" id="id39"><span class="brackets"><a class="fn-backref" href="#id14">KBK+19</a></span></dt>
+<dd><p>Niki Kilbertus, Philip J. Ball, Matt J. Kusner, Adrian Weller, and Ricardo Silva. The sensitivity of counterfactual fairness to unmeasured confounding. In <em>Proceedings of the Thirty-Fifth Conference on Uncertainty in Artificial Intelligence, UAI</em>. 2019.</p>
+</dd>
+<dt class="label" id="id29"><span class="brackets"><a class="fn-backref" href="#id3">KMR17</a></span></dt>
+<dd><p>Jon M. Kleinberg, Sendhil Mullainathan, and Manish Raghavan. Inherent trade-offs in the fair determination of risk scores. In <em>Innovations in Theoretical Computer Science Conference</em>, 43:1–43:23. 2017.</p>
+</dd>
+<dt class="label" id="id92"><span class="brackets">KLRS17</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id14">2</a>)</span></dt>
+<dd><p>Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. Counterfactual fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 30</em>, pages 4066–4076. Curran Associates, Inc., 2017. URL: <a class="reference external" href="http://papers.nips.cc/paper/6995-counterfactual-fairness.pdf">http://papers.nips.cc/paper/6995-counterfactual-fairness.pdf</a>.</p>
+</dd>
+<dt class="label" id="id37"><span class="brackets"><a class="fn-backref" href="#id7">LSSW19</a></span></dt>
+<dd><p>Christos Louizos, Xiahan Shi, Klamer Schutte, and Max Welling. The functional neural process. <em>arXiv preprint arXiv:1906.08324</em>, 2019.</p>
+</dd>
+<dt class="label" id="id103"><span class="brackets">LSL+16</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id16">2</a>,<a href="#id18">3</a>)</span></dt>
+<dd><p>Christos Louizos, Kevin Swersky, Yujia Li, Max Welling, and Richard S. Zemel. The variational fair autoencoder. In <em>ICLR</em>. 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1511.00830">http://arxiv.org/abs/1511.00830</a>.</p>
+</dd>
+<dt class="label" id="id95"><span class="brackets"><a class="fn-backref" href="#id14">NS18</a></span></dt>
+<dd><p>Razieh Nabi and Ilya Shpitser. Fair inference on outcomes. In <em>Proceedings of the Thirty Second Conference on Association for the Advancement of Artificial Intelligence (AAAI-32nd)</em>. AAAI Press, 2018.</p>
+</dd>
+<dt class="label" id="id38"><span class="brackets"><a class="fn-backref" href="#id13">QST19</a></span></dt>
+<dd><p>Novi Quadrianto, Viktoriia Sharmanska, and Oliver Thomas. Discovering fair representations in the data domain. In <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>, 8227–8236. 2019.</p>
+</dd>
+<dt class="label" id="id31"><span class="brackets">RKLS17</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>,<a href="#id22">3</a>)</span></dt>
+<dd><p>Chris Russell, Matt J Kusner, Joshua Loftus, and Ricardo Silva. When worlds collide: integrating different counterfactual assumptions in fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 30</em>, 6414–6423. 2017.</p>
+</dd>
+<dt class="label" id="id126"><span class="brackets">Tol19</span><span class="fn-backref">(<a href="#id8">1</a>,<a href="#id15">2</a>)</span></dt>
+<dd><p>Songül Tolan. Fair and unbiased algorithmic decision making: current state and future challenges. <em>CoRR</em>, 2019. URL: <a class="reference external" href="http://arxiv.org/abs/1901.04730">http://arxiv.org/abs/1901.04730</a>, <a class="reference external" href="https://arxiv.org/abs/1901.04730">arXiv:1901.04730</a>.</p>
+</dd>
+<dt class="label" id="id120"><span class="brackets">YT21</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id15">2</a>)</span></dt>
+<dd><p>Samuel Yeom and Michael Carl Tschantz. Avoiding disparity amplification under different worldviews. In <em>ACM Conference on Fairness, Accountability, and Transparency</em>. 2021.</p>
+</dd>
+<dt class="label" id="id100"><span class="brackets"><a class="fn-backref" href="#id10">ZWS+13</a></span></dt>
+<dd><p>Rich Zemel, Yu Wu, Kevin Swersky, Toni Pitassi, and Cynthia Dwork. Learning fair representations. In Sanjoy Dasgupta and David McAllester, editors, <em>Proceedings of the 30th International Conference on Machine Learning</em>, volume 28 of Proceedings of Machine Learning Research, 325–333. Atlanta, Georgia, USA, 17–19 Jun 2013. PMLR. URL: <a class="reference external" href="http://proceedings.mlr.press/v28/zemel13.html">http://proceedings.mlr.press/v28/zemel13.html</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 
@@ -888,7 +992,7 @@ We aim to characterise this relationship in greater detail, investigating if bot
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="dfritdd.html" title="previous page">Discovering Fair Representations in the Data Domain</a>
+    <a class='left-prev' id="prev-link" href="framework_for_positive_action.html" title="previous page">An Algorithmic Framework for Positive Action</a>
     <a class='right-next' id="next-link" href="nosinn.html" title="next page">Null-Sampling for Invariant and Interpretable Representations</a>
 
         </div>

@@ -99,10 +99,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Fair Representations of Biased Data
+  <a class="reference internal" href="../../content.html">
+   Content
   </a>
  </li>
 </ul>
@@ -193,6 +198,11 @@
    Conclusion
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bib.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -239,6 +249,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="dfritdd.html">
      Discovering Fair Representations in the Data Domain
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="framework_for_positive_action.html">
+     An Algorithmic Framework for Positive Action
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="framework_for_positive_action.html#demonstration">
+     Demonstration
     </a>
    </li>
    <li class="toctree-l2">
@@ -531,21 +551,21 @@ This is a broad topic which includes fairness, interpretability and ultimately, 
 Whilst this is a relatively new area of research, there is a growing body of work, which is highlighted at conferences such as
 FAT/ML (Fairness, Accountability and Transparency in Machine Learning)
 as well as dedicated tracks at prestigious conferences such as NIPS
-<a href="#id1"><span class="problematic" id="id2">:cite:`barocas_hardt`</span></a> and ICML <a href="#id3"><span class="problematic" id="id4">:cite:`corbett-davies_goel`</span></a>.</p>
+<span id="id1">[<a class="reference internal" href="../../bib.html#id19"><span>BH</span></a>]</span> and ICML <span id="id2">[<a class="reference internal" href="../../bib.html#id20"><span>CDG</span></a>]</span>.</p>
 <p>The reason for this increase in activity is simple.
 Machine Learning models reflect underlying data.
 This has enabled them to be incredibly successful, performing to a superhuman standard for many tasks
-<a href="#id5"><span class="problematic" id="id6">:cite:`vincent_2017,brown-sandholm2018,cite-key`</span></a>.
+<span id="id3">[<a class="reference internal" href="../../bib.html#id23"><span>Vin17</span></a>,<a class="reference internal" href="../../bib.html#id24"><span>BS18</span></a>,<a class="reference internal" href="../../bib.html#id25"><span>SSS+17</span></a>]</span>.
 Typically these tend to be objective problems such as predicting the weather
-<a href="#id7"><span class="problematic" id="id8">:cite:`holmstrom2016machine`</span></a>, playing Atari games <a href="#id9"><span class="problematic" id="id10">:cite:`adamski2018distributed`</span></a> or distinguishing between plant phenotypes
-<a href="#id11"><span class="problematic" id="id12">:cite:`SINGH2016110`</span></a>.
+<span id="id4">[<a class="reference internal" href="../../bib.html#id53"><span>HLV16</span></a>]</span>, playing Atari games <span id="id5">[<a class="reference internal" href="../../bib.html#id50"><span>AAG+18</span></a>]</span> or distinguishing between plant phenotypes
+<span id="id6">[<a class="reference internal" href="../../bib.html#id26"><span>SGSS16</span></a>]</span>.
 In fact, the success and high performance of machine
 learning techniques in these areas has led to the desire to apply these
 same techniques to more subjective areas, such as advertising
-<a href="#id13"><span class="problematic" id="id14">:cite:`Sweeney2013DiscriminationDelivery`</span></a>, parole hearings
-<a href="#id15"><span class="problematic" id="id16">:cite:`Angwin2016MachineBlacks`</span></a> or CV screening <a href="#id17"><span class="problematic" id="id18">:cite:`ideal`</span></a>.
+<span id="id7">[<a class="reference internal" href="../../bib.html#id44"><span>Swe13</span></a>]</span>, parole hearings
+<span id="id8">[<a class="reference internal" href="../../bib.html#id21"><span>ALMK16</span></a>]</span> or CV screening <span id="id9">[<a class="reference internal" href="../../bib.html#id27"><span>Ide</span></a>]</span>.
 However, this presents a problem, described in the paper “Residual Unfairness in Fair
-Machine Learning from Prejudiced Data” <a href="#id19"><span class="problematic" id="id20">:cite:`kallus2018residual`</span></a> as
+Machine Learning from Prejudiced Data” <span id="id10">[<a class="reference internal" href="../../bib.html#id88"><span>KZ18</span></a>]</span> as
 “Bias In, Bias Out”.
 This refers to training a model on biased data and (unwittingly) approximating a biased function.
 It is analogous to the database mantra “Garbage In, Garbage Out”.
@@ -557,12 +577,12 @@ This is followed by <a class="reference internal" href="#impl"><span class="std 
 <p>The predominant discussion in this review is around fairness, as this has received the most attention within the machine
 learning community.
 The other areas, interpretability and accountability, which comprise the greater ‘ethical’ category have received far
-less attention<a class="footnote-reference brackets" href="#id180" id="id21">1</a>.
+less attention<a class="footnote-reference brackets" href="#id198" id="id11">1</a>.
 Although, we’ll discuss them briefly in the related work section <a class="reference internal" href="#background"><span class="std std-ref">Initial Experiments in Fairness and Related Work</span></a>.</p>
 <p>One area that has received little exploration, is the difference between
 transparency and interpretability. These terms are often used as
 synonyms, however that leads to confusion. A system can be transparent,
-but that doesn’t mean we are capable of interpreting the results<a class="footnote-reference brackets" href="#id181" id="id22">2</a>.
+but that doesn’t mean we are capable of interpreting the results<a class="footnote-reference brackets" href="#id199" id="id12">2</a>.
 Similar to the idea of a transparent system is one where we can see an
 intermediate representation. This is the concept of learned “fair”
 representations which have proved to be a popular approach to remove
@@ -574,14 +594,14 @@ not just complicated, they are complex. There’s a major challenge that a
 lot of biases are ingrained into our culture. An example of this is the
 everyday words that we use as highlighted by the paper “Man is to
 Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings”
-<a href="#id23"><span class="problematic" id="id24">:cite:`bolukbasi2016man`</span></a>. The exercise of debiasing word embeddings
+<span id="id13">[<a class="reference internal" href="../../bib.html#id5"><span>BCZ+16</span></a>]</span>. The exercise of debiasing word embeddings
 is appealing, and has sparked debate, with recent papers “Mitigating
 Unwanted Biases with Adversarial Learning”
-<a href="#id25"><span class="problematic" id="id26">:cite:`zhang2018mitigating`</span></a> and “Adversarial Removal of Demographic
-Attributes from Text Data” <a href="#id27"><span class="problematic" id="id28">:cite:`elazar2018adversarial`</span></a> proposing techniques
+<span id="id14">[<a class="reference internal" href="../../bib.html#id54"><span>ZLM18</span></a>]</span> and “Adversarial Removal of Demographic
+Attributes from Text Data” <span id="id15">[<a class="reference internal" href="../../bib.html#id37"><span>EG18</span></a>]</span> proposing techniques
 based on adversarial learning and a warning against this approach
 respectively. The adversarial approach to combating this problem is
-discussed in <span class="xref std std-ref">impl_adv</span>.</p>
+discussed in <a class="reference internal" href="#impl-adv"><span class="std std-ref">Adversarial Learning</span></a>.</p>
 <p>As these problems are complex, simply analysing correlations may not be
 enough to solve them without understanding the causal relationship
 between attributes. A predominant issue in this area revolves around the
@@ -610,9 +630,9 @@ Act 2010, let alone other protections within specific domains. As such,
 the problem about automated bias has been highlighted by researchers for
 a number of years and institutions are starting to pay attention.
 Governments around the world are saying that this is an issue. Both the
-House of Lords <a href="#id29"><span class="problematic" id="id30">:cite:`house2018select`</span></a> and the Whitehouse
-<a href="#id31"><span class="problematic" id="id32">:cite:`Munoz2016BigRights`</span></a> say that this issue should be addressed.
-Propublica’s ‘Machine Bias’ <a href="#id33"><span class="problematic" id="id34">:cite:`angwin_larson_kirchner_mattu`</span></a> article
+House of Lords <span id="id16">[<a class="reference internal" href="../../bib.html#id58"><span>HOU18</span></a>]</span> and the Whitehouse
+<span id="id17">[<a class="reference internal" href="../../bib.html#id41"><span>MSP16</span></a>]</span> say that this issue should be addressed.
+Propublica’s ‘Machine Bias’ <span id="id18">[<a class="reference internal" href="../../bib.html#id21"><span>ALMK16</span></a>]</span> article
 sparked debate and raised concerns that needed to be addressed by the
 community after demonstrating that (at least on the surface) recidivism
 prediction software produced by Northpointe advised that black people in
@@ -637,7 +657,7 @@ to reduce discrimination referring to unfair treatment of a person, or a
 group of people based on membership of a category, with no regard to
 individual merit. This is an important distinction and was first raised
 in the now seminal 2008 paper “Discrimination Aware Data Mining”
-<a href="#id35"><span class="problematic" id="id36">:cite:`Pedreshi2008Discrimination-awareMining`</span></a>. The membership of the
+<span id="id19">[<a class="reference internal" href="../../bib.html#id89"><span>PRT08</span></a>]</span>. The membership of the
 category that we are conscious of not discriminating against is referred
 to as a <em>potentially discriminatory</em> attribute. This paper argues that
 this is different to being a <em>sensitive attribute</em> giving the example
@@ -646,7 +666,7 @@ discriminatory. In general, later work has adopted that both sensitive
 attributes and potentially discriminatory attributes are both referred
 to as sensitive attributes, though more recent works, such as
 “Path-Specific Counterfactual
-Fairness”<a href="#id37"><span class="problematic" id="id38">:cite:`chiappa2019path`</span></a><a class="footnote-reference brackets" href="#id182" id="id39">3</a> go back to this
+Fairness”<span id="id20">[<a class="reference internal" href="../../bib.html#id73"><span>Chi19</span></a>]</span><a class="footnote-reference brackets" href="#id200" id="id21">3</a> go back to this
 original view that they are different. The predominant take-away from
 this paper is that it is simply not enough to not directly capture a
 sensitive attribute. The reason for this is that a sensitive attribute
@@ -659,14 +679,14 @@ from NYC”. This may seem harmless, but if you asked a subject matter
 expert who advised that the vast majority of people in NYC area 10451
 were black, then the learned rule is equivalent to “rarely give credit
 to black-race applicants in neighbourhood 10451 in NYC”, which is
-evidently discriminatory <a href="#id40"><span class="problematic" id="id41">:cite:`Pedreshi2008Discrimination-awareMining`</span></a>. The
+evidently discriminatory <span id="id22">[<a class="reference internal" href="../../bib.html#id89"><span>PRT08</span></a>]</span>. The
 paper is set in the field of data-mining and the aim is to find rules
 that discriminate in some way. The authors distinguish between direct
 discrimination, which uses a sensitive attribute directly, and indirect
 discrimination which uses a non-sensitive feature (or combination of
 features) as a proxy for the sensitive feature and then use this proxy
 in the rule.</p>
-<p>Independently, Kamiran and Calders <a href="#id42"><span class="problematic" id="id43">:cite:`Kamiran2009`</span></a> started investigating
+<p>Independently, Kamiran and Calders <span id="id23">[<a class="reference internal" href="../../bib.html#id32"><span>KC09</span></a>]</span> started investigating
 fairness with regards to classification. Their approach hinges around
 the notion that the bias isn’t captured in the features of an
 individual, but within the label <span class="math notranslate nohighlight">\(y\)</span>. Their approach involves measuring
@@ -693,13 +713,13 @@ brief overview.</p>
 <h3>Accountability<a class="headerlink" href="#accountability" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Transparent, Explainable, and Accountable AI for Robotics
-<a href="#id44"><span class="problematic" id="id45">:cite:`wachter2017transparent`</span></a>: Leaves open questions; Can
+<span id="id24">[<a class="reference internal" href="../../bib.html#id61"><span>WMF17</span></a>]</span>: Leaves open questions; Can
 human-interpretable systems be designed without sacrificing
 performance? How can transparency and accountability be achieved in
 inscrutable systems? and How can parallels between emerging systems
 be identified to set accountability requirements?</p></li>
 <li><p>The Scored Society : Due Process for Automated Predictions
-<a href="#id46"><span class="problematic" id="id47">:cite:`citron2014scored`</span></a>: The concern in this paper is “arbitrariness
+<span id="id25">[<a class="reference internal" href="../../bib.html#id59"><span>CP14</span></a>]</span>: The concern in this paper is “arbitrariness
 by algorithm” and the effect that this may have on society. They
 suggest that individuals assessed by predictive models should be
 notified that they have been assessed, along with the opportunity to
@@ -707,18 +727,18 @@ challenge the assessment. Individuals, or neutral experts should be
 able to “open up the black box scoring system”.</p></li>
 <li><p>Seeing without knowing : Limitations of the transparency ideal and
 its application to algorithmic accountability
-<a href="#id48"><span class="problematic" id="id49">:cite:`ananny2018seeing`</span></a>: Transparency alone cannot create
+<span id="id26">[<a class="reference internal" href="../../bib.html#id57"><span>AC18</span></a>]</span>: Transparency alone cannot create
 accountable systems. Accountability is about about addressing power
 imbalance and transparency is limited in it’s ability to deal with
 this. As models are complex, transparency is unlikely to be a binary
 attribute, so it’s important to not only consider what transparency
 reveals, but also what is not revealed.</p></li>
 <li><p>Algorithmic accountability reporting : On the investigation of black
-boxes <a href="#id50"><span class="problematic" id="id51">:cite:`diakopoulos2014algorithmic`</span></a>: Journalistic approaches should
+boxes <span id="id27">[<a class="reference internal" href="../../bib.html#id38"><span>Dia14</span></a>]</span>: Journalistic approaches should
 be taken to try and interrogate the semantic behaviour of a decision
 system.</p></li>
 <li><p>Computational power and the social impact of artificial intelligence
-<a href="#id52"><span class="problematic" id="id53">:cite:`hwang2018computational`</span></a>: Computational decision processes
+<span id="id28">[<a class="reference internal" href="../../bib.html#id43"><span>Hwa18</span></a>]</span>: Computational decision processes
 are in part determined by the computational power available. As
 such, regions with the greatest access to computational resource
 will be the ones to determine the ethics of more complicated models.</p></li>
@@ -731,22 +751,22 @@ of a decision. Some models are inherently interpretable, such as
 Decision Trees, or to a lesser extent linear models. There are also
 model agnostic interpretability techniques such as local surrogate
 models such as “Local Interpretable Model-agnostic Explanations (LIME)”
-<a href="#id54"><span class="problematic" id="id55">:cite:`ribeiro2016should`</span></a>, or game-theory approaches to explanation
-such as the Shapley Value <a href="#id56"><span class="problematic" id="id57">:cite:`roth1988shapley`</span></a>.</p>
+<span id="id29">[<a class="reference internal" href="../../bib.html#id34"><span>RSG16</span></a>]</span>, or game-theory approaches to explanation
+such as the Shapley Value <span id="id30">[<a class="reference internal" href="../../bib.html#id60"><span>Rot88</span></a>]</span>.</p>
 <p>From “Explanation in Artificial Intelligence : Insights from the Social
-Sciences” <a href="#id58"><span class="problematic" id="id59">:cite:`miller2019explanation`</span></a>, Interpretability is the degree
+Sciences” <span id="id31">[<a class="reference internal" href="../../bib.html#id94"><span>Mil19</span></a>]</span>, Interpretability is the degree
 to which a human can understand the cause of a decision. The book
-“Interpretable Machine Learning” <a href="#id60"><span class="problematic" id="id61">:cite:`molnar`</span></a> frames that statement in a
+“Interpretable Machine Learning” <span id="id32">[<a class="reference internal" href="../../bib.html#id28"><span>Mol18</span></a>]</span> frames that statement in a
 slightly different way, describing interpretability is “the degree to
 which a human can consistently predict the model’s result”. In this
 review we have already distinguished between transparency and
-interpretability, but <a href="#id62"><span class="problematic" id="id63">:cite:`molnar`</span></a> distinguishes further between
-interpretability and explanation. Miller <a href="#id64"><span class="problematic" id="id65">:cite:`miller2019explanation`</span></a>
+interpretability, but <span id="id33">[<a class="reference internal" href="../../bib.html#id28"><span>Mol18</span></a>]</span> distinguishes further between
+interpretability and explanation. Miller <span id="id34">[<a class="reference internal" href="../../bib.html#id94"><span>Mil19</span></a>]</span>
 argues that even if we are capable of interpreting the results of a
 model, unless we receive an explanation of how that model came to make a
 decision, then we will be unable to reliably reproduce the results. not
 only that, but as humans, any old explanation will not do, we require a
-<em>good explanation</em>. According to Miller <a href="#id66"><span class="problematic" id="id67">:cite:`miller2019explanation`</span></a>,
+<em>good explanation</em>. According to Miller <span id="id35">[<a class="reference internal" href="../../bib.html#id94"><span>Mil19</span></a>]</span>,
 good explanations are:-</p>
 <ul class="simple">
 <li><p><strong>contrastive</strong>. We tend to think in a counterfactual way i.e. would
@@ -779,7 +799,7 @@ characteristic, and <em>Disparate Impact</em> is the result of a seemingly fair
 decision affecting a protected group unfairly. Essentially, disparate
 treatment is in the measuring of the effect of <span class="math notranslate nohighlight">\(s\)</span> on <span class="math notranslate nohighlight">\(\hat{y}\)</span>.
 Disparate impact is found in measuring the difference between
-<span class="math notranslate nohighlight">\(p(\hat{y}|s=0)\)</span> and <span class="math notranslate nohighlight">\(p(\hat{y}|s=1)\)</span><a class="footnote-reference brackets" href="#id183" id="id68">4</a>.</p>
+<span class="math notranslate nohighlight">\(p(\hat{y}|s=0)\)</span> and <span class="math notranslate nohighlight">\(p(\hat{y}|s=1)\)</span><a class="footnote-reference brackets" href="#id201" id="id36">4</a>.</p>
 <p>Clearly these definitions are not mutually exclusive. You could choose a
 decision rule that treated groups disparately and it may or may not show
 disparate impact. Similarly regardless of whether there is disparate
@@ -804,7 +824,7 @@ where <span class="math notranslate nohighlight">\(H(Y) = - \sum_{y \in Y}P(y) \
 <h3>Types of Fairness<a class="headerlink" href="#types-of-fairness" title="Permalink to this headline">¶</a></h3>
 <p>Fairness constraints on the other hand have three forms. In the
 currently unfinished book on Fairness in Machine Learning
-<a href="#id69"><span class="problematic" id="id70">:cite:`barocas-hardt-narayanan`</span></a> the definitions of fairness are described as
+<span id="id37">[<a class="reference internal" href="../../bib.html#id22"><span>BHN19</span></a>]</span> the definitions of fairness are described as
 belonging to one of three groups, <em>Independence</em>, <em>Separation</em> or
 <em>Sufficiency</em>. This pattern is adopted in this section.</p>
 <div class="section" id="independence">
@@ -816,11 +836,11 @@ sensitive attribute</p>
 <div class="math notranslate nohighlight">
 \[P(\hat{Y}) \perp S\]</div>
 <p>In fact, one of the first
-papers in this area by Kamiran and Calders <a href="#id71"><span class="problematic" id="id72">:cite:`Kamiran2009`</span></a> use this as
+papers in this area by Kamiran and Calders <span id="id38">[<a class="reference internal" href="../../bib.html#id32"><span>KC09</span></a>]</span> use this as
 their discrimination measure. Although written in a different form, they
 later use the notation latterly adopted in fairness literature during
-their journal article <a href="#id73"><span class="problematic" id="id74">:cite:`Kamiran2012`</span></a> expanding on their previous work
-<a href="#id75"><span class="problematic" id="id76">:cite:`Kamiran2009,kamiran2011`</span></a></p>
+their journal article <span id="id39">[<a class="reference internal" href="../../bib.html#id10"><span>KC12</span></a>]</span> expanding on their previous work
+<span id="id40">[<a class="reference internal" href="../../bib.html#id32"><span>KC09</span></a>,<a class="reference internal" href="../../bib.html#id33"><span>Kam11</span></a>]</span></p>
 <div class="math notranslate nohighlight">
 \[disc = P(\hat{y}|s=0) - P(\hat{y}|s=1)\]</div>
 <p>Statistical Parity (or
@@ -854,14 +874,14 @@ the population would have to be accepted at random to be ‘fair’, whilst
 10% of qualified females would be rejected.</p>
 <p>To counter this, yet keeping within the frame of <em>independence</em>,
 relaxations of this criterion have also been suggested to include parity
-up to some threshold, <span class="math notranslate nohighlight">\(\epsilon\)</span>. <a href="#id77"><span class="problematic" id="id78">:cite:`zafar2015fairness`</span></a></p>
+up to some threshold, <span class="math notranslate nohighlight">\(\epsilon\)</span>. <span id="id41">[<a class="reference internal" href="../../bib.html#id48"><span>ZVGRG19</span></a>]</span></p>
 <div class="math notranslate nohighlight">
 \[P(\hat{Y}|s=a) \geq P(\hat{Y}|s=b) - \epsilon\]</div>
 <p>or via a ratio</p>
 <div class="math notranslate nohighlight">
 \[\frac{P(\hat{Y}|s=a)}{P(\hat{Y}|s=b)} \geq 1 - \epsilon\]</div>
 <p>When set to <span class="math notranslate nohighlight">\(\epsilon = 0.2\)</span>, this is seen as comparable to the <em>80%
-rule</em> mentioned in disparate impact law <a href="#id79"><span class="problematic" id="id80">:cite:`feldman2015certifying`</span></a>.
+rule</em> mentioned in disparate impact law <span id="id42">[<a class="reference internal" href="../../bib.html#id42"><span>FFM+15</span></a>]</span>.
 This rule suggests that as long as the selection rate of the ‘harmed’
 group is within 80% of the ‘privileged’ group, then it is fair enough.
 Though critics of this point out that 80% was chosen arbitrarily.</p>
@@ -870,9 +890,9 @@ Though critics of this point out that 80% was chosen arbitrarily.</p>
 <h4>Separation<a class="headerlink" href="#separation" title="Permalink to this headline">¶</a></h4>
 <p>A more complex definition of fairness is <em>separation</em>, which is
 independence given the actual outcome (<span class="math notranslate nohighlight">\(Y\)</span>) $<span class="math notranslate nohighlight">\(\hat{Y} \perp S | Y\)</span>$</p>
-<p>This has been formalised by the metric Equalised Odds <a href="#id81"><span class="problematic" id="id82">:cite:`hardt2016equality`</span></a> which
+<p>This has been formalised by the metric Equalised Odds <span id="id43">[<a class="reference internal" href="../../bib.html#id68"><span>HPS16</span></a>]</span> which
 considers all values of <span class="math notranslate nohighlight">\(Y\)</span>, and the looser constraint Equality of
-Opportunity <a href="#id83"><span class="problematic" id="id84">:cite:`hardt2016equality`</span></a>, which only constrains independence given the
+Opportunity <span id="id44">[<a class="reference internal" href="../../bib.html#id68"><span>HPS16</span></a>]</span>, which only constrains independence given the
 outcome is positive .</p>
 <p>Equalised Odds</p>
 <div class="math notranslate nohighlight">
@@ -897,7 +917,7 @@ were not only matching the true positive rate, but also the false
 positive rate. In our example, the selection rate would be <span class="math notranslate nohighlight">\(46.4\%\)</span> for
 males and <span class="math notranslate nohighlight">\(53.6\%\)</span> for females.</p>
 <p>But could an algorithm satisfy both independence and separation?
-Unfortunately not, it is shown in <a href="#id85"><span class="problematic" id="id86">:cite:`hardt2016equality`</span></a> that independence based
+Unfortunately not, it is shown in <span id="id45">[<a class="reference internal" href="../../bib.html#id68"><span>HPS16</span></a>]</span> that independence based
 notions of fairness are incompatible with separation based notions of
 fairness.</p>
 </div>
@@ -948,7 +968,7 @@ helps us to categorise various definitions of fairness, such as those in
 table 1, but that shouldn’t diminish work that seeks to make novel
 strides within each of the areas. For example, the work in “An
 Intersectional Definition of Fairness”
-<a href="#id87"><span class="problematic" id="id88">:cite:`FouldsJamesandPan2018AnFairness`</span></a> expands the independence notion of
+<span id="id46">[<a class="reference internal" href="../../bib.html#id18"><span>FIKP20</span></a>]</span> expands the independence notion of
 fairness. Their inspiration comes from third-wave feminism and
 intersectional privacy, and is trying to expand beyond binary sensitive
 groups and measuring an unfairness value at each intersect. For example,
@@ -1001,13 +1021,13 @@ present.</p>
 <p>Differing Fairness Criterion and their categorisation</p>
 <p>Which fairness definition (or family of definitions) should one be
 using? This is a more complex question to answer. Some, such as
-<a href="#id89"><span class="problematic" id="id90">:cite:`yeom2018discriminative,heidari2018`</span></a> make the assumption the the choice of which
+<span id="id47">[<a class="reference internal" href="../../bib.html#id97"><span>YT21</span></a>,<a class="reference internal" href="../../bib.html#id4"><span>HLGK19</span></a>]</span> make the assumption the the choice of which
 to apply should come from the designer’s moral perspective, arguing that
 this is a task outside of the expertise of computer scientists and
 instead should be debated by philosophers.</p>
 <p>However, not everyone is agreed. Recently there has started to be work
 investigating the delayed impact that fair interventions in machine
-learning have on society <a href="#id91"><span class="problematic" id="id92">:cite:`liu2018delayed`</span></a>. This work looks to determine the
+learning have on society <span id="id48">[<a class="reference internal" href="../../bib.html#id76"><span>LDR+18</span></a>]</span>. This work looks to determine the
 impact that different notions of fairness have on the groups involved,
 recognising that there is more than the initial ‘accepted for a loan’ or
 ‘rejected for a loan’ dichotomy, but that this has an impact in terms of
@@ -1017,8 +1037,8 @@ generation into the future. Although not explicitly stated, it leaves
 the suggestion that maybe we should be using statistical models to
 underpin moral assumptions.</p>
 <p>A recent paper “Evaluating Fairness Metrics in the Presence of Dataset
-Bias” <a href="#id93"><span class="problematic" id="id94">:cite:`hinnefeld2018evaluating`</span></a> looked into the problem of
-determining which fairness criteria to apply. They look at a dataset<a class="footnote-reference brackets" href="#id184" id="id95">5</a>
+Bias” <span id="id49">[<a class="reference internal" href="../../bib.html#id45"><span>HCMD18</span></a>]</span> looked into the problem of
+determining which fairness criteria to apply. They look at a dataset<a class="footnote-reference brackets" href="#id202" id="id50">5</a>
 which they use to create 4 datasets, with combinations of Sample Bias,
 No Sample Bias, Label Bias and No Label Bias. They consider a binary
 race attribute (Black, White) where White race is <span class="math notranslate nohighlight">\(s=0\)</span> and Black race
@@ -1055,8 +1075,8 @@ proportions of groups, called <em>group fairness</em>. There is another
 approach, called <em>individual fairness</em>. This is the idea that regardless
 of any groups as a whole, similar individuals should be treated
 similarly. This idea was proposed by Luong et al.
-<a href="#id96"><span class="problematic" id="id97">:cite:`Luong2011K-NNPrevention`</span></a> in the context of k-NN and later refined by
-Dwork et al. <a href="#id98"><span class="problematic" id="id99">:cite:`dwork2012fairness`</span></a>.</p>
+<span id="id51">[<a class="reference internal" href="../../bib.html#id51"><span>LRT11</span></a>]</span> in the context of k-NN and later refined by
+Dwork et al. <span id="id52">[<a class="reference internal" href="../../bib.html#id49"><span>DHP+12</span></a>]</span>.</p>
 <p>Luong et al. use a Manhattan distance of z-scores for interval-scaled
 attributes, and percentage of mismatching values for nominal attributes
 to determine the distance between data-points. They determine that
@@ -1066,7 +1086,7 @@ neighbours of a different category. They propose that on finding points
 where they are confident that some discrimination has occurred, then the
 class-label for that point should be amended. This data should then be
 used to train subsequent models.</p>
-<p>A seminal paper in the field, Dwork et al. <a href="#id100"><span class="problematic" id="id101">:cite:`dwork2012fairness`</span></a>
+<p>A seminal paper in the field, Dwork et al. <span id="id53">[<a class="reference internal" href="../../bib.html#id49"><span>DHP+12</span></a>]</span>
 continued with the concept of a distance measure. They propose again
 that individual fairness should be the goal. They suggest that given
 some <em>task-specific</em> similarity metric, <span class="math notranslate nohighlight">\(\delta\)</span>, then
@@ -1081,11 +1101,11 @@ each gaining a reputation as an expert within their own right and covers
 themes that have been spun into more fleshed out ideas. Examples of this
 are Demographic Parity, the predominant fairness measure at the time,
 being weak in some situations which has been explored in
-<a href="#id102"><span class="problematic" id="id103">:cite:`hardt2016equality,liu2018delayed`</span></a>, and noting that it there is a differentiation
+<span id="id54">[<a class="reference internal" href="../../bib.html#id68"><span>HPS16</span></a>,<a class="reference internal" href="../../bib.html#id76"><span>LDR+18</span></a>]</span>, and noting that it there is a differentiation
 between a data-provider (who obtains the data) and a vendor (who uses
 the data to make decisions). It’s discussed that the vendor may not care
 about fairness and this is explored further by two of the authors in
-<a href="#id104"><span class="problematic" id="id105">:cite:`zemel2013learning,madras2018learning`</span></a>. This is
+<span id="id55">[<a class="reference internal" href="../../bib.html#id77"><span>ZWS+13</span></a>,<a class="reference internal" href="../../bib.html#id52"><span>MCPZ18a</span></a>]</span>. This is
 discussed in section <a class="reference external" href="#impl_repr">4.3</a>{reference-type=”ref”
 reference=”impl_repr”}.</p>
 </div>
@@ -1098,7 +1118,7 @@ example, at what point does pre-processing the data become learning a
 new representation for the data? As such, some of these methods blur
 boundaries. However, in general, we can think of fairness interventions
 occurring before, during, or after the training of the model as
-suggested in <a href="#id106"><span class="problematic" id="id107">:cite:`barocas-hardt-narayanan`</span></a>.</p>
+suggested in <span id="id56">[<a class="reference internal" href="../../bib.html#id22"><span>BHN19</span></a>]</span>.</p>
 <p>In this section we’ll look onto the broad categories <em>pre-processing</em> -
 which includes feature selection and feature adjustment, <em>during
 training</em> - which covers minimising fairness constraints directly,
@@ -1113,7 +1133,7 @@ trend to transforming the features to a new space, called learning a
 fair representation of the data. This is covered under the ‘During
 Training’ section. This section is reserved for those papers which
 explicitly change the input features, such as “Certifying and Removing
-Disparate Impact” <a href="#id108"><span class="problematic" id="id109">:cite:`feldman2015certifying`</span></a>. This paper compares
+Disparate Impact” <span id="id57">[<a class="reference internal" href="../../bib.html#id42"><span>FFM+15</span></a>]</span>. This paper compares
 the probability distributions of features across protected groups and
 seeks to rectify this. Enforcing</p>
 <div class="math notranslate nohighlight">
@@ -1131,7 +1151,7 @@ features are due to the disparate impact of previous unfair decisions.
 An example of this may be disproportionate wealth distribution in the US
 manifesting itself as an unusually small number of white people
 receiving public schooling
-<a href="#id110"><span class="problematic" id="id111">:cite:`census_bureau,national_education_statistics`</span></a>. Modifying this feature
+<span id="id58">[<a class="reference internal" href="../../bib.html#id29"><span>USC</span></a>,<a class="reference internal" href="../../bib.html#id30"><span>USN</span></a>]</span>. Modifying this feature
 to correct for previous biases may have merit. It may also be useful to
 consider that amending the input space allows us to interpret what has
 changed about an individual to make them appear less worthy of being
@@ -1144,14 +1164,14 @@ work experience, it may be that there should be a policy change to
 encourage people into apprenticeships or internships. The other approach
 is changing the labels, as discussed in section
 <a class="reference external" href="#background">2</a>{reference-type=”ref” reference=”background”} about the
-Kamiran and Calders paper <a href="#id112"><span class="problematic" id="id113">:cite:`Kamiran2009`</span></a>.</p>
+Kamiran and Calders paper <span id="id59">[<a class="reference internal" href="../../bib.html#id32"><span>KC09</span></a>]</span>.</p>
 </div>
 <div class="section" id="during-training">
 <h3>During Training<a class="headerlink" href="#during-training" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="minimising-fairness-criteria">
 <h4>Minimising Fairness criteria<a class="headerlink" href="#minimising-fairness-criteria" title="Permalink to this headline">¶</a></h4>
 <p>One of the more direct ways to enforce fairness is to follow Quadrianto
-et al <a href="#id114"><span class="problematic" id="id115">:cite:`Quadrianto2017RecyclingFairness`</span></a> who noticed that enforcing
+et al <span id="id60">[<a class="reference internal" href="../../bib.html#id56"><span>QS17</span></a>]</span> who noticed that enforcing
 fairness constraints is an application of Distribution Matching. They
 use a modified SVM from the Learning Using Privileged Information (LUPI)
 paradigm to ensure the sensitive feature is not used during test time,
@@ -1163,7 +1183,7 @@ accountability into automated decision making is an important though
 overlooked addition.</p>
 </div>
 <div class="section" id="adversarial-learning">
-<span id="imple-adv"></span><h4>Adversarial Learning<a class="headerlink" href="#adversarial-learning" title="Permalink to this headline">¶</a></h4>
+<span id="impl-adv"></span><h4>Adversarial Learning<a class="headerlink" href="#adversarial-learning" title="Permalink to this headline">¶</a></h4>
 <p>Given the success of Generative Adversarial Networks (GANs), there has
 been an excitement to use this adversarial approach in other areas. In
 the GAN framework, a generator produces some representation and a
@@ -1186,37 +1206,37 @@ cannot make an accurate prediction of <span class="math notranslate nohighlight"
 <p>There are parallels between what we’re trying to achieve with fairness
 constraints and the work that is being progressed in Domain adaptation.
 One of the major breakthroughs in this work was adding a gradient
-reversal layer <a href="#id116"><span class="problematic" id="id117">:cite:`Ganin2016Domain-AdversarialNetworks`</span></a>. This has been
+reversal layer <span id="id61">[<a class="reference internal" href="../../bib.html#id79"><span>GUA+16</span></a>]</span>. This has been
 applied in many fields including Fairness. The gradient reversal layer
 is applied to the adversary and allows the <em>min-max</em> game to become a
 direct minimisation, as minimising the adversary now directly maximises
 the adversary’s loss.</p>
 <p>This framework was then used by Edwards and Storkey
-<a href="#id118"><span class="problematic" id="id119">:cite:`edwards2015censoring`</span></a> on making a representation that
+<span id="id62">[<a class="reference internal" href="../../bib.html#id78"><span>ES16</span></a>]</span> on making a representation that
 censored a sensitive attribute. Beutel et al
-<a href="#id120"><span class="problematic" id="id121">:cite:`beutel2017data`</span></a> then built on this and applied the
+<span id="id63">[<a class="reference internal" href="../../bib.html#id74"><span>BCZC17</span></a>]</span> then built on this and applied the
 technique explicitly to fairness, demonstrating that this method is
 particularly useful even with very small amounts of data. Other papers
 have tried to build on this work, such as
-<a href="#id122"><span class="problematic" id="id123">:cite:`wadsworth2018achieving`</span></a> who instead of using a
+<span id="id64">[<a class="reference internal" href="../../bib.html#id36"><span>WVP18</span></a>]</span> who instead of using a
 representation as the input to the adversary, use the soft output from
 the predictor.</p>
 <p>Other GAN approaches have followed the more traditional route of
 generating data. Fairness is applied by making the generated data fair
-to a specific attribute. “FairGAN” <a href="#id124"><span class="problematic" id="id125">:cite:`xu2018fairgan`</span></a> use a regular
+to a specific attribute. “FairGAN” <span id="id65">[<a class="reference internal" href="../../bib.html#id13"><span>XYZW18</span></a>]</span> use a regular
 GAN set-up, but have an additional discriminator to not just determine
 if the data is real or not, but to also query whether the data generated
-is fair<a class="footnote-reference brackets" href="#id185" id="id126">6</a>. A second paper, “FairnessGAN” <a href="#id127"><span class="problematic" id="id128">:cite:`sattigeri2018fairness`</span></a> use a
+is fair<a class="footnote-reference brackets" href="#id203" id="id66">6</a>. A second paper, “FairnessGAN” <span id="id67">[<a class="reference internal" href="../../bib.html#id12"><span>SHCV18</span></a>]</span> use a
 similar approach, but instead of the UCI Adult dataset (which is
 commonly used in nearly all fairness literature), they use use images
-<a class="footnote-reference brackets" href="#id186" id="id129">7</a> and achieve “generally positive” <a href="#id130"><span class="problematic" id="id131">:cite:`sattigeri2018fairness`</span></a> results.</p>
+<a class="footnote-reference brackets" href="#id204" id="id68">7</a> and achieve “generally positive” <span id="id69">[<a class="reference internal" href="../../bib.html#id12"><span>SHCV18</span></a>]</span> results.</p>
 </div>
 </div>
 <div class="section" id="fair-representations">
 <span id="impl-repr"></span><h3>Fair Representations<a class="headerlink" href="#fair-representations" title="Permalink to this headline">¶</a></h3>
 <p>Work in this field was pioneered by Zemel
-<a href="#id132"><span class="problematic" id="id133">:cite:`zemel2013learning`</span></a> and was followed up by Madras
-<a href="#id134"><span class="problematic" id="id135">:cite:`madras2018learning`</span></a> who suggested that these could be
+<span id="id70">[<a class="reference internal" href="../../bib.html#id77"><span>ZWS+13</span></a>]</span> and was followed up by Madras
+<span id="id71">[<a class="reference internal" href="../../bib.html#id52"><span>MCPZ18a</span></a>]</span> who suggested that these could be
 applied to transfer learning.</p>
 <p>Zemel argues that fairness can be achieved through representation
 learning. They suggest that the population in <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> should be
@@ -1227,16 +1247,16 @@ of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and that <s
 to maintain the same mapping from <span class="math notranslate nohighlight">\(\mathcal{Z} \rightarrow \mathcal{Y}\)</span>
 as <span class="math notranslate nohighlight">\(\mathcal{X} \rightarrow \mathcal{Y}\)</span>. In this way, similar people
 are treated similarly, a notion suggested by Dwork et al
-<a href="#id136"><span class="problematic" id="id137">:cite:`dwork2012fairness`</span></a>. A surprising effect of this fair
+<span id="id72">[<a class="reference internal" href="../../bib.html#id49"><span>DHP+12</span></a>]</span>. A surprising effect of this fair
 representation is that it allows for transfer learning. Although
 <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> was selected to retain the mapping to <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> whilst
 preserving as much information about <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> as possible, they
 show that <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> is still capable of predicting other features
 not selected to be in <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>.</p>
-<p>Madras et al. <a href="#id138"><span class="problematic" id="id139">:cite:`madras2018learning`</span></a> explored this idea of
+<p>Madras et al. <span id="id73">[<a class="reference internal" href="../../bib.html#id52"><span>MCPZ18a</span></a>]</span> explored this idea of
 transfer learning further, but used the framework of Beutel et al
-<a href="#id140"><span class="problematic" id="id141">:cite:`beutel2017data`</span></a>, which in turn is based on Edwards and
-Storkey <a href="#id142"><span class="problematic" id="id143">:cite:`edwards2015censoring`</span></a>, both discussed in the section
+<span id="id74">[<a class="reference internal" href="../../bib.html#id74"><span>BCZC17</span></a>]</span>, which in turn is based on Edwards and
+Storkey <span id="id75">[<a class="reference internal" href="../../bib.html#id78"><span>ES16</span></a>]</span>, both discussed in the section
 above. Madras demonstrate that fair representations can indeed be used
 to predict other features and give a more robust set of experiments than
 presented in the Zemel paper (which mentioned transfer learning as an
@@ -1251,7 +1271,7 @@ the motivation for learning a fair, transferable representation.</p>
 </div>
 <div class="section" id="post-processing">
 <h3>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h3>
-<p>This area isn’t as well explored, but <a href="#id144"><span class="problematic" id="id145">:cite:`hardt2016equality`</span></a> use it in their
+<p>This area isn’t as well explored, but <span id="id76">[<a class="reference internal" href="../../bib.html#id68"><span>HPS16</span></a>]</span> use it in their
 paper.</p>
 </div>
 </div>
@@ -1262,13 +1282,13 @@ arithmetically, methods to incorporate subject matter expertise are
 being explored. Causal models are appealing in this regard because they
 allow for an explicit causal relationship to be accounted for rather
 than relying on correlation.</p>
-<p>DeDeo <a href="#id146"><span class="problematic" id="id147">:cite:`dedeo2014wrong`</span></a> argues that without understanding the
+<p>DeDeo <span id="id77">[<a class="reference internal" href="../../bib.html#id62"><span>DeD14</span></a>]</span> argues that without understanding the
 causal relationship between attributes, then it becomes particularly
 difficult to differentiate between innocent relationships, and those
 which at first glance may appear innocent, but when you understand the
 socio-economic background of those attributes, they might infer a less
 innocent relationship.</p>
-<p>Stemming from the work of Pearl <a href="#id148"><span class="problematic" id="id149">:cite:`Pearl:2009:CMR:1642718`</span></a>, causal models
+<p>Stemming from the work of Pearl <span id="id78">[<a class="reference internal" href="../../bib.html#id31"><span>Pea09</span></a>]</span>, causal models
 are an attempt to model cause and effect. An example would be
 atmospheric pressure and the position of the needle on a barometer
 reading. We know that the two are linked and our data about this will
@@ -1294,7 +1314,7 @@ features. Whilst not insurmountable, this is nonetheless a very labour
 intensive approach. In many ways, if this approach is fully realised, it
 is the gold standard for ethical models.</p>
 <p>A recent paper, “Path-Specific Counterfactual Fairness”
-<a href="#id150"><span class="problematic" id="id151">:cite:`chiappa2019path`</span></a> poses some thought provoking
+<span id="id79">[<a class="reference internal" href="../../bib.html#id73"><span>Chi19</span></a>]</span> poses some thought provoking
 questions. They note that not all affects of a sensitive attribute on
 the outcome are potentially discriminatory. They give the example of the
 Berkley admissions data that was suggested to be discriminatory to
@@ -1302,18 +1322,18 @@ women. They note that women were applying with greater proportions to
 classes with low acceptance rates, thus the influence of gender on the
 class applied for is not discriminatory and should be taken into account
 to learn a highly predictive model. This is similar to the idea first
-mentioned in Pedreschi et al. <a href="#id152"><span class="problematic" id="id153">:cite:`Pedreshi2008Discrimination-awareMining`</span></a>
+mentioned in Pedreschi et al. <span id="id80">[<a class="reference internal" href="../../bib.html#id89"><span>PRT08</span></a>]</span>
 that there is a difference between sensitive attributes and potentially
-discriminatory attributes. In <a href="#id154"><span class="problematic" id="id155">:cite:`chiappa2019path`</span></a> they
+discriminatory attributes. In <span id="id81">[<a class="reference internal" href="../../bib.html#id73"><span>Chi19</span></a>]</span> they
 use the power of a causal model to isolate this to effects along
 specific pathways noting “approaches based on statistical relations
 among observations are in danger of not discerning correlation from
 causation, and are unable to distinguish the different ways in which the
 sensitive attribute might influence the decision”
-<a href="#id156"><span class="problematic" id="id157">:cite:`chiappa2019path`</span></a>. This paper views unfairness as the
+<span id="id82">[<a class="reference internal" href="../../bib.html#id73"><span>Chi19</span></a>]</span>. This paper views unfairness as the
 presence of an unfair causal effect of <span class="math notranslate nohighlight">\(S\)</span> on <span class="math notranslate nohighlight">\(\hat{Y}\)</span>. This idea is
 not new. In fact it is specifically mentioned in “Counterfactual
-Fairness” <a href="#id158"><span class="problematic" id="id159">:cite:`kusner2017counterfactual`</span></a> that “a decision is unfair
+Fairness” <span id="id83">[<a class="reference internal" href="../../bib.html#id69"><span>KLRS17</span></a>]</span> that “a decision is unfair
 toward an individual if it coincides with the one that would have been
 taken in a counterfactual world in which the sensitive attribute were
 different”. This assumes that the entire effect of <span class="math notranslate nohighlight">\(S\)</span> on <span class="math notranslate nohighlight">\(\hat{Y}\)</span> is
@@ -1345,10 +1365,10 @@ M_{\text{fair}} &amp;= \theta^m + \epsilon_m \\
 Y_{\text{fair}} &amp;= \theta^y + \theta^y_s + \theta^y_{m_\text{fair}} + \epsilon_y
 \end{align*}\end{split}\]</div>
 <p>In this case, (and in the case of “Counterfactual Fairness”
-<a href="#id160"><span class="problematic" id="id161">:cite:`kusner2017counterfactual`</span></a>). The goal is to achieve fairness in
+<span id="id84">[<a class="reference internal" href="../../bib.html#id69"><span>KLRS17</span></a>]</span>). The goal is to achieve fairness in
 a counterfactual world as described above. This is a form of individual
 fairness, and is often linked to the other seminal work in this area of
-Dwork et al. <a href="#id162"><span class="problematic" id="id163">:cite:`dwork2012fairness`</span></a>. Whilst one uses a causal
+Dwork et al. <span id="id85">[<a class="reference internal" href="../../bib.html#id49"><span>DHP+12</span></a>]</span>. Whilst one uses a causal
 model to determine the effect of group membership, the other uses a
 distance measure. Clearly there are strengths and weaknesses to both
 approaches.</p>
@@ -1361,16 +1381,16 @@ resource allocation.</p>
 <div class="section" id="recommendation">
 <h3>Recommendation<a class="headerlink" href="#recommendation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>“A Fairness-aware Hybrid Recommender System” <a href="#id164"><span class="problematic" id="id165">:cite:`farnadi2018fairness`</span></a>:
+<li><p>“A Fairness-aware Hybrid Recommender System” <span id="id86">[<a class="reference internal" href="../../bib.html#id35"><span>FKT+18</span></a>]</span>:
 Gives recommendations such that item ratings are indifferent to
 whether a user is a member of a protected group or not.</p></li>
 <li><p>“Balanced Neighborhoods for Multi-sided Fairness in Recommendation”
-<a href="#id166"><span class="problematic" id="id167">:cite:`Burke2018BalancedRecommendation`</span></a>: Gives recommendations after
+<span id="id87">[<a class="reference internal" href="../../bib.html#id39"><span>BSOG18</span></a>]</span>: Gives recommendations after
 transforming users into a ‘fair neighbourhood’ that is conceptually
 similar to the fair representation of Zemel
-<a href="#id168"><span class="problematic" id="id169">:cite:`zemel2013learning`</span></a>.</p></li>
+<span id="id88">[<a class="reference internal" href="../../bib.html#id77"><span>ZWS+13</span></a>]</span>.</p></li>
 <li><p>“Beyond Parity: Fairness Objectives for Collaborative Filtering”
-<a href="#id170"><span class="problematic" id="id171">:cite:`yao2017beyond`</span></a>: Explores the effect of different fairness
+<span id="id89">[<a class="reference internal" href="../../bib.html#id40"><span>YH17</span></a>]</span>: Explores the effect of different fairness
 constraints on collaborative filtering.</p></li>
 </ul>
 </div>
@@ -1378,15 +1398,15 @@ constraints on collaborative filtering.</p></li>
 <h3>Ranking<a class="headerlink" href="#ranking" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>“FA*IR: A Fair Top-k Ranking Algorithm”
-<a href="#id172"><span class="problematic" id="id173">:cite:`zehlike2017fa`</span></a>: A ranking algorithm that aims to
-preserve utility whilst maintaining group fairness.<a class="footnote-reference brackets" href="#id187" id="id174">8</a></p></li>
+<span id="id90">[<a class="reference internal" href="../../bib.html#id46"><span>ZBC+17</span></a>]</span>: A ranking algorithm that aims to
+preserve utility whilst maintaining group fairness.<a class="footnote-reference brackets" href="#id205" id="id91">8</a></p></li>
 </ul>
 </div>
 <div class="section" id="resource-allocation">
 <h3>Resource Allocation<a class="headerlink" href="#resource-allocation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>“Fair Algorithms for Learning in Allocation Problems”
-<a href="#id175"><span class="problematic" id="id176">:cite:`elzayn2019fair`</span></a>: Allocate resources such that members of
+<span id="id92">[<a class="reference internal" href="../../bib.html#id47"><span>EJJ+19</span></a>]</span>: Allocate resources such that members of
 an unprotected group are no more likely to receive a resource than
 members of a protected group.</p></li>
 </ul>
@@ -1413,9 +1433,9 @@ wish to be fair with regard to <em>religion</em>, a feature which is not been
 captured in this dataset (though could be inferred using prior knowledge
 and the nationality feature), you will not be able to claim fairness
 with regard to that non-captured attribute, despite Freedom of
-Religion<a class="footnote-reference brackets" href="#id188" id="id177">9</a> being enshrined in most modern democratic countries. There
+Religion<a class="footnote-reference brackets" href="#id206" id="id93">9</a> being enshrined in most modern democratic countries. There
 has been an attempt to address this problem in the paper Proxy
-Fairness <a href="#id178"><span class="problematic" id="id179">:cite:`gupta2018proxy`</span></a> which finds potential proxy groups
+Fairness <span id="id94">[<a class="reference internal" href="../../bib.html#id55"><span>GCFW18</span></a>]</span> which finds potential proxy groups
 that could potentially be discriminated against, though this is a first
 foray into this particularly difficult problem.</p>
 <p>Many classifiers are focused on making predictions without needing
@@ -1428,33 +1448,222 @@ accountable algorithms, we need sensitive attributes to be recorded. We
 may not use these features within our models, but if not captured, we
 stand little chance of calming ethical concerns about the application of
 our field to subjective areas.</p>
+<p id="id95"><dl class="citation">
+<dt class="label" id="id121"><span class="brackets"><a class="fn-backref" href="#id9">Ide</a></span></dt>
+<dd><p>Ai for recruiting software | high-volume hiring | maximize quality of hire. URL: <a class="reference external" href="https://ideal.com/">https://ideal.com/</a>.</p>
+</dd>
+<dt class="label" id="id124"><span class="brackets"><a class="fn-backref" href="#id58">USN</a></span></dt>
+<dd><p>Mobile digest of education statistics, 2017. URL: <a class="reference external" href="https://nces.ed.gov/programs/digest/mobile/Enrollment\%5FES\%5FEnrollment\%5Fby\%5FRace\%5Fand\%5FEthnicity.aspx">https://nces.ed.gov/programs/digest/mobile/Enrollment\%5FES\%5FEnrollment\%5Fby\%5FRace\%5Fand\%5FEthnicity.aspx</a>.</p>
+</dd>
+<dt class="label" id="id123"><span class="brackets"><a class="fn-backref" href="#id58">USC</a></span></dt>
+<dd><p>U.s. census bureau quickfacts: united states. URL: <a class="reference external" href="https://www.census.gov/quickfacts/fact/table/US/PST045217">https://www.census.gov/quickfacts/fact/table/US/PST045217</a>.</p>
+</dd>
+<dt class="label" id="id144"><span class="brackets"><a class="fn-backref" href="#id5">AAG+18</a></span></dt>
+<dd><p>Igor Adamski, Robert Adamski, Tomasz Grel, Adam Jędrych, Kamil Kaczmarek, and Henryk Michalewski. Distributed deep reinforcement learning: learn how to play atari games in 21â minutes. In Rio Yokota, Michèle Weiland, David Keyes, and Carsten Trinitis, editors, <em>High Performance Computing</em>, 370–388. Cham, 2018. Springer International Publishing.</p>
+</dd>
+<dt class="label" id="id151"><span class="brackets"><a class="fn-backref" href="#id26">AC18</a></span></dt>
+<dd><p>Mike Ananny and Kate Crawford. Seeing without knowing: limitations of the transparency ideal and its application to algorithmic accountability. <em>new media &amp; society</em>, 20(3):973–989, 2018.</p>
+</dd>
+<dt class="label" id="id115"><span class="brackets">ALMK16</span><span class="fn-backref">(<a href="#id8">1</a>,<a href="#id18">2</a>)</span></dt>
+<dd><p>Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner. Machine bias. <em>ProPublica, May</em>, 23(2016):139–159, 2016.</p>
+</dd>
+<dt class="label" id="id113"><span class="brackets"><a class="fn-backref" href="#id1">BH</a></span></dt>
+<dd><p>S Barocas and M Hardt. Fairness in machine learning. URL: <a class="reference external" href="https://nips.cc/Conferences/2017/Schedule?showEvent=8734">https://nips.cc/Conferences/2017/Schedule?showEvent=8734</a>.</p>
+</dd>
+<dt class="label" id="id116"><span class="brackets">BHN19</span><span class="fn-backref">(<a href="#id37">1</a>,<a href="#id56">2</a>)</span></dt>
+<dd><p>Solon Barocas, Moritz Hardt, and Arvind Narayanan. <em>Fairness and Machine Learning</em>. fairmlbook.org, 2019. <span><a class="reference external" href="#"></a></span>http://www.fairmlbook.org.</p>
+</dd>
+<dt class="label" id="id168"><span class="brackets">BCZC17</span><span class="fn-backref">(<a href="#id63">1</a>,<a href="#id74">2</a>)</span></dt>
+<dd><p>Alex Beutel, Jilin Chen, Zhe Zhao, and Ed H. Chi. Data decisions and theoretical implications when adversarially learning fair representations. <em>CoRR</em>, 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1707.00075">http://arxiv.org/abs/1707.00075</a>, <a class="reference external" href="https://arxiv.org/abs/1707.00075">arXiv:1707.00075</a>.</p>
+</dd>
+<dt class="label" id="id99"><span class="brackets"><a class="fn-backref" href="#id13">BCZ+16</a></span></dt>
+<dd><p>Tolga Bolukbasi, Kai-Wei Chang, James Y Zou, Venkatesh Saligrama, and Adam T Kalai. Man is to computer programmer as woman is to homemaker? debiasing word embeddings. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 4349–4357. 2016.</p>
+</dd>
+<dt class="label" id="id118"><span class="brackets"><a class="fn-backref" href="#id3">BS18</a></span></dt>
+<dd><p>N. Brown and T. Sandholm. Superhuman ai for heads-up no-limit poker: libratus beats top professionals. <em>Science</em>, 359:418–424, January 2018. <a class="reference external" href="https://doi.org/10.1126/science.aao1733">doi:10.1126/science.aao1733</a>.</p>
+</dd>
+<dt class="label" id="id133"><span class="brackets"><a class="fn-backref" href="#id87">BSOG18</a></span></dt>
+<dd><p>Robin Burke, Nasim Sonboli, and Aldo Ordonez-Gauger. Balanced neighborhoods for multi-sided fairness in recommendation. <em>Proceedings of the 1st Conference on Fairness, Accountability and Transparency</em>, 81(2008):202–214, 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v81/burke18a.html">http://proceedings.mlr.press/v81/burke18a.html</a>.</p>
+</dd>
+<dt class="label" id="id167"><span class="brackets">Chi19</span><span class="fn-backref">(<a href="#id20">1</a>,<a href="#id79">2</a>,<a href="#id81">3</a>,<a href="#id82">4</a>)</span></dt>
+<dd><p>Silvia Chiappa. Path-specific counterfactual fairness. In <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, volume 33, 7801–7808. 2019.</p>
+</dd>
+<dt class="label" id="id153"><span class="brackets"><a class="fn-backref" href="#id25">CP14</a></span></dt>
+<dd><p>Danielle Keats Citron and Frank Pasquale. The scored society: due process for automated predictions. <em>Wash. L. Rev.</em>, 89:1, 2014.</p>
+</dd>
+<dt class="label" id="id114"><span class="brackets"><a class="fn-backref" href="#id2">CDG</a></span></dt>
+<dd><p>S Corbett-Davies and S Goel. Defining and designing fair algorithms. ICML 2018 Tutorial. URL: <a class="reference external" href="https://icml.cc/Conferences/2018/Schedule?showEvent=1862">https://icml.cc/Conferences/2018/Schedule?showEvent=1862</a>.</p>
+</dd>
+<dt class="label" id="id156"><span class="brackets"><a class="fn-backref" href="#id77">DeD14</a></span></dt>
+<dd><p>Simon DeDeo. &quot;wrong side of the tracks&quot;: big data and protected categories. <em>CoRR</em>, 2014. URL: <a class="reference external" href="http://arxiv.org/abs/1412.4643">http://arxiv.org/abs/1412.4643</a>, <a class="reference external" href="https://arxiv.org/abs/1412.4643">arXiv:1412.4643</a>.</p>
+</dd>
+<dt class="label" id="id132"><span class="brackets"><a class="fn-backref" href="#id27">Dia14</a></span></dt>
+<dd><p>Nicholas Diakopoulos. Algorithmic accountability reporting: on the investigation of black boxes. <em>NA</em>, 2014.</p>
+</dd>
+<dt class="label" id="id143"><span class="brackets">DHP+12</span><span class="fn-backref">(<a href="#id52">1</a>,<a href="#id53">2</a>,<a href="#id72">3</a>,<a href="#id85">4</a>)</span></dt>
+<dd><p>Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. Fairness through awareness. In <em>Proceedings of the 3rd Innovations in Theoretical Computer Science Conference</em>, ITCS '12, 214–226. New York, NY, USA, 2012. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/2090236.2090255">https://doi.org/10.1145/2090236.2090255</a>, <a class="reference external" href="https://doi.org/10.1145/2090236.2090255">doi:10.1145/2090236.2090255</a>.</p>
+</dd>
+<dt class="label" id="id172"><span class="brackets">ES16</span><span class="fn-backref">(<a href="#id62">1</a>,<a href="#id75">2</a>)</span></dt>
+<dd><p>Harrison Edwards and Amos J. Storkey. Censoring representations with an adversary. In Yoshua Bengio and Yann LeCun, editors, <em>4th International Conference on Learning Representations, ICLR 2016, San Juan, Puerto Rico, May 2-4, 2016, Conference Track Proceedings</em>. 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1511.05897">http://arxiv.org/abs/1511.05897</a>.</p>
+</dd>
+<dt class="label" id="id131"><span class="brackets"><a class="fn-backref" href="#id15">EG18</a></span></dt>
+<dd><p>Yanai Elazar and Yoav Goldberg. Adversarial removal of demographic attributes from text data. In <em>Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing</em>, 11–21. Brussels, Belgium, October 2018. Association for Computational Linguistics. URL: <a class="reference external" href="https://www.aclweb.org/anthology/D18-1002">https://www.aclweb.org/anthology/D18-1002</a>, <a class="reference external" href="https://doi.org/10.18653/v1/D18-1002">doi:10.18653/v1/D18-1002</a>.</p>
+</dd>
+<dt class="label" id="id141"><span class="brackets"><a class="fn-backref" href="#id92">EJJ+19</a></span></dt>
+<dd><p>Hadi Elzayn, Shahin Jabbari, Christopher Jung, Michael Kearns, Seth Neel, Aaron Roth, and Zachary Schutzman. Fair algorithms for learning in allocation problems. In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>, FAT* '19, 170–179. New York, NY, USA, 2019. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3287560.3287571">https://doi.org/10.1145/3287560.3287571</a>, <a class="reference external" href="https://doi.org/10.1145/3287560.3287571">doi:10.1145/3287560.3287571</a>.</p>
+</dd>
+<dt class="label" id="id129"><span class="brackets"><a class="fn-backref" href="#id86">FKT+18</a></span></dt>
+<dd><p>Golnoosh Farnadi, Pigi Kouki, Spencer K. Thompson, Sriram Srinivasan, and Lise Getoor. A fairness-aware hybrid recommender system. <em>CoRR</em>, 2018. URL: <a class="reference external" href="http://arxiv.org/abs/1809.09030">http://arxiv.org/abs/1809.09030</a>, <a class="reference external" href="https://arxiv.org/abs/1809.09030">arXiv:1809.09030</a>.</p>
+</dd>
+<dt class="label" id="id136"><span class="brackets">FFM+15</span><span class="fn-backref">(<a href="#id42">1</a>,<a href="#id57">2</a>)</span></dt>
+<dd><p>Michael Feldman, Sorelle A. Friedler, John Moeller, Carlos Scheidegger, and Suresh Venkatasubramanian. Certifying and removing disparate impact. In <em>Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>, KDD '15, 259–268. New York, NY, USA, 2015. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/2783258.2783311">https://doi.org/10.1145/2783258.2783311</a>, <a class="reference external" href="https://doi.org/10.1145/2783258.2783311">doi:10.1145/2783258.2783311</a>.</p>
+</dd>
+<dt class="label" id="id112"><span class="brackets"><a class="fn-backref" href="#id46">FIKP20</a></span></dt>
+<dd><p>James R. Foulds, Rashidul Islam, Kamrun Naher Keya, and Shimei Pan. An intersectional definition of fairness. <em>2020 IEEE 36th International Conference on Data Engineering (ICDE)</em>, April 2020. URL: <a class="reference external" href="http://dx.doi.org/10.1109/ICDE48307.2020.00203">http://dx.doi.org/10.1109/ICDE48307.2020.00203</a>, <a class="reference external" href="https://doi.org/10.1109/icde48307.2020.00203">doi:10.1109/icde48307.2020.00203</a>.</p>
+</dd>
+<dt class="label" id="id173"><span class="brackets"><a class="fn-backref" href="#id61">GUA+16</a></span></dt>
+<dd><p>Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario March, and Victor Lempitsky. Domain-adversarial training of neural networks. <em>Journal of Machine Learning Research</em>, 17(59):1–35, 2016. URL: <a class="reference external" href="http://jmlr.org/papers/v17/15-239.html">http://jmlr.org/papers/v17/15-239.html</a>.</p>
+</dd>
+<dt class="label" id="id149"><span class="brackets"><a class="fn-backref" href="#id94">GCFW18</a></span></dt>
+<dd><p>Maya R. Gupta, Andrew Cotter, Mahdi Milani Fard, and Serena Wang. Proxy fairness. <em>CoRR</em>, 2018. URL: <a class="reference external" href="http://arxiv.org/abs/1806.11212">http://arxiv.org/abs/1806.11212</a>, <a class="reference external" href="https://arxiv.org/abs/1806.11212">arXiv:1806.11212</a>.</p>
+</dd>
+<dt class="label" id="id162"><span class="brackets">HPS16</span><span class="fn-backref">(<a href="#id43">1</a>,<a href="#id44">2</a>,<a href="#id45">3</a>,<a href="#id54">4</a>,<a href="#id76">5</a>)</span></dt>
+<dd><p>Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 3315–3323. Curran Associates, Inc., 2016. URL: <a class="reference external" href="http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf">http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf</a>.</p>
+</dd>
+<dt class="label" id="id98"><span class="brackets"><a class="fn-backref" href="#id47">HLGK19</a></span></dt>
+<dd><p>Hoda Heidari, Michele Loi, Krishna P. Gummadi, and Andreas Krause. A moral framework for understanding fair ml through economic models of equality of opportunity. In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>, FAT* '19, 181–190. New York, NY, USA, 2019. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3287560.3287584">https://doi.org/10.1145/3287560.3287584</a>, <a class="reference external" href="https://doi.org/10.1145/3287560.3287584">doi:10.1145/3287560.3287584</a>.</p>
+</dd>
+<dt class="label" id="id139"><span class="brackets"><a class="fn-backref" href="#id49">HCMD18</a></span></dt>
+<dd><p>J. Henry Hinnefeld, Peter Cooman, Nat Mammo, and Rupert Deese. Evaluating fairness metrics in the presence of dataset bias. <em>CoRR</em>, 2018. URL: <a class="reference external" href="http://arxiv.org/abs/1809.09245">http://arxiv.org/abs/1809.09245</a>, <a class="reference external" href="https://arxiv.org/abs/1809.09245">arXiv:1809.09245</a>.</p>
+</dd>
+<dt class="label" id="id147"><span class="brackets"><a class="fn-backref" href="#id4">HLV16</a></span></dt>
+<dd><p>Mark Holmstrom, Dylan Liu, and Christopher Vo. Machine learning applied to weather forecasting. <em>Stanford University</em>, pages 2–4, 2016.</p>
+</dd>
+<dt class="label" id="id152"><span class="brackets"><a class="fn-backref" href="#id16">HOU18</a></span></dt>
+<dd><p>OF LORDS HOUSE. Select committee on artificial intelligence. <em>AI in the UK: ready, willing and able</em>, 2018.</p>
+</dd>
+<dt class="label" id="id137"><span class="brackets"><a class="fn-backref" href="#id28">Hwa18</a></span></dt>
+<dd><p>Tim Hwang. Computational power and the social impact of artificial intelligence. <em>CoRR</em>, 2018. Available at SSRN 3147971. URL: <a class="reference external" href="http://arxiv.org/abs/1803.08971">http://arxiv.org/abs/1803.08971</a>, <a class="reference external" href="https://arxiv.org/abs/1803.08971">arXiv:1803.08971</a>.</p>
+</dd>
+<dt class="label" id="id182"><span class="brackets"><a class="fn-backref" href="#id10">KZ18</a></span></dt>
+<dd><p>Nathan Kallus and Angela Zhou. Residual unfairness in fair machine learning from prejudiced data. In Jennifer G. Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning, ICML 2018, Stockholmsmässan, Stockholm, Sweden, July 10-15, 2018</em>, volume 80 of Proceedings of Machine Learning Research, 2444–2453. PMLR, 2018.</p>
+</dd>
+<dt class="label" id="id127"><span class="brackets"><a class="fn-backref" href="#id40">Kam11</a></span></dt>
+<dd><p>F. Kamiran. Discrimination-aware classification. Technical Report, Technische Universiteit Eindhoven, Eindhoven, 2011. URL: <a class="reference external" href="https://research.tue.nl/en/publications/discrimination-aware-classification">https://research.tue.nl/en/publications/discrimination-aware-classification</a>, <a class="reference external" href="https://doi.org/10.6100/IR717576">doi:10.6100/IR717576</a>.</p>
+</dd>
+<dt class="label" id="id126"><span class="brackets">KC09</span><span class="fn-backref">(<a href="#id23">1</a>,<a href="#id38">2</a>,<a href="#id40">3</a>,<a href="#id59">4</a>)</span></dt>
+<dd><p>Faisal Kamiran and Toon Calders. Classifying without discriminating. In <em>2009 2nd International Conference on Computer, Control and Communication, IC4 2009</em>. 2009. <a class="reference external" href="https://doi.org/10.1109/IC4.2009.4909197">doi:10.1109/IC4.2009.4909197</a>.</p>
+</dd>
+<dt class="label" id="id104"><span class="brackets"><a class="fn-backref" href="#id39">KC12</a></span></dt>
+<dd><p>Faisal Kamiran and Toon Calders. Data preprocessing techniques for classification without discrimination. <em>Knowledge and Information Systems</em>, 33(1):1–33, 2012. <a class="reference external" href="https://doi.org/10.1007/s10115-011-0463-8">doi:10.1007/s10115-011-0463-8</a>.</p>
+</dd>
+<dt class="label" id="id163"><span class="brackets">KLRS17</span><span class="fn-backref">(<a href="#id83">1</a>,<a href="#id84">2</a>)</span></dt>
+<dd><p>Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. Counterfactual fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 30</em>, pages 4066–4076. Curran Associates, Inc., 2017. URL: <a class="reference external" href="http://papers.nips.cc/paper/6995-counterfactual-fairness.pdf">http://papers.nips.cc/paper/6995-counterfactual-fairness.pdf</a>.</p>
+</dd>
+<dt class="label" id="id170"><span class="brackets">LDR+18</span><span class="fn-backref">(<a href="#id48">1</a>,<a href="#id54">2</a>)</span></dt>
+<dd><p>Lydia T. Liu, Sarah Dean, Esther Rolf, Max Simchowitz, and Moritz Hardt. Delayed impact of fair machine learning. In Jennifer Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning</em>, volume 80 of Proceedings of Machine Learning Research, 3150–3158. StockholmsmÃ€ssan, Stockholm Sweden, 10–15 Jul 2018. PMLR. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/liu18c.html">http://proceedings.mlr.press/v80/liu18c.html</a>.</p>
+</dd>
+<dt class="label" id="id145"><span class="brackets"><a class="fn-backref" href="#id51">LRT11</a></span></dt>
+<dd><p>Binh Thanh Luong, Salvatore Ruggieri, and Franco Turini. K-nn as an implementation of situation testing for discrimination discovery and prevention. <em>Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD '11</em>, pages 502, 2011. URL: <a class="reference external" href="http://dl.acm.org/citation.cfm?doid=2020408.2020488">http://dl.acm.org/citation.cfm?doid=2020408.2020488</a>, <a class="reference external" href="https://doi.org/10.1145/2020408.2020488">doi:10.1145/2020408.2020488</a>.</p>
+</dd>
+<dt class="label" id="id146"><span class="brackets">MCPZ18</span><span class="fn-backref">(<a href="#id55">1</a>,<a href="#id71">2</a>,<a href="#id73">3</a>)</span></dt>
+<dd><p>David Madras, Elliot Creager, Toniann Pitassi, and Richard Zemel. Learning adversarially fair and transferable representations. In Jennifer Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning</em>, volume 80 of Proceedings of Machine Learning Research, 3384–3393. PMLR, 10–15 Jul 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/madras18a.html">http://proceedings.mlr.press/v80/madras18a.html</a>.</p>
+</dd>
+<dt class="label" id="id188"><span class="brackets">Mil19</span><span class="fn-backref">(<a href="#id31">1</a>,<a href="#id34">2</a>,<a href="#id35">3</a>)</span></dt>
+<dd><p>Tim Miller. Explanation in artificial intelligence: insights from the social sciences. <em>Artificial Intelligence</em>, 267:1–38, 2019. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0004370218305988">http://www.sciencedirect.com/science/article/pii/S0004370218305988</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.artint.2018.07.007">doi:https://doi.org/10.1016/j.artint.2018.07.007</a>.</p>
+</dd>
+<dt class="label" id="id122"><span class="brackets">Mol18</span><span class="fn-backref">(<a href="#id32">1</a>,<a href="#id33">2</a>)</span></dt>
+<dd><p>Christoph Molnar. <em>Interpretable Machine Learning</em>. https://christophm.github.io/interpretable-ml-book/, 2018.</p>
+</dd>
+<dt class="label" id="id135"><span class="brackets"><a class="fn-backref" href="#id17">MSP16</a></span></dt>
+<dd><p>Cecilia Munoz, Megan Smith, and DJ Patil. Big data : a report on algorithmic systems , opportunity , and civil rights big data : a report on algorithmic systems , opportunity , and civil rights. <em>Executive Office of the President of USA</em>, 2016. URL: <a class="reference external" href="https://www.whitehouse.gov/sites/default/files/microsites/ostp/2016\%5F0504\%5Fdata\%5Fdiscrimination.pdf">https://www.whitehouse.gov/sites/default/files/microsites/ostp/2016\%5F0504\%5Fdata\%5Fdiscrimination.pdf</a>, <a class="reference external" href="https://doi.org/10.1177/0162243915598056">doi:10.1177/0162243915598056</a>.</p>
+</dd>
+<dt class="label" id="id125"><span class="brackets"><a class="fn-backref" href="#id78">Pea09</a></span></dt>
+<dd><p>Judea Pearl. <em>Causality: Models, Reasoning and Inference</em>. Cambridge University Press, New York, NY, USA, 2nd edition, 2009. ISBN 052189560X, 9780521895606.</p>
+</dd>
+<dt class="label" id="id183"><span class="brackets">PRT08</span><span class="fn-backref">(<a href="#id19">1</a>,<a href="#id22">2</a>,<a href="#id80">3</a>)</span></dt>
+<dd><p>Dino Pedreschi, Salvatore Ruggieri, and Franco Turini. Discrimination-aware data mining. In Ying Li, Bing Liu, and Sunita Sarawagi, editors, <em>Proceedings of the 14th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, Las Vegas, Nevada, USA, August 24-27, 2008</em>, 560–568. ACM, 2008. <a class="reference external" href="https://doi.org/10.1145/1401890.1401959">doi:10.1145/1401890.1401959</a>.</p>
+</dd>
+<dt class="label" id="id150"><span class="brackets"><a class="fn-backref" href="#id60">QS17</a></span></dt>
+<dd><p>Novi Quadrianto and Viktoriia Sharmanska. Recycling privileged learning and distribution matching for fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems</em>, volume 30. Curran Associates, Inc., 2017. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2017/file/250cf8b51c773f3f8dc8b4be867a9a02-Paper.pdf">https://proceedings.neurips.cc/paper/2017/file/250cf8b51c773f3f8dc8b4be867a9a02-Paper.pdf</a>.</p>
+</dd>
+<dt class="label" id="id128"><span class="brackets"><a class="fn-backref" href="#id29">RSG16</a></span></dt>
+<dd><p>Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. &quot;why should i trust you?&quot; explaining the predictions of any classifier. In <em>Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining</em>, 1135–1144. 2016.</p>
+</dd>
+<dt class="label" id="id154"><span class="brackets"><a class="fn-backref" href="#id30">Rot88</a></span></dt>
+<dd><p>Alvin E Roth. <em>The Shapley value: essays in honor of Lloyd S. Shapley</em>. Cambridge University Press, 1988.</p>
+</dd>
+<dt class="label" id="id106"><span class="brackets">SHCV18</span><span class="fn-backref">(<a href="#id67">1</a>,<a href="#id69">2</a>)</span></dt>
+<dd><p>Prasanna Sattigeri, Samuel C Hoffman, Vijil Chenthamarakshan, and Kush R Varshney. Fairness gan. <em>arXiv preprint arXiv:1805.09910</em>, 2018.</p>
+</dd>
+<dt class="label" id="id119"><span class="brackets"><a class="fn-backref" href="#id3">SSS+17</a></span></dt>
+<dd><p>David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis Antonoglou, Aja Huang, Arthur Guez, Thomas Hubert, Lucas Baker, Matthew Lai, Adrian Bolton, Yutian Chen, Timothy Lillicrap, Fan Hui, Laurent Sifre, George van den Driessche, Thore Graepel, and Demis Hassabis. Mastering the game of go without human knowledge. <em>Nature</em>, 550:354 EP –, 10 2017. URL: <a class="reference external" href="http://dx.doi.org/10.1038/nature24270">http://dx.doi.org/10.1038/nature24270</a>.</p>
+</dd>
+<dt class="label" id="id120"><span class="brackets"><a class="fn-backref" href="#id6">SGSS16</a></span></dt>
+<dd><p>Arti Singh, Baskar Ganapathysubramanian, Asheesh Kumar Singh, and Soumik Sarkar. Machine learning for high-throughput stress phenotyping in plants. <em>Trends in Plant Science</em>, 21(2):110–124, 2016. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1360138515002630">http://www.sciencedirect.com/science/article/pii/S1360138515002630</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.tplants.2015.10.015">doi:https://doi.org/10.1016/j.tplants.2015.10.015</a>.</p>
+</dd>
+<dt class="label" id="id138"><span class="brackets"><a class="fn-backref" href="#id7">Swe13</a></span></dt>
+<dd><p>Latanya Sweeney. Discrimination in online ad delivery. <em>Commun. ACM</em>, 56(5):44–54, May 2013. URL: <a class="reference external" href="https://doi.org/10.1145/2447976.2447990">https://doi.org/10.1145/2447976.2447990</a>, <a class="reference external" href="https://doi.org/10.1145/2447976.2447990">doi:10.1145/2447976.2447990</a>.</p>
+</dd>
+<dt class="label" id="id117"><span class="brackets"><a class="fn-backref" href="#id3">Vin17</a></span></dt>
+<dd><p>James Vincent. Deepmind's ai became a superhuman chess player in a few hours, just for fun. December 2017. URL: <a class="reference external" href="https://www.theverge.com/2017/12/6/16741106/deepmind-ai-chess-alphazero-shogi-go">https://www.theverge.com/2017/12/6/16741106/deepmind-ai-chess-alphazero-shogi-go</a>.</p>
+</dd>
+<dt class="label" id="id155"><span class="brackets"><a class="fn-backref" href="#id24">WMF17</a></span></dt>
+<dd><p>Sandra Wachter, Brent Mittelstadt, and Luciano Floridi. Transparent, explainable, and accountable ai for robotics. <em>NA</em>, 2017.</p>
+</dd>
+<dt class="label" id="id130"><span class="brackets"><a class="fn-backref" href="#id64">WVP18</a></span></dt>
+<dd><p>Christina Wadsworth, Francesca Vera, and Chris Piech. Achieving fairness through adversarial learning: an application to recidivism prediction. <em>CoRR</em>, 2018. URL: <a class="reference external" href="http://arxiv.org/abs/1807.00199">http://arxiv.org/abs/1807.00199</a>, <a class="reference external" href="https://arxiv.org/abs/1807.00199">arXiv:1807.00199</a>.</p>
+</dd>
+<dt class="label" id="id107"><span class="brackets"><a class="fn-backref" href="#id65">XYZW18</a></span></dt>
+<dd><p>Depeng Xu, Shuhan Yuan, Lu Zhang, and Xintao Wu. Fairgan: fairness-aware generative adversarial networks. In <em>2018 IEEE International Conference on Big Data (Big Data)</em>, 570–575. IEEE, 2018.</p>
+</dd>
+<dt class="label" id="id134"><span class="brackets"><a class="fn-backref" href="#id89">YH17</a></span></dt>
+<dd><p>Sirui Yao and Bert Huang. Beyond parity: fairness objectives for collaborative filtering. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems</em>, volume 30. Curran Associates, Inc., 2017. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2017/file/e6384711491713d29bc63fc5eeb5ba4f-Paper.pdf">https://proceedings.neurips.cc/paper/2017/file/e6384711491713d29bc63fc5eeb5ba4f-Paper.pdf</a>.</p>
+</dd>
+<dt class="label" id="id191"><span class="brackets"><a class="fn-backref" href="#id47">YT21</a></span></dt>
+<dd><p>Samuel Yeom and Michael Carl Tschantz. Avoiding disparity amplification under different worldviews. In <em>ACM Conference on Fairness, Accountability, and Transparency</em>. 2021.</p>
+</dd>
+<dt class="label" id="id142"><span class="brackets"><a class="fn-backref" href="#id41">ZVGRG19</a></span></dt>
+<dd><p>Muhammad Bilal Zafar, Isabel Valera, Manuel Gomez-Rodriguez, and Krishna P. Gummadi. Fairness constraints: a flexible approach for fair classification. <em>Journal of Machine Learning Research</em>, 20(75):1–42, 2019. URL: <a class="reference external" href="http://jmlr.org/papers/v20/18-262.html">http://jmlr.org/papers/v20/18-262.html</a>.</p>
+</dd>
+<dt class="label" id="id140"><span class="brackets"><a class="fn-backref" href="#id90">ZBC+17</a></span></dt>
+<dd><p>Meike Zehlike, Francesco Bonchi, Carlos Castillo, Sara Hajian, Mohamed Megahed, and Ricardo Baeza-Yates. Fa*ir: a fair top-k ranking algorithm. In <em>Proceedings of the 2017 ACM on Conference on Information and Knowledge Management</em>, CIKM '17, 1569–1578. New York, NY, USA, 2017. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3132847.3132938">https://doi.org/10.1145/3132847.3132938</a>, <a class="reference external" href="https://doi.org/10.1145/3132847.3132938">doi:10.1145/3132847.3132938</a>.</p>
+</dd>
+<dt class="label" id="id171"><span class="brackets">ZWS+13</span><span class="fn-backref">(<a href="#id55">1</a>,<a href="#id70">2</a>,<a href="#id88">3</a>)</span></dt>
+<dd><p>Rich Zemel, Yu Wu, Kevin Swersky, Toni Pitassi, and Cynthia Dwork. Learning fair representations. In Sanjoy Dasgupta and David McAllester, editors, <em>Proceedings of the 30th International Conference on Machine Learning</em>, volume 28 of Proceedings of Machine Learning Research, 325–333. Atlanta, Georgia, USA, 17–19 Jun 2013. PMLR. URL: <a class="reference external" href="http://proceedings.mlr.press/v28/zemel13.html">http://proceedings.mlr.press/v28/zemel13.html</a>.</p>
+</dd>
+<dt class="label" id="id148"><span class="brackets"><a class="fn-backref" href="#id14">ZLM18</a></span></dt>
+<dd><p>Brian Hu Zhang, Blake Lemoine, and Margaret Mitchell. Mitigating unwanted biases with adversarial learning. In <em>Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society</em>, AIES '18, 335–340. New York, NY, USA, 2018. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3278721.3278779">https://doi.org/10.1145/3278721.3278779</a>, <a class="reference external" href="https://doi.org/10.1145/3278721.3278779">doi:10.1145/3278721.3278779</a>.</p>
+</dd>
+</dl>
+</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id180"><span class="brackets"><a class="fn-backref" href="#id21">1</a></span></dt>
+<dt class="label" id="id198"><span class="brackets"><a class="fn-backref" href="#id11">1</a></span></dt>
 <dd><p>Certainly from the ethical perspective, although interpretability of machine learning models is a research area in it’s own right.</p>
 </dd>
-<dt class="label" id="id181"><span class="brackets"><a class="fn-backref" href="#id22">2</a></span></dt>
+<dt class="label" id="id199"><span class="brackets"><a class="fn-backref" href="#id12">2</a></span></dt>
 <dd><p>And alternatively, we may be able to interpret some stages of the decision making process but the process to obtain these may be opaque to us.</p>
 </dd>
-<dt class="label" id="id182"><span class="brackets"><a class="fn-backref" href="#id39">3</a></span></dt>
+<dt class="label" id="id200"><span class="brackets"><a class="fn-backref" href="#id21">3</a></span></dt>
 <dd><p>For more on this paper, see <a class="reference internal" href="#causal"><span class="std std-ref">Causal Inference</span></a>.</p>
 </dd>
-<dt class="label" id="id183"><span class="brackets"><a class="fn-backref" href="#id68">4</a></span></dt>
+<dt class="label" id="id201"><span class="brackets"><a class="fn-backref" href="#id36">4</a></span></dt>
 <dd><p>Throughout this section we consider a binary sensitive attribute, though all definitions can be extended to accommodate a sensitive attribute with <span class="math notranslate nohighlight">\(n\)</span> categories.</p>
 </dd>
-<dt class="label" id="id184"><span class="brackets"><a class="fn-backref" href="#id95">5</a></span></dt>
+<dt class="label" id="id202"><span class="brackets"><a class="fn-backref" href="#id50">5</a></span></dt>
 <dd><p>Which due to contractual reasons they are unable to release.</p>
 </dd>
-<dt class="label" id="id185"><span class="brackets"><a class="fn-backref" href="#id126">6</a></span></dt>
+<dt class="label" id="id203"><span class="brackets"><a class="fn-backref" href="#id66">6</a></span></dt>
 <dd><p>In this case, with regard to demographic parity.</p>
 </dd>
-<dt class="label" id="id186"><span class="brackets"><a class="fn-backref" href="#id129">7</a></span></dt>
+<dt class="label" id="id204"><span class="brackets"><a class="fn-backref" href="#id68">7</a></span></dt>
 <dd><p>The CelebA, Soccer Player and Quickdraw datasets were used.</p>
 </dd>
-<dt class="label" id="id187"><span class="brackets"><a class="fn-backref" href="#id174">8</a></span></dt>
+<dt class="label" id="id205"><span class="brackets"><a class="fn-backref" href="#id91">8</a></span></dt>
 <dd><p>Given the arbitrariness of many ‘fairness’ rules in the U.S. that have led to claims of disparate treatment (i.e. Ricci vs DeStefano or Texas House Bill 588) this objective may have a large impact.</p>
 </dd>
-<dt class="label" id="id188"><span class="brackets"><a class="fn-backref" href="#id177">9</a></span></dt>
+<dt class="label" id="id206"><span class="brackets"><a class="fn-backref" href="#id93">9</a></span></dt>
 <dd><p>And consequently the expectation to be free of discrimination based on that religion.</p>
 </dd>
 </dl>

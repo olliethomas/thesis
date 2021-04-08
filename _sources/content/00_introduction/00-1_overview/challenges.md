@@ -1,5 +1,5 @@
 # Challenges
-Need to record $$S$$ so that we can be fair with regard to $$S$$.
+Need to record $S$ so that we can be fair with regard to $S$.
 
 Distribution shift. 
 Particularly over time in systems with long feedback loops.

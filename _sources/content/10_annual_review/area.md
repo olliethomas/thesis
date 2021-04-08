@@ -18,9 +18,9 @@ Unfortunately, that's not always the case.
 
 Recent headlines include:
 - **Wrongfully Accused by an Algorithm**: In what may be the first known case of its kind, a faulty facial recognition match 
-led to a Michigan man’s arrest for a crime he did not commit. -- NYTimes {cite}`hill_2020`
-- **Amazon ditched AI recruiting tool that favored men for technical jobs**. -- The Guardian {cite}`reuters_2018`
-- **Police officers raise concerns about 'biased' AI data**. -- BBC News {cite}`bbc_news_2019`
+led to a Michigan man’s arrest for a crime he did not commit. -- NYTimes {cite}`Hill20`
+- **Amazon ditched AI recruiting tool that favored men for technical jobs**. -- The Guardian {cite}`Reu18`
+- **Police officers raise concerns about 'biased' AI data**. -- BBC News {cite}`BBC19`
 
 But how does this happen?
 A prediction model has to be designed and there are a number of legal and moral obstacles to prevent a group/individual from purposefully designing a biased system.
@@ -63,7 +63,7 @@ This will be expanded on in the introduction to my thesis.
 | Post-process  |                       |  X                    |                | X                                     |
 
 In my work I focus on removing bias in the 'pre-processing' stage. 
-This is an exciting and active research area with spotlight tutorials at top conferences such as NeurIPS[^footnote] {cite}`foundation`.
+This is an exciting and active research area with spotlight tutorials at top conferences such as NeurIPS[^footnote] {cite}`CisKoy19`.
 Part of the reason for the excitement in this area is that the underlying data itself is a major source of bias.
 After all, this is what a model is using to determine "correct" behaviour.
 If we are able to understand and counteract bias that exists in the underlying data, then we can use an unconstrained 
@@ -110,6 +110,6 @@ I will answer this question by:
 - demonstrating qualitatively that representations in the data domain provide feedback as to what is required to make data “fair”.
  
 
-```{bibliography} ../../area_references.bib
-
+```{bibliography}
+:filter: docname in docnames
 ```
