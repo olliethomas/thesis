@@ -43,7 +43,7 @@
     - The paper was **accepted** and published at the main conference.
     - This will form part of chapter 1 of my thesis.  
 - IJCAI[^ijcai2019] [submission on using generative models to balance a dataset with regard to
-  sensitive groups and their outcomes](../09_appendix/publications/imagined.md).
+  sensitive groups and their outcomes](../../../../Library/Application%20Support/JetBrains/PyCharm2020.3/scratches/imagined.md).
   - Having seen other work focusing on the input data and ignoring the outcomes as a source of bias, we submitted
   a paper to IJCAI which aimed to disentangle the effect of a sensitive attribute from both the input space and the decision space.
   - The paper was rejected with feedback that the paper was poorly structured, which was fair. 
@@ -74,7 +74,7 @@
 
 Since the last annual review, I worked on 3 papers
 
-1. _[Imagined Examples](../09_appendix/publications/imagined.md):_ This is a re-work of the IJCAI submission from the previous year.
+1. _[Imagined Examples](../../../../Library/Application%20Support/JetBrains/PyCharm2020.3/scratches/imagined.md):_ This is a re-work of the IJCAI submission from the previous year.
 We use a Variational Autoencoder model to produce a model that not 
 only considers the features, but also the reported outcomes as a source of bias. 
 We use this model to generate likely counterfactual samples but without the need for a causal model.

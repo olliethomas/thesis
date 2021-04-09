@@ -6,20 +6,7 @@
 
 - part: Thesis
   chapters:
-  - file: content/00_introduction/intro
-    sections:
-      - file: content/00_introduction/00-1_overview/overview
-        sections:
-        - file: content/00_introduction/00-1_overview/fair_ml
-          sections:
-            - file: content/00_introduction/00-1_overview/definitions
-        - file: content/00_introduction/00-1_overview/challenges
-      - file: content/00_introduction/00-2_background/background
-        sections:
-          - file: content/00_introduction/00-2_background/adversarial_methods
-          - file: content/00_introduction/00-2_background/dist_matching
-          - file: content/00_introduction/00-2_background/counterfactual_fairness
-  - file: content/01_fair_representations/intro
+  - file: content/01_introduction/intro
   - file: content/02_data_domain_fairness/intro
   - file: content/03_identifying/intro
   - file: content/08_conclusion/conclusion
@@ -38,8 +25,6 @@
   - file: content/09_appendix/published
     sections:
       - file: content/09_appendix/publications/dfritdd
-      - file: content/09_appendix/publications/framework_for_positive_action
-      - file: content/09_appendix/publications/imagined
       - file: content/09_appendix/publications/nosinn
       - file: content/09_appendix/publications/lit_review
   - file: content/09_appendix/software
