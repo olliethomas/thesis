@@ -1,3 +1,6 @@
 # Casual Discovery Tool
 
-Built a tool for discovering causal structures in data that can be used by social scientists to create inform plicy decisions.
+Whilst studying for the PhD, I led a team that built a tool for discovering causal structures in data.
+The aim was that the tool could be used by social scientists to help inform policy decisions.
+
+The tool is now owned by a third party.
