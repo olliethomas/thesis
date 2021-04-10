@@ -525,10 +525,10 @@ For example, intelligence resides in the construct space, IQ, measured by an IQ 
 <p>As the observed space is an approximation of the construct space, we are required to make an assumption regarding the accuracy and reliability of this approximation;
 these assumptions are refereed to as axiom assumptions or ‘worldviews’.
 In the context of fairness, we can distinguish between two important axiom assumptions: WAE (“we’re all equal”) and WYSIWYG (“what you see is what you get”).
-WAE (Figure~\ref{fig:gcm_redux} – top right) assumes decisions, if correctly based on the ground truth, will be independent of the sensitive attribute.
-WYSIWYG (Figure~\ref{fig:gcm_redux} – top left), on the other hand, allows for a disparity between protected groups, assuming the observed discrepancies are a true reflection of the ground truth.
+WAE (<a class="reference internal" href="#fig-gcm-redux"><span class="std std-numref">Fig. 3</span></a> – top right) assumes decisions, if correctly based on the ground truth, will be independent of the sensitive attribute.
+WYSIWYG (<a class="reference internal" href="#fig-gcm-redux"><span class="std std-numref">Fig. 3</span></a> – top left), on the other hand, allows for a disparity between protected groups, assuming the observed discrepancies are a true reflection of the ground truth.
 These worldview assumptions are in tension, and considered to be fundamentally incompatible with each other <span id="id11">[<a class="reference internal" href="../bib.html#id67"><span>FSV16</span></a>,<a class="reference internal" href="../bib.html#id96"><span>BS20</span></a>]</span>.</p>
-<p>With these worldviews in mind, we can discuss two statistically measurable fairness definitions: Demographic parity (<code class="docutils literal notranslate"><span class="pre">DP</span></code>) and equality of opportunity (<code class="docutils literal notranslate"><span class="pre">EqOp</span></code>). Demographic parity, which requires the rate of positive outcome to be equal across protected groups, links with the WAE axiom <span id="id12">[<a class="reference internal" href="../bib.html#id67"><span>FSV16</span></a>,<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span>.
+<p>With these worldviews in mind, we can discuss two statistically measurable fairness definitions: Demographic parity (DP) and equality of opportunity (EqOp). Demographic parity, which requires the rate of positive outcome to be equal across protected groups, links with the WAE axiom <span id="id12">[<a class="reference internal" href="../bib.html#id67"><span>FSV16</span></a>,<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span>.
 For example, if a bank approves a loan for 50% of white applicants, under demographic parity, it will be required to to approve loans for 50% of black applicants as well, regardless of their credit score.
 Recently, <span id="id13">[<a class="reference internal" href="../bib.html#id92"><span>WMR20</span></a>]</span> proposed conditional demographic (dis)parity (CDD)<a class="footnote-reference brackets" href="#id140" id="id14">1</a> as a statistical baseline that aligns with the EU legislation.
 CDD requires demographic parity to be enforced only to the point it can occur without positive discrimination.
@@ -544,25 +544,20 @@ Mitigation efforts that consider selection bias <span id="id19">[<a class="refer
 <p>Treatment of fairness in machine learning is often limited to the observed space and the decision space.
 Thus, any effect of bias introduced outside of the environment which we can control – training population, measurements, learning algorithm – isn’t taken into consideration. This can give the false hope that deploying a locally-fair AI decision-maker can alleviate bias in the environment it is deployed in <span id="id21">[<a class="reference internal" href="../bib.html#id102"><span>FGU21</span></a>]</span>.
 We aim to encourage positive action trough understanding a broader range of biases, including bias that is external to the ADM system and therefore cannot be genuinely mitigated by an automated rejection / acceptance model.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure*<span class="nb">}</span>[ht]
-    <span class="k">\centering</span>
-    <span class="k">\includegraphics</span><span class="na">[width=0.95\textwidth]</span><span class="nb">{</span>assets/figure1.pdf<span class="nb">}</span>
-    <span class="k">\caption</span><span class="nb">{</span><span class="c">%</span>
-    A graphical visualisation of the `hybrid&#39; axiom and biases potentially introduced at each mapping step.
-    The potential at birth is assumed to be independent of all protected characteristics.
-    At the point of observation, however, disparity between sub-groups is allowed, due to the presence of `lifetime&#39; bias.
-    We define the WAE and the WYSIWYG axioms as separated by three steps, each with the possibility of bias being introduced.<span class="nb">}</span><span class="c">%</span>
-    <span class="k">\label</span><span class="nb">{</span>fig:story<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>figure*<span class="nb">}</span>
-</pre></div>
+<div class="figure align-default" id="fig-story">
+<a class="reference internal image-reference" href="../../_images/figure1.png"><img alt="../../_images/figure1.png" src="../../_images/figure1.png" style="height: 150px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">A graphical visualisation of the ‘hybrid’ axiom and biases potentially introduced at each mapping step.
+The potential at birth is assumed to be independent of all protected characteristics.
+At the point of observation, however, disparity between sub-groups is allowed, due to the presence of ‘lifetime’ bias.
+We define the WAE and the WYSIWYG axioms as separated by three steps, each with the possibility of bias being introduced.</span><a class="headerlink" href="#fig-story" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="contributions">
 <h3>Contributions<a class="headerlink" href="#contributions" title="Permalink to this headline">¶</a></h3>
 <p>Specifically, our paper provides the following main contributions:</p>
 <ol class="simple">
-<li><p>A `hybrid’ fairness axiom that combines both the WAE and WYSIWYG axioms, by further decomposing the construct space, to allow these axioms to co-exist<a class="footnote-reference brackets" href="#id144" id="id22">3</a>.</p></li>
-<li><p>A `positive action candidate’ (PAC) outcome, a decision that is neither accept/reject, to accommodate the suggested framework and promote positive action towards diversity &amp; equality</p></li>
+<li><p>A ‘hybrid’ fairness axiom that combines both the WAE and WYSIWYG axioms, by further decomposing the construct space, to allow these axioms to co-exist<a class="footnote-reference brackets" href="#id144" id="id22">3</a>.</p></li>
+<li><p>A ‘positive action candidate’ (PAC) outcome, a decision that is neither accept/reject, to accommodate the suggested framework and promote positive action towards diversity &amp; equality</p></li>
 <li><p>A counterfactual deferral model that allows flexible bias auditing and mitigation via a set of adaptable selection rules.</p></li>
 </ol>
 </div>
@@ -571,27 +566,23 @@ We aim to encourage positive action trough understanding a broader range of bias
 <h2>Positive Action Framework<a class="headerlink" href="#positive-action-framework" title="Permalink to this headline">¶</a></h2>
 <p>We first describe our proposed fairness axiom that will allow us to define a positive action candidate.</p>
 <p>\subsection{A ‘hybrid’ fairness axiom}
-The axiom adopted in this work is visually presented in Figure~\ref{fig:story}.
+The axiom adopted in this work is visually presented in <a class="reference internal" href="#fig-story"><span class="std std-numref">Fig. 1</span></a>.
 We expand the <em>construct space</em> to include the element of time, with the observed space containing discrete measurements of the construct space in time.
 Let’s consider a measurable feature <span class="math notranslate nohighlight">\(X\)</span> within the observed space; <span class="math notranslate nohighlight">\(X\)</span> is an approximation to its non-measurable counterpart <span class="math notranslate nohighlight">\(\tilde{X}\)</span>. We assume that <span class="math notranslate nohighlight">\(\tilde{X}\)</span> decomposes into the convex combination:</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-  X<span class="k">\approx\tilde</span><span class="nb">{</span>X<span class="nb">}</span>=<span class="k">\alpha\cdot\tilde</span><span class="nb">{</span>X<span class="nb">}_{</span>b<span class="nb">}</span>+<span class="k">\beta\cdot\Delta\tilde</span><span class="nb">{</span>X<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
-</pre></div>
-</div>
+<div class="math notranslate nohighlight" id="equation-my-math-ref">
+<span class="eqno">(1)<a class="headerlink" href="#equation-my-math-ref" title="Permalink to this equation">¶</a></span>\[X\approx\tilde{X}=\alpha\cdot\tilde{X}_{b}+\beta\cdot\Delta\tilde{X}\]</div>
 <p>where</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span>
-  <span class="k">\tilde</span><span class="nb">{</span>X<span class="nb">}_{</span>b<span class="nb">}</span><span class="k">\perp</span> s <span class="k">\quad\text</span><span class="nb">{</span>and<span class="nb">}</span><span class="k">\quad</span>
-  <span class="k">\Delta\tilde</span><span class="nb">{</span>X<span class="nb">}</span> <span class="k">\not</span> <span class="k">\perp</span> s~~,
-<span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
-</pre></div>
-</div>
+<div class="math notranslate nohighlight" id="equation-conditions">
+<span class="eqno">(2)<a class="headerlink" href="#equation-conditions" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+  \tilde{X}_{b} &amp; \perp s \quad\text{and}\quad \\
+  \Delta\tilde{X} \not &amp; \perp s~~,
+\end{align*}\end{split}\]</div>
 <p>the sensitive attribute being <span class="math notranslate nohighlight">\(s\)</span>, and <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> being non-negative values that sum to 1.
 In words, we assume an individual’s suitability for the task, at the time of the measurement, is a combination of their aptitude (<span class="math notranslate nohighlight">\(\tilde{X}_b\)</span>) and their experiences over time (<span class="math notranslate nohighlight">\(\Delta \tilde{X}\)</span>)<a class="footnote-reference brackets" href="#id146" id="id23">5</a>.
 We further assume that the ‘aptitude’ component, <span class="math notranslate nohighlight">\(\tilde{X}_{b}\)</span>, with regard most tasks<a class="footnote-reference brackets" href="#id147" id="id24">6</a>, is independent of any protected characteristic, and hence complies with the WAE axiom.
 The ‘life-experience’ component <span class="math notranslate nohighlight">\(\Delta\tilde{X}\)</span>, that shifts the ‘aptitude’ either positively, or negatively, may not be independent of a protected characteristic.
 <span class="math notranslate nohighlight">\(\tilde{X}\)</span> represents the non-observable ground truth, per individual, at the time of measurement, and may no longer be independent from the protected characteristic <span class="math notranslate nohighlight">\(S\)</span>, due to bias experienced prior to the observation.
-We define the effect <span class="math notranslate nohighlight">\(S\)</span> has on <span class="math notranslate nohighlight">\(\Delta\tilde{X}\)</span>, which may be a collection of several influences, as `lifetime’ bias.</p>
+We define the effect <span class="math notranslate nohighlight">\(S\)</span> has on <span class="math notranslate nohighlight">\(\Delta\tilde{X}\)</span>, which may be a collection of several influences, as ‘lifetime’ bias.</p>
 <p>However, there are many additional types of biases that can form within our data, prior to the collection of observed data. One example is self-selection bias, which may be present due to lack of awareness or lack of diverse role models, and can obscure the decision maker’s view of the construct space.
 When mapping from the construct space to the observed space, measurement bias can be introduced through the observation itself, as the observation may not reflect the potential equally well for under-represented groups.
 And, the mapping from the observed space into the decision space may introduce further bias, such as label bias from the use of a proxy variable, and potentially, direct discrimination.
@@ -599,52 +590,37 @@ The assumption made in this work is that the observed data represents the best a
 This way, despite our underlying assumption of the initial construct space being WAE, once the observed data is collected, WYSIWYG can be employed.</p>
 <div class="section" id="counterfactual-deferral-model">
 <h3>Counterfactual Deferral Model<a class="headerlink" href="#counterfactual-deferral-model" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[ht]
-    <span class="k">\centering</span>
-    <span class="k">\includegraphics</span><span class="na">[width=0.3\textwidth]</span><span class="nb">{</span>assets/figure2<span class="nb">_</span>rev.pdf<span class="nb">}</span>
-    <span class="k">\caption</span><span class="nb">{</span><span class="c">%</span>
-    Graphical Model of our `hybrid&#39; fairness axiom.
-    The labelling <span class="s">$</span><span class="nb">b_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span>, <span class="s">$</span><span class="nb">b_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span> and <span class="s">$</span><span class="nb">b_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span>, corresponds to the lifetime bias, measurement bias, and direct bias, respectively (see also Figure~<span class="k">\ref</span><span class="nb">{</span>fig:story<span class="nb">}</span>).<span class="nb">}</span><span class="c">%</span>
-    <span class="k">\label</span><span class="nb">{</span>fig:our<span class="nb">_</span>model<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</pre></div>
+<div class="figure align-default" id="fig-our-model">
+<a class="reference internal image-reference" href="../../_images/figure2_rev.png"><img alt="../../_images/figure2_rev.png" src="../../_images/figure2_rev.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Graphical Model of our ‘hybrid’ fairness axiom.
+The labelling <span class="math notranslate nohighlight">\(b_{1}\)</span>, <span class="math notranslate nohighlight">\(b_{2}\)</span> and <span class="math notranslate nohighlight">\(b_{3}\)</span>, corresponds to the lifetime bias, measurement bias, and direct bias, respectively (see also Fig. 1).</span><a class="headerlink" href="#fig-our-model" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="graphical-model">
 <h4>Graphical model<a class="headerlink" href="#graphical-model" title="Permalink to this headline">¶</a></h4>
-<p>A graphical model of our approach is shown in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:our_model}</span></code>.
-Corresponding to Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:story}</span></code>, the model is situated within the construct, observed and decision spaces.
+<p>A graphical model of our approach is shown in Figure <a class="reference internal" href="#fig-our-model"><span class="std std-numref">Fig. 2</span></a>.
+Corresponding to <a class="reference internal" href="#fig-story"><span class="std std-numref">Fig. 1</span></a>, the model is situated within the construct, observed and decision spaces.
 As mentioned above, within the construct space <span class="math notranslate nohighlight">\(\tilde{X}_{b}\)</span> represents the ‘aptitude’ component, whereas <span class="math notranslate nohighlight">\(\tilde{x}\)</span> represent the non observable true potential, with respect to a task, at the point of measurement.
 While <span class="math notranslate nohighlight">\(\tilde{X}_{b}\)</span> is independent of <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(\tilde{x}\)</span> contains an additional component <span class="math notranslate nohighlight">\(\Delta\tilde{x}\)</span> that is not independent of <span class="math notranslate nohighlight">\(s\)</span>, hence <span class="math notranslate nohighlight">\(\tilde{x}\)</span> is a child of <span class="math notranslate nohighlight">\(s\)</span>.
 The observed space contains <span class="math notranslate nohighlight">\(x\)</span>, the observable attributes measured, and the decision space contains <span class="math notranslate nohighlight">\(y\)</span>, the output.
 Both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are assumed to be a children of <span class="math notranslate nohighlight">\(s\)</span>.
-The labelling <span class="math notranslate nohighlight">\(b_{1}\)</span>, <span class="math notranslate nohighlight">\(b_{2}\)</span> and <span class="math notranslate nohighlight">\(b_{3}\)</span>, defines the potential biases at each mapping, for example, lifetime bias, measurement bias, and direct bias, respectively, as shown if Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:story}</span></code>.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[ht]
-    <span class="k">\centering</span>
-    <span class="k">\includegraphics</span><span class="na">[width=0.45\textwidth]</span><span class="nb">{</span>assets/figure3.pdf<span class="nb">}</span>
-    <span class="k">\caption</span><span class="nb">{</span><span class="c">%</span>
-    Graphical representations of the joint probability of a population which are labelled with regard to reported outcome <span class="s">$</span><span class="nb">Y</span><span class="s">$</span> and a protected characteristic <span class="s">$</span><span class="nb">S</span><span class="s">$</span>.
-    <span class="k">\emph</span><span class="nb">{</span>Top row<span class="nb">}</span>:
-    <span class="k">\emph</span><span class="nb">{</span>Left<span class="nb">}</span> -- In the WYSIWYG axiom the data is representative of a fundamental difference between protected groups.
-    <span class="k">\emph</span><span class="nb">{</span>Right<span class="nb">}</span> In the WAE axiom, potential should be equally present across protected groups. Any mis-representation of this must be caused by &#39;lifetime&#39; and measurement bias.
-    <span class="k">\emph</span><span class="nb">{</span>Bottom<span class="nb">}</span>: Overlapping the above two axioms.
-    The population captured by groups G1, G2, G5 and G6 are represented consistently.
-    Groups G3 and G4 represent individuals that will receive different outcome if a different axiom is assumed.<span class="nb">}</span><span class="c">%</span>
-    <span class="k">\label</span><span class="nb">{</span>fig:gcm<span class="nb">_</span>redux<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</pre></div>
+The labelling <span class="math notranslate nohighlight">\(b_{1}\)</span>, <span class="math notranslate nohighlight">\(b_{2}\)</span> and <span class="math notranslate nohighlight">\(b_{3}\)</span>, defines the potential biases at each mapping, for example, lifetime bias, measurement bias, and direct bias, respectively, as shown if <a class="reference internal" href="#fig-story"><span class="std std-numref">Fig. 1</span></a>.</p>
+<div class="figure align-default" id="fig-gcm-redux">
+<a class="reference internal image-reference" href="../../_images/figure3.png"><img alt="../../_images/figure3.png" src="../../_images/figure3.png" style="height: 450px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Graphical representations of the joint probability of a population which are labelled with regard to reported outcome <span class="math notranslate nohighlight">\(Y\)</span> and a protected characteristic <span class="math notranslate nohighlight">\(S\)</span>.
+<strong>Top row</strong>:
+<em>Left</em> – In the WYSIWYG axiom the data is representative of a fundamental difference between protected groups.
+<em>Right</em> In the WAE axiom, potential should be equally present across protected groups. Any mis-representation of this must be caused by ‘lifetime’ and measurement bias.
+<strong>Bottom</strong>: Overlapping the above two axioms.
+The population captured by groups G1, G2, G5 and G6 are represented consistently.
+Groups G3 and G4 represent individuals that will receive different outcome if a different axiom is assumed.</span><a class="headerlink" href="#fig-gcm-redux" title="Permalink to this image">¶</a></p>
 </div>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure*<span class="nb">}</span>[ht]
-    <span class="k">\centering</span>
-    <span class="k">\includegraphics</span><span class="na">[width=0.8\textwidth]</span><span class="nb">{</span>assets/figure4.pdf<span class="nb">}</span>
-    <span class="k">\caption</span><span class="nb">{</span><span class="c">%</span>
-    Diagram representing our method.
-    The original representation <span class="s">$</span><span class="nb">x</span><span class="s">$</span> is mapped into a representation <span class="s">$</span><span class="nb">z</span><span class="s">$</span> that is independent of the protected characteristic <span class="s">$</span><span class="nb">s</span><span class="s">$</span>.
-    <span class="s">$</span><span class="nb">z</span><span class="s">$</span> is mapped back into <span class="s">$</span><span class="nb">x_{s_x</span><span class="o">=</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span> and <span class="s">$</span><span class="nb">x_{s_x</span><span class="o">=</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span>, reintroducing <span class="s">$</span><span class="nb">b_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> and <span class="s">$</span><span class="nb">b_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span>.
-    Each of those representations are then labelled, reintroducing <span class="s">$</span><span class="nb">b_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span>, resulting in four representation in total.
-    The four corresponding predicted outcomes then determine the group classification (according to Table <span class="k">\ref</span><span class="nb">{</span>table:1<span class="nb">}</span>) and one of three final outcomes: accept, reject, or flag for positive action.<span class="nb">}</span><span class="c">%</span>
-    <span class="k">\label</span><span class="nb">{</span>fig:wae<span class="nb">_</span>wys<span class="nb">_</span>thirdoption<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>figure*<span class="nb">}</span>
-</pre></div>
+<div class="figure align-default" id="fig-wae-wys-thirdoption">
+<a class="reference internal image-reference" href="../../_images/figure4.png"><img alt="../../_images/figure4.png" src="../../_images/figure4.png" style="height: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Diagram representing our method.
+The original representation <span class="math notranslate nohighlight">\(x\)</span> is mapped into a representation <span class="math notranslate nohighlight">\(z\)</span> that is independent of the protected characteristic <span class="math notranslate nohighlight">\(s\)</span>.
+<span class="math notranslate nohighlight">\(z\)</span> is mapped back into <span class="math notranslate nohighlight">\(x_{s_x=0}\)</span> and <span class="math notranslate nohighlight">\(x_{s_x=1}\)</span>, reintroducing <span class="math notranslate nohighlight">\(b_{1}\)</span> and <span class="math notranslate nohighlight">\(b_{2}\)</span>.
+Each of those representations are then labelled, reintroducing <span class="math notranslate nohighlight">\(b_{3}\)</span>, resulting in four representation in total.
+The four corresponding predicted outcomes then determine the group classification (according to Table \ref{table:1}) and one of three final outcomes: accept, reject, or flag for positive action.</span><a class="headerlink" href="#fig-wae-wys-thirdoption" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -652,9 +628,9 @@ The labelling <span class="math notranslate nohighlight">\(b_{1}\)</span>, <span
 <h3>Counterfactual Approach<a class="headerlink" href="#counterfactual-approach" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="splitting-wae-and-wysiwyg-in-the-middle">
 <h4>Splitting WAE and WYSIWYG in the middle<a class="headerlink" href="#splitting-wae-and-wysiwyg-in-the-middle" title="Permalink to this headline">¶</a></h4>
-<p>As a prelude to our counterfactual model, it is helpful to divide the data into six subgroups, as shown in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:gcm_redux}</span></code>.
-There groups are defined by overlaying the observed data, assuming a WYSIWYG axiom, (Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:gcm_redux}</span></code>, top left) on a representation of the data with demographic parity enforced, assuming a WAE axiom (Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:gcm_redux}</span></code>, top right).
-When overlaid, the data can be separated into six subgroups, as shown in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:gcm_redux}</span></code>, bottom.
+<p>As a prelude to our counterfactual model, it is helpful to divide the data into six subgroups, as shown in Figure <a class="reference internal" href="#fig-gcm-redux"><span class="std std-numref">Fig. 3</span></a>.
+There groups are defined by overlaying the observed data, assuming a WYSIWYG axiom, (Figure <a class="reference internal" href="#fig-gcm-redux"><span class="std std-numref">Fig. 3</span></a>, top left) on a representation of the data with demographic parity enforced, assuming a WAE axiom (Figure <a class="reference internal" href="#fig-gcm-redux"><span class="std std-numref">Fig. 3</span></a>, top right).
+When overlaid, the data can be separated into six subgroups, as shown in Figure <a class="reference internal" href="#fig-gcm-redux"><span class="std std-numref">Fig. 3</span></a>, bottom.
 Subgroup <span class="math notranslate nohighlight">\(G_{1}\)</span> and <span class="math notranslate nohighlight">\(G_{2}\)</span>, represent a positive outcome under both axioms.
 Subgroup <span class="math notranslate nohighlight">\(G_{5}\)</span> and <span class="math notranslate nohighlight">\(G_{6}\)</span>, represent a negative outcome under both axioms.
 Subgroups <span class="math notranslate nohighlight">\(G_{3}\)</span> and <span class="math notranslate nohighlight">\(G_{4}\)</span>, however, represent <em>a different outcome under the two axiom</em> (i.e. the two axioms collide).
@@ -666,12 +642,12 @@ For simplicity, we provide illustrations for a binary protected attribute, the p
 </div>
 <div class="section" id="building-a-group-classifier">
 <h4>Building a group classifier.<a class="headerlink" href="#building-a-group-classifier" title="Permalink to this headline">¶</a></h4>
-<p>We use a general two-step approach following the scheme in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:wae_wys_thirdoption}</span></code>.
+<p>We use a general two-step approach following the scheme in Figure <a class="reference internal" href="#fig-wae-wys-thirdoption"><span class="std std-numref">Fig. 4</span></a>.
 First, we train an adversarial auto-encoder model that performs translations within the domain of the protected attribute: the observed data <span class="math notranslate nohighlight">\(x\)</span> is mapped into a representation <span class="math notranslate nohighlight">\(z\)</span>, that is independent of the protected characteristic.
 From <span class="math notranslate nohighlight">\(z\)</span>, two mirror representations can be created, <span class="math notranslate nohighlight">\(x_{s_x=0}\)</span> and <span class="math notranslate nohighlight">\(x_{s_x=1}\)</span>.
 The variables <span class="math notranslate nohighlight">\(x_{s_x=0}\)</span> and <span class="math notranslate nohighlight">\(x_{s_x=1}\)</span> are labelled to create four representation in total: <span class="math notranslate nohighlight">\(x_{s_x=0,s_y=0}\)</span>, <span class="math notranslate nohighlight">\(x_{s_x=0,s_y=1}\)</span>, <span class="math notranslate nohighlight">\(x_{s_x=1,s_y=0}\)</span> and <span class="math notranslate nohighlight">\(x_{s_x=1,s_y=1}\)</span>.
 Here, <span class="math notranslate nohighlight">\(S_y\)</span> denotes the direct label attached to the set of attributes.
-For the second step, we train a second model, a classifier (‘decision predictor’ in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:wae_wys_thirdoption}</span></code>) to performs predictions on the counterfactual representations.
+For the second step, we train a second model, a classifier (‘decision predictor’ in Figure <a class="reference internal" href="#fig-wae-wys-thirdoption"><span class="std std-numref">Fig. 4</span></a>) to performs predictions on the counterfactual representations.
 When we feed in the counterfactuals, we get a corresponding set of outputs:
 <span class="math notranslate nohighlight">\(y_{s_x=0,s_y=0}\)</span>, <span class="math notranslate nohighlight">\(y_{s_x=0,s_y=1}\)</span>, <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=0}\)</span> and <span class="math notranslate nohighlight">\(y_{s_x=1,s_x=1}\)</span>.
 With this knowledge, the group classifier then sorts the original data representation <span class="math notranslate nohighlight">\(x\)</span> into one of the subgroups <span class="math notranslate nohighlight">\(G_{1-6}\)</span>.
@@ -681,71 +657,153 @@ To better understand the difference between <span class="math notranslate nohigh
 A titled chess player (<span class="math notranslate nohighlight">\(CP\)</span>) from Krakozhia, is ranked within the top <span class="math notranslate nohighlight">\(5\%\)</span> of players in her country.
 In this example, <span class="math notranslate nohighlight">\(s\)</span> is country of origin and <span class="math notranslate nohighlight">\(y\)</span> is whether or not an invitation to an international tournament is received.
 To determine if the process for receiving a tournament invitation is fair, we can
-follow the process shown in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:wae_wys_thirdoption}</span></code> and create a counterfactual player, from rival nation Syldavia, such that <span class="math notranslate nohighlight">\(CP_{s_x=1}\)</span> is our chess player having grown with all the benefits of being a Krakozhian player, and placing in the top <span class="math notranslate nohighlight">\(5\%\)</span> of her country, and <span class="math notranslate nohighlight">\(CP_{s_x=0}\)</span> is our chess players, but with the best guess of how their chess skill would have progressed if raised in Syldavia, placing her in the top <span class="math notranslate nohighlight">\(5\%\)</span> in her country.
+follow the process shown in Figure <a class="reference internal" href="#fig-wae-wys-thirdoption"><span class="std std-numref">Fig. 4</span></a> and create a counterfactual player, from rival nation Syldavia, such that <span class="math notranslate nohighlight">\(CP_{s_x=1}\)</span> is our chess player having grown with all the benefits of being a Krakozhian player, and placing in the top <span class="math notranslate nohighlight">\(5\%\)</span> of her country, and <span class="math notranslate nohighlight">\(CP_{s_x=0}\)</span> is our chess players, but with the best guess of how their chess skill would have progressed if raised in Syldavia, placing her in the top <span class="math notranslate nohighlight">\(5\%\)</span> in her country.
 <span class="math notranslate nohighlight">\(S_y\)</span>, in this case, is the country of origin, as stated in the application form.
-For each player we create two tournament applications, resulting in four applications in total as shown in Table <code class="docutils literal notranslate"><span class="pre">\ref{table:chess}</span></code>:
+For each player we create two tournament applications, resulting in four applications in total as shown in Table <a class="reference internal" href="#table-chess"><span class="std std-numref">Table 1</span></a>:
 <span class="math notranslate nohighlight">\(CP_{s_x=0,s_y=0}\)</span>, Syldavian player, Syldavia on the form; <span class="math notranslate nohighlight">\(CP_{s_x=0,s_y=1}\)</span> Syldavian player, Krakozhia on the form; <span class="math notranslate nohighlight">\(CP_{s_x=1,s_y=0}\)</span>, Krakozhian player, Syldavia on the form; <span class="math notranslate nohighlight">\(CP_{s_x=1,s_y=1}\)</span> Krakozhian player, Krakozhia on the form.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[h!]
-<span class="k">\resizebox</span><span class="nb">{</span><span class="k">\columnwidth</span><span class="nb">}{</span>!<span class="nb">}{</span><span class="c">%</span>
-<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>@<span class="nb">{}</span>rll@<span class="nb">{}}</span> <span class="k">\toprule</span>
-<span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>l<span class="nb">}{}</span> <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>c<span class="nb">}{</span>Country of origin on application form<span class="nb">}</span> <span class="k">\\</span>
-<span class="k">\cmidrule</span><span class="nb">{</span>2-3<span class="nb">}</span>
-Country raised in <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{</span>Krakozhia (<span class="s">$</span><span class="nb">S_y</span><span class="o">=</span><span class="m">1</span><span class="s">$</span>)<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{</span>Syldavia (<span class="s">$</span><span class="nb">S_y</span><span class="o">=</span><span class="m">0</span><span class="s">$</span>)<span class="nb">}</span> <span class="k">\\</span>
-<span class="k">\midrule</span>
-Krakozhia (<span class="s">$</span><span class="nb">S_x</span><span class="o">=</span><span class="m">1</span><span class="s">$</span>) <span class="nb">&amp;</span> Invited?<span class="s">$</span><span class="nb">_{s_x</span><span class="o">=</span><span class="m">1</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> Invited?<span class="s">$</span><span class="nb">_{s_x</span><span class="o">=</span><span class="m">1</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span> <span class="k">\\</span>
-Sylvadia (<span class="s">$</span><span class="nb">S_x</span><span class="o">=</span><span class="m">0</span><span class="s">$</span>) <span class="nb">&amp;</span> Invited?<span class="s">$</span><span class="nb">_{s_x</span><span class="o">=</span><span class="m">0</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> Invited?<span class="s">$</span><span class="nb">_{s_x</span><span class="o">=</span><span class="m">0</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span> <span class="k">\\</span>
-<span class="k">\bottomrule</span>
-<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
-<span class="nb">}</span>
-<span class="k">\caption</span><span class="nb">{</span>Intervening on the protected characteristic at two stages of the decision-forming process allows for more precise diagnosis and remedy on undesired behaviour.<span class="nb">}</span>
-<span class="k">\label</span><span class="nb">{</span>table:chess<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
-</pre></div>
-</div>
+<table class="colwidths-auto table" id="table-chess">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Intervening on the protected characteristic at two stages of the decision-forming process allows for more precise diagnosis and remedy on undesired behaviour.</span><a class="headerlink" href="#table-chess" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Country raised in</p></th>
+<th class="text-align:center head"><p>Country of origin on application form</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td class="text-align:center"><p>Krakozhia (<span class="math notranslate nohighlight">\(S_y=1\)</span>)</p></td>
+<td><p>Syldavia (<span class="math notranslate nohighlight">\(S_y=0\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Krakozhia (<span class="math notranslate nohighlight">\(S_x=1\)</span>)</p></td>
+<td class="text-align:center"><p>Invited?<span class="math notranslate nohighlight">\(_{s_x=1,s_y=1}\)</span></p></td>
+<td><p>Invited?<span class="math notranslate nohighlight">\(_{s_x=1,s_y=0}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Sylvadia (<span class="math notranslate nohighlight">\(S_x=0\)</span>)</p></td>
+<td class="text-align:center"><p>Invited?<span class="math notranslate nohighlight">\(_{s_x=0,s_y=1}\)</span></p></td>
+<td><p>Invited?<span class="math notranslate nohighlight">\(_{s_x=0,s_y=0}\)</span></p></td>
+</tr>
+</tbody>
+</table>
 <p>We then `submit’ these application to the decision-predictor and receive four corresponding decisions.
 The tournament invitation system can then be interrogated.
 Importantly, unfair patterns resulting from the decision system, as opposed to development of the player, can be identified.</p>
 <p>The group classifier takes the four outcomes predicted by the classifier and sorts to the appropriate subgroup, following a set of selection rules.
-These group classifier rules are presented in Table <code class="docutils literal notranslate"><span class="pre">\ref{table:1}</span></code>.
+These group classifier rules are presented in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 2</span></a>.
 When consensus is achieved between all counterfactual outputs, no bias is detected and the outcome is reported as dictated by the consensus.
 If consensus is not achieved, the following rules apply (assuming bias is in favour of <span class="math notranslate nohighlight">\(s=1\)</span>):</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-    <span class="k">\item</span> If <span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="m">1</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">1</span><span class="nb">}</span><span class="o">=</span><span class="m">1</span><span class="nb">|s</span><span class="o">=</span><span class="m">0</span><span class="s">$</span> and <span class="k">\\</span> <span class="s">$</span><span class="nv">\forall</span><span class="nb"> j </span><span class="nv">\in</span><span class="nb"> </span><span class="nv">\{</span><span class="m">0</span><span class="nb">,</span><span class="m">1</span><span class="nv">\}</span><span class="s">$</span> <span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="m">0</span><span class="nb">,s_y</span><span class="o">=</span><span class="nb">j}</span><span class="o">=</span><span class="m">0</span><span class="nb">|s</span><span class="o">=</span><span class="m">0</span><span class="s">$</span> then <span class="s">$</span><span class="nb">y</span><span class="o">=</span><span class="m">2</span><span class="s">$</span> <span class="k">\\</span> (we use <span class="s">$</span><span class="nb">y</span><span class="o">=</span><span class="m">2</span><span class="s">$</span> to denote the outcome for positive action candidates).
-    <span class="k">\item</span> else, if <span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="m">1</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">1</span><span class="nb">}</span><span class="o">=</span><span class="m">1</span><span class="s">$</span> then <span class="s">$</span><span class="nb">y</span><span class="o">=</span><span class="m">1</span><span class="s">$</span>.
-    <span class="c">% \item If any $y_{s_x=1,s_y=i}=1$ and all $y_{s_x=0,s_y=i}=0$ and $s=1$ the output is $y=1$.</span>
-    <span class="c">% \item If any $y_{s_x=1,s_y=i}=1$ and all $y_{s_x=0,s_y=i}=0$ and $s=0$ the output is $y=2$ (we use $y=2$ to denote the outcome for positive action candidates)</span>
-    <span class="k">\item</span> If <span class="s">$</span><span class="nv">\forall</span><span class="nb"> i,j </span><span class="nv">\in</span><span class="nb"> </span><span class="nv">\{</span><span class="m">0</span><span class="nb">,</span><span class="m">1</span><span class="nv">\}</span><span class="s">$</span> such that <span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="nb">i,s_y</span><span class="o">=</span><span class="nb">j}</span><span class="o">=</span><span class="m">0</span><span class="s">$</span> then <span class="s">$</span><span class="nb">y</span><span class="o">=</span><span class="m">0</span><span class="s">$</span>.
-<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-</pre></div>
-</div>
+<ol class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=1}=1|s=0\)</span> and <span class="math notranslate nohighlight">\(\forall j \in \{0,1\}\)</span> <span class="math notranslate nohighlight">\(y_{s_x=0,s_y=j}=0|s=0\)</span> then <span class="math notranslate nohighlight">\(y=2\)</span> (we use <span class="math notranslate nohighlight">\(y=2\)</span> to denote the outcome for positive action candidates).</p></li>
+<li><p>else, if <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=1}=1\)</span> then <span class="math notranslate nohighlight">\(y=1\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\forall i,j \in \{0,1\}\)</span> such that <span class="math notranslate nohighlight">\(y_{s_x=i,s_y=j}=0\)</span> then <span class="math notranslate nohighlight">\(y=0\)</span>.</p></li>
+</ol>
 <p>Rules for bias in the opposite direction can be easily derived.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>table*<span class="nb">}</span>[ht]
-<span class="k">\centering</span>
-<span class="c">% \resizebox{\textwidth}{!}{%</span>
-<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span> @<span class="nb">{}</span>ccccccccc@<span class="nb">{}</span> <span class="nb">}</span>
- <span class="k">\toprule</span>
-   Selection Rule <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">s</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="m">0</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="m">0</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="nb">{</span><span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="m">1</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">y_{s_x</span><span class="o">=</span><span class="m">1</span><span class="nb">,s_y</span><span class="o">=</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> Subgroup <span class="nb">&amp;</span> Bias <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">y</span><span class="s">$</span> <span class="k">\\</span> [0.5ex]
-<span class="k">\midrule</span>
- 1 <span class="nb">&amp;</span> 0 or 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> or <span class="s">$</span><span class="nb">G_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> - <span class="nb">&amp;</span> 1<span class="k">\\</span>
- 2 <span class="nb">&amp;</span> 0 or 1 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span>  <span class="s">$</span><span class="nb">G_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> or <span class="s">$</span><span class="nb">G_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">b_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1<span class="k">\\</span>
- 3 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">b_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> or <span class="s">$</span><span class="nb">b_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1<span class="k">\\</span>
- 4 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1  <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">b_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1<span class="k">\\</span>
- 5 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1  <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">b_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1<span class="k">\\</span>
- 6 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">b_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> or <span class="s">$</span><span class="nb">b_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 2<span class="k">\\</span>
- 7 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1  <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">b_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 2<span class="k">\\</span>
- 8 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 1  <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">b_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1<span class="k">\\</span>
- 9 <span class="nb">&amp;</span> 0 or 1 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">G_{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span> or <span class="s">$</span><span class="nb">G_{</span><span class="m">6</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> - <span class="nb">&amp;</span> 0<span class="k">\\</span>
- <span class="k">\bottomrule</span>
-<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span><span class="c">%</span>
-<span class="c">% }</span>
-<span class="k">\caption</span><span class="nb">{</span><span class="c">%</span>
-Selection rules for mapping from the groups represented in Figure~<span class="k">\ref</span><span class="nb">{</span>fig:gcm<span class="nb">_</span>redux<span class="nb">}</span> and Figure~<span class="k">\ref</span><span class="nb">{</span>fig:wae<span class="nb">_</span>wys<span class="nb">_</span>thirdoption<span class="nb">}</span> to a decision.
-As <span class="s">$</span><span class="nb">s</span><span class="o">=</span><span class="m">0</span><span class="s">$</span> represents an disadvantaged group, we identify those in group 3 to be suitable for <span class="k">\emph</span><span class="nb">{</span>positive action<span class="nb">}</span>. These are candidates who would have been accepted had a counterfactual version of themselves been considered.
-N.b. Combinations not listed are identified and the outcome reverts to the outcome from an unconstrained model.<span class="nb">}</span><span class="c">%</span>
-<span class="k">\label</span><span class="nb">{</span>table:1<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>table*<span class="nb">}</span>
-</pre></div>
-</div>
+<table class="colwidths-auto table" id="table-1">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Selection rules for mapping from the groups represented in Figure GCM and Figure WAEWYS to a decision. As <span class="math notranslate nohighlight">\(s=0\)</span> represents an disadvantaged group, we identify those in group 3 to be suitable for <em>positive action</em>.  These are candidates who would have been accepted had a counterfactual version of themselves been considered. N.b. Combinations not listed are identified and the outcome reverts to the outcome from an unconstrained model.</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Selection Rule</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(s\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{s_x=0,s_y=0}\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{s_x=0,s_y=1}\)</span></p></th>
+<th class="text-align:center head"><p>{<span class="math notranslate nohighlight">\(y_{s_x=1,s_y=0}\)</span>}</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{s_x=1,s_y=1}\)</span></p></th>
+<th class="text-align:center head"><p>Subgroup</p></th>
+<th class="text-align:center head"><p>Bias</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td class="text-align:center"><p>0 or 1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{1}\)</span> or <span class="math notranslate nohighlight">\(G_{2}\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td class="text-align:center"><p>0 or 1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{1}\)</span> or <span class="math notranslate nohighlight">\(G_{2}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(b_{3}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{4}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(b_{1}\)</span> or <span class="math notranslate nohighlight">\(b_{2}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{4}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(b_{3}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{4}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(b_{3}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{3}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(b_{1}\)</span> or <span class="math notranslate nohighlight">\(b_{2}\)</span></p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{3}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(b_{3}\)</span></p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{1}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(b_{3}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td class="text-align:center"><p>0 or 1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G_{5}\)</span> or <span class="math notranslate nohighlight">\(G_{6}\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -754,35 +812,31 @@ N.b. Combinations not listed are identified and the outcome reverts to the outco
 <p>Our model is implemented as two successive neural networks representing distinct phases as mentioned above.
 Our goal in each model is to produce a counterfactual with respect to the protected characteristic <span class="math notranslate nohighlight">\(s\)</span>.
 First, we aim to train an autoencoder model capable of producing a counterfactual <em>reconstruction</em> in <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>; and then we aim to train a classification model capable of producing a counterfactual <em>decision</em> in <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span>.</p>
-<p>The adversarial autoencoder has a similar architecture to <span id="id25">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span>, but with multiple decoders, and comprises of:
-\begin{enumerate}
-\item An Encoder function <span class="math notranslate nohighlight">\(g: (\mathcal{X}, \mathcal{S}) \to \mathcal{Z}\)</span> to map the input <span class="math notranslate nohighlight">\(x\)</span> to a more malleable representation <span class="math notranslate nohighlight">\(z\)</span>.
-\item An Adversary function <span class="math notranslate nohighlight">\(h:\mathcal{Z} \to \mathcal{S} \)</span> to encourage the representation in the latent space to \emph{not} be predictive of <span class="math notranslate nohighlight">\(s\)</span>.
-\item An ensemble of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-specific decoders.
+<p>The adversarial autoencoder has a similar architecture to <span id="id25">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span>, but with multiple decoders, and comprises of:</p>
+<ol class="simple">
+<li><p>An Encoder function <span class="math notranslate nohighlight">\(g: (\mathcal{X}, \mathcal{S}) \to \mathcal{Z}\)</span> to map the input <span class="math notranslate nohighlight">\(x\)</span> to a more malleable representation <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
+<li><p>An Adversary function <span class="math notranslate nohighlight">\(h:\mathcal{Z} \to \mathcal{S} \)</span> to encourage the representation in the latent space to \emph{not} be predictive of <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+<li><p>An ensemble of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-specific decoders.
 The task is to produce a reconstruction <span class="math notranslate nohighlight">\(x_s\)</span> from <span class="math notranslate nohighlight">\(z\)</span> and is defined as a function <span class="math notranslate nohighlight">\(k: (\mathcal{Z}) \to \mathcal{X}_s \quad \forall ~ s \in \mathcal{S}\)</span>.
 Where <span class="math notranslate nohighlight">\(\mathcal{X}_s\)</span> is an array of reconstructions, each corresponding to a possible <span class="math notranslate nohighlight">\(s\)</span>-value.
-During training, <span class="math notranslate nohighlight">\(\mathcal{X}_s\)</span> is indexed by the real <span class="math notranslate nohighlight">\(s\)</span> value so that only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true protected characteristic is used for training.
-\end{enumerate}</p>
+During training, <span class="math notranslate nohighlight">\(\mathcal{X}_s\)</span> is indexed by the real <span class="math notranslate nohighlight">\(s\)</span> value so that only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true protected characteristic is used for training.</p></li>
+</ol>
 <p>The encoder’s purpose is to produce a \emph{likely} counterfactual <span class="math notranslate nohighlight">\(X\)</span> with respect to <span class="math notranslate nohighlight">\(s\)</span>.
 To do this, we produce a latent embedding, <span class="math notranslate nohighlight">\(z\)</span> which removes as much information about <span class="math notranslate nohighlight">\(s\)</span> as possible.
 Then, we have one decoder per possible <span class="math notranslate nohighlight">\(s\)</span>-label, allowing the effect of <span class="math notranslate nohighlight">\(s\)</span> to be reintroduced.
-We train this model by optimising the objective function in Equation~\eqref{eq:ae_loss}, where <span class="math notranslate nohighlight">\(\ell_{\textrm{recon}}\)</span> is an appropriate reconstruction loss between the reconstructions and the features, and <span class="math notranslate nohighlight">\(\ell_{\textrm{adv}}\)</span> is the adversarial loss realised as cross-entropy between the <span class="math notranslate nohighlight">\(s\)</span>-prediction and the <span class="math notranslate nohighlight">\(s\)</span>-target coupled with a supplementary non-parametric measure (Maximum Mean Discrepancy <span id="id26">[<a class="reference internal" href="../bib.html#id81"><span>GBR+07</span></a>]</span>) with a linear kernel.
+We train this model by optimising the objective function in Equation <a class="reference internal" href="#equation-eq-ae-loss">(3)</a>, where <span class="math notranslate nohighlight">\(\ell_{\textrm{recon}}\)</span> is an appropriate reconstruction loss between the reconstructions and the features, and <span class="math notranslate nohighlight">\(\ell_{\textrm{adv}}\)</span> is the adversarial loss realised as cross-entropy between the <span class="math notranslate nohighlight">\(s\)</span>-prediction and the <span class="math notranslate nohighlight">\(s\)</span>-target coupled with a supplementary non-parametric measure (Maximum Mean Discrepancy <span id="id26">[<a class="reference internal" href="../bib.html#id81"><span>GBR+07</span></a>]</span>) with a linear kernel.
 A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is incorporated to allow for a trade-off between the two competing losses<a class="footnote-reference brackets" href="#id148" id="id27">9</a>.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span> <span class="k">\nonumber</span> <span class="k">\label</span><span class="nb">{</span>eq:ae<span class="nb">_</span>loss<span class="nb">}</span>
-    <span class="k">\mathcal</span><span class="nb">{</span>L<span class="nb">}_{</span><span class="k">\mathrm</span><span class="nb">{</span>AE<span class="nb">}}</span> = <span class="nb">&amp;</span> <span class="k">\min</span><span class="nb">_{</span><span class="k">\theta</span>, <span class="k">\pi</span><span class="nb">}</span><span class="k">\max</span><span class="nb">_{</span><span class="k">\phi</span><span class="nb">}</span> <span class="k">\mathbb</span><span class="nb">{</span>E<span class="nb">}_{</span>x <span class="k">\sim</span> X<span class="nb">}</span> [ <span class="k">\ell</span><span class="nb">_{</span><span class="k">\textrm</span><span class="nb">{</span>recon<span class="nb">}}</span>(k<span class="nb">_{</span><span class="k">\pi</span><span class="nb">}</span>(g<span class="nb">_{</span><span class="k">\theta</span><span class="nb">}</span>(x), s)<span class="nb">_</span>s; x) <span class="k">\nonumber</span> <span class="k">\\</span>
-    <span class="nb">&amp;</span> - <span class="k">\lambda</span> <span class="k">\ell</span><span class="nb">_{</span><span class="k">\textrm</span><span class="nb">{</span>adv<span class="nb">}}</span>(h<span class="nb">_{</span><span class="k">\phi</span><span class="nb">}</span>(g<span class="nb">_{</span><span class="k">\theta</span><span class="nb">}</span>(x)), s)]
-<span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
-</pre></div>
-</div>
+<div class="math notranslate nohighlight" id="equation-eq-ae-loss">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-ae-loss" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+    \mathcal{L}_{\mathrm{AE}} = &amp; \min_{\theta, \pi}\max_{\phi} \mathbb{E}_{x \sim X} [ \ell_{\textrm{recon}}(k_{\pi}(g_{\theta}(x), s)_s; x) \nonumber \\
+    &amp; - \lambda \ell_{\textrm{adv}}(h_{\phi}(g_{\theta}(x)), s)]
+\end{align}\end{split}\]</div>
 <p>The classification model consists of a shared network with, in a similar fashion to the autoencoder, <span class="math notranslate nohighlight">\(s\)</span>-specific task-heads.
 For the classification model the task is to produce an ensemble of predictions of the class label <span class="math notranslate nohighlight">\(y_s\)</span> from <span class="math notranslate nohighlight">\(x\)</span> and is defined as <span class="math notranslate nohighlight">\(f_s: (\mathcal{X}) \rightarrow \mathcal{Y}_s \quad \forall ~ s \in \mathcal{S}\)</span>.
 As with the autoencoder, only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true sensitive label is used for training.
-The objective is shown in Eq <code class="docutils literal notranslate"><span class="pre">\eqref{eq:clf_loss}</span></code>.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span> <span class="k">\label</span><span class="nb">{</span>eq:clf<span class="nb">_</span>loss<span class="nb">}</span>
-    <span class="k">\mathcal</span><span class="nb">{</span>L<span class="nb">}_{</span><span class="k">\mathrm</span><span class="nb">{</span>Clf<span class="nb">}}</span> = <span class="k">\min</span><span class="nb">_{</span><span class="k">\omega</span>, <span class="k">\xi</span><span class="nb">}</span> <span class="k">\mathbb</span><span class="nb">{</span>E<span class="nb">}_{</span>x <span class="k">\sim</span> X<span class="nb">}</span>[ <span class="k">\ell</span><span class="nb">_{</span><span class="k">\textrm</span><span class="nb">{</span>pred<span class="nb">}}</span>(f<span class="nb">_{</span><span class="k">\omega</span><span class="nb">}</span>(x)<span class="nb">_</span>s; y) ]
-<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
-</pre></div>
-</div>
+The objective is shown in Eq <a class="reference internal" href="#equation-eq-clf-loss">(4)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-clf-loss">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-clf-loss" title="Permalink to this equation">¶</a></span>\[\mathcal{L}_{\mathrm{Clf}} = \min_{\omega, \xi} \mathbb{E}_{x \sim X}[ \ell_{\textrm{pred}}(f_{\omega}(x)_s; y) ]\]</div>
 <p>At inference time, the autoencoder model results in one reconstruction per <span class="math notranslate nohighlight">\(S\)</span>-label, per sample, and likewise for the classification model.
 In the case of a binary <span class="math notranslate nohighlight">\(S\)</span>\label, this results in two reconstructions per sample and two decisions per reconstruction, resulting in 4 outcomes per sample.</p>
 </div>
@@ -791,24 +845,22 @@ In the case of a binary <span class="math notranslate nohighlight">\(S\)</span>\
 <p>When we are considering an ADM deployed in a real-world biased setting, a distinction should be made between <em>three categories of bias</em>:
 bias that is introduced directly by incorporating AI, due, for example, to over-fitting on the training data;
 bias we can successfully intervene on by mitigating, or even completely removing, both direct and selection bias from our data and algorithm; and, bias we can detect, but cannot intervene on.</p>
-<p>In this work, it is assumed to be possible, reasonable, and required to enforce the mapping between the observed and the decision space to be independent of the sensitive attribute at deployment, despite the data on which the model is trained not necessarily displaying this property. i.e. we assume it is a requirement to correct for direct bias within the decision environment. We achieve this by applying selection rules <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(8\)</span> from Table~\ref{table:1}. <span class="math notranslate nohighlight">\(G3\)</span> and <span class="math notranslate nohighlight">\(G4\)</span> within the framework allow for auditing and mitigation in the form of positive action, of bias we can detect, but cannot directly intervene on.</p>
+<p>In this work, it is assumed to be possible, reasonable, and required to enforce the mapping between the observed and the decision space to be independent of the sensitive attribute at deployment, despite the data on which the model is trained not necessarily displaying this property. i.e. we assume it is a requirement to correct for direct bias within the decision environment. We achieve this by applying selection rules <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(8\)</span> from <a class="reference internal" href="#table-1"><span class="std std-numref">Table 2</span></a>. <span class="math notranslate nohighlight">\(G3\)</span> and <span class="math notranslate nohighlight">\(G4\)</span> within the framework allow for auditing and mitigation in the form of positive action, of bias we can detect, but cannot directly intervene on.</p>
 <p>It is important to note the subgroup of the intersection of <span class="math notranslate nohighlight">\(G_{4}\)</span> and <span class="math notranslate nohighlight">\(b_{3}\)</span>: when <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=0}=0\)</span> and <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=1}=1\)</span>, there is a benefit to the candidate from the direct bias.
 In this work, we choose to adopt a no-detriment, or positive-corrective approach.
 This means that no individual, even if they are a beneficiary of past biased behaviour, will be made worse off by the positive action approach.
 However, in practice, selection rules can be adapted to suit the context and objectives at hand.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure*<span class="nb">}</span>[t]
-    <span class="k">\centering</span>
-    <span class="k">\includegraphics</span><span class="na">[width=0.95\textwidth]</span><span class="nb">{</span>assets/figure6.pdf<span class="nb">}</span>
-    <span class="k">\caption</span><span class="nb">{</span>Changes in the engineered synthetic data, at every step, representing a simplified version of the changes different biases can have to the talent distribution of a population. Starting from a uniform distribution, we visualise how the additive effect of bias can result in a significant disproportion of success between groups differing by a sensitive attribute. In the synthetic data, lifetime and measurement bias are modelled as a shift between the distributions, while the the label bias is modelled by having a slightly different acceptance score, depending on the value of the sensitive attribute.<span class="nb">}</span><span class="c">%</span>
-    <span class="k">\label</span><span class="nb">{</span>fig:SynGen2<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>figure*<span class="nb">}</span>
-</pre></div>
+<div class="figure align-default" id="fig-syngen2">
+<a class="reference internal image-reference" href="../../_images/figure6.png"><img alt="../../_images/figure6.png" src="../../_images/figure6.png" style="height: 150px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Changes in the engineered synthetic data, at every step, representing a simplified version of the changes different biases can have to the talent distribution of a population.
+Starting from a uniform distribution, we visualise how the additive effect of bias can result in a significant disproportion of success between groups differing by a sensitive attribute.
+In the synthetic data, lifetime and measurement bias are modelled as a shift between the distributions, while the the label bias is modelled by having a slightly different acceptance score, depending on the value of the sensitive attribute.</span><a class="headerlink" href="#fig-syngen2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="demonstration">
 <h2>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h2>
 <p>To demonstrate how our approach can be applied to a candidate-filtering task within a biased setting, we use synthetic data.
-This allows us to analyse the efficacy of our approach, as we can access the underlying data generation procedure to compare against ``perfect’’ counterfactuals.</p>
+This allows us to analyse the efficacy of our approach, as we can access the underlying data generation procedure to compare against “perfect” counterfactuals.</p>
 <p>For this demonstration, we consider applicants to a fictitious university course.
 The protected characteristic is defined as <em>colour</em>, with candidates classed as either <em>blue</em> or <em>green</em>.</p>
 <p>The university course is for a traditionally <em>blue</em> profession, rendering the setting potentially biased, and the department receives applications from many more promising blue candidates compared to applications from promising green candidates.
@@ -818,106 +870,160 @@ Under these settings, we will now demonstrate the potential of our approach for 
 <p>We define a data generation procedure for a simple dataset with binary <span class="math notranslate nohighlight">\(S\)</span>-labels and a binary outcome, with 2 imperfect observers of 3 features, making a feature-space <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> comprising 6 features.
 Full implementation details will be provided in the form of software code.
 We first draw samples for <span class="math notranslate nohighlight">\(S\)</span> from a Bernoulli distribution and model the underlying construct as a Uniform distribution - this is where the WAE axiom is applied, as <span class="math notranslate nohighlight">\(\tilde{x}_{b}\)</span> is independent of <span class="math notranslate nohighlight">\(s\)</span>:</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span>
-    s <span class="k">\sim</span> <span class="k">\mathcal</span><span class="nb">{</span>B<span class="nb">}</span>(0.5) <span class="k">\quad\text</span><span class="nb">{</span>and<span class="nb">}</span><span class="k">\quad</span>
-    <span class="k">\tilde</span><span class="nb">{</span>x<span class="nb">}_</span>b <span class="k">\sim</span> <span class="k">\mathcal</span><span class="nb">{</span>U<span class="nb">}</span>(0,1)~~.
-<span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
-</pre></div>
-</div>
-<p>(This is visualised in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:SynGen2}</span></code> – left.)</p>
+<div class="math notranslate nohighlight" id="equation-dist">
+<span class="eqno">(5)<a class="headerlink" href="#equation-dist" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+    s &amp; \sim \mathcal{B}(0.5) \quad\text{and}\quad \\
+    \tilde{x}_b &amp; \sim \mathcal{U}(0,1)~~.
+\end{align*}\end{split}\]</div>
+<p>(This is visualised in Figure <a class="reference internal" href="#fig-syngen2"><span class="std std-numref">Fig. 5</span></a> – left.)</p>
 <p>At this point, <span class="math notranslate nohighlight">\(\tilde{x}_b\)</span> represents ‘aptitude’ for the university programme.
 To represent <span class="math notranslate nohighlight">\(b_{1}\)</span>, the ‘lifetime bias’, for example, due to a lack of green role models at the university, or variation in parental support between blue and green parents, we map from the uniform distribution to an <span class="math notranslate nohighlight">\(S\)</span>-conditioned distribution for each feature using an inverse-CDF (percent point) function, <span class="math notranslate nohighlight">\(\tilde{x}_{b}\)</span> to <span class="math notranslate nohighlight">\(\tilde{x}\)</span>.
-This mapping is captured by <span class="math notranslate nohighlight">\(\Delta\tilde{x}_{s=0,1}\)</span> and is shown in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:SynGen2}</span></code> - left middle.</p>
+This mapping is captured by <span class="math notranslate nohighlight">\(\Delta\tilde{x}_{s=0,1}\)</span> and is shown in Figure <a class="reference internal" href="#fig-syngen2"><span class="std std-numref">Fig. 5</span></a> - left middle.</p>
 <p>The features <span class="math notranslate nohighlight">\(\tilde{x}_{s=0,1}\)</span> are still in the construct space, representing potentially useful university skills, at the point of applying.
 Two noisy observations are made of these underlying skills in the form of an interview or application procedure, mapping from the construct to the observed space.
-The bias potentially introduced in this measurement-process, which forms the mapping between <span class="math notranslate nohighlight">\(\tilde{x}\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, is characterised as <span class="math notranslate nohighlight">\(b_{2}\)</span> and is demonstrated in Figure~\ref{fig:SynGen2} – right middle.</p>
+The bias potentially introduced in this measurement-process, which forms the mapping between <span class="math notranslate nohighlight">\(\tilde{x}\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, is characterised as <span class="math notranslate nohighlight">\(b_{2}\)</span> and is demonstrated in <a class="reference internal" href="#fig-syngen2"><span class="std std-numref">Fig. 5</span></a> – right middle.</p>
 <p>We then generate two outcome scores.</p>
 <ol class="simple">
 <li><p>An ‘acceptance score’ based on a linear combination of the observed features. When mapping from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span>, both in the observed space, we add a final bias, <span class="math notranslate nohighlight">\(b_{3}\)</span>, representing direct discrimination, by setting different acceptance thresholds depending on the value of <span class="math notranslate nohighlight">\(s\)</span>.
-This is demonstrated in Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:SynGen2}</span></code> – right.</p></li>
+This is demonstrated in Figure <a class="reference internal" href="#fig-syngen2"><span class="std std-numref">Fig. 5</span></a> – right.</p></li>
 <li><p>A ‘graduation grade’ based on a linear combination of the features in <span class="math notranslate nohighlight">\(\tilde{x}\)</span>, bypassing the effect of <span class="math notranslate nohighlight">\(b_2\)</span> and <span class="math notranslate nohighlight">\(b_3\)</span>.</p></li>
 </ol>
 </div>
 <div class="section" id="evaluation">
 <h3>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h3>
 <p>To evaluate our model in context, we train the following models on the synthetic data:
-an Oracle, \texttt{Data}, to show the disparity in the underlying data,
-a Demographic Parity Oracle, \texttt{DemPar}, to put a bound on the performance of a fair decision model,
-an unconstrained \texttt{Logistic Regression} model,
+an Oracle, <code class="docutils literal notranslate"><span class="pre">Data</span></code>, to show the disparity in the underlying data,
+a Demographic Parity Oracle, <code class="docutils literal notranslate"><span class="pre">DemPar</span></code>, to put a bound on the performance of a fair decision model,
+an unconstrained <code class="docutils literal notranslate"><span class="pre">Logistic</span> <span class="pre">Regression</span></code> model,
 and established fair classification models
 <code class="docutils literal notranslate"><span class="pre">K&amp;C</span> <span class="pre">Reweighting</span></code> <span id="id28">[<a class="reference internal" href="../bib.html#id10"><span>KC12</span></a>]</span>,
 <code class="docutils literal notranslate"><span class="pre">Kamishima</span></code> <span id="id29">[<a class="reference internal" href="../bib.html#id85"><span>KAAS12</span></a>]</span> and
 <code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code> <span id="id30">[<a class="reference internal" href="../bib.html#id90"><span>ABD+18</span></a>]</span> alongside
 our positive action approach using <code class="docutils literal notranslate"><span class="pre">LCF</span></code> (Learnt Counterfactual) modelling.</p>
-<p>We utilise the following metrics with results comparing the models found in Table <code class="docutils literal notranslate"><span class="pre">\ref{table:results}</span></code><a class="footnote-reference brackets" href="#id149" id="id31">7</a>.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-    <span class="k">\item</span> <span class="k">\emph</span><span class="nb">{</span>Acceptance percentage per colour<span class="nb">}</span>. When this is equalised across groups, demographic parity is satisfied.
-        <span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-            P(Y=1|S=s) <span class="k">\quad</span> <span class="k">\forall</span> s <span class="k">\in</span> <span class="k">\mathcal</span><span class="nb">{</span>S<span class="nb">}</span>
-        <span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
-    <span class="k">\item</span> <span class="k">\emph</span><span class="nb">{</span>True Capture percentage<span class="nb">}</span>
-        <span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
-            P(Y=1|S<span class="nb">&amp;</span>=s, G=1) <span class="k">\\</span> <span class="k">\nonumber</span>
-            <span class="nb">&amp;</span><span class="k">\cup</span> <span class="k">\\</span>
-            P(Y=2|S=s, <span class="nb">&amp;</span>G=1) <span class="k">\quad</span> <span class="k">\forall</span> s <span class="k">\in</span> <span class="k">\mathcal</span><span class="nb">{</span>S<span class="nb">}</span> <span class="k">\nonumber</span>
-        <span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
-    <span class="k">\item</span> <span class="k">\emph</span><span class="nb">{</span>False Identification Difference<span class="nb">}</span> (FIDiff)
-        <span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-            |P(G=0|s=1, Y=1) - P(G=0|s=0, Y=1)|
-        <span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
-    <span class="k">\item</span> <span class="k">\emph</span><span class="nb">{</span>Accuracy<span class="nb">}</span>(Y). The utility of the model at predicting a proxy-label based on the best assumptions from the data.
-        <span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-            P(<span class="k">\text</span><span class="nb">{</span>prediction<span class="nb">}</span>=y) <span class="k">\quad</span> <span class="k">\forall</span> y <span class="k">\in</span> <span class="k">\mathcal</span><span class="nb">{</span>Y<span class="nb">}</span>
-        <span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
-    <span class="k">\item</span> <span class="k">\emph</span><span class="nb">{</span>Accuracy<span class="nb">}</span>(G). The utility of the model at predicting the obscured `true&#39; outcome.
-        <span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-            P(<span class="k">\text</span><span class="nb">{</span>prediction<span class="nb">}</span>=g) <span class="k">\quad</span> <span class="k">\forall</span> g <span class="k">\in</span> <span class="k">\mathcal</span><span class="nb">{</span>G<span class="nb">}</span>
-        <span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-</pre></div>
-</div>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>table*<span class="nb">}</span>[ht]
-<span class="k">\centering</span>
-<span class="c">% \resizebox{\textwidth}{!}{</span>
-<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span> @<span class="nb">{}</span>lrrcrcrr@<span class="nb">{}</span> <span class="nb">}</span>
- <span class="k">\toprule</span>
- <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{}</span> <span class="nb">&amp;</span>
- <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>c<span class="nb">}{</span>Theoretical Values<span class="nb">}</span> <span class="nb">&amp;</span>
- <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{}</span> <span class="nb">&amp;</span>
- <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{</span>Unconstrained models<span class="nb">}</span> <span class="nb">&amp;</span>
- <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{}</span> <span class="nb">&amp;</span>
- <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>c<span class="nb">}{</span>Fair models<span class="nb">}</span> <span class="k">\\</span>
- <span class="k">\cmidrule</span><span class="nb">{</span>2-3<span class="nb">}</span> <span class="k">\cmidrule</span><span class="nb">{</span>5-5<span class="nb">}</span> <span class="k">\cmidrule</span><span class="nb">{</span>7-8<span class="nb">}</span>
-  Metric <span class="nb">&amp;</span> <span class="k">\texttt</span><span class="nb">{</span>Data<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\texttt</span><span class="nb">{</span>DemPar<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\texttt</span><span class="nb">{</span>Logistic Regression<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\texttt</span><span class="nb">{</span>Fairlearn<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\texttt</span><span class="nb">{</span>LCF<span class="nb">}</span> (ours) <span class="k">\\</span>
- <span class="k">\midrule</span>
- Acceptance|B <span class="nb">&amp;</span> <span class="s">$</span><span class="m">35</span><span class="nb">.</span><span class="m">73</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">77</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">23</span><span class="nb">.</span><span class="m">12</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">16</span><span class="nb">.</span><span class="m">31</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">34</span><span class="nb">.</span><span class="m">54</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">79</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">26</span><span class="nb">.</span><span class="m">65</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">1</span><span class="nb">.</span><span class="m">17</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nv">\bf</span><span class="nb">{</span><span class="m">35</span><span class="nb">.</span><span class="m">15</span><span class="nb">} </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\bf</span><span class="nb">{</span><span class="m">1</span><span class="nb">.</span><span class="m">36</span><span class="nb">}</span><span class="s">$</span> <span class="k">\\</span>
- Acceptance|G <span class="nb">&amp;</span> <span class="s">$</span><span class="m">4</span><span class="nb">.</span><span class="m">30</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">33</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">23</span><span class="nb">.</span><span class="m">13</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">16</span><span class="nb">.</span><span class="m">13</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">5</span><span class="nb">.</span><span class="m">43</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">52</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="nv">\bf</span><span class="nb">{</span><span class="m">7</span><span class="nb">.</span><span class="m">83</span><span class="nb">} </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\bf</span><span class="nb">{</span><span class="m">0</span><span class="nb">.</span><span class="m">52</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">6</span><span class="nb">.</span><span class="m">04</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">60</span><span class="s">$</span>  <span class="k">\\</span>
- TCP|B <span class="s">$</span><span class="nv">\uparrow</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">93</span><span class="nb">.</span><span class="m">82</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">1</span><span class="nb">.</span><span class="m">36</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">60</span><span class="nb">.</span><span class="m">57</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">42</span><span class="nb">.</span><span class="m">80</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">91</span><span class="nb">.</span><span class="m">70</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">1</span><span class="nb">.</span><span class="m">92</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">71</span><span class="nb">.</span><span class="m">51</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">3</span><span class="nb">.</span><span class="m">72</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nv">\bf</span><span class="nb">{</span><span class="m">92</span><span class="nb">.</span><span class="m">63</span><span class="nb">} </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\bf</span><span class="nb">{</span><span class="m">2</span><span class="nb">.</span><span class="m">08</span><span class="nb">}</span><span class="s">$</span> <span class="k">\\</span>
- TCP|G <span class="s">$</span><span class="nv">\uparrow</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">60</span><span class="nb">.</span><span class="m">38</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">4</span><span class="nb">.</span><span class="m">73</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">69</span><span class="nb">.</span><span class="m">83</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">6</span><span class="nb">.</span><span class="m">03</span><span class="s">$</span> <span class="nb">&amp;&amp;</span>  <span class="s">$</span><span class="m">69</span><span class="nb">.</span><span class="m">84</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">5</span><span class="nb">.</span><span class="m">00</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">53</span><span class="nb">.</span><span class="m">17</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">6</span><span class="nb">.</span><span class="m">02</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nv">\bf</span><span class="nb">{</span><span class="m">96</span><span class="nb">.</span><span class="m">74</span><span class="nb">} </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\bf</span><span class="nb">{</span><span class="m">1</span><span class="nb">.</span><span class="m">93</span><span class="nb">}</span><span class="s">$</span> <span class="k">\\</span>
- FIDiff <span class="s">$</span><span class="nv">\downarrow</span><span class="s">$</span>  <span class="nb">&amp;</span> <span class="s">$</span><span class="m">0</span><span class="nb">.</span><span class="m">41</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">22</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">5</span><span class="nb">.</span><span class="m">55</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">6</span><span class="nb">.</span><span class="m">58</span><span class="s">$</span> <span class="nb">&amp;&amp;</span>  <span class="s">$</span><span class="m">0</span><span class="nb">.</span><span class="m">97</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">44</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">4</span><span class="nb">.</span><span class="m">42</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">82</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nv">\bf</span><span class="nb">{</span><span class="m">0</span><span class="nb">.</span><span class="m">86</span><span class="nb">} </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\bf</span><span class="nb">{</span><span class="m">0</span><span class="nb">.</span><span class="m">43</span><span class="nb">}</span><span class="s">$</span> <span class="k">\\</span>
- Accuracy(Y) <span class="s">$</span><span class="nv">\uparrow</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">100</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">00</span><span class="nb"> </span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">84</span><span class="nb">.</span><span class="m">50</span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">43</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">92</span><span class="nb">.</span><span class="m">64</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">41</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="nv">\bf</span><span class="nb">{</span><span class="m">98</span><span class="nb">.</span><span class="m">51</span><span class="nb">} </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\bf</span><span class="nb">{</span><span class="m">0</span><span class="nb">.</span><span class="m">18</span><span class="nb">} </span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">98</span><span class="nb">.</span><span class="m">31</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">26</span><span class="s">$</span>  <span class="k">\\</span>
- Accuracy(G) <span class="s">$</span><span class="nv">\uparrow</span><span class="s">$</span>  <span class="nb">&amp;</span> <span class="s">$</span><span class="m">87</span><span class="nb">.</span><span class="m">05</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">44</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">79</span><span class="nb">.</span><span class="m">25</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">9</span><span class="nb">.</span><span class="m">48</span><span class="s">$</span> <span class="nb">&amp;&amp;</span>  <span class="s">$</span><span class="nv">\bf</span><span class="nb">{</span><span class="m">87</span><span class="nb">.</span><span class="m">05</span><span class="nb">} </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\bf</span><span class="nb">{</span><span class="m">0</span><span class="nb">.</span><span class="m">46</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;&amp;</span> <span class="s">$</span><span class="m">86</span><span class="nb">.</span><span class="m">16</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">44</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">86</span><span class="nb">.</span><span class="m">67</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">47</span><span class="s">$</span> <span class="k">\\</span>
-<span class="k">\bottomrule</span>
-<span class="k">\caption</span><span class="nb">{</span>Comparison table for the synthetic data results.
-Theoretical values show <span class="k">\texttt</span><span class="nb">{</span>Data<span class="nb">}</span> which encode that the chance to graduate if accepted is almost independent of colour (approximately WYSIWYG since FIDiff is not <span class="s">$</span><span class="m">0</span><span class="s">$</span>), and the desired values for the WAE axiom (<span class="k">\texttt</span><span class="nb">{</span>DemPar<span class="nb">}</span>).
-
-The best result (excluding theoretical values) is highlighted in <span class="k">\textbf</span><span class="nb">{</span>boldface<span class="nb">}</span>.
-Our counterfactual model (<span class="k">\texttt</span><span class="nb">{</span>LCF<span class="nb">}</span>) captures 97<span class="k">\%</span> (see TCP|G row) of the candidates capable of graduating, they are either accepted or being picked up as a Positive Action Candidate (PAC).
-This high TCP value is achieved while maintaining low FIDiff (as per WYSIWYG axiom).
-<span class="k">\label</span><span class="nb">{</span>table:results<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>table*<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
-</pre></div>
-</div>
+<p>We utilise the following metrics with results comparing the models found in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 3</span></a><a class="footnote-reference brackets" href="#id149" id="id31">7</a>.</p>
+<ol>
+<li><p><em>Acceptance percentage per colour</em>. When this is equalised across groups, demographic parity is satisfied.</p>
+<div class="math notranslate nohighlight">
+\[P(Y=1|S=s) \quad \forall s \in \mathcal{S}\]</div>
+</li>
+<li><p><em>True Capture percentage</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    P(Y=1|S&amp;=s, G=1) \\ \nonumber
+    &amp;\cup \\
+    P(Y=2|S=s, &amp;G=1) \quad \forall s \in \mathcal{S} \nonumber
+\end{align}\end{split}\]</div>
+</li>
+<li><p><em>False Identification Difference</em> (FIDiff)</p>
+<div class="math notranslate nohighlight">
+\[|P(G=0|s=1, Y=1) - P(G=0|s=0, Y=1)|\]</div>
+</li>
+<li><p><em>Accuracy</em>(Y). The utility of the model at predicting a proxy-label based on the best assumptions from the data.</p>
+<div class="math notranslate nohighlight">
+\[P(\text{prediction}=y) \quad \forall y \in \mathcal{Y}\]</div>
+</li>
+<li><p><em>Accuracy</em>(G). The utility of the model at predicting the obscured `true’ outcome.</p>
+<div class="math notranslate nohighlight">
+\[P(\text{prediction}=g) \quad \forall g \in \mathcal{G}\]</div>
+</li>
+</ol>
+<table class="colwidths-auto table" id="table-results">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Comparison table for the synthetic data results. Theoretical values show \texttt{Data} which encode that the chance to graduate if accepted is almost independent of colour (approximately WYSIWYG since FIDiff is not <span class="math notranslate nohighlight">\(0\)</span>), and the desired values for the WAE axiom (\texttt{DemPar}). The best result (excluding theoretical values) is highlighted in \textbf{boldface}. Our counterfactual model (\texttt{LCF}) captures 97% (see TCP|G row) of the candidates capable of graduating, they are either accepted or being picked up as a Positive Action Candidate (PAC). This high TCP value is achieved while maintaining low FIDiff (as per WYSIWYG axiom).</span><a class="headerlink" href="#table-results" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p></p></th>
+<th class="text-align:center head"><p>Theoretical Values</p></th>
+<th class="text-align:right head"><p></p></th>
+<th class="text-align:center head"><p></p></th>
+<th class="text-align:center head"><p>Unconstrained models</p></th>
+<th class="text-align:center head"><p></p></th>
+<th class="text-align:center head"><p>Fair models</p></th>
+<th class="text-align:right head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Metric</p></td>
+<td class="text-align:center"><p>\texttt{Data}</p></td>
+<td class="text-align:right"><p>\texttt{DemPar}</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>\texttt{Logistic Regression}</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>\texttt{Fairlearn}</p></td>
+<td class="text-align:right"><p>\texttt{LCF} (ours)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Acceptance|B</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(35.73 \pm 0.77\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(23.12 \pm 16.31\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(34.54 \pm 0.79\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(26.65 \pm 1.17\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(\bf{35.15} \pm \bf{1.36}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Acceptance|G</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.30 \pm 0.33\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(23.13 \pm 16.13\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(5.43 \pm 0.52\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\bf{7.83} \pm \bf{0.52}\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(6.04 \pm 0.60\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>TCP|B <span class="math notranslate nohighlight">\(\uparrow\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(93.82 \pm 1.36\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(60.57 \pm 42.80\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(91.70 \pm 1.92\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(71.51 \pm 3.72\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(\bf{92.63} \pm \bf{2.08}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>TCP|G <span class="math notranslate nohighlight">\(\uparrow\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(60.38 \pm 4.73\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(69.83 \pm 6.03\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(69.84 \pm 5.00\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(53.17 \pm 6.02\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(\bf{96.74} \pm \bf{1.93}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>FIDiff <span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(0.41 \pm 0.22\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(5.55 \pm 6.58\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(0.97 \pm 0.44\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.42 \pm 0.82\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(\bf{0.86} \pm \bf{0.43}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Accuracy(Y) <span class="math notranslate nohighlight">\(\uparrow\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(100 \pm 0.00 \)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(84.50\pm 0.43\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(92.64 \pm 0.41\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\bf{98.51} \pm \bf{0.18} \)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(98.31 \pm 0.26\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Accuracy(G) <span class="math notranslate nohighlight">\(\uparrow\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(87.05 \pm 0.44\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(79.25 \pm 9.48\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\bf{87.05} \pm \bf{0.46}\)</span></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(86.16 \pm 0.44\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(86.67 \pm 0.47\)</span></p></td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="analysing-the-baseline-synthetic-data">
 <h4>Analysing the baseline synthetic data.<a class="headerlink" href="#analysing-the-baseline-synthetic-data" title="Permalink to this headline">¶</a></h4>
-<p>As shown in Table~\ref{table:results}, the baseline data was engineered to have a high level of bias against {green} candidates:
+<p>As shown in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 3</span></a>, the baseline data was engineered to have a high level of bias against {green} candidates:
 Only <span class="math notranslate nohighlight">\(4\%\)</span> of the {green} candidates are admitted, in comparison to the <span class="math notranslate nohighlight">\(36\%\)</span> of the {blue} candidates.
-As, unlike in the real world, we know the ground truth, we can also evaluate the True Capture percentage (TCP): how many candidates with the ability to graduate, are not being rejected. While for blue the TCP is at a high <span class="math notranslate nohighlight">\(94\%\)</span>, the green TCP is only <span class="math notranslate nohighlight">\(60\%\)</span>. The False Identification difference (FIDiff) measures how well the data conforms to `Equality of Opportunity’. A low FIDiff, <span class="math notranslate nohighlight">\(0.4\%\)</span>, means the data conforms to EqOP: once a candidate is accepted, the likelihood of graduation is nearly the same for both groups.</p>
+As, unlike in the real world, we know the ground truth, we can also evaluate the True Capture percentage (TCP): how many candidates with the ability to graduate, are not being rejected. While for blue the TCP is at a high <span class="math notranslate nohighlight">\(94\%\)</span>, the green TCP is only <span class="math notranslate nohighlight">\(60\%\)</span>. The False Identification difference (FIDiff) measures how well the data conforms to ‘Equality of Opportunity’. A low FIDiff, <span class="math notranslate nohighlight">\(0.4\%\)</span>, means the data conforms to EqOP: once a candidate is accepted, the likelihood of graduation is nearly the same for both groups.</p>
 </div>
 <div class="section" id="demographic-parity-oracle">
 <h4>Demographic Parity Oracle.<a class="headerlink" href="#demographic-parity-oracle" title="Permalink to this headline">¶</a></h4>
-<p>When enforcing `perfect’ demographic parity on the learning model, the metrics change substantially.
+<p>When enforcing ‘perfect’ demographic parity on the learning model, the metrics change substantially.
 Acceptance percentage is now equal between the {blue} and {green} candidates, but at a cost: the TCP for the blue has gone down to <span class="math notranslate nohighlight">\(61\%\)</span> and the FIDiff is up to <span class="math notranslate nohighlight">\(5.5\%\)</span>, meaning there is a higher chance for an accepted green candidate to fail, than a corresponding blue candidate.</p>
 </div>
 <div class="section" id="logistic-regression-model">
@@ -927,39 +1033,59 @@ Acceptance percentage is now equal between the {blue} and {green} candidates, bu
 <div class="section" id="k-c-kamishima-and-fairlearn">
 <h4>K &amp; C, Kamishima and Fairlearn.<a class="headerlink" href="#k-c-kamishima-and-fairlearn" title="Permalink to this headline">¶</a></h4>
 <p>None of the models manage to show significant improvement, in terms of fairness, on the baseline data.
-<code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code>, presented in Table~\ref{table:results} achieves the best green acceptance rate after the DP oracle, however, similar to the DP oracle, more green candidates get accepted, but not the ones capable of graduating.</p>
+<code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code>, presented in Table~<a class="reference internal" href="#table-results"><span class="std std-numref">Table 3</span></a> achieves the best green acceptance rate after the DP oracle, however, similar to the DP oracle, more green candidates get accepted, but not the ones capable of graduating.</p>
 </div>
 <div class="section" id="learnt-counterfactual-model">
 <h4>Learnt Counterfactual Model.<a class="headerlink" href="#learnt-counterfactual-model" title="Permalink to this headline">¶</a></h4>
-<p>Our <code class="docutils literal notranslate"><span class="pre">LCF</span></code> model accepts <span class="math notranslate nohighlight">\(40\%\)</span> more green candidates than the baseline. These additional candidates are mostly candidates that were flagged by our model as falling victim to direct bias, and got reassigned to `accept’ by the group classifier. Unlike the DP oracle (\texttt{DemPar}) and \texttt{Fairlearn}, the FIDiff remains under <span class="math notranslate nohighlight">\(1\%\)</span>, meaning the model aligns well with EqOp. A striking success, in comparison to the other models, is the high True Capture Percentage. <span class="math notranslate nohighlight">\(97\%\)</span> of the candidates capable of graduating are not rejected, they are either accepted or being picked up as a Positive Action Candidate (PAC).</p>
-<p>Table \ref{table:Subgroups} shows the breakdown of the outcome groups, in respect to all the candidates, produced by our <code class="docutils literal notranslate"><span class="pre">LCF</span></code> model.
+<p>Our LCF model accepts <span class="math notranslate nohighlight">\(40\%\)</span> more green candidates than the baseline. These additional candidates are mostly candidates that were flagged by our model as falling victim to direct bias, and got reassigned to `accept’ by the group classifier. Unlike the DP oracle (\texttt{DemPar}) and \texttt{Fairlearn}, the FIDiff remains under <span class="math notranslate nohighlight">\(1\%\)</span>, meaning the model aligns well with EqOp. A striking success, in comparison to the other models, is the high True Capture Percentage. <span class="math notranslate nohighlight">\(97\%\)</span> of the candidates capable of graduating are not rejected, they are either accepted or being picked up as a Positive Action Candidate (PAC).</p>
+<p>Table <a class="reference internal" href="#table-subgroups"><span class="std std-numref">Table 4</span></a> shows the breakdown of the outcome groups, in respect to all the candidates, produced by our LCF model.
 This is compared to the outcome groups of a “perfect” counterfactual (<code class="docutils literal notranslate"><span class="pre">PCF</span></code>).
 The <code class="docutils literal notranslate"><span class="pre">PCF</span></code> is the values we expect if both the encoder and classifier performed without error<a class="footnote-reference brackets" href="#id150" id="id32">8</a>.
 We can see that the majority of the candidates receive a counterfactual consensus in both <code class="docutils literal notranslate"><span class="pre">PCF</span></code> and <code class="docutils literal notranslate"><span class="pre">LCF</span></code>.
 <code class="docutils literal notranslate"><span class="pre">LCF</span></code> underestimates the consensus by an overall <span class="math notranslate nohighlight">\(7\%\)</span> when compared to the <code class="docutils literal notranslate"><span class="pre">PCF</span></code>, having larger <span class="math notranslate nohighlight">\(G_3\)</span> and <span class="math notranslate nohighlight">\(G_4\)</span> at the expense of the consensus subgroups.
 In this example, this means the <code class="docutils literal notranslate"><span class="pre">PCF</span></code> assigns rejection for <span class="math notranslate nohighlight">\(3\%\)</span> more candidates then the <code class="docutils literal notranslate"><span class="pre">LCF</span></code>.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[h]
-<span class="k">\centering</span>
-<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span> @<span class="nb">{}</span>ccrr@<span class="nb">{}</span> <span class="nb">}</span>
- <span class="k">\toprule</span>
-  Subgroup <span class="nb">&amp;</span>  Outcome <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{</span><span class="k">\texttt</span><span class="nb">{</span>PCF<span class="nb">}}</span> <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>1<span class="nb">}{</span>c<span class="nb">}{</span><span class="k">\texttt</span><span class="nb">{</span>LCF<span class="nb">}}</span> <span class="k">\\</span> [0.0ex]
-<span class="k">\midrule</span>
-<span class="s">$</span><span class="nb">g_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span><span class="s">$</span><span class="m">4</span><span class="nb">.</span><span class="m">73</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">15</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">3</span><span class="nb">.</span><span class="m">01</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">28</span><span class="s">$</span> <span class="k">\\</span>
-<span class="s">$</span><span class="nb">g_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span><span class="s">$</span><span class="m">4</span><span class="nb">.</span><span class="m">73</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">09</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">2</span><span class="nb">.</span><span class="m">40</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">48</span><span class="s">$</span>  <span class="k">\\</span>
-<span class="s">$</span><span class="nb">g_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 2 <span class="nb">&amp;</span> <span class="s">$</span><span class="m">10</span><span class="nb">.</span><span class="m">99</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">19</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">13</span><span class="nb">.</span><span class="m">77</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">2</span><span class="nb">.</span><span class="m">08</span><span class="s">$</span><span class="k">\\</span>
-<span class="s">$</span><span class="nb">g_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 1 <span class="nb">&amp;</span> <span class="s">$</span><span class="m">10</span><span class="nb">.</span><span class="m">96</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">25</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">15</span><span class="nb">.</span><span class="m">27</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">91</span><span class="nb"> </span><span class="s">$</span> <span class="k">\\</span>
-<span class="s">$</span><span class="nb">g_{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> <span class="s">$</span><span class="m">34</span><span class="nb">.</span><span class="m">35</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">26</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">32</span><span class="nb">.</span><span class="m">97</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">2</span><span class="nb">.</span><span class="m">86</span><span class="s">$</span><span class="k">\\</span>
-<span class="s">$</span><span class="nb">g_{</span><span class="m">6</span><span class="nb">}</span><span class="s">$</span> <span class="nb">&amp;</span> 0 <span class="nb">&amp;</span> <span class="s">$</span><span class="m">34</span><span class="nb">.</span><span class="m">23</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">28</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">32</span><span class="nb">.</span><span class="m">59</span><span class="nb"> </span><span class="nv">\pm</span><span class="nb"> </span><span class="m">0</span><span class="nb">.</span><span class="m">86</span><span class="s">$</span> <span class="k">\\</span>
-<span class="k">\bottomrule</span>
-<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
-<span class="k">\caption</span><span class="nb">{</span>Comparison of the number of samples allocated to each group for a ground truth Perfect Counterfactual (<span class="k">\texttt</span><span class="nb">{</span>PCF<span class="nb">}</span>) in comparison to the Learned Counterfactuals (<span class="k">\texttt</span><span class="nb">{</span>LCF<span class="nb">}</span>).
-We are able to make this comparison only because we know the ground truth for the synthetic data.
-Our learned model (`LCF`) is, in general, in agreement with the ground truth (`PCF`).
-<span class="nb">}</span>
-<span class="k">\label</span><span class="nb">{</span>table:Subgroups<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
-</pre></div>
-</div>
+<table class="colwidths-auto table" id="table-subgroups">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Comparison of the number of samples allocated to each group for a ground truth Perfect Counterfactual (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>) in comparison to the Learned Counterfactuals (<span class="math notranslate nohighlight">\(\texttt{LCF}\)</span>). We are able to make this comparison only because we know the ground truth for the synthetic data. Our learned model (<span class="math notranslate nohighlight">\(\texttt{LCF}\)</span>) is, in general, in agreement with the ground truth (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>).</span><a class="headerlink" href="#table-subgroups" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Subgroup</p></th>
+<th class="text-align:center head"><p>Outcome</p></th>
+<th class="text-align:center head"><p><code class="docutils literal notranslate"><span class="pre">PCF</span></code></p></th>
+<th class="text-align:center head"><p><code class="docutils literal notranslate"><span class="pre">LCF</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(g_{1}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.73 \pm 0.15\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(3.01 \pm 0.28\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(g_{2}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(4.73 \pm 0.09\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(2.40 \pm 0.48\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(g_{3}\)</span></p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(10.99 \pm 0.19\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(13.77 \pm 2.08\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(g_{4}\)</span></p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(10.96 \pm 0.25\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(15.27 \pm 0.91 \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(g_{5}\)</span></p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(34.35 \pm 0.26\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(32.97 \pm 2.86\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(g_{6}\)</span></p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(34.23 \pm 0.28\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(32.59 \pm 0.86\)</span></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -971,18 +1097,23 @@ Our learned model (`LCF`) is, in general, in agreement with the ground truth (`P
 This dataset comprises <span class="math notranslate nohighlight">\(45,222\)</span> samples from the 1994 U.S. census with <span class="math notranslate nohighlight">\(14\)</span> features including occupation, maximum attained education level and relationship status.
 Of these <span class="math notranslate nohighlight">\(14\)</span>, we reserve the binary <code class="docutils literal notranslate"><span class="pre">salary</span></code> feature as the target label, with <code class="docutils literal notranslate"><span class="pre">&gt;$50K</span></code> as the positive outcome.
 We consider <span class="math notranslate nohighlight">\(3\)</span> binary features as sensitive attributes: gender (Male / Female), race (White / Not White) and marital status (Married / Not Married).</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure*<span class="nb">}</span>[ht]
-    <span class="k">\centering</span>
-    <span class="k">\includegraphics</span><span class="na">[width=\textwidth]</span><span class="nb">{</span>assets/adult<span class="nb">_</span>figure.pdf<span class="nb">}</span>
-    <span class="k">\caption</span><span class="nb">{</span>Breakdown of group allocations on the withheld test set of the UCI Adult dataset averaged over 10 repeats, using 3 values as the protected characteristic. <span class="k">\textbf</span><span class="nb">{</span>Left<span class="nb">}</span>: The binary ``Gender&#39;&#39; feature. <span class="k">\textbf</span><span class="nb">{</span>Middle<span class="nb">}</span>: The ``Race&#39;&#39; feature binarised to membership of the majority group (white). <span class="k">\textbf</span><span class="nb">{</span>Right<span class="nb">}</span>: The ``Marital Status&#39;&#39; feature binarised to whether currently married. In all cases, the x-axis represents the percentage of the data that belongs to each protected characteristic, while the y-axis represents the percentage of the population assigned each outcome. Group membership is defined in Table~<span class="k">\ref</span><span class="nb">{</span>table:1<span class="nb">}</span>. For all attributes, subgroups <span class="s">$</span><span class="nb">G</span><span class="m">3</span><span class="s">$</span> and <span class="s">$</span><span class="nb">G</span><span class="m">4</span><span class="s">$</span> highlight the proportion of the population for which intervening on the sensitive attribute will result in the outcome changing as well. In <span class="s">$</span><span class="nb">G</span><span class="m">3</span><span class="s">$</span> the outcome changes from negative to positive when <span class="s">$</span><span class="nb">s</span><span class="s">$</span> changes, while changes in <span class="s">$</span><span class="nb">G</span><span class="m">4</span><span class="s">$</span> result in the opposite outcome. Although an intriguing visualisation of the effect of the different attributes, conclusions should be drawn carefully as the attributes can act as a proxy to hidden patterns in the data. Further discussion can be found in Section~<span class="k">\ref</span><span class="nb">{</span>sec:UCI<span class="nb">_</span>results<span class="nb">}</span>.<span class="nb">}</span><span class="c">%</span>
-    <span class="k">\label</span><span class="nb">{</span>fig:adult<span class="nb">_</span>results<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>figure*<span class="nb">}</span>
-</pre></div>
+<div class="figure align-default" id="fig-adult-results">
+<a class="reference internal image-reference" href="../../_images/adult_figure.png"><img alt="../../_images/adult_figure.png" src="../../_images/adult_figure.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Breakdown of group allocations on the withheld test set of the UCI Adult dataset averaged over 10 repeats, using 3 values as the protected characteristic.
+<em>Left</em>: The binary ‘Gender’ feature.
+<em>Middle</em>: The ‘Race’ feature binarised to membership of the majority group (white).
+<em>Right</em>: The ‘Marital Status’ feature binarised to whether currently married.
+In all cases, the x-axis represents the percentage of the data that belongs to each protected characteristic, while the y-axis represents the percentage of the population assigned each outcome.
+Group membership is defined in Table~\ref{table:1} ???.
+For all attributes, subgroups <span class="math notranslate nohighlight">\(G3\)</span> and <span class="math notranslate nohighlight">\(G4\)</span> highlight the proportion of the population for which intervening on the sensitive attribute will result in the outcome changing as well.
+In <span class="math notranslate nohighlight">\(G3\)</span> the outcome changes from negative to positive when <span class="math notranslate nohighlight">\(s\)</span> changes, while changes in <span class="math notranslate nohighlight">\(G4\)</span> result in the opposite outcome.
+Although an intriguing visualisation of the effect of the different attributes, conclusions should be drawn carefully as the attributes can act as a proxy to hidden patterns in the data.
+Further discussion can be found in Section <span class="xref std std-ref">sec:UCI_results</span> ???.</span><a class="headerlink" href="#fig-adult-results" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="auditing-the-uci-adult-income-for-bias">
-<h3>Auditing the UCI Adult Income for bias<a class="headerlink" href="#auditing-the-uci-adult-income-for-bias" title="Permalink to this headline">¶</a></h3>
-<p>Figure <code class="docutils literal notranslate"><span class="pre">\ref{fig:adult_results}</span></code> shows a counterfactual subgroup analysis for <span class="math notranslate nohighlight">\(3\)</span> sensitive attributes within the UCI Adult Income data set.
+<span id="uci-results"></span><h3>Auditing the UCI Adult Income for bias<a class="headerlink" href="#auditing-the-uci-adult-income-for-bias" title="Permalink to this headline">¶</a></h3>
+<p>Figure <a class="reference internal" href="#fig-adult-results"><span class="std std-numref">Fig. 6</span></a> shows a counterfactual subgroup analysis for <span class="math notranslate nohighlight">\(3\)</span> sensitive attributes within the UCI Adult Income data set.
 We note that the accuracy of the LFC model is on par with baseline models.
 As before, the individuals within subgroups <span class="math notranslate nohighlight">\(g_{4}\)</span> and <span class="math notranslate nohighlight">\(g_{3}\)</span> did not achieve counterfactual consensus. For example, for gender, the subgroup <span class="math notranslate nohighlight">\(g_{4}\)</span> contains samples of males that are above the <span class="math notranslate nohighlight">\(\$50,000\)</span> threshold, but their female counterfactual counterparts would be under the threshold, whereas <span class="math notranslate nohighlight">\(g_{3}\)</span> represent females under the threshold whose male counterfactual counterparts would be above the threshold.
 When visually comparing the subgroups, it is possible to see that marital status is the attribute most likely to changed the outcome if flipped from married to not married an vice versa.
@@ -990,7 +1121,7 @@ This results however, should be taken with a grain of salt as marital status can
 When comparing the effects of gender and race within this data, gender seems more influential on the outcome than race.
 However, gender may also be a proxy to occupations.</p>
 <p>Interesting patterns emerge from investigating the breakdown of candidates funnelling into <span class="math notranslate nohighlight">\(G1\)</span> from different selection rules.
-Table~\ref{table:g1} breaks down subgroup <span class="math notranslate nohighlight">\(G_1\)</span> further by the funnelling selection rules from Table~\ref{table:1}: selection rule 1 (Consensus), selection rules 2 and 8 (Direct bias), and other (Fallback).
+Table <a class="reference internal" href="#table-g1"><span class="std std-numref">Table 5</span></a> breaks down subgroup <span class="math notranslate nohighlight">\(G_1\)</span> further by the funnelling selection rules from Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 2</span></a>: selection rule 1 (Consensus), selection rules 2 and 8 (Direct bias), and other (Fallback).
 In the case of other, this indicates that bias was detected in the opposite direction to what we expect, and the decision reverted to the original outcome.
 We compare the <span class="math notranslate nohighlight">\(3\)</span> sensitive attributes: gender, race and martial status.
 For gender, consensus is the smallest contributor, followed by correction for direct bias.
@@ -1003,33 +1134,42 @@ For gender, the <code class="docutils literal notranslate"><span class="pre">LCF
 <p>An in-depth analysis of the UCI Adult Income data set is outside the scope of this paper, but we would like to mention a couple of easy-to-implement lines of investigations.
 First, while intervening on a protected characteristic, we allow the encoder to change all other attributes.
 It may be worthwhile to experiment with fixing other protected characteristics to eliminate proxy effects.
-Second, while examining protected characteristics separately, it is natural to assume biases may have an additive nature; this can be examined by running the LCF` model on a few sensitive attributes simultaneously.
+Second, while examining protected characteristics separately, it is natural to assume biases may have an additive nature; this can be examined by running the <code class="docutils literal notranslate"><span class="pre">LCF</span></code> model on a few sensitive attributes simultaneously.
 Extending the framework to allow multiple sensitive attribute requires expanding the selection rules.
 While lengthy, this is otherwise straightforward to derive and implement.</p>
-<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[h]
-<span class="k">\centering</span>
-<span class="c">% \resizebox{\columnwidth}{!}{</span>
-<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span> @<span class="nb">{}</span>rrrr@<span class="nb">{}</span> <span class="nb">}</span>
- <span class="k">\toprule</span>
-  Selection Rule <span class="nb">&amp;</span>  Gender <span class="nb">&amp;</span> Race <span class="nb">&amp;</span> Marital Status <span class="k">\\</span> [0.0ex]
-<span class="k">\midrule</span>
-Consensus <span class="nb">&amp;</span> <span class="s">$</span><span class="m">4</span><span class="nb">.</span><span class="m">3</span><span class="nb"> </span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">69</span><span class="nb">.</span><span class="m">2</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="nb"> </span><span class="m">71</span><span class="nb">.</span><span class="m">7</span><span class="nb"> </span><span class="s">$</span> <span class="k">\\</span>
-Direct bias <span class="nb">&amp;</span> <span class="s">$</span><span class="m">18</span><span class="nb">.</span><span class="m">4</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">0</span><span class="nb"> </span><span class="s">$</span> <span class="nb">&amp;</span>  <span class="s">$</span><span class="m">0</span><span class="s">$</span> <span class="k">\\</span>
-Fallback <span class="nb">&amp;</span> <span class="s">$</span><span class="nb"> </span><span class="m">77</span><span class="nb">.</span><span class="m">2</span><span class="nb"> </span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">30</span><span class="nb">.</span><span class="m">8</span><span class="s">$</span> <span class="nb">&amp;</span> <span class="s">$</span><span class="m">28</span><span class="nb">.</span><span class="m">3</span><span class="s">$</span><span class="k">\\</span>
-<span class="k">\bottomrule</span>
-<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span><span class="c">%</span>
-<span class="c">% }</span>
-<span class="k">\caption</span><span class="nb">{</span>Breakdown of the <span class="s">$</span><span class="nb">G</span><span class="m">1</span><span class="s">$</span> group, comprising individuals funnelled into this group due to different selection rules. Consensus corresponds to selection rule 1 in Table~<span class="k">\ref</span><span class="nb">{</span>table:1<span class="nb">}</span>. Direct bias corresponds to selection rules 2 and 8 in Table~<span class="k">\ref</span><span class="nb">{</span>table:1<span class="nb">}</span>. Fallback indicates bias was detected in the opposite direction and the decision reverted to the original outcome.<span class="nb">}</span>
-<span class="k">\label</span><span class="nb">{</span>table:g1<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
-</pre></div>
-</div>
+<table class="colwidths-auto table" id="table-g1">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Breakdown of the <span class="math notranslate nohighlight">\(G1\)</span> group, comprising individuals funnelled into this group due to different selection rules. Consensus corresponds to selection rule 1 in Table~\ref{table:1} ???. Direct bias corresponds to selection rules 2 and 8 in Table~\ref{table:1} ????. Fallback indicates bias was detected in the opposite direction and the decision reverted to the original outcome.</span><a class="headerlink" href="#table-g1" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Selection Rule</p></th>
+<th class="text-align:right head"><p>Gender</p></th>
+<th class="text-align:right head"><p>Race</p></th>
+<th class="text-align:right head"><p>Marital Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Consensus</p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(4.3 \)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(69.2\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\( 71.7 \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Direct bias</p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(18.4\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(0 \)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Fallback</p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\( 77.2 \)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(30.8\)</span></p></td>
+<td class="text-align:right"><p><span class="math notranslate nohighlight">\(28.3\)</span></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="discussion-and-conclusion">
 <h2>Discussion and Conclusion<a class="headerlink" href="#discussion-and-conclusion" title="Permalink to this headline">¶</a></h2>
 <p>In this paper we present an algorithmic framework that can assist organisations in setting and following long-term diversity and equality goals, in addition to balancing a fair and practical short-term approach.</p>
-<p>In order to facilitate both short and long term objectives, we must adopt a deferral model <span id="id34">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span> - a model that allows for an additional outcome outside accept and reject, in our case, the `positive action candidate’ outcome. This third outcome is aimed to capture and understand the needs of candidates that have high potential, but cannot yet successfully compete with capable candidates from the majority group. It also represents an idea that we have a social responsibility to try and work against disparate behaviours, including those we can not immediately correct.</p>
+<p>In order to facilitate both short and long term objectives, we must adopt a deferral model <span id="id34">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span> - a model that allows for an additional outcome outside accept and reject, in our case, the ‘positive action candidate’ outcome. This third outcome is aimed to capture and understand the needs of candidates that have high potential, but cannot yet successfully compete with capable candidates from the majority group. It also represents an idea that we have a social responsibility to try and work against disparate behaviours, including those we can not immediately correct.</p>
 <p>The concept of ‘positive action’ can already be found in practice in many settings, ranging from out-reach activities, to targeted training and even adaptive policies, for example, a change in grant requirements for mothers<a class="footnote-reference brackets" href="#id152" id="id35">11</a>.
 While the right ‘action’ will vary, and should be determined by experts, we believe that we can use AI to promote this positive practice by auditing for bias in past decisions and highlighting where missed opportunities may lie.</p>
 <p>The ‘lifetime’ bias we introduce to bring together the WAE and WYSIWYG axioms is an abstract idea, representing the cumulative effect that belonging to a disadvantaged group can have on an individual’s opportunities.

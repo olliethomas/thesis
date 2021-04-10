@@ -22,5 +22,8 @@ This is then extended in [](09_appendix/publications/nosinn.md) to allow for an 
 Given that some techniques have been presented that identify the parts of the data that are both sensitive and used to make a decision,
 can we identify at deployment time, which individuals are most likely to have decisions influenced by a sensitive attribute.
 And, in turn, can we use this to identify biased interpetation of features vs biased decisions.
-This is acheieved in.
+Publications supporting this work are currently under review.
+
+## Chapter 3
+
 
