@@ -843,7 +843,7 @@ sensitive attribute _along the unfair pathways_ were different". They
 achieve this by measuring the effect of $s$ along unfair pathways and
 disregarding it. In the simple case below
 
-```{figure} assets/path-specific.png
+```{figure} ./assets/path-specific.png
 ---
 height: 200px
 name: path-specific

@@ -68,7 +68,7 @@
 <meta property="og:url"         content="oliverthomas.ml/content/08_conclusion/conclusion.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Conclusion" />
-<meta property="og:description" content="Conclusion" />
+<meta property="og:description" content="Conclusion  A concern with following any purely statistical route in knowing in advance some attribute that you wish to be fair to. If we consider the UCI Adult" />
 <meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.svg" />
 
 <meta name="twitter:card" content="summary" />
@@ -307,6 +307,42 @@
                 
   <div class="section" id="conclusion">
 <h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h1>
+<p>A concern with following any purely statistical route in knowing in
+advance some attribute that you wish to be fair to. If we consider the
+UCI Adult Dataset (a popular dataset for benchmarking fairness
+algorithms with features such as Gender, Race and Nationality) and you
+wish to be fair with regard to <em>religion</em>, a feature which is not been
+captured in this dataset (though could be inferred using prior knowledge
+and the nationality feature), you will not be able to claim fairness
+with regard to that non-captured attribute, despite Freedom of
+Religion<a class="footnote-reference brackets" href="#id106" id="id1">9</a> being enshrined in most modern democratic countries. There
+has been an attempt to address this problem in the paper Proxy
+Fairness <span id="id2">[<a class="reference internal" href="../bib.html#id55"><span>GCFW18</span></a>]</span> which finds potential proxy groups
+that could potentially be discriminated against, though this is a first
+foray into this particularly difficult problem.</p>
+<p>Many classifiers are focused on making predictions without needing
+sensitive attributes to be captured. Whilst this may help achieve
+short-term goals, none of the methods discussed would be able to work if
+that information were not captured in the first place. It may seem
+counter-intuitive, but to ensure the long-term goals of ethical machine
+learning, of fairer, more interpretable, more transparent and more
+accountable algorithms, we need sensitive attributes to be recorded. We
+may not use these features within our models, but if not captured, we
+stand little chance of calming ethical concerns about the application of
+our field to subjective areas.</p>
+<hr class="docutils" />
+<p id="id3"><dl class="citation">
+<dt class="label" id="id57"><span class="brackets"><a class="fn-backref" href="#id2">GCFW18</a></span></dt>
+<dd><p>Maya R. Gupta, Andrew Cotter, Mahdi Milani Fard, and Serena Wang. Proxy fairness. <em>CoRR</em>, 2018. URL: <a class="reference external" href="http://arxiv.org/abs/1806.11212">http://arxiv.org/abs/1806.11212</a>, <a class="reference external" href="https://arxiv.org/abs/1806.11212">arXiv:1806.11212</a>.</p>
+</dd>
+</dl>
+</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id106"><span class="brackets"><a class="fn-backref" href="#id1">9</a></span></dt>
+<dd><p>And consequently the expectation to be free of discrimination based on that religion.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
