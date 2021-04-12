@@ -570,10 +570,10 @@ The axiom adopted in this work is visually presented in <a class="reference inte
 We expand the <em>construct space</em> to include the element of time, with the observed space containing discrete measurements of the construct space in time.
 Let’s consider a measurable feature <span class="math notranslate nohighlight">\(X\)</span> within the observed space; <span class="math notranslate nohighlight">\(X\)</span> is an approximation to its non-measurable counterpart <span class="math notranslate nohighlight">\(\tilde{X}\)</span>. We assume that <span class="math notranslate nohighlight">\(\tilde{X}\)</span> decomposes into the convex combination:</p>
 <div class="math notranslate nohighlight" id="equation-my-math-ref">
-<span class="eqno">(1)<a class="headerlink" href="#equation-my-math-ref" title="Permalink to this equation">¶</a></span>\[X\approx\tilde{X}=\alpha\cdot\tilde{X}_{b}+\beta\cdot\Delta\tilde{X}\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-my-math-ref" title="Permalink to this equation">¶</a></span>\[X\approx\tilde{X}=\alpha\cdot\tilde{X}_{b}+\beta\cdot\Delta\tilde{X}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-conditions">
-<span class="eqno">(2)<a class="headerlink" href="#equation-conditions" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+<span class="eqno">(5)<a class="headerlink" href="#equation-conditions" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
   \tilde{X}_{b} &amp; \perp s \quad\text{and}\quad \\
   \Delta\tilde{X} \not &amp; \perp s~~,
 \end{align*}\end{split}\]</div>
@@ -824,19 +824,19 @@ During training, <span class="math notranslate nohighlight">\(\mathcal{X}_s\)</s
 <p>The encoder’s purpose is to produce a \emph{likely} counterfactual <span class="math notranslate nohighlight">\(X\)</span> with respect to <span class="math notranslate nohighlight">\(s\)</span>.
 To do this, we produce a latent embedding, <span class="math notranslate nohighlight">\(z\)</span> which removes as much information about <span class="math notranslate nohighlight">\(s\)</span> as possible.
 Then, we have one decoder per possible <span class="math notranslate nohighlight">\(s\)</span>-label, allowing the effect of <span class="math notranslate nohighlight">\(s\)</span> to be reintroduced.
-We train this model by optimising the objective function in Equation <a class="reference internal" href="#equation-eq-ae-loss">(3)</a>, where <span class="math notranslate nohighlight">\(\ell_{\textrm{recon}}\)</span> is an appropriate reconstruction loss between the reconstructions and the features, and <span class="math notranslate nohighlight">\(\ell_{\textrm{adv}}\)</span> is the adversarial loss realised as cross-entropy between the <span class="math notranslate nohighlight">\(s\)</span>-prediction and the <span class="math notranslate nohighlight">\(s\)</span>-target coupled with a supplementary non-parametric measure (Maximum Mean Discrepancy <span id="id26">[<a class="reference internal" href="../bib.html#id81"><span>GBR+07</span></a>]</span>) with a linear kernel.
+We train this model by optimising the objective function in Equation <a class="reference internal" href="#equation-eq-ae-loss">(6)</a>, where <span class="math notranslate nohighlight">\(\ell_{\textrm{recon}}\)</span> is an appropriate reconstruction loss between the reconstructions and the features, and <span class="math notranslate nohighlight">\(\ell_{\textrm{adv}}\)</span> is the adversarial loss realised as cross-entropy between the <span class="math notranslate nohighlight">\(s\)</span>-prediction and the <span class="math notranslate nohighlight">\(s\)</span>-target coupled with a supplementary non-parametric measure (Maximum Mean Discrepancy <span id="id26">[<a class="reference internal" href="../bib.html#id81"><span>GBR+07</span></a>]</span>) with a linear kernel.
 A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is incorporated to allow for a trade-off between the two competing losses<a class="footnote-reference brackets" href="#id159" id="id27">9</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-ae-loss">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq-ae-loss" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-ae-loss" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
     \mathcal{L}_{\mathrm{AE}} = &amp; \min_{\theta, \pi}\max_{\phi} \mathbb{E}_{x \sim X} [ \ell_{\textrm{recon}}(k_{\pi}(g_{\theta}(x), s)_s; x) \nonumber \\
     &amp; - \lambda \ell_{\textrm{adv}}(h_{\phi}(g_{\theta}(x)), s)]
 \end{align}\end{split}\]</div>
 <p>The classification model consists of a shared network with, in a similar fashion to the autoencoder, <span class="math notranslate nohighlight">\(s\)</span>-specific task-heads.
 For the classification model the task is to produce an ensemble of predictions of the class label <span class="math notranslate nohighlight">\(y_s\)</span> from <span class="math notranslate nohighlight">\(x\)</span> and is defined as <span class="math notranslate nohighlight">\(f_s: (\mathcal{X}) \rightarrow \mathcal{Y}_s \quad \forall ~ s \in \mathcal{S}\)</span>.
 As with the autoencoder, only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true sensitive label is used for training.
-The objective is shown in Eq <a class="reference internal" href="#equation-eq-clf-loss">(4)</a>.</p>
+The objective is shown in Eq <a class="reference internal" href="#equation-eq-clf-loss">(7)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-clf-loss">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-clf-loss" title="Permalink to this equation">¶</a></span>\[\mathcal{L}_{\mathrm{Clf}} = \min_{\omega, \xi} \mathbb{E}_{x \sim X}[ \ell_{\textrm{pred}}(f_{\omega}(x)_s; y) ]\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-clf-loss" title="Permalink to this equation">¶</a></span>\[\mathcal{L}_{\mathrm{Clf}} = \min_{\omega, \xi} \mathbb{E}_{x \sim X}[ \ell_{\textrm{pred}}(f_{\omega}(x)_s; y) ]\]</div>
 <p>At inference time, the autoencoder model results in one reconstruction per <span class="math notranslate nohighlight">\(S\)</span>-label, per sample, and likewise for the classification model.
 In the case of a binary <span class="math notranslate nohighlight">\(S\)</span>\label, this results in two reconstructions per sample and two decisions per reconstruction, resulting in 4 outcomes per sample.</p>
 </div>
@@ -871,7 +871,7 @@ Under these settings, we will now demonstrate the potential of our approach for 
 Full implementation details will be provided in the form of software code.
 We first draw samples for <span class="math notranslate nohighlight">\(S\)</span> from a Bernoulli distribution and model the underlying construct as a Uniform distribution - this is where the WAE axiom is applied, as <span class="math notranslate nohighlight">\(\tilde{x}_{b}\)</span> is independent of <span class="math notranslate nohighlight">\(s\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-dist">
-<span class="eqno">(5)<a class="headerlink" href="#equation-dist" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+<span class="eqno">(8)<a class="headerlink" href="#equation-dist" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
     s &amp; \sim \mathcal{B}(0.5) \quad\text{and}\quad \\
     \tilde{x}_b &amp; \sim \mathcal{U}(0,1)~~.
 \end{align*}\end{split}\]</div>
