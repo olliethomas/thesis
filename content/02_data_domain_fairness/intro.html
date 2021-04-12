@@ -68,7 +68,7 @@
 <meta property="og:url"         content="oliverthomas.ml/content/02_data_domain_fairness/intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Data Domain Fairness" />
-<meta property="og:description" content="Data Domain Fairness  Fair representations are useful, as previously discussed. But, they are not transparent." />
+<meta property="og:description" content="Data Domain Fairness  Fair representations are useful, as previously discussed. But, they are not transparent.  Machine learning systems are increasingly used b" />
 <meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.svg" />
 
 <meta name="twitter:card" content="summary" />
@@ -297,6 +297,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-work">
+   Related work
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -309,6 +324,120 @@
 <h1>Data Domain Fairness<a class="headerlink" href="#data-domain-fairness" title="Permalink to this headline">¶</a></h1>
 <p>Fair representations are useful, as previously discussed.
 But, they are not transparent.</p>
+<p>Machine learning systems are increasingly used by government agencies, businesses, and other organisations to assist in making life-changing decisions such as whether or not to invite a candidate to a job interview, or whether to give someone a loan.
+The question is how can we ensure that those systems are <em>fair</em>, i.e. they do not discriminate against individuals because of their gender, disability, or other personal (“protected”) characteristics?
+For example, in building an automated system to review job applications, a photograph might be used in addition to other features to make an invite decision.
+By using the photograph as is, a discrimination issue might arise, as photographs with faces could reveal certain protected characteristics, such as gender, race, or age (e.g. <span id="id1">[<a class="reference internal" href="../bib.html#id104"><span>FHH14</span></a>,<a class="reference internal" href="../bib.html#id105"><span>BBH+93</span></a>,<a class="reference internal" href="../bib.html#id106"><span>BP93</span></a>,<a class="reference internal" href="../bib.html#id107"><span>LH15</span></a>]</span>).
+Therefore, any automated system that incorporates photographs into its decision process is at risk of indirectly conditioning on protected characteristics (indirect discrimination).
+Recent advances in learning fair representations suggest adversarial training as the means to hide the protected characteristics from the decision/prediction function <span id="id2">[<a class="reference internal" href="../bib.html#id74"><span>BCZC17</span></a>,<a class="reference internal" href="../bib.html#id54"><span>ZLM18</span></a>,<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span>.
+All fair representation models, however, learn <em>latent embeddings</em>.
+Hence, the produced representations cannot be easily interpreted.
+They do not have the semantic meaning of the input that photographs, or education and training attainments, provide when we have job application data.
+If we want to encourage public conversations and productive public debates regarding fair machine learning systems <span id="id3">[<a class="reference internal" href="../bib.html#id109"><span>GlobalFCoHR20161818</span></a>]</span>, interpretability in how fairness is met is an integral yet overlooked ingredient.</p>
+<p>In this paper we focus on representation learning models that can transform inputs to their fair representations and retain the semantics of the input domain in the transformed space.
+When we have image data, our method will make a semantic change to the appearance of an image to deliver a certain fairness criterion <a class="footnote-reference brackets" href="#id133" id="id4">1</a>.
+To achieve this, we perform <em>a data-to-data translation</em> by learning a mapping from data in a source domain to a target domain.
+Mapping from source to target domain is a standard procedure, and many methods are available.
+For example, in the image domain, if we have aligned source/target as training data, we can use the pix2pix method of <span id="id5">[<a class="reference internal" href="../bib.html#id108"><span>IZZE17</span></a>]</span>, which is based on conditional generative adversarial networks (cGANs) <span id="id6">[<a class="reference internal" href="../bib.html#id110"><span>MO14</span></a>]</span>.
+Zhu et al.’s CycleGAN <span id="id7">[<a class="reference internal" href="../bib.html#id111"><span>ZPIE17</span></a>]</span> and Choi et al.’s StarGAN <span id="id8">[<a class="reference internal" href="../bib.html#id112"><span>CCK+18</span></a>]</span> solve a more challenging setting in which only _un_aligned training examples are available.
+However, we can not simply reuse existing methods for source-to-target mapping because we do <em>not have data in the target domain</em> (e.g. fair images are not available; images by themselves can not be fair or unfair, it is only when they are coupled with a particular task that the concern of fairness arises).</p>
+<p>To illustrate the difficulty, consider our earlier example of an automated job review system that uses photographs as part of an input.
+For achieving fairness, it is tempting to simply use GAN-driven methods to <em>translate female face photos to male</em>.
+We would require training data of female faces (source domain) and male faces (target domain), and only unaligned training data would be needed.
+This solution is however fundamentally flawed; who gets to decide that we should translate in this direction?
+Is it fairer if we translate male faces to female instead?
+An ethically grounded approach would be to translate both male and female face photos (source domain) to appropriate middle ground face photos (target domain).
+This challenge is actually multi-dimensional, it contains at least <em>two sub-problems</em>: a) how to have a general approach that can handle image data as well as tabular data (e.g. work experience, education, or even semantic attribute representations of photographs), and b) how to find a middle-ground with a multi-value (e.g. race) or continuous value (e.g. age) protected characteristic or even multiple characteristics (e.g. race and age).</p>
+<p>We propose a solution to the multi-dimensional challenge described above by exploiting statistical (in)dependence between translated images and protected characteristics.
+We use the Hilbert-Schmidt norm of the cross-covariance operator between reproducing kernel Hilbert spaces of image features and protected characteristics (Hilbert-Schmidt independence criterion <span id="id9">[<a class="reference internal" href="../bib.html#id113"><span>GBSScholkopf05</span></a>]</span>) as an empirical estimate of statistical independence.
+This flexible measure of independence allows us to take into account higher order independence, and handle a multi-/continuous value and multiple protected characteristics.</p>
+<div class="section" id="related-work">
+<h2>Related work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<p>We focus on expanding the related topic of learning fair, <em>albeit uninterpretable</em>, representations.
+The aim of fair representation learning is to learn an intermediate representation of the data that preserves as much information about the data as possible, while simultaneously removing protected characteristic information such as age and gender.
+Zemel et al. <span id="id10">[<a class="reference internal" href="../bib.html#id77"><span>ZWS+13</span></a>]</span> learn a probabilistic mapping of the data point to a set of latent prototypes that is independent of protected characteristic (equality of acceptance rates, also called a statistical parity criterion), while retaining as much class label information as possible.
+Louizos et al. <span id="id11">[<a class="reference internal" href="../bib.html#id80"><span>LSL+16</span></a>]</span> extend this by employing a deep variational auto-encoder (VAE) framework for finding the fair latent representation.
+In recent years, we see increased adversarial learning methods for fair representations.
+Ganin et al. <span id="id12">[<a class="reference internal" href="../bib.html#id79"><span>GUA+16</span></a>]</span> propose adversarial representation learning for domain adaptation by requiring the learned representation to be indiscriminate with respect to differences in the domains.
+Multiple data domains can be translated into multiple demographic groups.
+Edwards and Storkey <span id="id13">[<a class="reference internal" href="../bib.html#id78"><span>ES16</span></a>]</span> make this connection and propose adversarial representation learning for the statistical parity criterion.
+To achieve other notions of fairness such as equality of opportunity, Beutel et al. <span id="id14">[<a class="reference internal" href="../bib.html#id74"><span>BCZC17</span></a>]</span> show that the adversarial learning algorithm of Edwards and Storkey <span id="id15">[<a class="reference internal" href="../bib.html#id78"><span>ES16</span></a>]</span> can be reused but we only supply training data with positive outcome to the adversarial component.
+Madras et al. <span id="id16">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span> use a label-aware adversary to learn fair and transferable latent representations for the statistical parity as well as equality of opportunity criteria.</p>
+<p><em>None of the above</em> learn fair representations while simultaneously retaining the semantic meaning of the data.
+There is an orthogonal work on feature selection using human perception of fairness (e.g. <span id="id17">[<a class="reference internal" href="../bib.html#id114"><span>GHRGW18</span></a>]</span>), while this approach undoubtedly retains the semantic meaning of tabular data, it has not been generalized to image data.
+In an independent work to ours, Sattigeri et al. <span id="id18">[<a class="reference internal" href="../bib.html#id12"><span>SHCV19</span></a>]</span> describe a similar motivation of producing fair representations in the input image domain; their focus is on creating a whole new image-like dataset, rather than conditioning on each input image.
+Hence it is not possible to visualise a fair version for a given image as provided by our method<!--(refer to Figures \ref{fig:faces} and \ref{fig:faces_attributes})-->.</p>
+<hr class="docutils" />
+<p id="id19"><dl class="citation">
+<dt class="label" id="id92"><span class="brackets">BCZC17</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id14">2</a>)</span></dt>
+<dd><p>Alex Beutel, Jilin Chen, Zhe Zhao, and Ed H. Chi. Data decisions and theoretical implications when adversarially learning fair representations. <em>CoRR</em>, 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1707.00075">http://arxiv.org/abs/1707.00075</a>, <a class="reference external" href="https://arxiv.org/abs/1707.00075">arXiv:1707.00075</a>.</p>
+</dd>
+<dt class="label" id="id124"><span class="brackets"><a class="fn-backref" href="#id1">BP93</a></span></dt>
+<dd><p>Elizabeth Brown and David I Perrett. What gives a face its gender? <em>Perception</em>, 22(7):829–840, 1993. PMID: 8115240. URL: <a class="reference external" href="https://doi.org/10.1068/p220829">https://doi.org/10.1068/p220829</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1068/p220829">arXiv:https://doi.org/10.1068/p220829</a>, <a class="reference external" href="https://doi.org/10.1068/p220829">doi:10.1068/p220829</a>.</p>
+</dd>
+<dt class="label" id="id123"><span class="brackets"><a class="fn-backref" href="#id1">BBH+93</a></span></dt>
+<dd><p>Vicki Bruce, A Mike Burton, Elias Hanna, Pat Healey, Oli Mason, Anne Coombes, Rick Fright, and Alf Linney. Sex discrimination: how do we tell the difference between male and female faces? <em>Perception</em>, 22(2):131–152, 1993. PMID: 8474840. URL: <a class="reference external" href="https://doi.org/10.1068/p220131">https://doi.org/10.1068/p220131</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1068/p220131">arXiv:https://doi.org/10.1068/p220131</a>, <a class="reference external" href="https://doi.org/10.1068/p220131">doi:10.1068/p220131</a>.</p>
+</dd>
+<dt class="label" id="id130"><span class="brackets"><a class="fn-backref" href="#id8">CCK+18</a></span></dt>
+<dd><p>Yunjey Choi, Minje Choi, Munyoung Kim, Jung-Woo Ha, Sunghun Kim, and Jaegul Choo. Stargan: unified generative adversarial networks for multi-domain image-to-image translation. In <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>. June 2018.</p>
+</dd>
+<dt class="label" id="id96"><span class="brackets">ES16</span><span class="fn-backref">(<a href="#id13">1</a>,<a href="#id15">2</a>)</span></dt>
+<dd><p>Harrison Edwards and Amos J. Storkey. Censoring representations with an adversary. In Yoshua Bengio and Yann LeCun, editors, <em>4th International Conference on Learning Representations, ICLR 2016, San Juan, Puerto Rico, May 2-4, 2016, Conference Track Proceedings</em>. 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1511.05897">http://arxiv.org/abs/1511.05897</a>.</p>
+</dd>
+<dt class="label" id="id122"><span class="brackets"><a class="fn-backref" href="#id1">FHH14</a></span></dt>
+<dd><p>S. Fu, H. He, and Z. Hou. Learning race from face: a survey. <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, 36(12):2483–2509, 2014. <a class="reference external" href="https://doi.org/10.1109/TPAMI.2014.2321570">doi:10.1109/TPAMI.2014.2321570</a>.</p>
+</dd>
+<dt class="label" id="id97"><span class="brackets"><a class="fn-backref" href="#id12">GUA+16</a></span></dt>
+<dd><p>Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario March, and Victor Lempitsky. Domain-adversarial training of neural networks. <em>Journal of Machine Learning Research</em>, 17(59):1–35, 2016. URL: <a class="reference external" href="http://jmlr.org/papers/v17/15-239.html">http://jmlr.org/papers/v17/15-239.html</a>.</p>
+</dd>
+<dt class="label" id="id131"><span class="brackets"><a class="fn-backref" href="#id9">GBSScholkopf05</a></span></dt>
+<dd><p>Arthur Gretton, Olivier Bousquet, Alex Smola, and Bernhard Schölkopf. Measuring statistical dependence with hilbert-schmidt norms. In Sanjay Jain, Hans Ulrich Simon, and Etsuji Tomita, editors, <em>Algorithmic Learning Theory</em>, 63–77. Berlin, Heidelberg, 2005. Springer Berlin Heidelberg.</p>
+</dd>
+<dt class="label" id="id132"><span class="brackets"><a class="fn-backref" href="#id17">GHRGW18</a></span></dt>
+<dd><p>Nina Grgic-Hlaca, Elissa M. Redmiles, Krishna P. Gummadi, and Adrian Weller. Human perceptions of fairness in algorithmic decision making: a case study of criminal risk prediction. In <em>Proceedings of the 2018 World Wide Web Conference</em>, WWW '18, 903–912. Republic and Canton of Geneva, CHE, 2018. International World Wide Web Conferences Steering Committee. URL: <a class="reference external" href="https://doi.org/10.1145/3178876.3186138">https://doi.org/10.1145/3178876.3186138</a>, <a class="reference external" href="https://doi.org/10.1145/3178876.3186138">doi:10.1145/3178876.3186138</a>.</p>
+</dd>
+<dt class="label" id="id86"><span class="brackets"><a class="fn-backref" href="#id134">HPS16</a></span></dt>
+<dd><p>Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 3315–3323. Curran Associates, Inc., 2016. URL: <a class="reference external" href="http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf">http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf</a>.</p>
+</dd>
+<dt class="label" id="id126"><span class="brackets"><a class="fn-backref" href="#id5">IZZE17</a></span></dt>
+<dd><p>Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei A. Efros. Image-to-image translation with conditional adversarial networks. In <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>. July 2017.</p>
+</dd>
+<dt class="label" id="id125"><span class="brackets"><a class="fn-backref" href="#id1">LH15</a></span></dt>
+<dd><p>G. Levi and T. Hassncer. Age and gender classification using convolutional neural networks. In <em>2015 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)</em>, 34–42. 2015. <a class="reference external" href="https://doi.org/10.1109/CVPRW.2015.7301352">doi:10.1109/CVPRW.2015.7301352</a>.</p>
+</dd>
+<dt class="label" id="id98"><span class="brackets"><a class="fn-backref" href="#id11">LSL+16</a></span></dt>
+<dd><p>Christos Louizos, Kevin Swersky, Yujia Li, Max Welling, and Richard S. Zemel. The variational fair autoencoder. In <em>ICLR</em>. 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1511.00830">http://arxiv.org/abs/1511.00830</a>.</p>
+</dd>
+<dt class="label" id="id70"><span class="brackets">MCPZ18</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id16">2</a>)</span></dt>
+<dd><p>David Madras, Elliot Creager, Toniann Pitassi, and Richard Zemel. Learning adversarially fair and transferable representations. In Jennifer Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning</em>, volume 80 of Proceedings of Machine Learning Research, 3384–3393. PMLR, 10–15 Jul 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/madras18a.html">http://proceedings.mlr.press/v80/madras18a.html</a>.</p>
+</dd>
+<dt class="label" id="id128"><span class="brackets"><a class="fn-backref" href="#id6">MO14</a></span></dt>
+<dd><p>Mehdi Mirza and Simon Osindero. Conditional generative adversarial nets. <em>CoRR</em>, 2014. URL: <a class="reference external" href="http://arxiv.org/abs/1411.1784">http://arxiv.org/abs/1411.1784</a>, <a class="reference external" href="https://arxiv.org/abs/1411.1784">arXiv:1411.1784</a>.</p>
+</dd>
+<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id18">SHCV19</a></span></dt>
+<dd><p>P. Sattigeri, S. C. Hoffman, V. Chenthamarakshan, and K. R. Varshney. Fairness gan: generating datasets with fairness properties using a generative adversarial network. <em>IBM Journal of Research and Development</em>, 63(4/5):3:1–3:9, 2019. <a class="reference external" href="https://doi.org/10.1147/JRD.2019.2945519">doi:10.1147/JRD.2019.2945519</a>.</p>
+</dd>
+<dt class="label" id="id95"><span class="brackets"><a class="fn-backref" href="#id10">ZWS+13</a></span></dt>
+<dd><p>Rich Zemel, Yu Wu, Kevin Swersky, Toni Pitassi, and Cynthia Dwork. Learning fair representations. In Sanjoy Dasgupta and David McAllester, editors, <em>Proceedings of the 30th International Conference on Machine Learning</em>, volume 28 of Proceedings of Machine Learning Research, 325–333. Atlanta, Georgia, USA, 17–19 Jun 2013. PMLR. URL: <a class="reference external" href="http://proceedings.mlr.press/v28/zemel13.html">http://proceedings.mlr.press/v28/zemel13.html</a>.</p>
+</dd>
+<dt class="label" id="id72"><span class="brackets"><a class="fn-backref" href="#id2">ZLM18</a></span></dt>
+<dd><p>Brian Hu Zhang, Blake Lemoine, and Margaret Mitchell. Mitigating unwanted biases with adversarial learning. In <em>Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society</em>, AIES '18, 335–340. New York, NY, USA, 2018. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3278721.3278779">https://doi.org/10.1145/3278721.3278779</a>, <a class="reference external" href="https://doi.org/10.1145/3278721.3278779">doi:10.1145/3278721.3278779</a>.</p>
+</dd>
+<dt class="label" id="id129"><span class="brackets"><a class="fn-backref" href="#id7">ZPIE17</a></span></dt>
+<dd><p>J. Zhu, T. Park, P. Isola, and A. A. Efros. Unpaired image-to-image translation using cycle-consistent adversarial networks. In <em>2017 IEEE International Conference on Computer Vision (ICCV)</em>, 2242–2251. 2017. <a class="reference external" href="https://doi.org/10.1109/ICCV.2017.244">doi:10.1109/ICCV.2017.244</a>.</p>
+</dd>
+<dt class="label" id="id127"><span class="brackets"><a class="fn-backref" href="#id3">GlobalFCoHR20161818</a></span></dt>
+<dd><p>Global Future Council on Human Rights 2016-18. How to prevent discriminatory outcomes in machine learning. Technical Report, World Economic Forum, 2018.</p>
+</dd>
+</dl>
+</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id133"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>Examples of fairness criteria are equality of true positive rates (TPR), also called equality of opportunity <span id="id134">[<a class="reference internal" href="../bib.html#id68"><span>HPS16</span></a>,<span>ZafValRodGum17b</span>]</span>, between males and females.</p>
+</dd>
+</dl>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
