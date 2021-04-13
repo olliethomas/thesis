@@ -494,7 +494,7 @@ The notions of fairness and equality are perhaps even more elusive and can vary 
 Successfully incorporating an unbiased algorithmic decision maker, however, requires a sound understating of the organisation’s equality &amp; diversity objectives in both the short and long term.
 Short-term goals may focus on aligning with legal requirements and ensuring a non-discriminatory process, and long-term term goals may include a desire to increase diversity or representation of under represented groups.
 While positive discrimination is generally discouraged and can even be unlawful within the EU, organisations may wish to take <em>positive action</em>;
-lawful measures taken to encourage and train people from under-represented groups to help them overcome disadvantages in competing with other applicants<a class="footnote-reference brackets" href="#id150" id="id4">4</a>.
+lawful measures taken to encourage and train people from under-represented groups to help them overcome disadvantages in competing with other applicants<a class="footnote-reference brackets" href="#id154" id="id4">4</a>.
 Positive action examples include universities offering a foundation year to disadvantaged students and the Athena SWAN charter.</p>
 <p>We propose a computational framework and a counterfactual deferral model that promotes positive action towards equality in addition to aligning with non-discrimination legal requirements.</p>
 </div>
@@ -530,11 +530,11 @@ WYSIWYG (<a class="reference internal" href="#fig-gcm-redux"><span class="std st
 These worldview assumptions are in tension, and considered to be fundamentally incompatible with each other <span id="id11">[<a class="reference internal" href="../bib.html#id67"><span>FSV16</span></a>,<a class="reference internal" href="../bib.html#id96"><span>BS20</span></a>]</span>.</p>
 <p>With these worldviews in mind, we can discuss two statistically measurable fairness definitions: Demographic parity (DP) and equality of opportunity (EqOp). Demographic parity, which requires the rate of positive outcome to be equal across protected groups, links with the WAE axiom <span id="id12">[<a class="reference internal" href="../bib.html#id67"><span>FSV16</span></a>,<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span>.
 For example, if a bank approves a loan for 50% of white applicants, under demographic parity, it will be required to to approve loans for 50% of black applicants as well, regardless of their credit score.
-Recently, <span id="id13">[<a class="reference internal" href="../bib.html#id92"><span>WMR20</span></a>]</span> proposed conditional demographic (dis)parity (CDD)<a class="footnote-reference brackets" href="#id151" id="id14">1</a> as a statistical baseline that aligns with the EU legislation.
+Recently, <span id="id13">[<a class="reference internal" href="../bib.html#id92"><span>WMR20</span></a>]</span> proposed conditional demographic (dis)parity (CDD)<a class="footnote-reference brackets" href="#id155" id="id14">1</a> as a statistical baseline that aligns with the EU legislation.
 CDD requires demographic parity to be enforced only to the point it can occur without positive discrimination.
 In this example, demographic parity will be enforced only with the condition that the credit scores threshold is also being satisfied.
 Equality of opportunity (\texttt{EqOp}) is another important group fairness definition.
-EqOp requires we enforce the True Positive Rate (\texttt{TPR}) to be equal across protected groups and links with the WYSIWYG axiom <span id="id15">[<a class="reference internal" href="../bib.html#id68"><span>HPS16</span></a>,<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span><a class="footnote-reference brackets" href="#id153" id="id16">2</a>.
+EqOp requires we enforce the True Positive Rate (\texttt{TPR}) to be equal across protected groups and links with the WYSIWYG axiom <span id="id15">[<a class="reference internal" href="../bib.html#id68"><span>HPS16</span></a>,<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span><a class="footnote-reference brackets" href="#id157" id="id16">2</a>.
 Referring back to the loan example, under EqOp we will require the loan would be approved s.t. the same % of black and white applicants actually go on to repay the loan.</p>
 <p>To better understand the statistical disparity we may witness in the data, it is useful to discuss potential biases.
 Focusing only on bias within the observed and decision spaces, we can categorise bias within data into two broad categories – a misleading representation of the input attributes (such as selection bias) and a misleading set of outcomes (such as label bias).
@@ -556,7 +556,7 @@ We define the WAE and the WYSIWYG axioms as separated by three steps, each with 
 <h3>Contributions<a class="headerlink" href="#contributions" title="Permalink to this headline">¶</a></h3>
 <p>Specifically, our paper provides the following main contributions:</p>
 <ol class="simple">
-<li><p>A ‘hybrid’ fairness axiom that combines both the WAE and WYSIWYG axioms, by further decomposing the construct space, to allow these axioms to co-exist<a class="footnote-reference brackets" href="#id155" id="id22">3</a>.</p></li>
+<li><p>A ‘hybrid’ fairness axiom that combines both the WAE and WYSIWYG axioms, by further decomposing the construct space, to allow these axioms to co-exist<a class="footnote-reference brackets" href="#id159" id="id22">3</a>.</p></li>
 <li><p>A ‘positive action candidate’ (PAC) outcome, a decision that is neither accept/reject, to accommodate the suggested framework and promote positive action towards diversity &amp; equality</p></li>
 <li><p>A counterfactual deferral model that allows flexible bias auditing and mitigation via a set of adaptable selection rules.</p></li>
 </ol>
@@ -578,8 +578,8 @@ Let’s consider a measurable feature <span class="math notranslate nohighlight"
   \Delta\tilde{X} \not &amp; \perp s~~,
 \end{align*}\end{split}\]</div>
 <p>the sensitive attribute being <span class="math notranslate nohighlight">\(s\)</span>, and <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> being non-negative values that sum to 1.
-In words, we assume an individual’s suitability for the task, at the time of the measurement, is a combination of their aptitude (<span class="math notranslate nohighlight">\(\tilde{X}_b\)</span>) and their experiences over time (<span class="math notranslate nohighlight">\(\Delta \tilde{X}\)</span>)<a class="footnote-reference brackets" href="#id157" id="id23">5</a>.
-We further assume that the ‘aptitude’ component, <span class="math notranslate nohighlight">\(\tilde{X}_{b}\)</span>, with regard most tasks<a class="footnote-reference brackets" href="#id158" id="id24">6</a>, is independent of any protected characteristic, and hence complies with the WAE axiom.
+In words, we assume an individual’s suitability for the task, at the time of the measurement, is a combination of their aptitude (<span class="math notranslate nohighlight">\(\tilde{X}_b\)</span>) and their experiences over time (<span class="math notranslate nohighlight">\(\Delta \tilde{X}\)</span>)<a class="footnote-reference brackets" href="#id161" id="id23">5</a>.
+We further assume that the ‘aptitude’ component, <span class="math notranslate nohighlight">\(\tilde{X}_{b}\)</span>, with regard most tasks<a class="footnote-reference brackets" href="#id162" id="id24">6</a>, is independent of any protected characteristic, and hence complies with the WAE axiom.
 The ‘life-experience’ component <span class="math notranslate nohighlight">\(\Delta\tilde{X}\)</span>, that shifts the ‘aptitude’ either positively, or negatively, may not be independent of a protected characteristic.
 <span class="math notranslate nohighlight">\(\tilde{X}\)</span> represents the non-observable ground truth, per individual, at the time of measurement, and may no longer be independent from the protected characteristic <span class="math notranslate nohighlight">\(S\)</span>, due to bias experienced prior to the observation.
 We define the effect <span class="math notranslate nohighlight">\(S\)</span> has on <span class="math notranslate nohighlight">\(\Delta\tilde{X}\)</span>, which may be a collection of several influences, as ‘lifetime’ bias.</p>
@@ -659,10 +659,10 @@ In this example, <span class="math notranslate nohighlight">\(s\)</span> is coun
 To determine if the process for receiving a tournament invitation is fair, we can
 follow the process shown in Figure <a class="reference internal" href="#fig-wae-wys-thirdoption"><span class="std std-numref">Fig. 4</span></a> and create a counterfactual player, from rival nation Syldavia, such that <span class="math notranslate nohighlight">\(CP_{s_x=1}\)</span> is our chess player having grown with all the benefits of being a Krakozhian player, and placing in the top <span class="math notranslate nohighlight">\(5\%\)</span> of her country, and <span class="math notranslate nohighlight">\(CP_{s_x=0}\)</span> is our chess players, but with the best guess of how their chess skill would have progressed if raised in Syldavia, placing her in the top <span class="math notranslate nohighlight">\(5\%\)</span> in her country.
 <span class="math notranslate nohighlight">\(S_y\)</span>, in this case, is the country of origin, as stated in the application form.
-For each player we create two tournament applications, resulting in four applications in total as shown in Table <a class="reference internal" href="#table-chess"><span class="std std-numref">Table 1</span></a>:
+For each player we create two tournament applications, resulting in four applications in total as shown in Table <a class="reference internal" href="#table-chess"><span class="std std-numref">Table 3</span></a>:
 <span class="math notranslate nohighlight">\(CP_{s_x=0,s_y=0}\)</span>, Syldavian player, Syldavia on the form; <span class="math notranslate nohighlight">\(CP_{s_x=0,s_y=1}\)</span> Syldavian player, Krakozhia on the form; <span class="math notranslate nohighlight">\(CP_{s_x=1,s_y=0}\)</span>, Krakozhian player, Syldavia on the form; <span class="math notranslate nohighlight">\(CP_{s_x=1,s_y=1}\)</span> Krakozhian player, Krakozhia on the form.</p>
 <table class="colwidths-auto table" id="table-chess">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Intervening on the protected characteristic at two stages of the decision-forming process allows for more precise diagnosis and remedy on undesired behaviour.</span><a class="headerlink" href="#table-chess" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Intervening on the protected characteristic at two stages of the decision-forming process allows for more precise diagnosis and remedy on undesired behaviour.</span><a class="headerlink" href="#table-chess" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Country raised in</p></th>
 <th class="text-align:center head"><p>Country of origin on application form</p></th>
@@ -688,7 +688,7 @@ For each player we create two tournament applications, resulting in four applica
 The tournament invitation system can then be interrogated.
 Importantly, unfair patterns resulting from the decision system, as opposed to development of the player, can be identified.</p>
 <p>The group classifier takes the four outcomes predicted by the classifier and sorts to the appropriate subgroup, following a set of selection rules.
-These group classifier rules are presented in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 2</span></a>.
+These group classifier rules are presented in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 4</span></a>.
 When consensus is achieved between all counterfactual outputs, no bias is detected and the outcome is reported as dictated by the consensus.
 If consensus is not achieved, the following rules apply (assuming bias is in favour of <span class="math notranslate nohighlight">\(s=1\)</span>):</p>
 <ol class="simple">
@@ -698,7 +698,7 @@ If consensus is not achieved, the following rules apply (assuming bias is in fav
 </ol>
 <p>Rules for bias in the opposite direction can be easily derived.</p>
 <table class="colwidths-auto table" id="table-1">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Selection rules for mapping from the groups represented in Figure GCM and Figure WAEWYS to a decision. As <span class="math notranslate nohighlight">\(s=0\)</span> represents an disadvantaged group, we identify those in group 3 to be suitable for <em>positive action</em>.  These are candidates who would have been accepted had a counterfactual version of themselves been considered. N.b. Combinations not listed are identified and the outcome reverts to the outcome from an unconstrained model.</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Selection rules for mapping from the groups represented in Figure GCM and Figure WAEWYS to a decision. As <span class="math notranslate nohighlight">\(s=0\)</span> represents an disadvantaged group, we identify those in group 3 to be suitable for <em>positive action</em>.  These are candidates who would have been accepted had a counterfactual version of themselves been considered. N.b. Combinations not listed are identified and the outcome reverts to the outcome from an unconstrained model.</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Selection Rule</p></th>
 <th class="text-align:center head"><p><span class="math notranslate nohighlight">\(s\)</span></p></th>
@@ -825,7 +825,7 @@ During training, <span class="math notranslate nohighlight">\(\mathcal{X}_s\)</s
 To do this, we produce a latent embedding, <span class="math notranslate nohighlight">\(z\)</span> which removes as much information about <span class="math notranslate nohighlight">\(s\)</span> as possible.
 Then, we have one decoder per possible <span class="math notranslate nohighlight">\(s\)</span>-label, allowing the effect of <span class="math notranslate nohighlight">\(s\)</span> to be reintroduced.
 We train this model by optimising the objective function in Equation <a class="reference internal" href="#equation-eq-ae-loss">(6)</a>, where <span class="math notranslate nohighlight">\(\ell_{\textrm{recon}}\)</span> is an appropriate reconstruction loss between the reconstructions and the features, and <span class="math notranslate nohighlight">\(\ell_{\textrm{adv}}\)</span> is the adversarial loss realised as cross-entropy between the <span class="math notranslate nohighlight">\(s\)</span>-prediction and the <span class="math notranslate nohighlight">\(s\)</span>-target coupled with a supplementary non-parametric measure (Maximum Mean Discrepancy <span id="id26">[<a class="reference internal" href="../bib.html#id81"><span>GBR+07</span></a>]</span>) with a linear kernel.
-A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is incorporated to allow for a trade-off between the two competing losses<a class="footnote-reference brackets" href="#id159" id="id27">9</a>.</p>
+A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is incorporated to allow for a trade-off between the two competing losses<a class="footnote-reference brackets" href="#id163" id="id27">9</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-ae-loss">
 <span class="eqno">(6)<a class="headerlink" href="#equation-eq-ae-loss" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
     \mathcal{L}_{\mathrm{AE}} = &amp; \min_{\theta, \pi}\max_{\phi} \mathbb{E}_{x \sim X} [ \ell_{\textrm{recon}}(k_{\pi}(g_{\theta}(x), s)_s; x) \nonumber \\
@@ -845,7 +845,7 @@ In the case of a binary <span class="math notranslate nohighlight">\(S\)</span>\
 <p>When we are considering an ADM deployed in a real-world biased setting, a distinction should be made between <em>three categories of bias</em>:
 bias that is introduced directly by incorporating AI, due, for example, to over-fitting on the training data;
 bias we can successfully intervene on by mitigating, or even completely removing, both direct and selection bias from our data and algorithm; and, bias we can detect, but cannot intervene on.</p>
-<p>In this work, it is assumed to be possible, reasonable, and required to enforce the mapping between the observed and the decision space to be independent of the sensitive attribute at deployment, despite the data on which the model is trained not necessarily displaying this property. i.e. we assume it is a requirement to correct for direct bias within the decision environment. We achieve this by applying selection rules <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(8\)</span> from <a class="reference internal" href="#table-1"><span class="std std-numref">Table 2</span></a>. <span class="math notranslate nohighlight">\(G3\)</span> and <span class="math notranslate nohighlight">\(G4\)</span> within the framework allow for auditing and mitigation in the form of positive action, of bias we can detect, but cannot directly intervene on.</p>
+<p>In this work, it is assumed to be possible, reasonable, and required to enforce the mapping between the observed and the decision space to be independent of the sensitive attribute at deployment, despite the data on which the model is trained not necessarily displaying this property. i.e. we assume it is a requirement to correct for direct bias within the decision environment. We achieve this by applying selection rules <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(8\)</span> from <a class="reference internal" href="#table-1"><span class="std std-numref">Table 4</span></a>. <span class="math notranslate nohighlight">\(G3\)</span> and <span class="math notranslate nohighlight">\(G4\)</span> within the framework allow for auditing and mitigation in the form of positive action, of bias we can detect, but cannot directly intervene on.</p>
 <p>It is important to note the subgroup of the intersection of <span class="math notranslate nohighlight">\(G_{4}\)</span> and <span class="math notranslate nohighlight">\(b_{3}\)</span>: when <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=0}=0\)</span> and <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=1}=1\)</span>, there is a benefit to the candidate from the direct bias.
 In this work, we choose to adopt a no-detriment, or positive-corrective approach.
 This means that no individual, even if they are a beneficiary of past biased behaviour, will be made worse off by the positive action approach.
@@ -898,9 +898,9 @@ an unconstrained <code class="docutils literal notranslate"><span class="pre">Lo
 and established fair classification models
 <code class="docutils literal notranslate"><span class="pre">K&amp;C</span> <span class="pre">Reweighting</span></code> <span id="id28">[<a class="reference internal" href="../bib.html#id10"><span>KC12</span></a>]</span>,
 <code class="docutils literal notranslate"><span class="pre">Kamishima</span></code> <span id="id29">[<a class="reference internal" href="../bib.html#id85"><span>KAAS12</span></a>]</span> and
-<code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code> <span id="id30">[<a class="reference internal" href="../bib.html#id90"><span>ABD+18</span></a>]</span> alongside
+<code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code> <span id="id30">[<a class="reference internal" href="../bib.html#id90"><span>ABD+18b</span></a>]</span> alongside
 our positive action approach using <code class="docutils literal notranslate"><span class="pre">LCF</span></code> (Learnt Counterfactual) modelling.</p>
-<p>We utilise the following metrics with results comparing the models found in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 3</span></a><a class="footnote-reference brackets" href="#id160" id="id31">7</a>.</p>
+<p>We utilise the following metrics with results comparing the models found in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 5</span></a><a class="footnote-reference brackets" href="#id164" id="id31">7</a>.</p>
 <ol>
 <li><p><em>Acceptance percentage per colour</em>. When this is equalised across groups, demographic parity is satisfied.</p>
 <div class="math notranslate nohighlight">
@@ -928,7 +928,7 @@ our positive action approach using <code class="docutils literal notranslate"><s
 </li>
 </ol>
 <table class="colwidths-auto table" id="table-results">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Comparison table for the synthetic data results. Theoretical values show \texttt{Data} which encode that the chance to graduate if accepted is almost independent of colour (approximately WYSIWYG since FIDiff is not <span class="math notranslate nohighlight">\(0\)</span>), and the desired values for the WAE axiom (\texttt{DemPar}). The best result (excluding theoretical values) is highlighted in \textbf{boldface}. Our counterfactual model (\texttt{LCF}) captures 97% (see TCP|G row) of the candidates capable of graduating, they are either accepted or being picked up as a Positive Action Candidate (PAC). This high TCP value is achieved while maintaining low FIDiff (as per WYSIWYG axiom).</span><a class="headerlink" href="#table-results" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Comparison table for the synthetic data results. Theoretical values show \texttt{Data} which encode that the chance to graduate if accepted is almost independent of colour (approximately WYSIWYG since FIDiff is not <span class="math notranslate nohighlight">\(0\)</span>), and the desired values for the WAE axiom (\texttt{DemPar}). The best result (excluding theoretical values) is highlighted in \textbf{boldface}. Our counterfactual model (\texttt{LCF}) captures 97% (see TCP|G row) of the candidates capable of graduating, they are either accepted or being picked up as a Positive Action Candidate (PAC). This high TCP value is achieved while maintaining low FIDiff (as per WYSIWYG axiom).</span><a class="headerlink" href="#table-results" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p></p></th>
 <th class="text-align:center head"><p>Theoretical Values</p></th>
@@ -1017,7 +1017,7 @@ our positive action approach using <code class="docutils literal notranslate"><s
 </table>
 <div class="section" id="analysing-the-baseline-synthetic-data">
 <h4>Analysing the baseline synthetic data.<a class="headerlink" href="#analysing-the-baseline-synthetic-data" title="Permalink to this headline">¶</a></h4>
-<p>As shown in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 3</span></a>, the baseline data was engineered to have a high level of bias against {green} candidates:
+<p>As shown in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 5</span></a>, the baseline data was engineered to have a high level of bias against {green} candidates:
 Only <span class="math notranslate nohighlight">\(4\%\)</span> of the {green} candidates are admitted, in comparison to the <span class="math notranslate nohighlight">\(36\%\)</span> of the {blue} candidates.
 As, unlike in the real world, we know the ground truth, we can also evaluate the True Capture percentage (TCP): how many candidates with the ability to graduate, are not being rejected. While for blue the TCP is at a high <span class="math notranslate nohighlight">\(94\%\)</span>, the green TCP is only <span class="math notranslate nohighlight">\(60\%\)</span>. The False Identification difference (FIDiff) measures how well the data conforms to ‘Equality of Opportunity’. A low FIDiff, <span class="math notranslate nohighlight">\(0.4\%\)</span>, means the data conforms to EqOP: once a candidate is accepted, the likelihood of graduation is nearly the same for both groups.</p>
 </div>
@@ -1033,19 +1033,19 @@ Acceptance percentage is now equal between the {blue} and {green} candidates, bu
 <div class="section" id="k-c-kamishima-and-fairlearn">
 <h4>K &amp; C, Kamishima and Fairlearn.<a class="headerlink" href="#k-c-kamishima-and-fairlearn" title="Permalink to this headline">¶</a></h4>
 <p>None of the models manage to show significant improvement, in terms of fairness, on the baseline data.
-<code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code>, presented in Table~<a class="reference internal" href="#table-results"><span class="std std-numref">Table 3</span></a> achieves the best green acceptance rate after the DP oracle, however, similar to the DP oracle, more green candidates get accepted, but not the ones capable of graduating.</p>
+<code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code>, presented in Table~<a class="reference internal" href="#table-results"><span class="std std-numref">Table 5</span></a> achieves the best green acceptance rate after the DP oracle, however, similar to the DP oracle, more green candidates get accepted, but not the ones capable of graduating.</p>
 </div>
 <div class="section" id="learnt-counterfactual-model">
 <h4>Learnt Counterfactual Model.<a class="headerlink" href="#learnt-counterfactual-model" title="Permalink to this headline">¶</a></h4>
 <p>Our LCF model accepts <span class="math notranslate nohighlight">\(40\%\)</span> more green candidates than the baseline. These additional candidates are mostly candidates that were flagged by our model as falling victim to direct bias, and got reassigned to `accept’ by the group classifier. Unlike the DP oracle (\texttt{DemPar}) and \texttt{Fairlearn}, the FIDiff remains under <span class="math notranslate nohighlight">\(1\%\)</span>, meaning the model aligns well with EqOp. A striking success, in comparison to the other models, is the high True Capture Percentage. <span class="math notranslate nohighlight">\(97\%\)</span> of the candidates capable of graduating are not rejected, they are either accepted or being picked up as a Positive Action Candidate (PAC).</p>
-<p>Table <a class="reference internal" href="#table-subgroups"><span class="std std-numref">Table 4</span></a> shows the breakdown of the outcome groups, in respect to all the candidates, produced by our LCF model.
+<p>Table <a class="reference internal" href="#table-subgroups"><span class="std std-numref">Table 6</span></a> shows the breakdown of the outcome groups, in respect to all the candidates, produced by our LCF model.
 This is compared to the outcome groups of a “perfect” counterfactual (<code class="docutils literal notranslate"><span class="pre">PCF</span></code>).
-The <code class="docutils literal notranslate"><span class="pre">PCF</span></code> is the values we expect if both the encoder and classifier performed without error<a class="footnote-reference brackets" href="#id161" id="id32">8</a>.
+The <code class="docutils literal notranslate"><span class="pre">PCF</span></code> is the values we expect if both the encoder and classifier performed without error<a class="footnote-reference brackets" href="#id165" id="id32">8</a>.
 We can see that the majority of the candidates receive a counterfactual consensus in both <code class="docutils literal notranslate"><span class="pre">PCF</span></code> and <code class="docutils literal notranslate"><span class="pre">LCF</span></code>.
 <code class="docutils literal notranslate"><span class="pre">LCF</span></code> underestimates the consensus by an overall <span class="math notranslate nohighlight">\(7\%\)</span> when compared to the <code class="docutils literal notranslate"><span class="pre">PCF</span></code>, having larger <span class="math notranslate nohighlight">\(G_3\)</span> and <span class="math notranslate nohighlight">\(G_4\)</span> at the expense of the consensus subgroups.
 In this example, this means the <code class="docutils literal notranslate"><span class="pre">PCF</span></code> assigns rejection for <span class="math notranslate nohighlight">\(3\%\)</span> more candidates then the <code class="docutils literal notranslate"><span class="pre">LCF</span></code>.</p>
 <table class="colwidths-auto table" id="table-subgroups">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">Comparison of the number of samples allocated to each group for a ground truth Perfect Counterfactual (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>) in comparison to the Learned Counterfactuals (<span class="math notranslate nohighlight">\(\texttt{LCF}\)</span>). We are able to make this comparison only because we know the ground truth for the synthetic data. Our learned model (<span class="math notranslate nohighlight">\(\texttt{LCF}\)</span>) is, in general, in agreement with the ground truth (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>).</span><a class="headerlink" href="#table-subgroups" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Comparison of the number of samples allocated to each group for a ground truth Perfect Counterfactual (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>) in comparison to the Learned Counterfactuals (<span class="math notranslate nohighlight">\(\texttt{LCF}\)</span>). We are able to make this comparison only because we know the ground truth for the synthetic data. Our learned model (<span class="math notranslate nohighlight">\(\texttt{LCF}\)</span>) is, in general, in agreement with the ground truth (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>).</span><a class="headerlink" href="#table-subgroups" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Subgroup</p></th>
 <th class="text-align:center head"><p>Outcome</p></th>
@@ -1121,7 +1121,7 @@ This results however, should be taken with a grain of salt as marital status can
 When comparing the effects of gender and race within this data, gender seems more influential on the outcome than race.
 However, gender may also be a proxy to occupations.</p>
 <p>Interesting patterns emerge from investigating the breakdown of candidates funnelling into <span class="math notranslate nohighlight">\(G1\)</span> from different selection rules.
-Table <a class="reference internal" href="#table-g1"><span class="std std-numref">Table 5</span></a> breaks down subgroup <span class="math notranslate nohighlight">\(G_1\)</span> further by the funnelling selection rules from Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 2</span></a>: selection rule 1 (Consensus), selection rules 2 and 8 (Direct bias), and other (Fallback).
+Table <a class="reference internal" href="#table-g1"><span class="std std-numref">Table 7</span></a> breaks down subgroup <span class="math notranslate nohighlight">\(G_1\)</span> further by the funnelling selection rules from Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 4</span></a>: selection rule 1 (Consensus), selection rules 2 and 8 (Direct bias), and other (Fallback).
 In the case of other, this indicates that bias was detected in the opposite direction to what we expect, and the decision reverted to the original outcome.
 We compare the <span class="math notranslate nohighlight">\(3\)</span> sensitive attributes: gender, race and martial status.
 For gender, consensus is the smallest contributor, followed by correction for direct bias.
@@ -1129,7 +1129,7 @@ Interestingly, the majority of contributions to <span class="math notranslate no
 We assume this ‘reversed’ bias could be present in a subset of occupations.
 Overall however, the direction of bias still favours male as <span class="math notranslate nohighlight">\(G_4\)</span> is much larger than this subsection of <span class="math notranslate nohighlight">\(G1\)</span>.
 Race and Marital status both have Consensus as the main contributor, with fallback as a secondary contributor.
-For race and marital status, the <code class="docutils literal notranslate"><span class="pre">LCF</span></code> model didn’t detect direct bias within this dataset<a class="footnote-reference brackets" href="#id162" id="id33">10</a>.
+For race and marital status, the <code class="docutils literal notranslate"><span class="pre">LCF</span></code> model didn’t detect direct bias within this dataset<a class="footnote-reference brackets" href="#id166" id="id33">10</a>.
 For gender, the <code class="docutils literal notranslate"><span class="pre">LCF</span></code> model detected and corrected for direct bias for <span class="math notranslate nohighlight">\(18.4\%\)</span> of the females in subgroup <span class="math notranslate nohighlight">\(G1\)</span>.</p>
 <p>An in-depth analysis of the UCI Adult Income data set is outside the scope of this paper, but we would like to mention a couple of easy-to-implement lines of investigations.
 First, while intervening on a protected characteristic, we allow the encoder to change all other attributes.
@@ -1138,7 +1138,7 @@ Second, while examining protected characteristics separately, it is natural to a
 Extending the framework to allow multiple sensitive attribute requires expanding the selection rules.
 While lengthy, this is otherwise straightforward to derive and implement.</p>
 <table class="colwidths-auto table" id="table-g1">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Breakdown of the <span class="math notranslate nohighlight">\(G1\)</span> group, comprising individuals funnelled into this group due to different selection rules. Consensus corresponds to selection rule 1 in Table~\ref{table:1} ???. Direct bias corresponds to selection rules 2 and 8 in Table~\ref{table:1} ????. Fallback indicates bias was detected in the opposite direction and the decision reverted to the original outcome.</span><a class="headerlink" href="#table-g1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Breakdown of the <span class="math notranslate nohighlight">\(G1\)</span> group, comprising individuals funnelled into this group due to different selection rules. Consensus corresponds to selection rule 1 in Table~\ref{table:1} ???. Direct bias corresponds to selection rules 2 and 8 in Table~\ref{table:1} ????. Fallback indicates bias was detected in the opposite direction and the decision reverted to the original outcome.</span><a class="headerlink" href="#table-g1" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Selection Rule</p></th>
 <th class="text-align:right head"><p>Gender</p></th>
@@ -1170,7 +1170,7 @@ While lengthy, this is otherwise straightforward to derive and implement.</p>
 <h2>Discussion and Conclusion<a class="headerlink" href="#discussion-and-conclusion" title="Permalink to this headline">¶</a></h2>
 <p>In this paper we present an algorithmic framework that can assist organisations in setting and following long-term diversity and equality goals, in addition to balancing a fair and practical short-term approach.</p>
 <p>In order to facilitate both short and long term objectives, we must adopt a deferral model <span id="id34">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span> - a model that allows for an additional outcome outside accept and reject, in our case, the ‘positive action candidate’ outcome. This third outcome is aimed to capture and understand the needs of candidates that have high potential, but cannot yet successfully compete with capable candidates from the majority group. It also represents an idea that we have a social responsibility to try and work against disparate behaviours, including those we can not immediately correct.</p>
-<p>The concept of ‘positive action’ can already be found in practice in many settings, ranging from out-reach activities, to targeted training and even adaptive policies, for example, a change in grant requirements for mothers<a class="footnote-reference brackets" href="#id163" id="id35">11</a>.
+<p>The concept of ‘positive action’ can already be found in practice in many settings, ranging from out-reach activities, to targeted training and even adaptive policies, for example, a change in grant requirements for mothers<a class="footnote-reference brackets" href="#id167" id="id35">11</a>.
 While the right ‘action’ will vary, and should be determined by experts, we believe that we can use AI to promote this positive practice by auditing for bias in past decisions and highlighting where missed opportunities may lie.</p>
 <p>The ‘lifetime’ bias we introduce to bring together the WAE and WYSIWYG axioms is an abstract idea, representing the cumulative effect that belonging to a disadvantaged group can have on an individual’s opportunities.
 We leave the interpretation as open as possible, and use it to as a blanket for all the latent contributors that lead to the statistical disparity we measure within the observed space.</p>
@@ -1224,7 +1224,7 @@ An introductory investigation of the UCI Adult Income dataset revealed several i
 <dt class="label" id="id45"><span class="brackets">KC12</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id19">2</a>,<a href="#id28">3</a>)</span></dt>
 <dd><p>Faisal Kamiran and Toon Calders. Data preprocessing techniques for classification without discrimination. <em>Knowledge and Information Systems</em>, 33(1):1–33, 2012. <a class="reference external" href="https://doi.org/10.1007/s10115-011-0463-8">doi:10.1007/s10115-011-0463-8</a>.</p>
 </dd>
-<dt class="label" id="id133"><span class="brackets"><a class="fn-backref" href="#id152">KZC13</a></span></dt>
+<dt class="label" id="id133"><span class="brackets"><a class="fn-backref" href="#id156">KZC13</a></span></dt>
 <dd><p>Faisal Kamiran, Indrė Žliobaitė, and Toon Calders. Quantifying explainable discrimination and removing illegal discrimination in automated decision making. <em>Knowl Inf Syst</em>, 2013. URL: <a class="reference external" href="https://doi.org/10.1007/s10115-012-0584-8">https://doi.org/10.1007/s10115-012-0584-8</a>.</p>
 </dd>
 <dt class="label" id="id120"><span class="brackets">KAAS12</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id29">2</a>)</span></dt>
@@ -1263,7 +1263,7 @@ An introductory investigation of the UCI Adult Income dataset revealed several i
 <dt class="label" id="id105"><span class="brackets"><a class="fn-backref" href="#id18">WPT19</a></span></dt>
 <dd><p>Michael Wick, Swetasudha Panda, and Jean-Baptiste Tristan. Unlocking fairness: a trade-off revisited. In H. Wallach, H. Larochelle, A. Beygelzimer, F. d\textquotesingle  Alché-Buc, E. Fox, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 32</em>, pages 8783–8792. Curran Associates, Inc., 2019. URL: <a class="reference external" href="http://papers.nips.cc/paper/9082-unlocking-fairness-a-trade-off-revisited.pdf">http://papers.nips.cc/paper/9082-unlocking-fairness-a-trade-off-revisited.pdf</a>.</p>
 </dd>
-<dt class="label" id="id132"><span class="brackets">YT21</span><span class="fn-backref">(<a href="#id12">1</a>,<a href="#id15">2</a>,<a href="#id154">3</a>,<a href="#id156">4</a>)</span></dt>
+<dt class="label" id="id132"><span class="brackets">YT21</span><span class="fn-backref">(<a href="#id12">1</a>,<a href="#id15">2</a>,<a href="#id158">3</a>,<a href="#id160">4</a>)</span></dt>
 <dd><p>Samuel Yeom and Michael Carl Tschantz. Avoiding disparity amplification under different worldviews. In <em>ACM Conference on Fairness, Accountability, and Transparency</em>. 2021.</p>
 </dd>
 <dt class="label" id="id112"><span class="brackets"><a class="fn-backref" href="#id2">ZWS+13</a></span></dt>
@@ -1273,37 +1273,37 @@ An introductory investigation of the UCI Adult Income dataset revealed several i
 </p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id150"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dt class="label" id="id154"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
 <dd><p>As defined by the Equality Act 2010 (UK).</p>
 </dd>
-<dt class="label" id="id151"><span class="brackets"><a class="fn-backref" href="#id14">1</a></span></dt>
-<dd><p>Originally named conditional (non-)discrimination by <span id="id152">[<a class="reference internal" href="../bib.html#id98"><span>KZC13</span></a>]</span>.</p>
+<dt class="label" id="id155"><span class="brackets"><a class="fn-backref" href="#id14">1</a></span></dt>
+<dd><p>Originally named conditional (non-)discrimination by <span id="id156">[<a class="reference internal" href="../bib.html#id98"><span>KZC13</span></a>]</span>.</p>
 </dd>
-<dt class="label" id="id153"><span class="brackets"><a class="fn-backref" href="#id16">2</a></span></dt>
-<dd><p><span id="id154">[<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span> makes the link between equalised odds and WYSIWYG. Equalised odds requires the True Negative Rate to be equalised in addition to the True Positive Rate. However, the link the WYSIWYG worldview can be made with both on similar grounds.</p>
+<dt class="label" id="id157"><span class="brackets"><a class="fn-backref" href="#id16">2</a></span></dt>
+<dd><p><span id="id158">[<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span> makes the link between equalised odds and WYSIWYG. Equalised odds requires the True Negative Rate to be equalised in addition to the True Positive Rate. However, the link the WYSIWYG worldview can be made with both on similar grounds.</p>
 </dd>
-<dt class="label" id="id155"><span class="brackets"><a class="fn-backref" href="#id22">3</a></span></dt>
-<dd><p><span id="id156">[<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span> also presents a hybrid worldview axiom, but the approaches diverge past that point.</p>
+<dt class="label" id="id159"><span class="brackets"><a class="fn-backref" href="#id22">3</a></span></dt>
+<dd><p><span id="id160">[<a class="reference internal" href="../bib.html#id97"><span>YT21</span></a>]</span> also presents a hybrid worldview axiom, but the approaches diverge past that point.</p>
 </dd>
-<dt class="label" id="id157"><span class="brackets"><a class="fn-backref" href="#id23">5</a></span></dt>
+<dt class="label" id="id161"><span class="brackets"><a class="fn-backref" href="#id23">5</a></span></dt>
 <dd><p>We make no claims regarding the strength of ‘nature’ vs. ‘nurture’ and the framework holds for essentially all potential ratios, including either <span class="math notranslate nohighlight">\(\alpha=0\)</span> or <span class="math notranslate nohighlight">\(\beta=0\)</span> (but not both)</p>
 </dd>
-<dt class="label" id="id158"><span class="brackets"><a class="fn-backref" href="#id24">6</a></span></dt>
+<dt class="label" id="id162"><span class="brackets"><a class="fn-backref" href="#id24">6</a></span></dt>
 <dd><p>We are notably excluding tasks that may correlate with physical attributes, for example, playing professional basketball and height.</p>
 </dd>
-<dt class="label" id="id159"><span class="brackets"><a class="fn-backref" href="#id27">9</a></span></dt>
+<dt class="label" id="id163"><span class="brackets"><a class="fn-backref" href="#id27">9</a></span></dt>
 <dd><p>In our experiments, this is set to <span class="math notranslate nohighlight">\(1.0\)</span>.</p>
 </dd>
-<dt class="label" id="id160"><span class="brackets"><a class="fn-backref" href="#id31">7</a></span></dt>
+<dt class="label" id="id164"><span class="brackets"><a class="fn-backref" href="#id31">7</a></span></dt>
 <dd><p>For ease of comparison, we choose to omit the results for <code class="docutils literal notranslate"><span class="pre">K&amp;C</span> <span class="pre">Reweighting</span></code> and <code class="docutils literal notranslate"><span class="pre">Kamishima</span></code> from the table and only report <code class="docutils literal notranslate"><span class="pre">Fairlearn</span></code>, the model with the highest acceptance percentage for green candidates.</p>
 </dd>
-<dt class="label" id="id161"><span class="brackets"><a class="fn-backref" href="#id32">8</a></span></dt>
+<dt class="label" id="id165"><span class="brackets"><a class="fn-backref" href="#id32">8</a></span></dt>
 <dd><p>These values assume a consistent decision rule across all populations.</p>
 </dd>
-<dt class="label" id="id162"><span class="brackets"><a class="fn-backref" href="#id33">10</a></span></dt>
+<dt class="label" id="id166"><span class="brackets"><a class="fn-backref" href="#id33">10</a></span></dt>
 <dd><p>This is not enough for us to conclude there is no direct bias; however there is no strong enough direct pattern to be picked up by the <code class="docutils literal notranslate"><span class="pre">LCF</span></code> model within the setup of the experiment.</p>
 </dd>
-<dt class="label" id="id163"><span class="brackets"><a class="fn-backref" href="#id35">11</a></span></dt>
+<dt class="label" id="id167"><span class="brackets"><a class="fn-backref" href="#id35">11</a></span></dt>
 <dd><p>For European Research Council grants, mothers get an additional 1.5 year per child added to the eligibility calculation.</p>
 </dd>
 </dl>
