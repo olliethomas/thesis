@@ -170,9 +170,9 @@ The population captured by groups G1, G2, G5 and G6 are represented consistently
 Groups G3 and G4 represent individuals that will receive different outcome if a different axiom is assumed.
 ```
 
-```{figure} ./assets/figure4.png
+```{figure} ./assets/model.png
 ---
-height: 400px
+height: 200px
 name: fig:wae_wys_thirdoption
 ---
 Diagram representing our method.
