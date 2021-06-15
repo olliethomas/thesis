@@ -18,6 +18,8 @@ making process, from the parts of a datapoint that are not effected by a "sensit
 This is achieved in [](09_appendix/publications/dfritdd.md), with a simple assumption of additive decomposition.
 This is then extended in [](09_appendix/publications/nosinn.md) to allow for an arbitrarily complex reconstruction.
 
+In both of these works we increase the _transparency_ of what the model determines to be related to a sensitive attribute by visualising the embedding within the visual domain.
+
 ## Chapter 2
 Given that some techniques have been presented that identify the parts of the data that are both sensitive and used to make a decision,
 can we identify at deployment time, which individuals are most likely to have decisions influenced by a sensitive attribute.
@@ -26,4 +28,4 @@ Publications supporting this work are currently under review.
 
 ## Chapter 3
 
-
+In the last chapter I look in general at methods to remove a sensitive attribute from data, whilst retaining other semantic features. In general this is a challenge. Most methods rely on significant compression of the input image. In this chapter I evaluate retaining as much sematic information as possible while also removing a sensitive attribute. I then suggest an additional approach based on Mixup.

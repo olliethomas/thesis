@@ -14,7 +14,7 @@ scikit-learn = "*"
 sphinx-tabs = "*"
 plotly = "*"
 pyppeteer = "*"
-jupyterbook-latex = "^0.2.0"
+jupyterbook-latex = "*"
 
 [tool.poetry.dev-dependencies]
 

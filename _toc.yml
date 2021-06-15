@@ -1,33 +1,31 @@
-- file: content/index
-
-- part: Overview
+format: jb-book
+root: content/index
+parts:
+- caption: Overview
   chapters:
   - file: content/content
-
-- part: Thesis
+- caption: Thesis
   chapters:
   - file: content/01_introduction/intro
   - file: content/02_data_domain_fairness/intro
   - file: content/03_identifying/intro
   - file: content/08_conclusion/conclusion
   - file: content/bib
-
-- part: Annual Review 2020
+- caption: Annual Review 2020
   chapters:
   - file: content/10_annual_review/summary
     sections:
-      - file: content/10_annual_review/area
+    - file: content/10_annual_review/area
   - file: content/10_annual_review/activities_to_date
   - file: content/10_annual_review/structure
-
-- part: Appendix
+- caption: Appendix
   chapters:
   - file: content/09_appendix/published
     sections:
-      - file: content/09_appendix/publications/dfritdd
-      - file: content/09_appendix/publications/nosinn
-      - file: content/09_appendix/publications/lit_review
+    - file: content/09_appendix/publications/dfritdd
+    - file: content/09_appendix/publications/nosinn
+    - file: content/09_appendix/publications/lit_review
   - file: content/09_appendix/software
     sections:
-      - file: content/09_appendix/software/ethicml
-      - file: content/09_appendix/software/intervene
+    - file: content/09_appendix/software/ethicml
+    - file: content/09_appendix/software/intervene
