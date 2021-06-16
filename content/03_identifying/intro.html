@@ -54,6 +54,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="canonical" href="oliverthomas.ml/content/03_identifying/intro.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Conclusion" href="../08_conclusion/conclusion.html" />
@@ -671,8 +672,8 @@ We assume equality was true at some stage, but is not necessarily so at the time
 We therefore align with WYSIWYG at the point of measurement, and assume that statistical disparity observed within the observed space is, at least partly, due to disparity within the construct space. Positive action is aimed at addressing the disparities within the construct space as we  assume those occur due to imbalance of opportunity or disadvantage affecting individuals belonging to the under-represented group.</p>
 <p>To illustrate this, consider a set of measurable features <span class="math notranslate nohighlight">\(X\)</span> within the observed space <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, where <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> represents the space of all potential feature values.
 Each individual sample <span class="math notranslate nohighlight">\(x \in X\)</span> is an approximation to its non-measurable construct-counterpart <span class="math notranslate nohighlight">\(\tilde{x} \in \tilde{X}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f22ad80-ce32-4a37-bda7-c3d7f4987ac7">
-<span class="eqno">(4)<a class="headerlink" href="#equation-2f22ad80-ce32-4a37-bda7-c3d7f4987ac7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a18678d8-c90a-4d33-b54a-246b7777ad10">
+<span class="eqno">(4)<a class="headerlink" href="#equation-a18678d8-c90a-4d33-b54a-246b7777ad10" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   X\approx\tilde{X}=\alpha\cdot\tilde{X}_{apt}+\beta\cdot\Delta\tilde{X}
 \end{equation}\]</div>
 <p>where</p>
@@ -956,8 +957,8 @@ A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> 
 <p>In our experiments, we use <span class="math notranslate nohighlight">\(\lambda = 1.0\)</span></p>
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-0910a789-37e0-4508-b3c4-6745a81ac89a">
-<span class="eqno">(5)<a class="headerlink" href="#equation-0910a789-37e0-4508-b3c4-6745a81ac89a" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-299e0bf4-6554-44f0-9e5c-9ce0e04e0a0e">
+<span class="eqno">(5)<a class="headerlink" href="#equation-299e0bf4-6554-44f0-9e5c-9ce0e04e0a0e" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
     \mathcal{L}_{\mathrm{AE}} = &amp; \min_{\theta, \pi}\max_{\phi} \mathbb{E}_{x \sim X} [ \ell_{\textrm{recon}}(k_{\pi}(g_{\theta}(x), s)_s; x) \nonumber \\
     &amp;\qquad\qquad\qquad\quad - \lambda \ell_{\textrm{adv}}(h_{\phi}(g_{\theta}(x)), s)] 
 \end{align}\]</div>
@@ -966,8 +967,8 @@ This is to capture any potential direct discrimination that the model determines
 For the classification model the task is to produce an ensemble of predictions of the class label <span class="math notranslate nohighlight">\(y_s\)</span> from <span class="math notranslate nohighlight">\(x\)</span> and is defined as <span class="math notranslate nohighlight">\(f_s: (\mathcal{X}) \rightarrow \mathcal{Y}_s \quad \forall ~ s \in \mathcal{S}\)</span>.
 As with the autoencoder, only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true protected label is used for training.
 The objective is shown in the following equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2dede6ce-6290-4477-bac0-8ceef663494b">
-<span class="eqno">(6)<a class="headerlink" href="#equation-2dede6ce-6290-4477-bac0-8ceef663494b" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-6dd4ffd7-ac86-4675-9cc6-d84867ecd026">
+<span class="eqno">(6)<a class="headerlink" href="#equation-6dd4ffd7-ac86-4675-9cc6-d84867ecd026" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
     \mathcal{L}_{\mathrm{Clf}} = \min_{\omega, \xi} \mathbb{E}_{x \sim X}[ \ell_{\textrm{pred}}(f_{\omega}(x)_s; y) ]
 \end{equation}\]</div>
 <p>At inference time, the autoencoder model produces one reconstruction per <span class="math notranslate nohighlight">\(S\)</span>-label, per sample, and likewise for the classification model.
