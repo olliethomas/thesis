@@ -46,6 +46,41 @@ Typically, these are referred to as “Fair Machine Learning Models”.
 
 ## Overview
 
+The reason for this increase in activity is simple.
+Machine Learning models reflect underlying data.
+This has enabled them to be incredibly successful, performing to a superhuman standard for many tasks {cite}`Vin17,BroSan18,SilSchSim17`.
+Typically these tend to be objective problems such as predicting the weather {cite}`HolLiuVo16`, playing Atari games {cite}`AdaAdaGreJedKacMic18` or distinguishing between plant phenotypes {cite}`SinGanSinSar16`.
+In fact, the success and high performance of machine learning techniques in these areas has led to the desire to apply these same techniques to more subjective areas, such as advertising {cite}`Swe13`, parole hearings {cite}`AngLarMatKir16` or CV screening {cite}`Ideal`.
+However, this presents a problem, described in the paper "Residual Unfairness in Fair Machine Learning from Prejudiced Data" {cite}`KalZho18` as "Bias In, Bias Out".
+This refers to training a model on biased data and (unwittingly) approximating a biased function.
+It is analogous to the database mantra "Garbage In, Garbage Out".
+In principle, this short description is appealing, but it leaves us with hard questions to face, such as defining bias in this context and how to rectify it.
+In {ref}`definitions`, we'll review the current trends in bias definitions and give some firmer definitions of the counterbalance, fairness, with regard to unfairness in data.
+This is followed by {ref}`impl`, an overview of how fairness constraints are being added to existing models.
+
+The predominant discussion in this review is around fairness, as this has received the most attention within the machine learning community.
+The other areas, interpretability and accountability, which comprise the greater 'ethical' category have received far less attention[^1].
+Although, we'll discuss them briefly in the related work section {ref}`background`.
+
+One area that has received little exploration, is the difference between transparency and interpretability. These terms are often used as synonyms, however that leads to confusion. A system can be transparent, but that doesn't mean we are capable of interpreting the results[^2].
+Similar to the idea of a transparent system is one where we can see an intermediate representation. 
+This is the concept of learned "fair" representations which have proved to be a popular approach to remove bias from the feature space. 
+However, whilst transparent (to a degree), the lack of interpretability may ultimately become their downfall. 
+An overview of learned representations and more of this discussion is in {ref}`impl_repr`.
+
+An over-arching theme throughout this review is that these problems are not just complicated, they are complex. 
+There's a major challenge that a lot of biases are ingrained into our culture. 
+An example of this is the everyday words that we use as highlighted by the paper "Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings" {cite}`BolChaZouSalKal16`. 
+The exercise of debiasing word embeddings is appealing, and has sparked debate, with recent papers "Mitigating Unwanted Biases with Adversarial Learning" {cite}`ZhaLemMit18` and "Adversarial Removal of Demographic Attributes from Text Data" {cite}`ElaGol18` proposing techniques based on adversarial learning and a warning against this approach respectively. 
+The adversarial approach to combating this problem is discussed in {ref}`impl_adv`.
+
+As these problems are complex, simply analysing correlations may not be enough to solve them without understanding the causal relationship between attributes. 
+A predominant issue in this area revolves around the problem that what is considered discriminatory is domain-specific, requiring subject matter expertise to identify. 
+For example, sex may be an important, non-discriminatory feature in a diagnosis system, but would be considered discriminatory by a bank to determine if you should receive a loan. 
+Due to this, causal inference as a method to understand relationships between attributes is gaining in popularity. 
+A brief summation of this activity is covered in {ref}`causal`.
+
+
 ### The Goals of Machine Learning
 Given inputs $x \in \mathcal{X}$ and a target $y \in \mathcal{Y}$, the goal is to learn a function $f: x \rightarrow y$ that emulates some underlying relationship.
 
@@ -85,6 +120,75 @@ If an applicant is rejected for a loan, then this will affect their credit ratin
 When there are competing objectives, it's often that the "correct" answer is not obvious.
 In fact, there can be multiple "correct" answers.
 The Pareto Frontier is collection of outputs, where each is the optimal output for that speicific balance between $$n$$ outcomes.
+
+#### Why are we doing this?
+
+The area of bias and discrimination isn't a new one. 
+Legal scholars have been writing about this problem for decades. 
+As such, there are a number of regulations around the world that make it illegal to discriminate. 
+In the UK discrimination based on age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex and sexual orientation are all covered by the Equality Act 2010, let alone other protections within specific domains. 
+As such, the problem about automated bias has been highlighted by researchers for a number of years and institutions are starting to pay attention.
+Governments around the world are saying that this is an issue. 
+Both the House of Lords {cite}`HOL18` and the Whitehouse {cite}`MunSmiPat16` say that this issue should be addressed.
+Propublica's 'Machine Bias' {cite}`AngLarMatKir16` article sparked debate and raised concerns that needed to be addressed by the community after demonstrating that (at least on the surface) recidivism prediction software produced by Northpointe advised that black people in the U.S. were more likely to re-offend than similar profile offenders who were white.
+
+The aim is to approach justifiable concerns head on. 
+Doing this has a number of benefits. 
+It's changing the questions that we're asking about fairness, bias and the impact they have on our own societies, and also prompting researchers to find innovative ways of adapting models to complex real-world problems.
+
+#### Fairness
+
+As mentioned, the predominant body of literature with regard to fairness is based around classification, which is an inherently discriminative task. 
+This is in the Latin sense that we are trying to discriminate between two (or more) classes. 
+However, in _fair classification_ we aim to reduce discrimination referring to unfair treatment of a person, or a group of people based on membership of a category, with no regard to individual merit. 
+This is an important distinction and was first raised in the now seminal 2008 paper "Discrimination Aware Data Mining" {cite}`PedRugTur08`. 
+The membership of the category that we are conscious of not discriminating against is referred to as a _potentially discriminatory_ attribute. 
+This paper argues that this is different to being a _sensitive attribute_ giving the example that gender is not often considered sensitive, but it can be discriminatory. 
+In general, later work has adopted that both sensitive attributes and potentially discriminatory attributes are both referred to as sensitive attributes, though more recent works, such as "Path-Specific Counterfactual Fairness"{cite}`Chi19`[^3] go back to this original view that they are different. 
+The predominant take-away from this paper is that it is simply not enough to not directly capture a sensitive attribute. 
+The reason for this is that a sensitive attribute can be effectively 'reconstructed' from the other features. 
+In the paper they give the example of determining whether to give a loan to an applicant or not. 
+They point out that if we decide not to capture the race of an applicant, but still capture area code, we could potentially learn the rule "rarely give credit to applicants in neighbourhood 10451 from NYC". 
+This may seem harmless, but if you asked a subject matter expert who advised that the vast majority of people in NYC area 10451 were black, then the learned rule is equivalent to "rarely give credit to black-race applicants in neighbourhood 10451 in NYC", which is evidently discriminatory {cite}`PedRugTur08`. 
+The paper is set in the field of data-mining and the aim is to find rules that discriminate in some way. 
+The authors distinguish between direct discrimination, which uses a sensitive attribute directly, and indirect discrimination which uses a non-sensitive feature (or combination of features) as a proxy for the sensitive feature and then use this proxy in the rule.
+
+Independently, Kamiran and Calders {cite}`KamCal09` started investigating fairness with regards to classification. 
+Their approach hinges around the notion that the bias isn't captured in the features of an individual, but within the label $y$. 
+Their approach involves measuring the discrimination that an individual receives (defined in the following section) and ranking the data-points based on this with the aim of finding the unbiased label $y'$ and pre-processing the data to reflect this. 
+They then 'switch' the label for data that they believe was discriminated against, on the condition that for every data point you 'switch', you 'switch' a data-point of the opposite class which you also believe to have been discriminated against. 
+The notion that bias exists within the label is an interesting one and reflects our understanding of the world. 
+Intuitively, there is no bias in just having an attribute, such as race, the bias only exists in outcomes based on that feature.
+This assumption has now been challenged. 
+It's been observed that due to the inherent feedback loop of decisions regarding people, that decisions that affect a generation have repercussions. 
+If a group are perpetually discriminated against, then over time the sensitive attribute is reflected in other features.
+
+### Accountability
+
+- Transparent, Explainable, and Accountable AI for Robotics {cite}`WacMitFlo17`: Leaves open questions; 
+  Can human-interpretable systems be designed without sacrificing performance? 
+  How can transparency and accountability be achieved in inscrutable systems? 
+  and How can parallels between emerging systems be identified to set accountability requirements?
+
+- The Scored Society: Due Process for Automated Predictions {cite}`CitPas14`: 
+  The concern in this paper is "arbitrariness by algorithm" and the effect that this may have on society. 
+  They suggest that individuals assessed by predictive models should be notified that they have been assessed, along with the opportunity to
+  challenge the assessment. Individuals, or neutral experts should be
+  able to "open up the black box scoring system".
+
+- Seeing without knowing: Limitations of the transparency ideal and its application to algorithmic accountability {cite}`AnaCra18`: 
+  Transparency alone cannot create accountable systems. 
+  Accountability is about about addressing power imbalance and transparency is limited in it's ability to deal with this. 
+  As models are complex, transparency is unlikely to be a binary attribute, so it's important to not only consider what transparency reveals, but also what is not revealed.
+
+- Algorithmic accountability reporting: 
+  On the investigation of black boxes {cite}`Dia14`: 
+  Journalistic approaches should be taken to try and interrogate the semantic behaviour of a decision system.
+
+- Computational power and the social impact of artificial intelligence {cite}`Hwa18`: 
+  Computational decision processes are in part determined by the computational power available. 
+  As such, regions with the greatest access to computational resource will be the ones to determine the ethics of more complicated models.
+
 
 ### Interpretability
 
@@ -244,7 +348,6 @@ accountability into automated decision making is an important though
 overlooked addition.
 
 
-
 #### Post-process
 
 This area isn't as well explored, but {cite}`HarPriSre16` use it in their
@@ -256,6 +359,8 @@ paper.
 
 ### Definitions
 Broadly, definitions of fairness can bve split into two sections: Group and Individual notions of fairness.
+
+
 
 
 #### Group Notions of Fairness
@@ -677,10 +782,208 @@ Optimising without taking fairness metrics into account.
 ## Background
 
 ### Adversarial Methods
+Given the success of Generative Adversarial Networks (GANs), there has
+been an excitement to use this adversarial approach in other areas. In
+the GAN framework, a generator produces some representation and a
+discriminator determines between the generated representation and a
+genuine sample. The area that has produced the greatest success to date
+is modifying the GAN framework so that a regular model learns in the
+presence of an adversary. We determine one of the hidden layers to be
+our representation, from the input to this representation layer can be
+thought of as the generator, and after the generator, the model splits
+so that the rest of the regular network is the predictor. There is an
+additional network, an adversary, that takes the hidden layer
+representation as input and tries to predict the sensitive feature $s$.
+The learning of the dual models takes place as a _min-max_ game. On one
+hand we have the generator trying to produce a representation which is
+rich enough for the predictor to be accurate, so that our predictive
+loss is minimised. On the other hand, the representation must be encoded
+so that as little information about $s$ remains so that the adversary
+cannot make an accurate prediction of $s$ from the representation
+(maximising the loss of the adversary).
+
+There are parallels between what we're trying to achieve with fairness
+constraints and the work that is being progressed in Domain adaptation.
+One of the major breakthroughs in this work was adding a gradient
+reversal layer {cite}`GanUstAjaGerLarLavMarLem16`. This has been
+applied in many fields including Fairness. The gradient reversal layer
+is applied to the adversary and allows the _min-max_ game to become a
+direct minimisation, as minimising the adversary now directly maximises
+the adversary's loss.
+
+This framework was then used by Edwards and Storkey
+{cite}`EdwSto16` on making a representation that
+censored a sensitive attribute. Beutel et al
+{cite}`BeuCheZhaChi17` then built on this and applied the
+technique explicitly to fairness, demonstrating that this method is
+particularly useful even with very small amounts of data. Other papers
+have tried to build on this work, such as
+{cite}`WadVerPie18` who instead of using a
+representation as the input to the adversary, use the soft output from
+the predictor.
+
+Other GAN approaches have followed the more traditional route of
+generating data. Fairness is applied by making the generated data fair
+to a specific attribute. "FairGAN" {cite}`XuYuaZhaWu18` use a regular
+GAN set-up, but have an additional discriminator to not just determine
+if the data is real or not, but to also query whether the data generated
+is fair[^6]. A second paper, "FairnessGAN" {cite}`SatHofCheVar18` use a
+similar approach, but instead of the UCI Adult dataset (which is
+commonly used in nearly all fairness literature), they use use images
+[^7] and achieve "generally positive" {cite}`SatHofCheVar18` results.
+
+### Fair Representations
+
+Work in this field was pioneered by Zemel
+{cite}`ZemWuSwePitDwo13` and was followed up by Madras
+{cite}`MadCrePitZem18` who suggested that these could be
+applied to transfer learning.
+
+Zemel argues that fairness can be achieved through representation
+learning. They suggest that the population in $\mathcal{X}$ should be
+transformed to a new space, $\mathcal{Z}$ such that the mapping from
+$\mathcal{X}$ to $\mathcal{Z}$ satisfies demographic parity, but still
+be as similar to $\mathcal{X}$ as possible without retaining knowledge
+of $\mathcal{S}$ and that $\mathcal{Z}$ should retain enough information
+to maintain the same mapping from $\mathcal{Z} \rightarrow \mathcal{Y}$
+as $\mathcal{X} \rightarrow \mathcal{Y}$. In this way, similar people
+are treated similarly, a notion suggested by Dwork et al
+{cite}`DwoHarPitReiZem12`. A surprising effect of this fair
+representation is that it allows for transfer learning. Although
+$\mathcal{Z}$ was selected to retain the mapping to $\mathcal{Y}$ whilst
+preserving as much information about $\mathcal{X}$ as possible, they
+show that $\mathcal{Z}$ is still capable of predicting other features
+not selected to be in $\mathcal{X}$.
+
+Madras et al. {cite}`MadCrePitZem18` explored this idea of
+transfer learning further, but used the framework of Beutel et al
+{cite}`BeuCheZhaChi17`, which in turn is based on Edwards and
+Storkey {cite}`EdwSto16`, both discussed in the section
+above. Madras demonstrate that fair representations can indeed be used
+to predict other features and give a more robust set of experiments than
+presented in the Zemel paper (which mentioned transfer learning as an
+aside). They give motivation for this by defining two individuals. There
+is a data collector who obtains the data and sells it, there is also a
+vendor who purchases the data and uses it to create models. Madras
+argues that the vendor may not care about fairness, and as such the
+responsibility falls to the data collector to amend the data to a new,
+fair representation. This provides a difficulty for the data collector
+as they do not know what the vendor intends to do with the data. This is
+the motivation for learning a fair, transferable representation.
+
 
 ### Distribution Matching
 
 ### Counterfactual Fairness
+With the acknowledgement that fairness is difficult to solve
+arithmetically, methods to incorporate subject matter expertise are
+being explored. Causal models are appealing in this regard because they
+allow for an explicit causal relationship to be accounted for rather
+than relying on correlation.
+
+DeDeo {cite}`DeDeo14` argues that without understanding the
+causal relationship between attributes, then it becomes particularly
+difficult to differentiate between innocent relationships, and those
+which at first glance may appear innocent, but when you understand the
+socio-economic background of those attributes, they might infer a less
+innocent relationship.
+
+Stemming from the work of Pearl {cite}`Pearl09`, causal models
+are an attempt to model cause and effect. An example would be
+atmospheric pressure and the position of the needle on a barometer
+reading. We know that the two are linked and our data about this will
+demonstrate a high correlation between observations, but correlation
+does not imply causation. Whist we know that changing the pressure will
+effect the barometer, moving the needle on the barometer will not effect
+the pressure in the room. The benefit of viewing the world in this way
+is that we can transparently interpret why decisions have been made.
+Obviously the relationships between features is complex, but we can
+utilise experts from the domain we are trying to apply our model to.
+This is a nice feature given that fairness itself is domain specific.
+Whilst this may seem simple on the surface, it is highly complicated to
+correctly model the world. For example, not all features are captured.
+There may be an unobserved feature that confounds two features, so
+whilst they may look as though they are connected in some way, they are
+actually both reflective of the unseen confounder. An example of this is
+height and level of education. On the surface we could draw a
+correlation that the taller (on average) a population is, the higher the
+level of education. This can be observed by visiting any primary or
+secondary school, but we're missing a confounder, age. What's more,
+there can be multiple confounders that affect different sets of
+features. Whilst not insurmountable, this is nonetheless a very labour
+intensive approach. In many ways, if this approach is fully realised, it
+is the gold standard for ethical models.
+
+A recent paper, "Path-Specific Counterfactual Fairness"
+{cite}`Chi19` poses some thought provoking
+questions. They note that not all affects of a sensitive attribute on
+the outcome are potentially discriminatory. They give the example of the
+Berkley admissions data that was suggested to be discriminatory to
+women. They note that women were applying with greater proportions to
+classes with low acceptance rates, thus the influence of gender on the
+class applied for is not discriminatory and should be taken into account
+to learn a highly predictive model. This is similar to the idea first
+mentioned in Pedreschi et al. {cite}`PedRugTur08`
+that there is a difference between sensitive attributes and potentially
+discriminatory attributes. In {cite}`Chi19` they
+use the power of a causal model to isolate this to effects along
+specific pathways noting "approaches based on statistical relations
+among observations are in danger of not discerning correlation from
+causation, and are unable to distinguish the different ways in which the
+sensitive attribute might influence the decision"
+{cite}`Chi19`. This paper views unfairness as the
+presence of an unfair causal effect of $S$ on $\hat{Y}$. This idea is
+not new. In fact it is specifically mentioned in "Counterfactual
+Fairness" {cite}`KusLofRusSil17` that "a decision is unfair
+toward an individual if it coincides with the one that would have been
+taken in a counterfactual world in which the sensitive attribute were
+different". This assumes that the entire effect of $S$ on $\hat{Y}$ is
+problematic. The path-specific approach uses the same definition, but
+modifies the ending to be "\... counterfactual world in which the
+sensitive attribute _along the unfair pathways_ were different". They
+achieve this by measuring the effect of $s$ along unfair pathways and
+disregarding it. In the simple case below
+
+```{figure} ./assets/path-specific.png
+---
+height: 200px
+name: path-specific
+---
+```
+
+where the direct effect of $s$ on $y$ is fair, but the effect of $s$ via
+$m$ is unfair, then we can think of each variable being created of it's
+own characteristic $\theta^{\text{variable}}$, plus the effect of its
+parents $\theta^{\text{variable}}_{\text{induced by}}$, plus noise
+$\epsilon_{\text{variable}}$, so
+
+```{math}
+\begin{align*}
+S &= \theta^s + \epsilon_s \\
+M &= \theta^m + \theta^m_s + \epsilon_m \\
+Y &= \theta^y + \theta^y_s + \theta^y_m + \epsilon_y
+\end{align*}
+```
+
+our goal would be to remove the effect of $s$ along unfair pathways,
+giving
+
+```{math}
+\begin{align*}
+S &= \theta^s + \epsilon_s \\
+M_{\text{fair}} &= \theta^m + \epsilon_m \\
+Y_{\text{fair}} &= \theta^y + \theta^y_s + \theta^y_{m_\text{fair}} + \epsilon_y
+\end{align*}
+```
+
+In this case, (and in the case of "Counterfactual Fairness"
+{cite}`KusLofRusSil17`). The goal is to achieve fairness in
+a counterfactual world as described above. This is a form of individual
+fairness, and is often linked to the other seminal work in this area of
+Dwork et al. {cite}`DwoHarPitReiZem12`. Whilst one uses a causal
+model to determine the effect of group membership, the other uses a
+distance measure. Clearly there are strengths and weaknesses to both
+approaches.
 
 
 ## Research Question
