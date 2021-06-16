@@ -3,7 +3,7 @@
 title                       : Fair Representations of Biased Data
 author                      : Oliver Thomas
 copyright                   : "2021"  # Copyright year to be placed in the footer
-logo                        : "pal-logo.svg"
+logo                        : "assets/pal-logo.svg"
 exclude_patterns            : ["draft/*"]  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 only_build_toc_files        : false
 
@@ -34,7 +34,7 @@ parse:
 #######################################################################################
 # HTML-specific settings
 html:
-  favicon                   : ""  # A path to a favicon image
+  favicon                   : "assets/favicon.ico"  # A path to a favicon image
   navbar_number_sections    : false  # Add a number to each section in your left navbar
   use_edit_page_button      : true  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
   use_repository_button     : false  # Whether to add a link to your repository button
