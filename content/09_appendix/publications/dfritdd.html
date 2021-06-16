@@ -307,7 +307,7 @@
 <h1>Discovering Fair Representations in the Data Domain<a class="headerlink" href="#discovering-fair-representations-in-the-data-domain" title="Permalink to this headline">¶</a></h1>
 <p>Authors: N.Quadrianto, V. Sharmanska, O. Thomas</p>
 <hr class="docutils" />
-<p>Published at IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2019</p>
+<p>Published at IEEE Conference on Computer Vision and Pattern Recognition (<a class="footnote-reference brackets" href="#cvpr" id="id1">1</a>) 2019</p>
 <div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@InProceedings</span><span class="p">{</span><span class="nl">QuaShaTho19</span><span class="p">,</span>
   <span class="na">author</span>    <span class="p">=</span> <span class="s">{Quadrianto, Novi and </span>
 <span class="s">               Sharmanska, Viktoriia and </span>
@@ -322,6 +322,24 @@
 <p><a class="reference external" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Quadrianto_Discovering_Fair_Representations_in_the_Data_Domain_CVPR_2019_paper.html">landing page</a>
 | <a class="reference external" href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Quadrianto_Discovering_Fair_Representations_in_the_Data_Domain_CVPR_2019_paper.pdf">pdf</a>
 | <a class="reference external" href="https://github.com/predictive-analytics-lab/Data-Domain-Fairness">code</a></p>
+<p><strong>Abstract</strong>: Interpretability and fairness are critical in computer vision and machine learning applications, in particular when dealing with human outcomes, e.g. inviting or not inviting for a job interview based on application materials that may include photographs.
+One promising direction to achieve fairness is by learning data representations that remove the semantics of protected characteristics, and are therefore able to mitigate unfair outcomes.
+All available models however learn latent embeddings which comes at the cost of being uninterpretable.
+We propose to cast this problem as data-to-data translation, i.e. learning a mapping from an input domain to a fair target domain, where a fairness definition is being enforced.
+Here the data domain can be images, or any tabular data representation.
+This task would be straightforward if we had fair target data available, but this is not the case.
+To overcome this, we learn a highly unconstrained mapping by exploiting statistics of residuals – the difference between input data and its translated version – and the protected characteristics.
+When applied to the CelebA dataset of face images with gender attribute as the protected characteristic, our model enforces equality of opportunity by adjusting the eyes and lips regions.
+Intriguingly, on the same dataset we arrive at similar conclusions when using semantic attribute representations of images for translation.
+On face images of the recent DiF dataset, with the same gender attribute, our method adjusts nose regions.
+In the Adult income dataset, also with protected gender attribute, our model achieves equality of opportunity by, among others, obfuscating the wife and husband relationship.
+Analyzing those systematic changes will allow us to scrutinize the interplay of fairness criterion, chosen protected characteristics, and prediction performance.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="cvpr"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>ERA rating A (best), QUALIS rating A1 (best), CORE rank A* (best), 25.2% acceptance rate (2019)</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">

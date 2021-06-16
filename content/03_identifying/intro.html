@@ -518,7 +518,7 @@ It is therefore necessary to consider how the notions of fair process and fair o
 <p>Anti-discrimination legislation in the E.U., U.S. and U.K. among others, indicate that a fair selection process requires equal treatment in the sense that protected attributes, for example, gender and race, should not be considered within the decision making process without a good reason <span id="id3">[<a class="reference internal" href="../bib.html#id49">DHP+12</a>, <a class="reference internal" href="../bib.html#id130">Ben19</a>]</span>.
 Ignoring the protected attributes within an algorithmic approach, however, guarantees neither fair process nor fair outcome <span id="id4">[<a class="reference internal" href="../bib.html#id89">PRT08</a>, <a class="reference internal" href="../bib.html#id131">HW19</a>, <a class="reference internal" href="../bib.html#id127">SBW21</a>, <a class="reference internal" href="../bib.html#id92">WMR20</a>, <a class="reference internal" href="../bib.html#id125">Xia21</a>]</span>.</p>
 <p>Decision support algorithms are commonly trained on a dataset of past decisions.
-The resulting model may disproportionately predict positive outcomes in favour of the majority over historically under-represented groups <span id="id5">[<a class="reference internal" href="../bib.html#id10">KC12</a>, <a class="reference internal" href="../bib.html#id88">KZ18</a>]</span>.
+The resulting model may disproportionately predict positive outcomes in favour of the majority over historically under-represented groups <span id="id5">[<a class="reference internal" href="../bib.html#id88">KZ18</a>, <a class="reference internal" href="../bib.html#id10">KC12</a>]</span>.
 These statistical disparities could arise from two distinct mechanisms:
 (i) unequal treatment;<br />
 or (ii) equal treatment when the status quo itself is not neutral.
@@ -671,8 +671,8 @@ We assume equality was true at some stage, but is not necessarily so at the time
 We therefore align with WYSIWYG at the point of measurement, and assume that statistical disparity observed within the observed space is, at least partly, due to disparity within the construct space. Positive action is aimed at addressing the disparities within the construct space as we  assume those occur due to imbalance of opportunity or disadvantage affecting individuals belonging to the under-represented group.</p>
 <p>To illustrate this, consider a set of measurable features <span class="math notranslate nohighlight">\(X\)</span> within the observed space <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, where <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> represents the space of all potential feature values.
 Each individual sample <span class="math notranslate nohighlight">\(x \in X\)</span> is an approximation to its non-measurable construct-counterpart <span class="math notranslate nohighlight">\(\tilde{x} \in \tilde{X}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96f0a35d-bb6b-4892-93a7-864c4b09b366">
-<span class="eqno">(4)<a class="headerlink" href="#equation-96f0a35d-bb6b-4892-93a7-864c4b09b366" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2f22ad80-ce32-4a37-bda7-c3d7f4987ac7">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2f22ad80-ce32-4a37-bda7-c3d7f4987ac7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   X\approx\tilde{X}=\alpha\cdot\tilde{X}_{apt}+\beta\cdot\Delta\tilde{X}
 \end{equation}\]</div>
 <p>where</p>
@@ -956,8 +956,8 @@ A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> 
 <p>In our experiments, we use <span class="math notranslate nohighlight">\(\lambda = 1.0\)</span></p>
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-ea4c6df6-3b28-4916-8aed-2181f4aefd1b">
-<span class="eqno">(5)<a class="headerlink" href="#equation-ea4c6df6-3b28-4916-8aed-2181f4aefd1b" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-0910a789-37e0-4508-b3c4-6745a81ac89a">
+<span class="eqno">(5)<a class="headerlink" href="#equation-0910a789-37e0-4508-b3c4-6745a81ac89a" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
     \mathcal{L}_{\mathrm{AE}} = &amp; \min_{\theta, \pi}\max_{\phi} \mathbb{E}_{x \sim X} [ \ell_{\textrm{recon}}(k_{\pi}(g_{\theta}(x), s)_s; x) \nonumber \\
     &amp;\qquad\qquad\qquad\quad - \lambda \ell_{\textrm{adv}}(h_{\phi}(g_{\theta}(x)), s)] 
 \end{align}\]</div>
@@ -966,8 +966,8 @@ This is to capture any potential direct discrimination that the model determines
 For the classification model the task is to produce an ensemble of predictions of the class label <span class="math notranslate nohighlight">\(y_s\)</span> from <span class="math notranslate nohighlight">\(x\)</span> and is defined as <span class="math notranslate nohighlight">\(f_s: (\mathcal{X}) \rightarrow \mathcal{Y}_s \quad \forall ~ s \in \mathcal{S}\)</span>.
 As with the autoencoder, only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true protected label is used for training.
 The objective is shown in the following equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c48f981-306e-48c3-a0df-eba0d502dcee">
-<span class="eqno">(6)<a class="headerlink" href="#equation-0c48f981-306e-48c3-a0df-eba0d502dcee" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-2dede6ce-6290-4477-bac0-8ceef663494b">
+<span class="eqno">(6)<a class="headerlink" href="#equation-2dede6ce-6290-4477-bac0-8ceef663494b" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
     \mathcal{L}_{\mathrm{Clf}} = \min_{\omega, \xi} \mathbb{E}_{x \sim X}[ \ell_{\textrm{pred}}(f_{\omega}(x)_s; y) ]
 \end{equation}\]</div>
 <p>At inference time, the autoencoder model produces one reconstruction per <span class="math notranslate nohighlight">\(S\)</span>-label, per sample, and likewise for the classification model.

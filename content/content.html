@@ -307,17 +307,26 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-1">
-   Chapter 1
+   <span class="xref myst">
+    Chapter 1
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-2">
-   Chapter 2
+   <span class="xref myst">
+    Chapter 2
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-3">
    Chapter 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix">
+   Appendix
   </a>
  </li>
 </ul>
@@ -333,9 +342,8 @@
                 
   <div class="section" id="content">
 <h1>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h1>
-<p>This site serves as an expended thesis/collection of works, and is structured in the following way.</p>
-<p>First, the work in progress thesis, followed by annual review documents for reference, and lastly there is an appendix
-of works completed.</p>
+<p>This site serves as an expanded thesis/collection of works, and is structured in the following way.</p>
+<p>First, the work-in-progress thesis, followed by annual review documents for reference, and lastly there is an appendix of works completed.</p>
 <div class="section" id="thesis">
 <h2>Thesis<a class="headerlink" href="#thesis" title="Permalink to this headline">¶</a></h2>
 <p>The structure of the thesis doesn’t fall into a thesis by publication, but rather, a thesis supported by publication.
@@ -344,7 +352,7 @@ The “story” that I am trying to tell is about identifying the parts of a dec
 rightly or not, by a sensitive attribute.</p>
 </div>
 <div class="section" id="chapter-1">
-<h2>Chapter 1<a class="headerlink" href="#chapter-1" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference internal" href="02_data_domain_fairness/intro.html"><span class="doc std std-doc">Chapter 1</span></a><a class="headerlink" href="#chapter-1" title="Permalink to this headline">¶</a></h2>
 <p>To identify these, we begin by trying to separate the “sensitive” part of a datapoint that have an effect on the decision
 making process, from the parts of a datapoint that are not effected by a “sensitive” attribute.
 This is achieved in <a class="reference internal" href="09_appendix/publications/dfritdd.html"><span class="doc std std-doc">Discovering Fair Representations in the Data Domain</span></a>, with a simple assumption of additive decomposition.
@@ -352,15 +360,26 @@ This is then extended in <a class="reference internal" href="09_appendix/publica
 <p>In both of these works we increase the <em>transparency</em> of what the model determines to be related to a sensitive attribute by visualising the embedding within the visual domain.</p>
 </div>
 <div class="section" id="chapter-2">
-<h2>Chapter 2<a class="headerlink" href="#chapter-2" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference internal" href="03_identifying/intro.html"><span class="doc std std-doc">Chapter 2</span></a><a class="headerlink" href="#chapter-2" title="Permalink to this headline">¶</a></h2>
 <p>Given that some techniques have been presented that identify the parts of the data that are both sensitive and used to make a decision,
-can we identify at deployment time, which individuals are most likely to have decisions influenced by a sensitive attribute.
-And, in turn, can we use this to identify biased interpetation of features vs biased decisions.
+can we identify at deployment time, which individuals are most likely to have decisions influenced by a sensitive attribute?
+And, in turn, can we use this to identify biased interpetation of features vs biased decisions?
 Publications supporting this work are currently under review.</p>
 </div>
 <div class="section" id="chapter-3">
 <h2>Chapter 3<a class="headerlink" href="#chapter-3" title="Permalink to this headline">¶</a></h2>
-<p>In the last chapter I look in general at methods to remove a sensitive attribute from data, whilst retaining other semantic features. In general this is a challenge. Most methods rely on significant compression of the input image. In this chapter I evaluate retaining as much sematic information as possible while also removing a sensitive attribute. I then suggest an additional approach based on Mixup.</p>
+<p>In the last chapter I look in general at methods to remove a sensitive attribute from data, whilst retaining other semantic features.
+In general this is a challenge.
+Most methods rely on significant compression of the input image.
+In this chapter I evaluate retaining as much sematic information as possible while also removing a sensitive attribute.
+I then suggest an additional approach based on Mixup.</p>
+</div>
+<div class="section" id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="09_appendix/published.html"><span class="doc std std-doc">Publications</span></a></p></li>
+<li><p><a class="reference internal" href="09_appendix/software.html"><span class="doc std std-doc">Software</span></a></p></li>
+</ul>
 </div>
 </div>
 
