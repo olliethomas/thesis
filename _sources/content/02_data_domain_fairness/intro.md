@@ -36,6 +36,11 @@
 Fair representations are useful, as previously discussed.
 But, they are not transparent.
 
+#### TODO
+
+- [ ] reconstruction losses are generally at odds with fair representations.
+- [ ] The need for zs/zy partitions
+
 
 Machine learning systems are increasingly used by government agencies, businesses, and other organisations to assist in making life-changing decisions such as whether or not to invite a candidate to a job interview, or whether to give someone a loan. 
 The question is how can we ensure that those systems are _fair_, i.e. they do not discriminate against individuals because of their gender, disability, or other personal ("protected") characteristics?
@@ -143,11 +148,11 @@ Formally, given the $N$ training triplets $(X,S,Y)$, to find a fair and interpre
   &  \min_{T_\omega}   \underbrace{\sum_{n=1}^N\Lcal(T_{\omega}(\x^n),y^n)}_{\text{prediction loss}} + \lambda_1 \underbrace{\sum_{n=1}^{N}\|\x^n-T_{\omega}(\x^n)\|_2^2}_{\text{reconstruction loss}} + \nonumber\\
   &+ \lambda_2\left(\underbrace{- \text{HSIC}(R,S|Y=+1) + \text{HSIC}(P,S|Y=+1)}_{\text{decomposition loss}}\right) 
 \end{align}
-``` 
+```
 where $\text{HSIC}(\cdot,\cdot)$ is the statistical dependence measure, and $\lambda_i$ are trade-off parameters. 
 HSIC is the Hilbert-Schmidt norm of the cross-covariance operator between reproducing kernel Hilbert spaces.
-This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion{cite}`GreBorRasSchetal12`; MMD has been successfully used in fairnesss literature in it's own right {cite}`LouSweLiWelZem15, QuaSha17`. Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
-We use the biased estimator of HSIC {cite}`GreBouSmoSch05,SonSmoGreBedetal12`: $\text{HSIC}_{\text{emp.}} = (N-1)^{-2}\tr HKHL,$
+This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion{cite}`GreBorRasSchSmo12`; MMD has been successfully used in fairnesss literature in it's own right {cite}`LouSweLiWelZem15, QuaSha17`. Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
+We use the biased estimator of HSIC {cite}`GreBouSmoSch05,SonSmoGreBedBor12`: $\text{HSIC}_{\text{emp.}} = (N-1)^{-2}\tr HKHL,$
 where $K, L \in\mathbb{R}^{N\times N}$ are the kernel matrices for the _residual_ set $R$ and the protected characteristic set $S$ respectively, i.e.\ $K_{ij} = k(r^i, r^j)$ and $L_{ij} = l(s^i, s^j)$ (similar definition for measuring independence between sets $P$ and $S$). 
 We use a Gaussian RBF kernel function for both $k(\cdot,\cdot)$ and $l(\cdot,\cdot)$. 
 Moreover, $H_{ij}=\delta_{ij}-N^{-1}$ centres the observations of set $R$ and set $S$ in RKHS feature space. 
@@ -162,7 +167,7 @@ We could use mutual information as the statistical dependence measure, however, 
 computing mutual information in high dimensions (our pre-trained feature map $\phi(\cdot)$ is high dimensional) requires sophisticated bias correction methods {cite}`NemShaBia02`.
 Instead of mutual information, we use the Hilbert-Schmidt Independence Criterion (HSIC) {cite}`GreBouSmoSch05` as our measure of statistical dependence in \eq{eq:optproblem}, i.e. $\text{Dep}(\cdot,\cdot) = \text{HSIC}$.
 HSIC is the Hilbert-Schmidt norm of the cross-covariance operator between reproducing kernel Hilbert spaces.
-This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion {cite}`GreBorRasSchetal12` (which has been successfully used in fairnesss literature in it's own right {cite}`LouSweLiWelZem15, QuaSha17`). Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
+This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion {cite}`GreBorRasSchSmo12` (which has been successfully used in fairnesss literature in it's own right {cite}`LouSweLiWelZem15, QuaSha17`). Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
 HSIC has several advantages: first, it does not require density estimation, and second, it has very little bias, even in high dimensions.
 Given a sample
 $Z=\{(r^1,s^1),\ldots,(r^N,s^N)\}$ of size $N$ drawn from $\PP_{rs}$ an
@@ -180,12 +185,12 @@ Finally, $\bar{K} := H K H$ and $\bar{L} := H L H$ denote the centred versions o
 For complete statistical properties of the empirical estimator in \eq{eq:e_hsic} refer to {cite}`GreBouSmoSch05`.
 
 ### Neural style transfer and pre-trained feature space
-Neural style transfer (e.g. {cite}`GatEckBet15a,JohAlaFei2016`) is a popular approach to perform an image-to-image translation.
+Neural style transfer (e.g. {cite}`GatEckBat16,JohAlaFei2016`) is a popular approach to perform an image-to-image translation.
 Our decomposition loss in \eq{eq:optproblem} is reminiscent of a style loss used in neural style transfer models.
 The style loss is defined as the distance between second-order statistics of a style image and the translated image.
-Excellent results {cite}`GatEckBet15a,JohAlaFei2016,UlyLebVedLem16,ulyanov2017` on neural style transfer rely on pre-trained features.
+Excellent results {cite}`GatEckBat16,JohAlaFei2016,UlyLebVedLem16,ulyanov2017` on neural style transfer rely on pre-trained features.
 Following this spirit, we also use a "pre-trained" feature mapping $\phi(\cdot)$ in defining our decomposition loss.
-For image data, we take advantage of the powerful representation of deep convolutional neural networks (CNN) to define the mapping function {cite}`GatEckBet15a`.
+For image data, we take advantage of the powerful representation of deep convolutional neural networks (CNN) to define the mapping function {cite}`GatEckBat16`.
 The feature maps of $\x$ in the layer $l$ of a CNN are denoted by $F^l_\x\in R^{N_l\times M_l}$ where $N_l$ is the number of the feature maps in the layer $l$ and $M_l$ is the height times the width of the feature map.
 We use the vectorization of $F^l_\x$ as the required mapping $\phi(\x) = \text{vec}(F^l_\x)$.
 Several layers of a CNN will be used to define the full mapping (see Section \ref{sec:experiments}). 
@@ -306,7 +311,7 @@ Best viewed in color.}
 #### Image-to-image translation 
 Our autoencoder network is based on the architecture of the transformer network for neural style transfer {cite}`JohAlaFei2016` with three convolutional layers, five residual layers and three deconvolutional/upsampling layers in combination with instance weight normalization {cite}`ulyanov2017`. 
 The transformer network produces the residual image using a non-linear tanh activation, which is then subtracted from the input image to form the translated fair image $\xtilde$.
-Similarly to neural style transfer {cite}`GatEckBet15a, gardner2016, JohAlaFei2016`, for computing the loss terms, we use the activations in the deeper layers of the 19-layered VGG19 network {cite}`SimZis15` as feature representations of both input and translated images. Specifically, we use activations in the conv3\_1, conv4\_1 and conv5\_1 layers for computing the decomposition loss, the conv3\_1 layer activations for the reconstruction loss, and the activations in the last convolutional layer pool\_5 for the prediction loss and when evaluating the performance. Given a 176x176 color input image, we compute the activations at each layer mentioned earlier after ReLU, then we flatten and $l_2$ normalize them to form features for the loss terms.
+Similarly to neural style transfer {cite}`GatEckBat16, gardner2016, JohAlaFei2016`, for computing the loss terms, we use the activations in the deeper layers of the 19-layered VGG19 network {cite}`SimZis15` as feature representations of both input and translated images. Specifically, we use activations in the conv3\_1, conv4\_1 and conv5\_1 layers for computing the decomposition loss, the conv3\_1 layer activations for the reconstruction loss, and the activations in the last convolutional layer pool\_5 for the prediction loss and when evaluating the performance. Given a 176x176 color input image, we compute the activations at each layer mentioned earlier after ReLU, then we flatten and $l_2$ normalize them to form features for the loss terms.
 In the HSIC estimates of the decomposition loss, we use a Gaussian RBF kernel $k(x_1,x_2) = \text{exp} (-\gamma \|x_1-x_2\|^2)$ width $\gamma=1.0$ for image features, and $\gamma =0.5$ for protected characteristics (as one over squared distance in the binary space).
 To compute the decomposition loss, we add the contributions across the three feature layers. 
 We set the trade-off parameters $\lambda_1$ and $\lambda_2$ of the reconstruction loss and the decomposition loss, respectively, to $1.0$, and the TV regularization strength, $\lambda_3$ 

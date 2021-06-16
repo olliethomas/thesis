@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Domain Fairness &#8212; Fair Representations of Biased Data</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -45,7 +42,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -61,23 +58,14 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="An Algorithmic Framework for Positive Action" href="../03_identifying/intro.html" />
     <link rel="prev" title="Introduction" href="../01_introduction/intro.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="oliverthomas.ml/content/02_data_domain_fairness/intro.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Data Domain Fairness" />
-<meta property="og:description" content="Data Domain Fairness  \newcommand{\x}{\mathbf{x}} \newcommand{\xtilde}{\mathbf{\tilde{x}}} \newcommand{\xhat}{\mathbf{\hat{x}}} \newcommand{\y}{\mathbf{y}} \new" />
-<meta property="og:image"       content="oliverthomas.ml/_static/pal-logo.svg" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -86,37 +74,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
-  
-  <img src="../../_static/pal-logo.svg" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Fair Representations of Biased Data</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/pal-logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Fair Representations of Biased Data</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
  <span class="caption-text">
   Overview
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../content.html">
    Content
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Thesis
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../01_introduction/intro.html">
    Introduction
@@ -143,25 +131,28 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Annual Review 2020
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../10_annual_review/summary.html">
    Summary
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../10_annual_review/area.html">
      Research Area &amp; Question
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../10_annual_review/activities_to_date.html">
@@ -174,17 +165,22 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Appendix
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../09_appendix/published.html">
    Publications
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_appendix/publications/dfritdd.html">
      Discovering Fair Representations in the Data Domain
@@ -201,14 +197,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../09_appendix/software.html">
    Software
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_appendix/software/ethicml.html">
      EthicML
@@ -220,11 +219,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 </div>
@@ -285,12 +283,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -299,12 +297,16 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#todo">
+   TODO
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#related-work">
    Related work
@@ -400,8 +402,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -445,22 +446,28 @@
 \newcommand{\tr}{\mathop{\mathrm{tr}}}\]</div>
 <p>Fair representations are useful, as previously discussed.
 But, they are not transparent.</p>
+<div class="section" id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>[ ] reconstruction losses are generally at odds with fair representations.</p></li>
+<li><p>[ ] The need for zs/zy partitions</p></li>
+</ul>
 <p>Machine learning systems are increasingly used by government agencies, businesses, and other organisations to assist in making life-changing decisions such as whether or not to invite a candidate to a job interview, or whether to give someone a loan.
 The question is how can we ensure that those systems are <em>fair</em>, i.e. they do not discriminate against individuals because of their gender, disability, or other personal (“protected”) characteristics?
 For example, in building an automated system to review job applications, a photograph might be used in addition to other features to make an invite decision.
-By using the photograph as is, a discrimination issue might arise, as photographs with faces could reveal certain protected characteristics, such as gender, race, or age (e.g. <span id="id1">[<a class="reference internal" href="../bib.html#id104"><span>FHH14</span></a>,<a class="reference internal" href="../bib.html#id105"><span>BBH+93</span></a>,<a class="reference internal" href="../bib.html#id106"><span>BP93</span></a>,<a class="reference internal" href="../bib.html#id107"><span>LH15</span></a>]</span>).
+By using the photograph as is, a discrimination issue might arise, as photographs with faces could reveal certain protected characteristics, such as gender, race, or age (e.g. <span id="id1">[<a class="reference internal" href="../bib.html#id106">BP93</a>, <a class="reference internal" href="../bib.html#id105">BBH+93</a>, <a class="reference internal" href="../bib.html#id104">FHH14</a>, <a class="reference internal" href="../bib.html#id107">LH15</a>]</span>).
 Therefore, any automated system that incorporates photographs into its decision process is at risk of indirectly conditioning on protected characteristics (indirect discrimination).
-Recent advances in learning fair representations suggest adversarial training as the means to hide the protected characteristics from the decision/prediction function <span id="id2">[<a class="reference internal" href="../bib.html#id74"><span>BCZC17</span></a>,<a class="reference internal" href="../bib.html#id54"><span>ZLM18</span></a>,<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span>.
+Recent advances in learning fair representations suggest adversarial training as the means to hide the protected characteristics from the decision/prediction function <span id="id2">[<a class="reference internal" href="../bib.html#id52">MCPZ18a</a>, <a class="reference internal" href="../bib.html#id74">BCZC17</a>, <a class="reference internal" href="../bib.html#id54">ZLM18</a>]</span>.
 All fair representation models, however, learn <em>latent embeddings</em>.
 Hence, the produced representations cannot be easily interpreted.
 They do not have the semantic meaning of the input that photographs, or education and training attainments, provide when we have job application data.
-If we want to encourage public conversations and productive public debates regarding fair machine learning systems <span id="id3">[<a class="reference internal" href="../bib.html#id109"><span>GlobalFCoHR20161818</span></a>]</span>, interpretability in how fairness is met is an integral yet overlooked ingredient.</p>
+If we want to encourage public conversations and productive public debates regarding fair machine learning systems <span id="id3">[<a class="reference internal" href="../bib.html#id109">GlobalFCoHR20161818</a>]</span>, interpretability in how fairness is met is an integral yet overlooked ingredient.</p>
 <p>In this paper we focus on representation learning models that can transform inputs to their fair representations and retain the semantics of the input domain in the transformed space.
-When we have image data, our method will make a semantic change to the appearance of an image to deliver a certain fairness criterion <a class="footnote-reference brackets" href="#id189" id="id4">1</a>.
+When we have image data, our method will make a semantic change to the appearance of an image to deliver a certain fairness criterion <a class="footnote-reference brackets" href="#id212" id="id4">1</a>.
 To achieve this, we perform <em>a data-to-data translation</em> by learning a mapping from data in a source domain to a target domain.
 Mapping from source to target domain is a standard procedure, and many methods are available.
-For example, in the image domain, if we have aligned source/target as training data, we can use the pix2pix method of <span id="id5">[<a class="reference internal" href="../bib.html#id108"><span>IZZE17</span></a>]</span>, which is based on conditional generative adversarial networks (cGANs) <span id="id6">[<a class="reference internal" href="../bib.html#id110"><span>MO14</span></a>]</span>.
-Zhu et al.’s CycleGAN <span id="id7">[<a class="reference internal" href="../bib.html#id111"><span>ZPIE17</span></a>]</span> and Choi et al.’s StarGAN <span id="id8">[<a class="reference internal" href="../bib.html#id112"><span>CCK+18</span></a>]</span> solve a more challenging setting in which only _un_aligned training examples are available.
+For example, in the image domain, if we have aligned source/target as training data, we can use the pix2pix method of <span id="id5">[<a class="reference internal" href="../bib.html#id108">IZZE17</a>]</span>, which is based on conditional generative adversarial networks (cGANs) <span id="id6">[<a class="reference internal" href="../bib.html#id110">MO14</a>]</span>.
+Zhu et al.’s CycleGAN <span id="id7">[<a class="reference internal" href="../bib.html#id111">ZPIE17</a>]</span> and Choi et al.’s StarGAN <span id="id8">[<a class="reference internal" href="../bib.html#id112">CCK+18</a>]</span> solve a more challenging setting in which only _un_aligned training examples are available.
 However, we can not simply reuse existing methods for source-to-target mapping because we do <em>not have data in the target domain</em> (e.g. fair images are not available; images by themselves can not be fair or unfair, it is only when they are coupled with a particular task that the concern of fairness arises).</p>
 <p>To illustrate the difficulty, consider our earlier example of an automated job review system that uses photographs as part of an input.
 For achieving fairness, it is tempting to simply use GAN-driven methods to <em>translate female face photos to male</em>.
@@ -470,23 +477,24 @@ Is it fairer if we translate male faces to female instead?
 An ethically grounded approach would be to translate both male and female face photos (source domain) to appropriate middle ground face photos (target domain).
 This challenge is actually multi-dimensional, it contains at least <em>two sub-problems</em>: a) how to have a general approach that can handle image data as well as tabular data (e.g. work experience, education, or even semantic attribute representations of photographs), and b) how to find a middle-ground with a multi-value (e.g. race) or continuous value (e.g. age) protected characteristic or even multiple characteristics (e.g. race and age).</p>
 <p>We propose a solution to the multi-dimensional challenge described above by exploiting statistical (in)dependence between translated images and protected characteristics.
-We use the Hilbert-Schmidt norm of the cross-covariance operator between reproducing kernel Hilbert spaces of image features and protected characteristics (Hilbert-Schmidt independence criterion <span id="id9">[<a class="reference internal" href="../bib.html#id113"><span>GBSScholkopf05</span></a>]</span>) as an empirical estimate of statistical independence.
+We use the Hilbert-Schmidt norm of the cross-covariance operator between reproducing kernel Hilbert spaces of image features and protected characteristics (Hilbert-Schmidt independence criterion <span id="id9">[<a class="reference internal" href="../bib.html#id113">GBSScholkopf05</a>]</span>) as an empirical estimate of statistical independence.
 This flexible measure of independence allows us to take into account higher order independence, and handle a multi-/continuous value and multiple protected characteristics.</p>
+</div>
 <div class="section" id="related-work">
 <h2>Related work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
 <p>We focus on expanding the related topic of learning fair, <em>albeit uninterpretable</em>, representations.
 The aim of fair representation learning is to learn an intermediate representation of the data that preserves as much information about the data as possible, while simultaneously removing protected characteristic information such as age and gender.
-Zemel et al. <span id="id10">[<a class="reference internal" href="../bib.html#id77"><span>ZWS+13</span></a>]</span> learn a probabilistic mapping of the data point to a set of latent prototypes that is independent of protected characteristic (equality of acceptance rates, also called a statistical parity criterion), while retaining as much class label information as possible.
-Louizos et al. <span id="id11">[<a class="reference internal" href="../bib.html#id80"><span>LSL+16</span></a>]</span> extend this by employing a deep variational auto-encoder (VAE) framework for finding the fair latent representation.
+Zemel et al. <span id="id10">[<a class="reference internal" href="../bib.html#id77">ZWS+13</a>]</span> learn a probabilistic mapping of the data point to a set of latent prototypes that is independent of protected characteristic (equality of acceptance rates, also called a statistical parity criterion), while retaining as much class label information as possible.
+Louizos et al. <span id="id11">[<a class="reference internal" href="../bib.html#id80">LSL+16</a>]</span> extend this by employing a deep variational auto-encoder (VAE) framework for finding the fair latent representation.
 In recent years, we see increased adversarial learning methods for fair representations.
-Ganin et al. <span id="id12">[<a class="reference internal" href="../bib.html#id79"><span>GUA+16</span></a>]</span> propose adversarial representation learning for domain adaptation by requiring the learned representation to be indiscriminate with respect to differences in the domains.
+Ganin et al. <span id="id12">[<a class="reference internal" href="../bib.html#id79">GUA+16</a>]</span> propose adversarial representation learning for domain adaptation by requiring the learned representation to be indiscriminate with respect to differences in the domains.
 Multiple data domains can be translated into multiple demographic groups.
-Edwards and Storkey <span id="id13">[<a class="reference internal" href="../bib.html#id78"><span>ES16</span></a>]</span> make this connection and propose adversarial representation learning for the statistical parity criterion.
-To achieve other notions of fairness such as equality of opportunity, Beutel et al. <span id="id14">[<a class="reference internal" href="../bib.html#id74"><span>BCZC17</span></a>]</span> show that the adversarial learning algorithm of Edwards and Storkey <span id="id15">[<a class="reference internal" href="../bib.html#id78"><span>ES16</span></a>]</span> can be reused but we only supply training data with positive outcome to the adversarial component.
-Madras et al. <span id="id16">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span> use a label-aware adversary to learn fair and transferable latent representations for the statistical parity as well as equality of opportunity criteria.</p>
+Edwards and Storkey <span id="id13">[<a class="reference internal" href="../bib.html#id78">ES16</a>]</span> make this connection and propose adversarial representation learning for the statistical parity criterion.
+To achieve other notions of fairness such as equality of opportunity, Beutel et al. <span id="id14">[<a class="reference internal" href="../bib.html#id74">BCZC17</a>]</span> show that the adversarial learning algorithm of Edwards and Storkey <span id="id15">[<a class="reference internal" href="../bib.html#id78">ES16</a>]</span> can be reused but we only supply training data with positive outcome to the adversarial component.
+Madras et al. <span id="id16">[<a class="reference internal" href="../bib.html#id52">MCPZ18a</a>]</span> use a label-aware adversary to learn fair and transferable latent representations for the statistical parity as well as equality of opportunity criteria.</p>
 <p><em>None of the above</em> learn fair representations while simultaneously retaining the semantic meaning of the data.
-There is an orthogonal work on feature selection using human perception of fairness (e.g. <span id="id17">[<a class="reference internal" href="../bib.html#id114"><span>GHRGW18</span></a>]</span>), while this approach undoubtedly retains the semantic meaning of tabular data, it has not been generalized to image data.
-In an independent work to ours, Sattigeri et al. <span id="id18">[<a class="reference internal" href="../bib.html#id12"><span>SHCV19</span></a>]</span> describe a similar motivation of producing fair representations in the input image domain; their focus is on creating a whole new image-like dataset, rather than conditioning on each input image.
+There is an orthogonal work on feature selection using human perception of fairness (e.g. <span id="id17">[<a class="reference internal" href="../bib.html#id114">GHRGW18</a>]</span>), while this approach undoubtedly retains the semantic meaning of tabular data, it has not been generalized to image data.
+In an independent work to ours, Sattigeri et al. <span id="id18">[<a class="reference internal" href="../bib.html#id12">SHCV19</a>]</span> describe a similar motivation of producing fair representations in the input image domain; their focus is on creating a whole new image-like dataset, rather than conditioning on each input image.
 Hence it is not possible to visualise a fair version for a given image as provided by our method<!--(refer to Figures \ref{fig:faces} and \ref{fig:faces_attributes})-->.</p>
 </div>
 <div class="section" id="interpretability-in-fairness-by-residual-decomposition">
@@ -496,9 +504,9 @@ Given input data (photographs, work experience, education and training, personal
 We want the classifier to predict outcomes that are accurate with respect to <span class="math notranslate nohighlight">\(y^n\)</span> but fair with respect to <span class="math notranslate nohighlight">\(s^n\)</span>.</p>
 <div class="section" id="fairness-definitions">
 <span id="sec-fairnessdefinitions"></span><h3>Fairness definitions<a class="headerlink" href="#fairness-definitions" title="Permalink to this headline">¶</a></h3>
-<p>Much work has been done on mathematical definitions of fairness (e.g. <span id="id19">[<a class="reference internal" href="../bib.html#id6"><span>KMR17</span></a>,<a class="reference internal" href="../bib.html#id7"><span>Cho17</span></a>]</span>).
-It is widely accepted that no single definition of fairness applies in all cases, but will depend on the specific context and application of machine learning models <span id="id20">[<a class="reference internal" href="../bib.html#id109"><span>GlobalFCoHR20161818</span></a>]</span>.
-In this paper, we focus on the <em>equality of opportunity</em> criterion that requires the classifier <span class="math notranslate nohighlight">\(f\)</span> and the protected characteristic <span class="math notranslate nohighlight">\(s\)</span> be independent, conditional on the label being positive <a class="footnote-reference brackets" href="#id191" id="id21">2</a>, in shorthand notation <span class="math notranslate nohighlight">\(f\ci s\ |\ y = +1\)</span>.
+<p>Much work has been done on mathematical definitions of fairness (e.g. <span id="id19">[<a class="reference internal" href="../bib.html#id7">Cho17</a>, <a class="reference internal" href="../bib.html#id6">KMR17</a>]</span>).
+It is widely accepted that no single definition of fairness applies in all cases, but will depend on the specific context and application of machine learning models <span id="id20">[<a class="reference internal" href="../bib.html#id109">GlobalFCoHR20161818</a>]</span>.
+In this paper, we focus on the <em>equality of opportunity</em> criterion that requires the classifier <span class="math notranslate nohighlight">\(f\)</span> and the protected characteristic <span class="math notranslate nohighlight">\(s\)</span> be independent, conditional on the label being positive <a class="footnote-reference brackets" href="#id214" id="id21">2</a>, in shorthand notation <span class="math notranslate nohighlight">\(f\ci s\ |\ y = +1\)</span>.
 Expressing the shorthand notation in terms of a conditional distribution, we have <span class="math notranslate nohighlight">\(\PP(f(\x)|s,y=+1) = \PP(f(\x)|y=+1)\)</span>.
 With binary protected characteristic, this reads as equal true positive rates across the two groups, <span class="math notranslate nohighlight">\(\PP(f(\x)=+1|s=A,y=+1)=\PP(f(\x)=+1|s=B,y=+1)\)</span>.
 Equivalently, the shorthand notation can also be expressed in terms of joint distributions, resulting in <span class="math notranslate nohighlight">\(\PP(f(\x),s|y=+1) = \PP(f(\x)|y=+1)\PP(s|y=+1)\)</span>.
@@ -533,7 +541,7 @@ We use the decomposition property as a guiding mechanism to learn the parameters
 Residuals will make learning the transformer network easier.
 Taking into consideration that we do not have training data about the target fair features <span class="math notranslate nohighlight">\(\xtilde\)</span>, we should not desire the transformer network to take the input feature <span class="math notranslate nohighlight">\(\x\)</span> and <em>generate</em> a new output <span class="math notranslate nohighlight">\(\xtilde\)</span>.
 Instead, it should just learn how to <em>adjust</em> our input <span class="math notranslate nohighlight">\(\x\)</span> to produce the desired output <span class="math notranslate nohighlight">\(\xtilde\)</span>.
-The concept of residuals is universal, for example, a residual block has been used to speed up and to prevent over-fitting of a very deep neural network <span id="id22">[<span>HeZhaRenSun16</span>]</span>, and a residual regression output has been used to perform causal inference in additive noise models <span id="id23">[<span>MooJanPetSch09</span>]</span>.</p>
+The concept of residuals is universal, for example, a residual block has been used to speed up and to prevent over-fitting of a very deep neural network <span id="id22">[<a class="reference internal" href="../bib.html#id119">HZRS16</a>]</span>, and a residual regression output has been used to perform causal inference in additive noise models <span id="id23">[<a class="reference internal" href="../bib.html#id120">MJPScholkopf09</a>]</span>.</p>
 <p>Formally, given the <span class="math notranslate nohighlight">\(N\)</span> training triplets <span class="math notranslate nohighlight">\((X,S,Y)\)</span>, to find a fair and interpretable representation <span class="math notranslate nohighlight">\(\xtilde= T_{\omega}(\x)\)</span>, our optimization problem is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eq-optproblem">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eq-optproblem" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
@@ -542,23 +550,23 @@ The concept of residuals is universal, for example, a residual block has been us
 \end{align}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\text{HSIC}(\cdot,\cdot)\)</span> is the statistical dependence measure, and <span class="math notranslate nohighlight">\(\lambda_i\)</span> are trade-off parameters.
 HSIC is the Hilbert-Schmidt norm of the cross-covariance operator between reproducing kernel Hilbert spaces.
-This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion<span id="id24">[<span>GreBorRasSchetal12</span>]</span>; MMD has been successfully used in fairnesss literature in it’s own right <span id="id25">[<a class="reference internal" href="../bib.html#id80"><span>LSL+16</span></a>,<a class="reference internal" href="../bib.html#id56"><span>QS17</span></a>]</span>. Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
-We use the biased estimator of HSIC <span id="id26">[<a class="reference internal" href="../bib.html#id113"><span>GBSScholkopf05</span></a>,<span>SonSmoGreBedetal12</span>]</span>: <span class="math notranslate nohighlight">\(\text{HSIC}_{\text{emp.}} = (N-1)^{-2}\tr HKHL,\)</span>
+This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion<span id="id24">[<a class="reference internal" href="../bib.html#id121">GBR+12</a>]</span>; MMD has been successfully used in fairnesss literature in it’s own right <span id="id25">[<a class="reference internal" href="../bib.html#id56">QS17</a>, <a class="reference internal" href="../bib.html#id80">LSL+16</a>]</span>. Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
+We use the biased estimator of HSIC <span id="id26">[<a class="reference internal" href="../bib.html#id113">GBSScholkopf05</a>, <a class="reference internal" href="../bib.html#id122">SSG+12</a>]</span>: <span class="math notranslate nohighlight">\(\text{HSIC}_{\text{emp.}} = (N-1)^{-2}\tr HKHL,\)</span>
 where <span class="math notranslate nohighlight">\(K, L \in\mathbb{R}^{N\times N}\)</span> are the kernel matrices for the <em>residual</em> set <span class="math notranslate nohighlight">\(R\)</span> and the protected characteristic set <span class="math notranslate nohighlight">\(S\)</span> respectively, i.e.\ <span class="math notranslate nohighlight">\(K_{ij} = k(r^i, r^j)\)</span> and <span class="math notranslate nohighlight">\(L_{ij} = l(s^i, s^j)\)</span> (similar definition for measuring independence between sets <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(S\)</span>).
 We use a Gaussian RBF kernel function for both <span class="math notranslate nohighlight">\(k(\cdot,\cdot)\)</span> and <span class="math notranslate nohighlight">\(l(\cdot,\cdot)\)</span>.
 Moreover, <span class="math notranslate nohighlight">\(H_{ij}=\delta_{ij}-N^{-1}\)</span> centres the observations of set <span class="math notranslate nohighlight">\(R\)</span> and set <span class="math notranslate nohighlight">\(S\)</span> in RKHS feature space.
 The prediction loss is defined using a softmax layer on the output of the transformer network.
-While in image data we add the total variation (TV) penalty <span id="id27">[<span>MahVed15</span>]</span> on the fair representation to ensure spatial smoothness, we do not enforce any regularization term for tabular data.</p>
+While in image data we add the total variation (TV) penalty <span id="id27">[]</span> on the fair representation to ensure spatial smoothness, we do not enforce any regularization term for tabular data.</p>
 <p>\noindent In summary, we learn a new representation <span class="math notranslate nohighlight">\(\xtilde{}\)</span> that removes statistical dependence on the protected characteristic <span class="math notranslate nohighlight">\(s\)</span> (by minimizing <span class="math notranslate nohighlight">\(\text{HSIC}(P,S|Y=+1)\)</span>) and enforces the dependence of the residual <span class="math notranslate nohighlight">\(\x-\xtilde\)</span> and <span class="math notranslate nohighlight">\(s\)</span> (by maximizing <span class="math notranslate nohighlight">\(\text{HSIC}(R,S|Y=+1)\)</span>).
-We can then train any classifier <span class="math notranslate nohighlight">\(f\)</span> using this new representation, and it will inherently satisfy the fairness criterion <span id="id28">[<a class="reference internal" href="../bib.html#id52"><span>MCPZ18a</span></a>]</span>.</p>
+We can then train any classifier <span class="math notranslate nohighlight">\(f\)</span> using this new representation, and it will inherently satisfy the fairness criterion <span id="id28">[<a class="reference internal" href="../bib.html#id52">MCPZ18a</a>]</span>.</p>
 </div>
 <div class="section" id="hilbert-schmidt-independence-criterion">
 <h3>Hilbert-Schmidt independence criterion<a class="headerlink" href="#hilbert-schmidt-independence-criterion" title="Permalink to this headline">¶</a></h3>
 <p>We could use mutual information as the statistical dependence measure, however, it has been shown that
-computing mutual information in high dimensions (our pre-trained feature map <span class="math notranslate nohighlight">\(\phi(\cdot)\)</span> is high dimensional) requires sophisticated bias correction methods <span id="id29">[<span>NemShaBia02</span>]</span>.
-Instead of mutual information, we use the Hilbert-Schmidt Independence Criterion (HSIC) <span id="id30">[<a class="reference internal" href="../bib.html#id113"><span>GBSScholkopf05</span></a>]</span> as our measure of statistical dependence in \eq{eq:optproblem}, i.e. <span class="math notranslate nohighlight">\(\text{Dep}(\cdot,\cdot) = \text{HSIC}\)</span>.
+computing mutual information in high dimensions (our pre-trained feature map <span class="math notranslate nohighlight">\(\phi(\cdot)\)</span> is high dimensional) requires sophisticated bias correction methods <span id="id29">[<a class="reference internal" href="../bib.html#id123">NSB02</a>]</span>.
+Instead of mutual information, we use the Hilbert-Schmidt Independence Criterion (HSIC) <span id="id30">[<a class="reference internal" href="../bib.html#id113">GBSScholkopf05</a>]</span> as our measure of statistical dependence in \eq{eq:optproblem}, i.e. <span class="math notranslate nohighlight">\(\text{Dep}(\cdot,\cdot) = \text{HSIC}\)</span>.
 HSIC is the Hilbert-Schmidt norm of the cross-covariance operator between reproducing kernel Hilbert spaces.
-This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion <span id="id31">[<span>GreBorRasSchetal12</span>]</span> (which has been successfully used in fairnesss literature in it’s own right <span id="id32">[<a class="reference internal" href="../bib.html#id80"><span>LSL+16</span></a>,<a class="reference internal" href="../bib.html#id56"><span>QS17</span></a>]</span>). Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
+This is equivalent to a non-parametric distance measure of a joint distribution and the product of two marginal distributions using the Maximum Mean Discrepancy (MMD) criterion <span id="id31">[<a class="reference internal" href="../bib.html#id121">GBR+12</a>]</span> (which has been successfully used in fairnesss literature in it’s own right <span id="id32">[<a class="reference internal" href="../bib.html#id56">QS17</a>, <a class="reference internal" href="../bib.html#id80">LSL+16</a>]</span>). Section \ref{sec:fairnessdefinitions} discusses defining statistical independence based on a joint distribution, contrasting this with a conditional distribution.
 HSIC has several advantages: first, it does not require density estimation, and second, it has very little bias, even in high dimensions.
 Given a sample
 <span class="math notranslate nohighlight">\(Z=\{(r^1,s^1),\ldots,(r^N,s^N)\}\)</span> of size <span class="math notranslate nohighlight">\(N\)</span> drawn from <span class="math notranslate nohighlight">\(\PP_{rs}\)</span> an
@@ -571,20 +579,20 @@ set <span class="math notranslate nohighlight">\(R\)</span> and the protected ch
 We use a Gaussian RBF kernel function for both <span class="math notranslate nohighlight">\(k(\cdot,\cdot)\)</span> and <span class="math notranslate nohighlight">\(l(\cdot,\cdot)\)</span>.
 Moreover, <span class="math notranslate nohighlight">\(H_{ij}=\delta_{ij}-N^{-1}\)</span> centres the observations of set <span class="math notranslate nohighlight">\(R\)</span> and set <span class="math notranslate nohighlight">\(S\)</span> in RKHS feature space.
 Finally, <span class="math notranslate nohighlight">\(\bar{K} := H K H\)</span> and <span class="math notranslate nohighlight">\(\bar{L} := H L H\)</span> denote the centred versions of <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(L\)</span> respectively.
-For complete statistical properties of the empirical estimator in \eq{eq:e_hsic} refer to <span id="id33">[<a class="reference internal" href="../bib.html#id113"><span>GBSScholkopf05</span></a>]</span>.</p>
+For complete statistical properties of the empirical estimator in \eq{eq:e_hsic} refer to <span id="id33">[<a class="reference internal" href="../bib.html#id113">GBSScholkopf05</a>]</span>.</p>
 </div>
 <div class="section" id="neural-style-transfer-and-pre-trained-feature-space">
 <h3>Neural style transfer and pre-trained feature space<a class="headerlink" href="#neural-style-transfer-and-pre-trained-feature-space" title="Permalink to this headline">¶</a></h3>
-<p>Neural style transfer (e.g. <span id="id34">[<span>GatEckBet15a</span><span>JohAlaFei2016</span>]</span>) is a popular approach to perform an image-to-image translation.
+<p>Neural style transfer (e.g. <span id="id34">[<a class="reference internal" href="../bib.html#id124">GEB16</a>]</span>) is a popular approach to perform an image-to-image translation.
 Our decomposition loss in \eq{eq:optproblem} is reminiscent of a style loss used in neural style transfer models.
 The style loss is defined as the distance between second-order statistics of a style image and the translated image.
-Excellent results <span id="id35">[<span>GatEckBet15a</span><span>JohAlaFei2016</span><span>UlyLebVedLem16</span><span>ulyanov2017</span>]</span> on neural style transfer rely on pre-trained features.
+Excellent results <span id="id35">[<a class="reference internal" href="../bib.html#id124">GEB16</a>]</span> on neural style transfer rely on pre-trained features.
 Following this spirit, we also use a “pre-trained” feature mapping <span class="math notranslate nohighlight">\(\phi(\cdot)\)</span> in defining our decomposition loss.
-For image data, we take advantage of the powerful representation of deep convolutional neural networks (CNN) to define the mapping function <span id="id36">[<span>GatEckBet15a</span>]</span>.
+For image data, we take advantage of the powerful representation of deep convolutional neural networks (CNN) to define the mapping function <span id="id36">[<a class="reference internal" href="../bib.html#id124">GEB16</a>]</span>.
 The feature maps of <span class="math notranslate nohighlight">\(\x\)</span> in the layer <span class="math notranslate nohighlight">\(l\)</span> of a CNN are denoted by <span class="math notranslate nohighlight">\(F^l_\x\in R^{N_l\times M_l}\)</span> where <span class="math notranslate nohighlight">\(N_l\)</span> is the number of the feature maps in the layer <span class="math notranslate nohighlight">\(l\)</span> and <span class="math notranslate nohighlight">\(M_l\)</span> is the height times the width of the feature map.
 We use the vectorization of <span class="math notranslate nohighlight">\(F^l_\x\)</span> as the required mapping <span class="math notranslate nohighlight">\(\phi(\x) = \text{vec}(F^l_\x)\)</span>.
 Several layers of a CNN will be used to define the full mapping (see Section \ref{sec:experiments}).
-For tabular data, we use the following random Fourier feature <span id="id37">[<span>RahRec08</span>]</span> mapping <span class="math notranslate nohighlight">\(\phi(\x) = \sqrt{\frac{2}{D}}\ \text{cos}(\inner{\theta}{\x}+b)\)</span> with a bias vector <span class="math notranslate nohighlight">\(b\in\RR^D\)</span> that is uniformly sampled in <span class="math notranslate nohighlight">\([0,2\pi]\)</span>, and a matrix
+For tabular data, we use the following random Fourier feature <span id="id37">[]</span> mapping <span class="math notranslate nohighlight">\(\phi(\x) = \sqrt{\frac{2}{D}}\ \text{cos}(\inner{\theta}{\x}+b)\)</span> with a bias vector <span class="math notranslate nohighlight">\(b\in\RR^D\)</span> that is uniformly sampled in <span class="math notranslate nohighlight">\([0,2\pi]\)</span>, and a matrix
 <span class="math notranslate nohighlight">\(\theta\in\RR^{d\times D}\)</span> where <span class="math notranslate nohighlight">\(\theta_{ij}\)</span> is sampled from a Gaussian distribution.
 We have assumed the input data lies in a <span class="math notranslate nohighlight">\(d\)</span>-dimensional space, and we transform them to a <span class="math notranslate nohighlight">\(D\)</span>-dimensional space.</p>
 </div>
@@ -593,13 +601,13 @@ We have assumed the input data lies in a <span class="math notranslate nohighlig
 <span id="sec-experiments"></span><h2>Experiments<a class="headerlink" href="#experiments" title="Permalink to this headline">¶</a></h2>
 <p>We gave an illustrative example about screening job applications, however, no such data is publicly available.
 We will instead use publicly available data to simulate the setting.
-We conduct the experiments using three datasets: the <a class="reference external" href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html">CelebA image dataset</a> <span id="id38">[<a class="reference internal" href="../bib.html#id115"><span>LLWT15</span></a>]</span> , the <a class="reference external" href="https://www.research.ibm.com/artificial-intelligence/trusted-ai/diversity-in-faces/">Diversity in Faces (DiF) dataset</a> <span id="id39">[<span>DiF2019</span>]</span>, and the <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/adult">Adult income dataset</a> from the UCI repository <span id="id40">[<span>Dua:2017</span>]</span>.
+We conduct the experiments using three datasets: the <a class="reference external" href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html">CelebA image dataset</a> <span id="id38">[<a class="reference internal" href="../bib.html#id115">LLWT15</a>]</span> , the <a class="reference external" href="https://www.research.ibm.com/artificial-intelligence/trusted-ai/diversity-in-faces/">Diversity in Faces (DiF) dataset</a> <span id="id39">[]</span>, and the <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/adult">Adult income dataset</a> from the UCI repository <span id="id40">[]</span>.
 The CelebA dataset has a total of <span class="math notranslate nohighlight">\(202,599\)</span> celebrity images. The images are annotated with <span class="math notranslate nohighlight">\(40\)</span> attributes that reflect appearance (hair color and style, face shape, makeup, for example), emotional state (smiling), gender, attractiveness, and age. For this dataset, we use gender as a binary protected characteristic, and attractiveness as the proxy measure of getting invited for a job interview in the world of fame.
 We randomly select <span class="math notranslate nohighlight">\(20\)</span>K images for testing and use the rest for training the model.
 The DiF dataset has only been introduced very recently and contains nearly a million human face images reflecting diversity in ethnicity, age and gender.
 We include preliminary results using 200K images for training and 200K images for testing our model on this dataset. The images are annotated with attributes such as race, gender and age (both continual and discretized into seven age groups) as well as facial landmarks and facial symmetry features. For this dataset, we use gender as a binary protected characteristic, and the discretized age groups as a predictive task.
 The Adult income dataset is frequently used to assess fairness methods. It comes from the Census bureau and the binary task is to predict whether or not an individual earns more than <span class="math notranslate nohighlight">\(\$ 50\)</span>K per year. It has a total of <span class="math notranslate nohighlight">\(45,222\)</span> data instances, each with <span class="math notranslate nohighlight">\(14\)</span> features such as gender, marital status, educational level, number of work hours per week.
-For this dataset, we follow <span id="id41">[<a class="reference internal" href="../bib.html#id77"><span>ZWS+13</span></a>]</span> and consider gender as a binary protected characteristic.
+For this dataset, we follow <span id="id41">[<a class="reference internal" href="../bib.html#id77">ZWS+13</a>]</span> and consider gender as a binary protected characteristic.
 We use <span class="math notranslate nohighlight">\(28,222\)</span> instances for training, and <span class="math notranslate nohighlight">\(15,000\)</span> instances for testing.
 We enforce equality of opportunity as the fairness criteria throughout for the three experiments.</p>
 <table class="colwidths-auto table" id="table-benchmarking">
@@ -639,7 +647,7 @@ We enforce equality of opportunity as the fairness criteria throughout for the t
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(81.9\pm2.0\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\mathbf{6.7\pm4.7}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>3: <span class="math notranslate nohighlight">\(\texttt{Fair Reduction LR}\)</span><span id="id42">[<a class="reference internal" href="../bib.html#id118"><span>ABD+18a</span></a>]</span></p></td>
+<tr class="row-odd"><td><p>3: <span class="math notranslate nohighlight">\(\texttt{Fair Reduction LR}\)</span><span id="id42">[<a class="reference internal" href="../bib.html#id118">ABD+18a</a>]</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(85.1\pm0.2\)</span></p></td>
 <td class="text-align:right"><p><span class="math notranslate nohighlight">\(\mathbf{14.9\pm1.3}\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(84.1\pm0.3\)</span></p></td>
@@ -647,7 +655,7 @@ We enforce equality of opportunity as the fairness criteria throughout for the t
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(81.8\pm2.1\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\mathbf{5.6\pm4.8}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p>4: <span class="math notranslate nohighlight">\(\texttt{Fair Reduction SVM}\)</span><span id="id43">[<a class="reference internal" href="../bib.html#id118"><span>ABD+18a</span></a>]</span></p></td>
+<tr class="row-even"><td><p>4: <span class="math notranslate nohighlight">\(\texttt{Fair Reduction SVM}\)</span><span id="id43">[<a class="reference internal" href="../bib.html#id118">ABD+18a</a>]</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(85.1\pm0.2\)</span></p></td>
 <td class="text-align:right"><p><span class="math notranslate nohighlight">\(\mathbf{8.2\pm2.3}\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(84.2\pm0.3\)</span></p></td>
@@ -655,7 +663,7 @@ We enforce equality of opportunity as the fairness criteria throughout for the t
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(81.9\pm2.0\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\mathbf{6.7\pm4.7}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>5: <span class="math notranslate nohighlight">\(\texttt{Kamiran \&amp; Calders LR}\)</span><span id="id44">[<a class="reference internal" href="../bib.html#id10"><span>KC12</span></a>]</span></p></td>
+<tr class="row-odd"><td><p>5: <span class="math notranslate nohighlight">\(\texttt{Kamiran \&amp; Calders LR}\)</span><span id="id44">[<a class="reference internal" href="../bib.html#id10">KC12</a>]</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(84.4\pm0.2\)</span></p></td>
 <td class="text-align:right"><p><span class="math notranslate nohighlight">\(\mathbf{14.9\pm1.3}\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(84.1\pm0.3\)</span></p></td>
@@ -663,7 +671,7 @@ We enforce equality of opportunity as the fairness criteria throughout for the t
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(81.8\pm2.1\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\mathbf{4.9\pm3.3}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p>6: <span class="math notranslate nohighlight">\(\texttt{Kamiran \&amp; Calders SVM}\)</span><span id="id45">[<a class="reference internal" href="../bib.html#id10"><span>KC12</span></a>]</span></p></td>
+<tr class="row-even"><td><p>6: <span class="math notranslate nohighlight">\(\texttt{Kamiran \&amp; Calders SVM}\)</span><span id="id45">[<a class="reference internal" href="../bib.html#id10">KC12</a>]</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(85.1\pm0.2\)</span></p></td>
 <td class="text-align:right"><p><span class="math notranslate nohighlight">\(\mathbf{8.2\pm2.3}\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(84.2\pm0.3\)</span></p></td>
@@ -671,7 +679,7 @@ We enforce equality of opportunity as the fairness criteria throughout for the t
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(81.9\pm2.0\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\mathbf{6.7\pm4.7}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>7: <span class="math notranslate nohighlight">\(\texttt{Zafar et al.}^*\)</span><span id="id46">[<a class="reference internal" href="../bib.html#id116"><span>ZVGRG17</span></a>]</span></p></td>
+<tr class="row-odd"><td><p>7: <span class="math notranslate nohighlight">\(\texttt{Zafar et al.}^*\)</span><span id="id46">[<a class="reference internal" href="../bib.html#id116">ZVGRG17</a>]</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(85.0\pm0.3\)</span></p></td>
 <td class="text-align:right"><p><span class="math notranslate nohighlight">\(\mathbf{1.8\pm0.9}\)</span></p></td>
 <td class="text-align:center"><p>—</p></td>
@@ -702,19 +710,19 @@ We compare our method against an unmodified <span class="math notranslate nohigh
 <li><p>logistic regression (<code class="docutils literal notranslate"><span class="pre">LR</span></code>) and</p></li>
 <li><p>support vector machine with linear kernel (<code class="docutils literal notranslate"><span class="pre">SVM</span></code>),
 We select the regularization parameter of <code class="docutils literal notranslate"><span class="pre">LR</span></code> and <code class="docutils literal notranslate"><span class="pre">SVM</span></code> over 6 possible values (<span class="math notranslate nohighlight">\(10^i\)</span> for <span class="math notranslate nohighlight">\(i \in [0,6]\)</span>) using <span class="math notranslate nohighlight">\(3\)</span>-fold cross validation.
-We then train classifiers 1–2 with the learned representation <span class="math notranslate nohighlight">\(\xtilde{}\)</span> and with the latent embedding <span class="math notranslate nohighlight">\(\z{}\)</span> of a state-of-the-art adversarial model described in Beutel et al. <span id="id47">[<a class="reference internal" href="../bib.html#id74"><span>BCZC17</span></a>]</span>.
-We also apply methods which reweigh the samples to simulate a balanced dataset with regard to the protected characteristic FairLearn <span id="id48">[<a class="reference internal" href="../bib.html#id118"><span>ABD+18a</span></a>]</span> <code class="docutils literal notranslate"><span class="pre">Fair</span> <span class="pre">Reduction</span></code> 3-4 and Kamiran &amp; Calders <span id="id49">[<a class="reference internal" href="../bib.html#id10"><span>KC12</span></a>]</span> <code class="docutils literal notranslate"><span class="pre">Kamiran</span> <span class="pre">&amp;</span> <span class="pre">Calders</span></code> 5-6,
+We then train classifiers 1–2 with the learned representation <span class="math notranslate nohighlight">\(\xtilde{}\)</span> and with the latent embedding <span class="math notranslate nohighlight">\(\z{}\)</span> of a state-of-the-art adversarial model described in Beutel et al. <span id="id47">[<a class="reference internal" href="../bib.html#id74">BCZC17</a>]</span>.
+We also apply methods which reweigh the samples to simulate a balanced dataset with regard to the protected characteristic FairLearn <span id="id48">[<a class="reference internal" href="../bib.html#id118">ABD+18a</a>]</span> <code class="docutils literal notranslate"><span class="pre">Fair</span> <span class="pre">Reduction</span></code> 3-4 and Kamiran &amp; Calders <span id="id49">[<a class="reference internal" href="../bib.html#id10">KC12</a>]</span> <code class="docutils literal notranslate"><span class="pre">Kamiran</span> <span class="pre">&amp;</span> <span class="pre">Calders</span></code> 5-6,
 optimized with both the cross-validated <code class="docutils literal notranslate"><span class="pre">LR</span></code> and <code class="docutils literal notranslate"><span class="pre">SVM</span></code> (1-2),
 giving (<code class="docutils literal notranslate"><span class="pre">Fair</span> <span class="pre">Reduction</span> <span class="pre">LR</span></code>), (<code class="docutils literal notranslate"><span class="pre">Fair</span> <span class="pre">Reduction</span> <span class="pre">SVM</span></code>), (<code class="docutils literal notranslate"><span class="pre">Kamiran</span> <span class="pre">&amp;</span> <span class="pre">Calders</span> <span class="pre">LR</span></code>) and (<code class="docutils literal notranslate"><span class="pre">Kamiran</span> <span class="pre">&amp;</span> <span class="pre">Calders</span> <span class="pre">SVM</span></code>) respectively.
 As a reference, we also compare with:</p></li>
-<li><p>Zafar et al.’s<span id="id50">[<a class="reference internal" href="../bib.html#id116"><span>ZVGRG17</span></a>]</span> fair classification method (<code class="docutils literal notranslate"><span class="pre">Zafar</span> <span class="pre">et</span> <span class="pre">al.</span></code>) that adds equality of opportunity directly as a constraint to the learning objective function.
-It has been shown that applying fairness constraints in succession as ‘fair pipelines’ do not enforce fairness <span id="id51">[<span>DwoIlv18</span><span>BowKitNisStraVarVen17</span>]</span>, as such, we only demonstrate (fair) classifier 7 on the unmodified <span class="math notranslate nohighlight">\(\x{}\)</span>.</p></li>
+<li><p>Zafar et al.’s<span id="id50">[<a class="reference internal" href="../bib.html#id116">ZVGRG17</a>]</span> fair classification method (<code class="docutils literal notranslate"><span class="pre">Zafar</span> <span class="pre">et</span> <span class="pre">al.</span></code>) that adds equality of opportunity directly as a constraint to the learning objective function.
+It has been shown that applying fairness constraints in succession as ‘fair pipelines’ do not enforce fairness <span id="id51">[]</span>, as such, we only demonstrate (fair) classifier 7 on the unmodified <span class="math notranslate nohighlight">\(\x{}\)</span>.</p></li>
 </ol>
 <div class="section" id="benchmarking">
 <h4>Benchmarking<a class="headerlink" href="#benchmarking" title="Permalink to this headline">¶</a></h4>
 <p>We train our model for <span class="math notranslate nohighlight">\(50,000\)</span> iterations using a network with 1 hidden layer of <span class="math notranslate nohighlight">\(40\)</span> nodes for both the encoder and decoder, with the encoded representation being 40 nodes. The predictor acts on the decoded output of this network. We set the trade-off parameters of the reconstruction loss (<span class="math notranslate nohighlight">\(\lambda_1\)</span>) and decomposition loss (<span class="math notranslate nohighlight">\(\lambda_2\)</span>) to <span class="math notranslate nohighlight">\(10^{-4}\)</span> and <span class="math notranslate nohighlight">\(100\)</span> respectively.
 We then use this model to translate <span class="math notranslate nohighlight">\(10\)</span> different training and test sets into <span class="math notranslate nohighlight">\(\xtilde{}\)</span>.
-Using a modified version of the framework provided by Friedler et al. <span id="id52">[<span>FrieSchVen18</span>]</span> we evaluate methods <span class="math notranslate nohighlight">\(1\)</span>–<span class="math notranslate nohighlight">\(6\)</span> using <span class="math notranslate nohighlight">\(\x{}\)</span> and <span class="math notranslate nohighlight">\(\xtilde{}\)</span> representations. To ensure consistency, we train the model of Beutel et al. <span id="id53">[<a class="reference internal" href="../bib.html#id74"><span>BCZC17</span></a>]</span> with the same architecture and number of iterations as our model.</p>
+Using a modified version of the framework provided by Friedler et al. <span id="id52">[]</span> we evaluate methods <span class="math notranslate nohighlight">\(1\)</span>–<span class="math notranslate nohighlight">\(6\)</span> using <span class="math notranslate nohighlight">\(\x{}\)</span> and <span class="math notranslate nohighlight">\(\xtilde{}\)</span> representations. To ensure consistency, we train the model of Beutel et al. <span id="id53">[<a class="reference internal" href="../bib.html#id74">BCZC17</a>]</span> with the same architecture and number of iterations as our model.</p>
 <p>Table \ref{table:benchmarking} shows the results of these experiments. Our interpretable representation, <span class="math notranslate nohighlight">\(\xtilde{}\)</span> achieves similar fairness level to Beutel’s state-of-the-art approach (<strong>Q1</strong>). Consistently, our representation <span class="math notranslate nohighlight">\(\xtilde{}\)</span> promoted the <em>fairness</em> criterion (Eq. Opp. close to <span class="math notranslate nohighlight">\(0\)</span>), with only a small penalty in accuracy.</p>
 </div>
 <div class="section" id="interpretability">
@@ -809,21 +817,21 @@ Best viewed in color.}
 </table>
 <div class="section" id="image-to-image-translation">
 <h4>Image-to-image translation<a class="headerlink" href="#image-to-image-translation" title="Permalink to this headline">¶</a></h4>
-<p>Our autoencoder network is based on the architecture of the transformer network for neural style transfer <span id="id54">[<span>JohAlaFei2016</span>]</span> with three convolutional layers, five residual layers and three deconvolutional/upsampling layers in combination with instance weight normalization <span id="id55">[<span>ulyanov2017</span>]</span>.
+<p>Our autoencoder network is based on the architecture of the transformer network for neural style transfer <span id="id54">[]</span> with three convolutional layers, five residual layers and three deconvolutional/upsampling layers in combination with instance weight normalization <span id="id55">[]</span>.
 The transformer network produces the residual image using a non-linear tanh activation, which is then subtracted from the input image to form the translated fair image <span class="math notranslate nohighlight">\(\xtilde\)</span>.
-Similarly to neural style transfer <span id="id56">[<span>GatEckBet15a</span><span>gardner2016</span><span>JohAlaFei2016</span>]</span>, for computing the loss terms, we use the activations in the deeper layers of the 19-layered VGG19 network <span id="id57">[<span>SimZis15</span>]</span> as feature representations of both input and translated images. Specifically, we use activations in the conv3_1, conv4_1 and conv5_1 layers for computing the decomposition loss, the conv3_1 layer activations for the reconstruction loss, and the activations in the last convolutional layer pool_5 for the prediction loss and when evaluating the performance. Given a 176x176 color input image, we compute the activations at each layer mentioned earlier after ReLU, then we flatten and <span class="math notranslate nohighlight">\(l_2\)</span> normalize them to form features for the loss terms.
+Similarly to neural style transfer <span id="id56">[<a class="reference internal" href="../bib.html#id124">GEB16</a>]</span>, for computing the loss terms, we use the activations in the deeper layers of the 19-layered VGG19 network <span id="id57">[]</span> as feature representations of both input and translated images. Specifically, we use activations in the conv3_1, conv4_1 and conv5_1 layers for computing the decomposition loss, the conv3_1 layer activations for the reconstruction loss, and the activations in the last convolutional layer pool_5 for the prediction loss and when evaluating the performance. Given a 176x176 color input image, we compute the activations at each layer mentioned earlier after ReLU, then we flatten and <span class="math notranslate nohighlight">\(l_2\)</span> normalize them to form features for the loss terms.
 In the HSIC estimates of the decomposition loss, we use a Gaussian RBF kernel <span class="math notranslate nohighlight">\(k(x_1,x_2) = \text{exp} (-\gamma \|x_1-x_2\|^2)\)</span> width <span class="math notranslate nohighlight">\(\gamma=1.0\)</span> for image features, and <span class="math notranslate nohighlight">\(\gamma =0.5\)</span> for protected characteristics (as one over squared distance in the binary space).
 To compute the decomposition loss, we add the contributions across the three feature layers.
 We set the trade-off parameters <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span> of the reconstruction loss and the decomposition loss, respectively, to <span class="math notranslate nohighlight">\(1.0\)</span>, and the TV regularization strength, <span class="math notranslate nohighlight">\(\lambda_3\)</span>
 to <span class="math notranslate nohighlight">\(10^{-3}\)</span>.
 Training was carried out for 50 epochs with a batch size of <span class="math notranslate nohighlight">\(80\)</span> images.
-We use minibatch SGD and apply the Adam solver <span id="id58">[<span>kingma2014adam</span>]</span> with learning rate <span class="math notranslate nohighlight">\(10^{-3}\)</span>; our <a class="reference external" href="https://github.com/predictive-analytics-lab/Data-Domain-Fairness">TensorFlow implementation is publicly available</a>.</p>
+We use minibatch SGD and apply the Adam solver <span id="id58">[]</span> with learning rate <span class="math notranslate nohighlight">\(10^{-3}\)</span>; our <a class="reference external" href="https://github.com/predictive-analytics-lab/Data-Domain-Fairness">TensorFlow implementation is publicly available</a>.</p>
 </div>
 <div class="section" id="benchmarking-and-interpretability">
 <h4>Benchmarking and interpretability<a class="headerlink" href="#benchmarking-and-interpretability" title="Permalink to this headline">¶</a></h4>
 <p>We enforce equality of opportunity as the fairness criterion, and we consider attractiveness as the positive label.
-Attractiveness is what could give someone a job opportunity or an advantaged outcome as defined in <span id="id59">[<a class="reference internal" href="../bib.html#id68"><span>HPS16</span></a>]</span>.
-To test the hypothesis that we have learned a fairer image representation, we compare the performance and fairness of a standard SVM classifier trained using original images and the translated fair images. We use activation in the pool_5 layer of the VGG19 network as features for training and evaluating the classifier<a class="footnote-reference brackets" href="#id192" id="id60">3</a>.</p>
+Attractiveness is what could give someone a job opportunity or an advantaged outcome as defined in <span id="id59">[<a class="reference internal" href="../bib.html#id68">HPS16</a>]</span>.
+To test the hypothesis that we have learned a fairer image representation, we compare the performance and fairness of a standard SVM classifier trained using original images and the translated fair images. We use activation in the pool_5 layer of the VGG19 network as features for training and evaluating the classifier<a class="footnote-reference brackets" href="#id215" id="id60">3</a>.</p>
 <p>We report the quantitative results of this experiment in Table \ref{tab:results_celeba} (first and third rows) and the qualitative evaluations of image-to-image translations in Figure \ref{fig:faces}.<br />
 From the Table \ref{tab:results_celeba} it is clear that the classifier trained on fair/translated images <span class="math notranslate nohighlight">\(\xtilde\)</span> has improved over the classifier trained on the original images <span class="math notranslate nohighlight">\(\x\)</span> in terms of equality of opportunity (reduction from <span class="math notranslate nohighlight">\(33.8\)</span> to <span class="math notranslate nohighlight">\(23.8\)</span>) while maintaining the prediction accuracy (<span class="math notranslate nohighlight">\(79.4\)</span> comparing to <span class="math notranslate nohighlight">\(80.6\)</span>).
 Looking at the TPR values across protected features (females and males), we can see that the male TPR value has increased, but it has an opposite effect for females.
@@ -856,14 +864,14 @@ To understand the balancing mechanism of TPR values (<strong>Q3</strong>), we vi
 \end{tabular}
 \end{tabular}
 \caption{Results of our approach (image-to-image translation via attributes). Given <span class="math notranslate nohighlight">\(N\)</span> i.i.d. samples <span class="math notranslate nohighlight">\(\{(\x^n,y^n)\}_{n=1}^N\)</span>, our method transforms them into a new fair dataset <span class="math notranslate nohighlight">\(\{(\tilde{\x}^n,y^n)\}_{n=1}^{N}\)</span> where <span class="math notranslate nohighlight">\((\tilde{\x}^n,y^n)\)</span> is the fair version of <span class="math notranslate nohighlight">\((\x^n,y^n)\)</span>.
-The synthesized images are produced by the StarGAN model <span id="id61">[<span>ChoChoKimHaetal18</span>]</span> conditioned on the original images and their fair attribute representation. }
+The synthesized images are produced by the StarGAN model <span id="id61">[]</span> conditioned on the original images and their fair attribute representation. }
 \label{fig:faces_attributes}
 \end{figure}
 \begin{figure}[t!b]
 \centering
 \includegraphics[width=0.23\textwidth]{figures/Sattigeri_male_attractive_images/male_attractive_eopp/Male_1_Attractive_0_debias_1.png}
 \includegraphics[width=0.23\textwidth]{figures/Sattigeri_male_attractive_images/male_attractive_eopp/Male_1_Attractive_1_debias_1.png}
-\caption{Results of Fainess GAN <span id="id62">[<a class="reference internal" href="../bib.html#id12"><span>SHCV19</span></a>]</span> (Fig.2) of non-attractive (left) and attractive (right) males after pre-processing.
+\caption{Results of Fainess GAN <span id="id62">[<a class="reference internal" href="../bib.html#id12">SHCV19</a>]</span> (Fig.2) of non-attractive (left) and attractive (right) males after pre-processing.
 Given <span class="math notranslate nohighlight">\(N\)</span> i.i.d. samples <span class="math notranslate nohighlight">\(\{(\x^n,y^n)\}_{n=1}^N\)</span>, Fainess GAN transforms them into a new fair dataset <span class="math notranslate nohighlight">\(\{(\tilde{\x}^n,\tilde{y}^n)\}_{n=1}^{N'}\)</span> where <span class="math notranslate nohighlight">\(N'\neq N\)</span> and <span class="math notranslate nohighlight">\((\tilde{\x}^n,\tilde{y}^n)\)</span> has no correspondence to <span class="math notranslate nohighlight">\((\x^n,y^n)\)</span>.}
 \label{fig:fairgan}
 \end{figure}
@@ -877,7 +885,7 @@ We observe a consistent localized area in face, specifically <em>lips</em> and <
 The CelebA dataset has a large diversity in visual appearance of females and males (hair style, hair color) and their ethnic groups, so more localized facial areas have to be discovered to equalize TPR values across groups.
 Lips are very often coloured in female (the majority group) celebrity faces, hence our method, to increase the minority group TPR value, colorizes the lip regions of the minority group (males).
 Interestingly, female faces without prominent lipstick often got this transformation as well, prompting the decrease in the majority group TPR value.
-Regarding eye regions, several studies (e.g. <span id="id63">[<span>brown1993</span>]</span> and references therein) have shown their importance in gender identification.
+Regarding eye regions, several studies (e.g. <span id="id63">[]</span> and references therein) have shown their importance in gender identification.
 Also, a heavy makeup that is often applied to female celebrity eyes can also support our visualization in Figure \ref{fig:faces}.</p>
 <p>The image-to-image translation using transformer network learns to produce coarse-grained changes, i.e. masking/colorizing face regions.
 This is expected as we learn a highly unconstrained mapping from source to target domain, in which the target data is unavailable.
@@ -902,25 +910,25 @@ This is encouraging as we have just arrived at the same conclusion (Figures \ref
 <div class="section" id="image-to-image-translation-via-attributes">
 <h4>Image-to-image translation via attributes<a class="headerlink" href="#image-to-image-translation-via-attributes" title="Permalink to this headline">¶</a></h4>
 <p>Given the remarkable progress that has been made in the field towards image synthesis with the conditional GAN models, we attempt to synthesize images with respect to the attribute description.<br />
-Specifically, we use the StarGAN model <span id="id64">[<span>ChoChoKimHaetal18</span>]</span>, the state-of-the-art model for image synthesis with multi-attribute transformation, to synthesize images with our learned fair attribute representation.
+Specifically, we use the StarGAN model <span id="id64">[]</span>, the state-of-the-art model for image synthesis with multi-attribute transformation, to synthesize images with our learned fair attribute representation.
 For this, we pre-train the StarGAN model to perform image transformations with <span class="math notranslate nohighlight">\(38\)</span> binary attributes (excluding gender and attractive attributes) using training data.
 We then translate all images in CelebA with respect to their fair attribute representation.<br />
 We evaluate the performance of this approach and report the results in Table \ref{tab:results_celeba} (last row).
 We also include the qualitative evaluations of image-to-image translations via attributes in Figure \ref{fig:faces_attributes}.
-These visualizations essentially generalize counterfactual explanations in the sense of <span id="id65">[<a class="reference internal" href="../bib.html#id117"><span>WMR18</span></a>]</span> to the image domain.
+These visualizations essentially generalize counterfactual explanations in the sense of <span id="id65">[<a class="reference internal" href="../bib.html#id117">WMR18</a>]</span> to the image domain.
 We have just shown the “closest synthesized world”, i.e. the smallest change to the world that can be made to obtain a desirable outcome.
 Overall, the classifier trained using this fair representation shows similar Eq. Opp. performance and comparable accuracy to the classifier trained on representation learned with the transformer network.
 However, the TPR rates for both protected groups are higher (last row versus third row), especially in the group of males, when using this representation.</p>
 </div>
 <div class="section" id="pre-processing-approaches">
 <h4>Pre-processing approaches<a class="headerlink" href="#pre-processing-approaches" title="Permalink to this headline">¶</a></h4>
-<p>The aim of the pre-processing approaches such as <span id="id66">[<a class="reference internal" href="../bib.html#id12"><span>SHCV19</span></a>,<span>calmon2017optimized</span>]</span> is to transform the given dataset of <span class="math notranslate nohighlight">\(N\)</span> i.i.d. samples <span class="math notranslate nohighlight">\(\{(\x^n,y^n)\}_{n=1}^N\)</span> into a <em>new</em> fair dataset <span class="math notranslate nohighlight">\(\{(\tilde{\x}^n,\tilde{y}^n)\}_{n=1}^{N'}\)</span>.
+<p>The aim of the pre-processing approaches such as <span id="id66">[<a class="reference internal" href="../bib.html#id12">SHCV19</a>]</span> is to transform the given dataset of <span class="math notranslate nohighlight">\(N\)</span> i.i.d. samples <span class="math notranslate nohighlight">\(\{(\x^n,y^n)\}_{n=1}^N\)</span> into a <em>new</em> fair dataset <span class="math notranslate nohighlight">\(\{(\tilde{\x}^n,\tilde{y}^n)\}_{n=1}^{N'}\)</span>.
 It is important to note that <span class="math notranslate nohighlight">\(N'\)</span> is not necessarily equal to <span class="math notranslate nohighlight">\(N\)</span>, and therefore <span class="math notranslate nohighlight">\((\tilde{\x}^n,\bar{y}^n)\)</span> has no correspondence to <span class="math notranslate nohighlight">\((\x^n,y^n)\)</span>.
-<span id="id67">[<span>calmon2017optimized</span>]</span> has proposed this approach for tabular (discrete) data, while <span id="id68">[<a class="reference internal" href="../bib.html#id12"><span>SHCV19</span></a>]</span> has explored image data.
+<span id="id67">[]</span> has proposed this approach for tabular (discrete) data, while <span id="id68">[<a class="reference internal" href="../bib.html#id12">SHCV19</a>]</span> has explored image data.
 Here, we offer a unified framework for tabular (continuous and discrete) and image data that transforms the given dataset <span class="math notranslate nohighlight">\(\{(\x^n,y^n)\}_{n=1}^N\)</span> into a new fair dataset <span class="math notranslate nohighlight">\(\{(\tilde{\x}^n,y^n)\}_{n=1}^{N}\)</span> where <span class="math notranslate nohighlight">\((\tilde{\x}^n,y^n)\)</span> is the fair version of <span class="math notranslate nohighlight">\((\x^n,y^n)\)</span>.
-<em>What is the advantage of creating a fair representation per sample (our method) rather than on the whole dataset at once <span id="id69">[<a class="reference internal" href="../bib.html#id12"><span>SHCV19</span></a>,<span>calmon2017optimized</span>]</span>?</em>
+<em>What is the advantage of creating a fair representation per sample (our method) rather than on the whole dataset at once <span id="id69">[<a class="reference internal" href="../bib.html#id12">SHCV19</a>]</span>?</em>
 The first can be used to provide an <em>individual</em>-level explanation of fair systems, while the latter can only be used to provide a <em>system</em>-level explanation.
-For comparison, we include here a snapshot of results presented in <span id="id70">[<a class="reference internal" href="../bib.html#id12"><span>SHCV19</span></a>]</span> using the CelebA dataset in Figure \ref{fig:fairgan}.
+For comparison, we include here a snapshot of results presented in <span id="id70">[<a class="reference internal" href="../bib.html#id12">SHCV19</a>]</span> using the CelebA dataset in Figure \ref{fig:fairgan}.
 The figure shows eigenfaces/eigensketches with <em>the mean image</em> of the new fair dataset <span class="math notranslate nohighlight">\(\{(\tilde{\x}^n)\}_{n=1}^{N'}\)</span> (in the center) of the <span class="math notranslate nohighlight">\(3\times 3\)</span> grid.
 No per sample visualisation <span class="math notranslate nohighlight">\((\tilde{\x}^n)\)</span> was provided.
 Left/right/top/bottom images in Fig. \ref{fig:fairgan} show variations along the first/second principal components.
@@ -966,14 +974,23 @@ These preliminary results are encouraging and further analysis will be addressed
 <dt class="label" id="id149"><span class="brackets"><a class="fn-backref" href="#id12">GUA+16</a></span></dt>
 <dd><p>Yaroslav Ganin, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario March, and Victor Lempitsky. Domain-adversarial training of neural networks. <em>Journal of Machine Learning Research</em>, 17(59):1–35, 2016. URL: <a class="reference external" href="http://jmlr.org/papers/v17/15-239.html">http://jmlr.org/papers/v17/15-239.html</a>.</p>
 </dd>
+<dt class="label" id="id194"><span class="brackets">GEB16</span><span class="fn-backref">(<a href="#id34">1</a>,<a href="#id35">2</a>,<a href="#id36">3</a>,<a href="#id56">4</a>)</span></dt>
+<dd><p>Leon Gatys, Alexander Ecker, and Matthias Bethge. A neural algorithm of artistic style. <em>Journal of Vision</em>, 16(12):326, Sep 2016. URL: <a class="reference external" href="http://dx.doi.org/10.1167/16.12.326">http://dx.doi.org/10.1167/16.12.326</a>, <a class="reference external" href="https://doi.org/10.1167/16.12.326">doi:10.1167/16.12.326</a>.</p>
+</dd>
+<dt class="label" id="id191"><span class="brackets">GBR+12</span><span class="fn-backref">(<a href="#id24">1</a>,<a href="#id31">2</a>)</span></dt>
+<dd><p>Arthur Gretton, Karsten M. Borgwardt, Malte J. Rasch, Bernhard Schölkopf, and Alexander Smola. A kernel two-sample test. <em>Journal of Machine Learning Research</em>, 13(25):723–773, 2012. URL: <a class="reference external" href="http://jmlr.org/papers/v13/gretton12a.html">http://jmlr.org/papers/v13/gretton12a.html</a>.</p>
+</dd>
 <dt class="label" id="id183"><span class="brackets">GBSScholkopf05</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id26">2</a>,<a href="#id30">3</a>,<a href="#id33">4</a>)</span></dt>
 <dd><p>Arthur Gretton, Olivier Bousquet, Alex Smola, and Bernhard Schölkopf. Measuring statistical dependence with hilbert-schmidt norms. In Sanjay Jain, Hans Ulrich Simon, and Etsuji Tomita, editors, <em>Algorithmic Learning Theory</em>, 63–77. Berlin, Heidelberg, 2005. Springer Berlin Heidelberg.</p>
 </dd>
 <dt class="label" id="id184"><span class="brackets"><a class="fn-backref" href="#id17">GHRGW18</a></span></dt>
 <dd><p>Nina Grgic-Hlaca, Elissa M. Redmiles, Krishna P. Gummadi, and Adrian Weller. Human perceptions of fairness in algorithmic decision making: a case study of criminal risk prediction. In <em>Proceedings of the 2018 World Wide Web Conference</em>, WWW '18, 903–912. Republic and Canton of Geneva, CHE, 2018. International World Wide Web Conferences Steering Committee. URL: <a class="reference external" href="https://doi.org/10.1145/3178876.3186138">https://doi.org/10.1145/3178876.3186138</a>, <a class="reference external" href="https://doi.org/10.1145/3178876.3186138">doi:10.1145/3178876.3186138</a>.</p>
 </dd>
-<dt class="label" id="id138"><span class="brackets">HPS16</span><span class="fn-backref">(<a href="#id59">1</a>,<a href="#id190">2</a>)</span></dt>
+<dt class="label" id="id138"><span class="brackets">HPS16</span><span class="fn-backref">(<a href="#id59">1</a>,<a href="#id213">2</a>)</span></dt>
 <dd><p>Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 3315–3323. Curran Associates, Inc., 2016. URL: <a class="reference external" href="http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf">http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf</a>.</p>
+</dd>
+<dt class="label" id="id189"><span class="brackets"><a class="fn-backref" href="#id22">HZRS16</a></span></dt>
+<dd><p>K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In <em>2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 770–778. 2016. <a class="reference external" href="https://doi.org/10.1109/CVPR.2016.90">doi:10.1109/CVPR.2016.90</a>.</p>
 </dd>
 <dt class="label" id="id178"><span class="brackets"><a class="fn-backref" href="#id5">IZZE17</a></span></dt>
 <dd><p>Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei A. Efros. Image-to-image translation with conditional adversarial networks. In <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>. July 2017.</p>
@@ -999,16 +1016,25 @@ These preliminary results are encouraging and further analysis will be addressed
 <dt class="label" id="id180"><span class="brackets"><a class="fn-backref" href="#id6">MO14</a></span></dt>
 <dd><p>Mehdi Mirza and Simon Osindero. Conditional generative adversarial nets. <em>CoRR</em>, 2014. URL: <a class="reference external" href="http://arxiv.org/abs/1411.1784">http://arxiv.org/abs/1411.1784</a>, <a class="reference external" href="https://arxiv.org/abs/1411.1784">arXiv:1411.1784</a>.</p>
 </dd>
+<dt class="label" id="id190"><span class="brackets"><a class="fn-backref" href="#id23">MJPScholkopf09</a></span></dt>
+<dd><p>Joris Mooij, Dominik Janzing, Jonas Peters, and Bernhard Schölkopf. Regression by dependence minimization and its application to causal inference in additive noise models. In <em>Proceedings of the 26th Annual International Conference on Machine Learning</em>, ICML '09, 745–752. New York, NY, USA, 2009. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/1553374.1553470">https://doi.org/10.1145/1553374.1553470</a>, <a class="reference external" href="https://doi.org/10.1145/1553374.1553470">doi:10.1145/1553374.1553470</a>.</p>
+</dd>
+<dt class="label" id="id193"><span class="brackets"><a class="fn-backref" href="#id29">NSB02</a></span></dt>
+<dd><p>Ilya Nemenman, F. Shafee, and William Bialek. Entropy and inference, revisited. In T. Dietterich, S. Becker, and Z. Ghahramani, editors, <em>Advances in Neural Information Processing Systems</em>, volume 14. MIT Press, 2002. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2001/file/d46e1fcf4c07ce4a69ee07e4134bcef1-Paper.pdf">https://proceedings.neurips.cc/paper/2001/file/d46e1fcf4c07ce4a69ee07e4134bcef1-Paper.pdf</a>.</p>
+</dd>
 <dt class="label" id="id126"><span class="brackets">QS17</span><span class="fn-backref">(<a href="#id25">1</a>,<a href="#id32">2</a>)</span></dt>
 <dd><p>Novi Quadrianto and Viktoriia Sharmanska. Recycling privileged learning and distribution matching for fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems</em>, volume 30. Curran Associates, Inc., 2017. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2017/file/250cf8b51c773f3f8dc8b4be867a9a02-Paper.pdf">https://proceedings.neurips.cc/paper/2017/file/250cf8b51c773f3f8dc8b4be867a9a02-Paper.pdf</a>.</p>
 </dd>
 <dt class="label" id="id82"><span class="brackets">SHCV19</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id62">2</a>,<a href="#id66">3</a>,<a href="#id68">4</a>,<a href="#id69">5</a>,<a href="#id70">6</a>)</span></dt>
 <dd><p>P. Sattigeri, S. C. Hoffman, V. Chenthamarakshan, and K. R. Varshney. Fairness gan: generating datasets with fairness properties using a generative adversarial network. <em>IBM Journal of Research and Development</em>, 63(4/5):3:1–3:9, 2019. <a class="reference external" href="https://doi.org/10.1147/JRD.2019.2945519">doi:10.1147/JRD.2019.2945519</a>.</p>
 </dd>
+<dt class="label" id="id192"><span class="brackets"><a class="fn-backref" href="#id26">SSG+12</a></span></dt>
+<dd><p>Le Song, Alex Smola, Arthur Gretton, Justin Bedo, and Karsten Borgwardt. Feature selection via dependence maximization. <em>Journal of Machine Learning Research</em>, 13(47):1393–1434, 2012. URL: <a class="reference external" href="http://jmlr.org/papers/v13/song12a.html">http://jmlr.org/papers/v13/song12a.html</a>.</p>
+</dd>
 <dt class="label" id="id187"><span class="brackets"><a class="fn-backref" href="#id65">WMR18</a></span></dt>
 <dd><p>Sandra Wachter, Brent Mittelstadt, and Chris Russell. Counterfactual explanations without opening the black box: automated decisions and the gdpr. <em>Harvard Journal of Law &amp; Technology</em>, 2018.</p>
 </dd>
-<dt class="label" id="id186"><span class="brackets">ZVGRG17</span><span class="fn-backref">(<a href="#id46">1</a>,<a href="#id50">2</a>,<a href="#id190">3</a>)</span></dt>
+<dt class="label" id="id186"><span class="brackets">ZVGRG17</span><span class="fn-backref">(<a href="#id46">1</a>,<a href="#id50">2</a>,<a href="#id213">3</a>)</span></dt>
 <dd><p>Muhammad Bilal Zafar, Isabel Valera, Manuel Gomez Rodriguez, and Krishna P. Gummadi. Fairness beyond disparate treatment &amp; disparate impact: learning classification without disparate mistreatment. In <em>Proceedings of the 26th International Conference on World Wide Web</em>, WWW '17, 1171–1180. Republic and Canton of Geneva, CHE, 2017. International World Wide Web Conferences Steering Committee. URL: <a class="reference external" href="https://doi.org/10.1145/3038912.3052660">https://doi.org/10.1145/3038912.3052660</a>, <a class="reference external" href="https://doi.org/10.1145/3038912.3052660">doi:10.1145/3038912.3052660</a>.</p>
 </dd>
 <dt class="label" id="id147"><span class="brackets">ZWS+13</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id41">2</a>)</span></dt>
@@ -1027,13 +1053,13 @@ These preliminary results are encouraging and further analysis will be addressed
 </p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id189"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
-<dd><p>Examples of fairness criteria are equality of true positive rates (TPR), also called equality of opportunity <span id="id190">[<a class="reference internal" href="../bib.html#id68"><span>HPS16</span></a>,<a class="reference internal" href="../bib.html#id116"><span>ZVGRG17</span></a>]</span>, between males and females.</p>
+<dt class="label" id="id212"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>Examples of fairness criteria are equality of true positive rates (TPR), also called equality of opportunity <span id="id213">[<a class="reference internal" href="../bib.html#id68">HPS16</a>, <a class="reference internal" href="../bib.html#id116">ZVGRG17</a>]</span>, between males and females.</p>
 </dd>
-<dt class="label" id="id191"><span class="brackets"><a class="fn-backref" href="#id21">2</a></span></dt>
+<dt class="label" id="id214"><span class="brackets"><a class="fn-backref" href="#id21">2</a></span></dt>
 <dd><p>With binary labels, it is assumed that positive label is a desirable/advantaged outcome, e.g. expected to perform well at the job.</p>
 </dd>
-<dt class="label" id="id192"><span class="brackets"><a class="fn-backref" href="#id60">3</a></span></dt>
+<dt class="label" id="id215"><span class="brackets"><a class="fn-backref" href="#id60">3</a></span></dt>
 <dd><p>We deliberately evaluate the performance (accuracy and fairness) using an auxiliary classifier instead of using the predictor of the transformer network. Since the emphasis of this work is on representation learning, we should not prescribe what classifier the user chooses on top of learned representation.</p>
 </dd>
 </dl>
@@ -1088,21 +1114,19 @@ These preliminary results are encouraging and further analysis will be addressed
 
       </div>
     </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-170288604-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-170288604-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>
