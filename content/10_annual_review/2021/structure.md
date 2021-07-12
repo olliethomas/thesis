@@ -147,6 +147,13 @@ The majority of this chapter is based on analysing where the representations are
 ### Fair Uncertainty Quantification of Learned Representation (**WIP**)
 The aim is to submit this work to a conference prior to the thesis submission. 
 
+## Conclusion
+The theme throughout this work is providing feedback to a designer.
+The designer may be a data-collector, or an ML-practitioner.
+This feedback is a form of interpretability that is missing from almost all fairness-inducing machine learning methods.
+While the work in this thesis will surely not be the final word on this topic, important in-roads are made to allow
+increasingly complex models to be deployed in consequential settings with confidence.
+
 [^eccv2020]: ERA rating A (best), QUALIS rating A1 (best), CORE rank A, 27% acceptance rate (2020).
 [^cvpr2019]: ERA rating A (best), QUALIS rating A1 (best), CORE rank A* (best), 25.2% acceptance rate (2019).
 [^dami2021]: Impact Factor 3.670 (2020).
