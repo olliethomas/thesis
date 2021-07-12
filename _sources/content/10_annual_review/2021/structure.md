@@ -140,11 +140,12 @@ In this work I was responsible for:
 
 ## Chapter 3
 
-In this chapter I extend the work of chapter 1 by providing uncertainty estimates of the model used to provide a fair representation.
-I contrast this with the 
+In this chapter I extend the work of chapter 1 by providing uncertainty estimates of the model used to provide a fair and interpretable representation.
+This is achieved by using a Monte-Carlo Dropout approach, providing multiple hypotheses of a fair representation for each input.
+The majority of this chapter is based on analysing where the representations are in consensus vs disagreement.
 
-## Fair Uncertainty Quantification of Learned Representation (**WIP**)
-
+### Fair Uncertainty Quantification of Learned Representation (**WIP**)
+The aim is to submit this work to a conference prior to the thesis submission. 
 
 [^eccv2020]: ERA rating A (best), QUALIS rating A1 (best), CORE rank A, 27% acceptance rate (2020).
 [^cvpr2019]: ERA rating A (best), QUALIS rating A1 (best), CORE rank A* (best), 25.2% acceptance rate (2019).
