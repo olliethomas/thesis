@@ -34,3 +34,4 @@ parts:
     sections:
     - file: content/09_appendix/software/ethicml
     - file: content/09_appendix/software/intervene
+    - file: content/09_appendix/software/fair_bolts
