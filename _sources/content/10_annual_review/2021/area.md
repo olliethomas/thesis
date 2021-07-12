@@ -92,7 +92,7 @@ My work specifically deals with _this_ problem.
 
 This work focuses on working with data, which is imperfect, but readily available, and asks:
 
-Given some data, can we use machine learning to provide feedback about changes needed in the data, or an existsing system, to counteract specific types of bias?
+Given some data, can we use machine learning to provide feedback about changes needed in the data, or an existing system, to counteract specific types of bias?
 
 [^footnote]: http://sanmi.cs.illinois.edu/documents/Representation_Learning_Fairness_NeurIPS19_Tutorial.pdf
 
@@ -105,7 +105,7 @@ I will answer this question by:
 - demonstrating that fair representations of data can be built in the original data domain without loss of performance with regard to both utility and fairness criterion.
   - this will provide feedback as to how the model _changes_ the data so that it becomes fair.
 - demonstrating that fair representations can be used to estimate counterfactual reconstructions of the input.
-  - this will provide feedback as to which _inidividuals_ are at risk of an unfair decision, by querying if they would receive
+  - this will provide feedback as to which _individuals_ are at risk of an unfair decision, by querying if they would receive
     a fair decision in a counterfactual world.
 - demonstrating that fair representations can be used to quantify uncertainty in a decision.
   - this will provide feedback as to how confident a model is that the decision is fair.

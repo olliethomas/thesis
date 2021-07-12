@@ -11,7 +11,7 @@
 ### 2020-2021: Full Time
 #### Submissions
 - FAccT (September '20): We re-submitted the "Imagined Examples" paper with a new title, adding Dr. Miri Zilka as a co-author. 
-  The direction of the paper shifted from providing additional traininig samples, to identifying at-risk individuals. 
+  The direction of the paper shifted from providing additional training samples, to identifying at-risk individuals. 
   The title was changed to reflect this, becoming "Beyond Decision Dichotomy: When Two Fairness Axioms Collide in the Real World".
    - Outcome: Reject.
    - Scores and main criticism: 

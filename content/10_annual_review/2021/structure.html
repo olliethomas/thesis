@@ -516,7 +516,6 @@ However, in NIFR, we assume the input is the result of an unknown function, <spa
 We assume a decomposition of <span class="math notranslate nohighlight">\(\phi(x) = \phi(\hat{x}) + \phi(\tilde{x})\)</span>, where <span class="math notranslate nohighlight">\(\phi\)</span> is a pre-trained feature map.</p>
 <p>For this paper I was responsible for:</p>
 <ul class="simple">
-<li><p>framing the solution as a method of interpretability</p></li>
 <li><p>writing code</p></li>
 <li><p>writing sections of the text</p></li>
 <li><p>experiments on the tabular data</p></li>
@@ -551,10 +550,10 @@ I do this using a relaxed form of Counterfactual Fairness.
 In this definition of fairness, I ask if the decision would have been affected if the individual had a different value
 for their protected attribute (i.e. they had been born of a different race or gender).
 To ‘properly’ perform counterfactual modeling requires access to a data-generation procedure called a Structural Causal Model.
-As these are difficult to obtain, I make use of the excellect performance that models such as StarGAN <span id="id4">[<a class="reference internal" href="../../bib.html#id143">CCK+18b</a>]</span>
+As these are difficult to obtain, I make use of the excellent performance that models such as StarGAN <span id="id4">[<a class="reference internal" href="../../bib.html#id143">CCK+18b</a>]</span>
 and Cycle-Gan <span id="id5">[<a class="reference internal" href="../../bib.html#id111">ZPIE17</a>]</span> achieve in unsupervised image-to-image domain translation, where domains include,
 gender, hair colour, race, or other visible differences.</p>
-<p>In this work I make use of fair representations which, in the laguage of the above models, encourages invariance to a specific domain
+<p>In this work I make use of fair representations which, in the language of the above models, encourages invariance to a specific domain
 using additional data as opposed to inferring this from a large amount of data.
 Because of this additional data, fewer samples are required to produce a similar result.</p>
 <p>I use these domain translation results as our counterfactual examples for interrogating an existing model.
