@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thesis Structure &#8212; Fair Representations of Biased Data</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="oliverthomas.ml/content/10_annual_review/2021/structure.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Publications" href="../../09_appendix/published.html" />
+    <link rel="prev" title="Activities to date" href="activities_to_date.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      <img src="../../../_static/pal-logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Fair Representations of Biased Data</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content.html">
+   Content
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Thesis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_introduction/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02_data_domain_fairness/intro.html">
+   Data Domain Fairness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../03_identifying/intro.html">
+   An Algorithmic Framework for Positive Action
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../08_conclusion/conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bib.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Annual Review
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../ar_21.html">
+   Annual Review 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="area.html">
+     Research Area &amp; Question
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activities_to_date.html">
+     Activities to date
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Thesis Structure
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../09_appendix/published.html">
+   Publications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_appendix/publications/dfritdd.html">
+     Discovering Fair Representations in the Data Domain
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_appendix/publications/nosinn.html">
+     Null-Sampling for Invariant and Interpretable Representations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_appendix/publications/lit_review.html">
+     Literature Review (Year 1 Annual Review)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../09_appendix/software.html">
+   Software
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_appendix/software/ethicml.html">
+     EthicML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../09_appendix/software/intervene.html">
+     Casual Discovery Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/10_annual_review/2021/structure.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/olliethomas/thesis/issues/new?title=Issue%20on%20page%20%2Fcontent/10_annual_review/2021/structure.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/olliethomas/thesis/edit/master/content/10_annual_review/2021/structure.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#title">
+   Title
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-work">
+   Background Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-1">
+   Chapter 1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discovering-fair-representations-in-the-data-domain">
+     Discovering Fair Representations in the Data Domain
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#null-sampling-for-invariant-and-interpretable-representations">
+     Null-Sampling for Invariant and Interpretable Representations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-2">
+   Chapter 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-3">
+   Chapter 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fair-uncertainty-quantification-of-learned-representation-wip">
+   Fair Uncertainty Quantification of Learned Representation (
+   <strong>
+    WIP
+   </strong>
+   )
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="thesis-structure">
+<h1>Thesis Structure<a class="headerlink" href="#thesis-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="title">
+<h2>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h2>
+<p>Fair Representations of Data</p>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Introduction</p>
+<ul class="simple">
+<li><p>Research Question: Can we learn to produce a representation of data that makes downstream tasks <strong>fair</strong>?</p></li>
+<li><p>What are the potential benefits of doing this?</p></li>
+</ul>
+</li>
+<li><p>Background: Literature Review</p>
+<ol class="simple">
+<li><p>Fair Machine Learning.</p>
+<ul class="simple">
+<li><p>Definitions of fairness.</p></li>
+</ul>
+</li>
+<li><p>Adversarial approaches.</p></li>
+<li><p>Distribution matching.</p></li>
+<li><p>Causality.</p>
+<ul class="simple">
+<li><p>Counterfactual Fairness.</p></li>
+</ul>
+</li>
+<li><p>Challenges.</p></li>
+</ol>
+</li>
+<li><p><strong>Chapter 1</strong>
+Without access to additional data, what changes can be made to make the data itself <em>fair</em>?</p>
+<p>Papers</p>
+<ol class="simple">
+<li><p>Discovering Fair Representations in the Data Domain.</p></li>
+<li><p>Null-Sampling for Invariant and Interpretable Representations.</p></li>
+</ol>
+</li>
+<li><p><strong>Chapter 2</strong>
+Which candidates appear susceptible to unfair treatment?</p>
+<p>Papers</p>
+<ol class="simple">
+<li><p>An Algorithmic Framework for Positive Action</p></li>
+</ol>
+</li>
+<li><p><strong>Chapter 3</strong>
+How certain is a model that the representation learned is fair?</p>
+<p>Papers</p>
+<ol class="simple">
+<li><p>Re(presentation)-Mixup for Uncertainty Quantification (<strong>WIP</strong>)</p></li>
+</ol>
+</li>
+<li><p>Conclusion</p></li>
+</ol>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This chapter opens with my research question: Is it possible to learn to produce representations of data that provide enough information
+for a downstream classification model to have utility, but also obfuscate protected characteristics?
+In addition, I introduce the overall theme of the work, providing mechanisms to give feedback to a designer.
+Different types of feedback are discussed in each chapter:</p>
+<ul class="simple">
+<li><p>Chapter 1 consists of providing feedback about what needs to change about the data to become “fair”.</p></li>
+<li><p>Chapter 2 looks at providing feedback at deployment/inference time to ask which individuals are most at risk of an unfair decision.</p></li>
+<li><p>Chapter 3 looks at methods which add a quantification of certainty around the “fairness” of a learned representation.</p></li>
+</ul>
+<p>This is followed by a discussion of the topic, with a particular focus on the benefits of this area of research, and the challenges.</p>
+</div>
+<div class="section" id="background-work">
+<h2>Background Work<a class="headerlink" href="#background-work" title="Permalink to this headline">¶</a></h2>
+<p>This chapter consists of a literature review of works to date.
+The topic of fair machine learning is very broad, so there is a particular focus on learned representations.</p>
+<p>The structure is:</p>
+<ol class="simple">
+<li><p>What is Fair Machine Learning?</p>
+<ul class="simple">
+<li><p>Definitions of fairness.</p>
+<ul>
+<li><p>Group</p></li>
+<li><p>Individual</p></li>
+<li><p>Counterfactual</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>A history of Fair Representation Learning.</p></li>
+<li><p>Adversarial approaches.</p></li>
+<li><p>Distribution matching.</p></li>
+<li><p>Causality.</p>
+<ul class="simple">
+<li><p>Counterfactual Fairness.</p></li>
+</ul>
+</li>
+<li><p>Challenges.</p></li>
+</ol>
+</div>
+<div class="section" id="chapter-1">
+<h2>Chapter 1<a class="headerlink" href="#chapter-1" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The aim is to submit this chapter to a journal at the same time as submitting the thesis.</p>
+</div>
+</div>
+<p>The first chapter ties together work completed in two papers:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../09_appendix/publications/dfritdd.html"><span class="doc std std-doc">Discovering Fair Representations in the Data Domain</span></a> (DFR)</p>
+<ul>
+<li><p>Published at CVPR 2019<a class="footnote-reference brackets" href="#cvpr2019" id="id1">1</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../../09_appendix/publications/nosinn.html"><span class="doc std std-doc">Null-sampling for Invariant and Fair Representations</span></a> (NIFR)</p>
+<ul>
+<li><p>Published at ECCV 2020<a class="footnote-reference brackets" href="#eccv2020" id="id2">2</a></p></li>
+</ul>
+</li>
+</ul>
+<p>In both works, the aim is to produce a modified version of the input so that a downstream model produces a <em>fair</em>-er
+prediction when trained using this version, as opposed to the input.
+The main difference between the works is the assumptions about how the data can be decomposed.
+In DFR, it is assumed that an input consists of the “fair” version of the image with an “unfair” mask added to it.
+e.g. <span class="math notranslate nohighlight">\(\textrm{input} = \textrm{fair input} + \textrm{unfair mask}\)</span>.
+However, in NIFR, we assume the input is the result of an unknown function, <span class="math notranslate nohighlight">\(d(\cdot, \cdot)\)</span> e.g.
+<span class="math notranslate nohighlight">\(\textrm{input} = d(\textrm{fair input}, \textrm{unfair mask})\)</span>.</p>
+<p>I present both papers together in this chapter, with extensions to both from their conference versions.</p>
+<div class="section" id="discovering-fair-representations-in-the-data-domain">
+<h3>Discovering Fair Representations in the Data Domain<a class="headerlink" href="#discovering-fair-representations-in-the-data-domain" title="Permalink to this headline">¶</a></h3>
+<p>In this paper we decompose an image into a fair component (<span class="math notranslate nohighlight">\(\hat{x}\)</span>) and an unfair component (<span class="math notranslate nohighlight">\(\tilde{x}\)</span>).
+We assume a decomposition of <span class="math notranslate nohighlight">\(\phi(x) = \phi(\hat{x}) + \phi(\tilde{x})\)</span>, where <span class="math notranslate nohighlight">\(\phi\)</span> is a pre-trained feature map.</p>
+<p>For this paper I was responsible for:</p>
+<ul class="simple">
+<li><p>framing the solution as a method of interpretability</p></li>
+<li><p>writing code</p></li>
+<li><p>writing sections of the text</p></li>
+<li><p>experiments on the tabular data</p></li>
+</ul>
+<p>This chapter will extend the conference paper by comparing HSIC (the independence measure used in the paper) to enforce
+independence vs adversarial learning and distribution matching.
+In addition, results will be included experimenting with non-binary sensitive and class labels.</p>
+</div>
+<div class="section" id="null-sampling-for-invariant-and-interpretable-representations">
+<h3>Null-Sampling for Invariant and Interpretable Representations<a class="headerlink" href="#null-sampling-for-invariant-and-interpretable-representations" title="Permalink to this headline">¶</a></h3>
+<p>A natural successor to the CVPR ‘19 paper, we build on the previous work, but instead of a decomposition assumed as
+<span class="math notranslate nohighlight">\(\phi(x) = \phi(\hat{x}) + \phi(\tilde{x})\)</span>, we try to learn some decomposition function <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(x=d(\hat{x}, \tilde{x})\)</span>.
+This work will be expended to include analysis of the interpretability of the representation in the data domain.</p>
+<p>For this paper I was responsible for:</p>
+<ul class="simple">
+<li><p>writing code</p></li>
+<li><p>running experiments</p></li>
+<li><p>writing sections of the text</p></li>
+<li><p>designing the evaluation</p></li>
+<li><p>proposing methods to overcome challenges (e.g. using an AE as a pre-processor for the tabular data.)</p></li>
+</ul>
+<p>This chapter will extend the conference paper by providing more analysis of the results for interpretability.</p>
+</div>
+</div>
+<div class="section" id="chapter-2">
+<h2>Chapter 2<a class="headerlink" href="#chapter-2" title="Permalink to this headline">¶</a></h2>
+<p>This chapter consists of the paper <a class="reference internal" href="../../03_identifying/intro.html"><span class="doc std std-doc">“An Algorithmic Framework for Positive Action”</span></a>,
+submitted to Data Mining and Knowledge Discovery Special issue on Bias and Fairness in AI.<a class="footnote-reference brackets" href="#dami2021" id="id3">3</a></p>
+<p>In this work I try to determine, at inference time, individuals who are at risk of receiving a biased decision.
+I do this using a relaxed form of Counterfactual Fairness.
+In this definition of fairness, I ask if the decision would have been affected if the individual had a different value
+for their protected attribute (i.e. they had been born of a different race or gender).
+To ‘properly’ perform counterfactual modeling requires access to a data-generation procedure called a Structural Causal Model.
+As these are difficult to obtain, I make use of the excellect performance that models such as StarGAN <span id="id4">[<a class="reference internal" href="../../bib.html#id143">CCK+18b</a>]</span>
+and Cycle-Gan <span id="id5">[<a class="reference internal" href="../../bib.html#id111">ZPIE17</a>]</span> achieve in unsupervised image-to-image domain translation, where domains include,
+gender, hair colour, race, or other visible differences.</p>
+<p>In this work I make use of fair representations which, in the laguage of the above models, encourages invariance to a specific domain
+using additional data as opposed to inferring this from a large amount of data.
+Because of this additional data, fewer samples are required to produce a similar result.</p>
+<p>I use these domain translation results as our counterfactual examples for interrogating an existing model.
+If the outcomes are different across counterfactuals, then we provide a strategy to handle this using the notion
+of Positive Action.</p>
+<p>In this work I was responsible for:</p>
+<ul class="simple">
+<li><p>Writing code</p></li>
+<li><p>Running experiments</p></li>
+<li><p>Writing sections of the text</p></li>
+</ul>
+</div>
+<div class="section" id="chapter-3">
+<h2>Chapter 3<a class="headerlink" href="#chapter-3" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter I extend the work of chapter 1 by providing uncertainty estimates of the model used to provide a fair representation.
+I contrast this with the</p>
+</div>
+<div class="section" id="fair-uncertainty-quantification-of-learned-representation-wip">
+<h2>Fair Uncertainty Quantification of Learned Representation (<strong>WIP</strong>)<a class="headerlink" href="#fair-uncertainty-quantification-of-learned-representation-wip" title="Permalink to this headline">¶</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="cvpr2019"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>ERA rating A (best), QUALIS rating A1 (best), CORE rank A* (best), 25.2% acceptance rate (2019).</p>
+</dd>
+<dt class="label" id="eccv2020"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>ERA rating A (best), QUALIS rating A1 (best), CORE rank A, 27% acceptance rate (2020).</p>
+</dd>
+<dt class="label" id="dami2021"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Impact Factor 3.670 (2020).</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/10_annual_review/2021"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="activities_to_date.html" title="previous page">Activities to date</a>
+    <a class='right-next' id="next-link" href="../../09_appendix/published.html" title="next page">Publications</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Oliver Thomas<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-170288604-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

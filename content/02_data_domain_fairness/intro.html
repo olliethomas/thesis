@@ -134,13 +134,13 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Annual Review 2020
+  Annual Review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../10_annual_review/summary.html">
-   Summary
+  <a class="reference internal" href="../10_annual_review/ar_21.html">
+   Annual Review 2021
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -149,21 +149,21 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10_annual_review/area.html">
+    <a class="reference internal" href="../10_annual_review/2021/area.html">
      Research Area &amp; Question
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_annual_review/2021/activities_to_date.html">
+     Activities to date
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_annual_review/2021/structure.html">
+     Thesis Structure
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_annual_review/activities_to_date.html">
-   Activities to date
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_annual_review/structure.html">
-   Thesis Structure
-  </a>
  </li>
 </ul>
 <p class="caption">
@@ -464,11 +464,11 @@ Hence, the produced representations cannot be easily interpreted.
 They do not have the semantic meaning of the input that photographs, or education and training attainments, provide when we have job application data.
 If we want to encourage public conversations and productive public debates regarding fair machine learning systems <span id="id3">[<a class="reference internal" href="../bib.html#id109">GlobalFCoHR20161818</a>]</span>, interpretability in how fairness is met is an integral yet overlooked ingredient.</p>
 <p>In this paper we focus on representation learning models that can transform inputs to their fair representations and retain the semantics of the input domain in the transformed space.
-When we have image data, our method will make a semantic change to the appearance of an image to deliver a certain fairness criterion <a class="footnote-reference brackets" href="#id212" id="id4">1</a>.
+When we have image data, our method will make a semantic change to the appearance of an image to deliver a certain fairness criterion <a class="footnote-reference brackets" href="#id214" id="id4">1</a>.
 To achieve this, we perform <em>a data-to-data translation</em> by learning a mapping from data in a source domain to a target domain.
 Mapping from source to target domain is a standard procedure, and many methods are available.
 For example, in the image domain, if we have aligned source/target as training data, we can use the pix2pix method of <span id="id5">[<a class="reference internal" href="../bib.html#id108">IZZE17</a>]</span>, which is based on conditional generative adversarial networks (cGANs) <span id="id6">[<a class="reference internal" href="../bib.html#id110">MO14</a>]</span>.
-Zhu et al.’s CycleGAN <span id="id7">[<a class="reference internal" href="../bib.html#id111">ZPIE17</a>]</span> and Choi et al.’s StarGAN <span id="id8">[<a class="reference internal" href="../bib.html#id112">CCK+18</a>]</span> solve a more challenging setting in which only _un_aligned training examples are available.
+Zhu et al.’s CycleGAN <span id="id7">[<a class="reference internal" href="../bib.html#id111">ZPIE17</a>]</span> and Choi et al.’s StarGAN <span id="id8">[<a class="reference internal" href="../bib.html#id112">CCK+18a</a>]</span> solve a more challenging setting in which only _un_aligned training examples are available.
 However, we can not simply reuse existing methods for source-to-target mapping because we do <em>not have data in the target domain</em> (e.g. fair images are not available; images by themselves can not be fair or unfair, it is only when they are coupled with a particular task that the concern of fairness arises).</p>
 <p>To illustrate the difficulty, consider our earlier example of an automated job review system that uses photographs as part of an input.
 For achieving fairness, it is tempting to simply use GAN-driven methods to <em>translate female face photos to male</em>.
@@ -507,7 +507,7 @@ We want the classifier to predict outcomes that are accurate with respect to <sp
 <span id="sec-fairnessdefinitions"></span><h3>Fairness definitions<a class="headerlink" href="#fairness-definitions" title="Permalink to this headline">¶</a></h3>
 <p>Much work has been done on mathematical definitions of fairness (e.g. <span id="id19">[<a class="reference internal" href="../bib.html#id7">Cho17</a>, <a class="reference internal" href="../bib.html#id6">KMR17</a>]</span>).
 It is widely accepted that no single definition of fairness applies in all cases, but will depend on the specific context and application of machine learning models <span id="id20">[<a class="reference internal" href="../bib.html#id109">GlobalFCoHR20161818</a>]</span>.
-In this paper, we focus on the <em>equality of opportunity</em> criterion that requires the classifier <span class="math notranslate nohighlight">\(f\)</span> and the protected characteristic <span class="math notranslate nohighlight">\(s\)</span> be independent, conditional on the label being positive <a class="footnote-reference brackets" href="#id214" id="id21">2</a>, in shorthand notation <span class="math notranslate nohighlight">\(f\ci s\ |\ y = +1\)</span>.
+In this paper, we focus on the <em>equality of opportunity</em> criterion that requires the classifier <span class="math notranslate nohighlight">\(f\)</span> and the protected characteristic <span class="math notranslate nohighlight">\(s\)</span> be independent, conditional on the label being positive <a class="footnote-reference brackets" href="#id216" id="id21">2</a>, in shorthand notation <span class="math notranslate nohighlight">\(f\ci s\ |\ y = +1\)</span>.
 Expressing the shorthand notation in terms of a conditional distribution, we have <span class="math notranslate nohighlight">\(\PP(f(\x)|s,y=+1) = \PP(f(\x)|y=+1)\)</span>.
 With binary protected characteristic, this reads as equal true positive rates across the two groups, <span class="math notranslate nohighlight">\(\PP(f(\x)=+1|s=A,y=+1)=\PP(f(\x)=+1|s=B,y=+1)\)</span>.
 Equivalently, the shorthand notation can also be expressed in terms of joint distributions, resulting in <span class="math notranslate nohighlight">\(\PP(f(\x),s|y=+1) = \PP(f(\x)|y=+1)\PP(s|y=+1)\)</span>.
@@ -832,7 +832,7 @@ We use minibatch SGD and apply the Adam solver <span id="id58">[]</span> with le
 <h4>Benchmarking and interpretability<a class="headerlink" href="#benchmarking-and-interpretability" title="Permalink to this headline">¶</a></h4>
 <p>We enforce equality of opportunity as the fairness criterion, and we consider attractiveness as the positive label.
 Attractiveness is what could give someone a job opportunity or an advantaged outcome as defined in <span id="id59">[<a class="reference internal" href="../bib.html#id68">HPS16</a>]</span>.
-To test the hypothesis that we have learned a fairer image representation, we compare the performance and fairness of a standard SVM classifier trained using original images and the translated fair images. We use activation in the pool_5 layer of the VGG19 network as features for training and evaluating the classifier<a class="footnote-reference brackets" href="#id215" id="id60">3</a>.</p>
+To test the hypothesis that we have learned a fairer image representation, we compare the performance and fairness of a standard SVM classifier trained using original images and the translated fair images. We use activation in the pool_5 layer of the VGG19 network as features for training and evaluating the classifier<a class="footnote-reference brackets" href="#id217" id="id60">3</a>.</p>
 <p>We report the quantitative results of this experiment in Table \ref{tab:results_celeba} (first and third rows) and the qualitative evaluations of image-to-image translations in Figure \ref{fig:faces}.<br />
 From the Table \ref{tab:results_celeba} it is clear that the classifier trained on fair/translated images <span class="math notranslate nohighlight">\(\xtilde\)</span> has improved over the classifier trained on the original images <span class="math notranslate nohighlight">\(\x\)</span> in terms of equality of opportunity (reduction from <span class="math notranslate nohighlight">\(33.8\)</span> to <span class="math notranslate nohighlight">\(23.8\)</span>) while maintaining the prediction accuracy (<span class="math notranslate nohighlight">\(79.4\)</span> comparing to <span class="math notranslate nohighlight">\(80.6\)</span>).
 Looking at the TPR values across protected features (females and males), we can see that the male TPR value has increased, but it has an opposite effect for females.
@@ -987,7 +987,7 @@ These preliminary results are encouraging and further analysis will be addressed
 <dt class="label" id="id184"><span class="brackets"><a class="fn-backref" href="#id17">GHRGW18</a></span></dt>
 <dd><p>Nina Grgic-Hlaca, Elissa M. Redmiles, Krishna P. Gummadi, and Adrian Weller. Human perceptions of fairness in algorithmic decision making: a case study of criminal risk prediction. In <em>Proceedings of the 2018 World Wide Web Conference</em>, WWW '18, 903–912. Republic and Canton of Geneva, CHE, 2018. International World Wide Web Conferences Steering Committee. URL: <a class="reference external" href="https://doi.org/10.1145/3178876.3186138">https://doi.org/10.1145/3178876.3186138</a>, <a class="reference external" href="https://doi.org/10.1145/3178876.3186138">doi:10.1145/3178876.3186138</a>.</p>
 </dd>
-<dt class="label" id="id138"><span class="brackets">HPS16</span><span class="fn-backref">(<a href="#id59">1</a>,<a href="#id213">2</a>)</span></dt>
+<dt class="label" id="id138"><span class="brackets">HPS16</span><span class="fn-backref">(<a href="#id59">1</a>,<a href="#id215">2</a>)</span></dt>
 <dd><p>Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 3315–3323. Curran Associates, Inc., 2016. URL: <a class="reference external" href="http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf">http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf</a>.</p>
 </dd>
 <dt class="label" id="id189"><span class="brackets"><a class="fn-backref" href="#id22">HZRS16</a></span></dt>
@@ -1035,7 +1035,7 @@ These preliminary results are encouraging and further analysis will be addressed
 <dt class="label" id="id187"><span class="brackets"><a class="fn-backref" href="#id65">WMR18</a></span></dt>
 <dd><p>Sandra Wachter, Brent Mittelstadt, and Chris Russell. Counterfactual explanations without opening the black box: automated decisions and the gdpr. <em>Harvard Journal of Law &amp; Technology</em>, 2018.</p>
 </dd>
-<dt class="label" id="id186"><span class="brackets">ZVGRG17</span><span class="fn-backref">(<a href="#id46">1</a>,<a href="#id50">2</a>,<a href="#id213">3</a>)</span></dt>
+<dt class="label" id="id186"><span class="brackets">ZVGRG17</span><span class="fn-backref">(<a href="#id46">1</a>,<a href="#id50">2</a>,<a href="#id215">3</a>)</span></dt>
 <dd><p>Muhammad Bilal Zafar, Isabel Valera, Manuel Gomez Rodriguez, and Krishna P. Gummadi. Fairness beyond disparate treatment &amp; disparate impact: learning classification without disparate mistreatment. In <em>Proceedings of the 26th International Conference on World Wide Web</em>, WWW '17, 1171–1180. Republic and Canton of Geneva, CHE, 2017. International World Wide Web Conferences Steering Committee. URL: <a class="reference external" href="https://doi.org/10.1145/3038912.3052660">https://doi.org/10.1145/3038912.3052660</a>, <a class="reference external" href="https://doi.org/10.1145/3038912.3052660">doi:10.1145/3038912.3052660</a>.</p>
 </dd>
 <dt class="label" id="id147"><span class="brackets">ZWS+13</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id41">2</a>)</span></dt>
@@ -1054,13 +1054,13 @@ These preliminary results are encouraging and further analysis will be addressed
 </p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id212"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
-<dd><p>Examples of fairness criteria are equality of true positive rates (TPR), also called equality of opportunity <span id="id213">[<a class="reference internal" href="../bib.html#id68">HPS16</a>, <a class="reference internal" href="../bib.html#id116">ZVGRG17</a>]</span>, between males and females.</p>
+<dt class="label" id="id214"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>Examples of fairness criteria are equality of true positive rates (TPR), also called equality of opportunity <span id="id215">[<a class="reference internal" href="../bib.html#id68">HPS16</a>, <a class="reference internal" href="../bib.html#id116">ZVGRG17</a>]</span>, between males and females.</p>
 </dd>
-<dt class="label" id="id214"><span class="brackets"><a class="fn-backref" href="#id21">2</a></span></dt>
+<dt class="label" id="id216"><span class="brackets"><a class="fn-backref" href="#id21">2</a></span></dt>
 <dd><p>With binary labels, it is assumed that positive label is a desirable/advantaged outcome, e.g. expected to perform well at the job.</p>
 </dd>
-<dt class="label" id="id215"><span class="brackets"><a class="fn-backref" href="#id60">3</a></span></dt>
+<dt class="label" id="id217"><span class="brackets"><a class="fn-backref" href="#id60">3</a></span></dt>
 <dd><p>We deliberately evaluate the performance (accuracy and fairness) using an auxiliary classifier instead of using the predictor of the transformer network. Since the emphasis of this work is on representation learning, we should not prescribe what classifier the user chooses on top of learned representation.</p>
 </dd>
 </dl>

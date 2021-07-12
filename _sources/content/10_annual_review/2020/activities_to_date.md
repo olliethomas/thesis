@@ -37,18 +37,18 @@
 
 #### Work
 
-- We extended the previous NeurIPS submission and submitted to CVPR[^cvpr2019] [our paper on discovering fair representations in the data domain](../09_appendix/publications/dfritdd.md).
+- We extended the previous NeurIPS submission and submitted to CVPR[^cvpr2019] [our paper on discovering fair representations in the data domain](../../09_appendix/publications/dfritdd.md).
     - We changed the focus to be less on styling and more on the problem of training with an unknown target. 
     The problem identified of finding a "fair" version of an image is not something that can be obviously solved with a typical GAN approach.
     - The paper was **accepted** and published at the main conference.
     - This will form part of chapter 1 of my thesis.  
 - IJCAI[^ijcai2019] [submission on using generative models to balance a dataset with regard to
-  sensitive groups and their outcomes](../../../../Library/Application%20Support/JetBrains/PyCharm2020.3/scratches/imagined.md).
+  sensitive groups and their outcomes](../../../../../Library/Application%20Support/JetBrains/PyCharm2020.3/scratches/imagined.md).
   - Having seen other work focusing on the input data and ignoring the outcomes as a source of bias, we submitted
   a paper to IJCAI which aimed to disentangle the effect of a sensitive attribute from both the input space and the decision space.
   - The paper was rejected with feedback that the paper was poorly structured, which was fair. 
   - This paper was worked on and submitted to AAAI (see 2019-2020). 
-- NeurIPS[^neurips2019] [submission on censoring a representation using an invertible network](../09_appendix/publications/nosinn.md).
+- NeurIPS[^neurips2019] [submission on censoring a representation using an invertible network](../../09_appendix/publications/nosinn.md).
     - Having spoken with colleagues about a new method they were keen to experiment with, Invertible Neural Networks (INNs),
     I spoke with them about my recent work and how I was approaching the problem of disentangling a sensitive attribute
     in latent space, and casting back into the input space, modifying the sensitive partition.
@@ -74,7 +74,7 @@
 
 Since the last annual review, I worked on 3 papers
 
-1. _[Imagined Examples](../../../../Library/Application%20Support/JetBrains/PyCharm2020.3/scratches/imagined.md):_ This is a re-work of the IJCAI submission from the previous year.
+1. _[Imagined Examples](../../../../../Library/Application%20Support/JetBrains/PyCharm2020.3/scratches/imagined.md):_ This is a re-work of the IJCAI submission from the previous year.
 We use a Variational Autoencoder model to produce a model that not 
 only considers the features, but also the reported outcomes as a source of bias. 
 We use this model to generate likely counterfactual samples but without the need for a causal model.
@@ -84,7 +84,7 @@ We also paid more attention to the overlap with the fairness is causality litera
     - This is now continuing work.
     - This will form chapter 2 of my thesis.
 
-2. _[Null-sampling for Invariant and Interpretable Representations](../09_appendix/publications/nosinn.md):_ We use the bijective 
+2. _[Null-sampling for Invariant and Interpretable Representations](../../09_appendix/publications/nosinn.md):_ We use the bijective 
 property of invertible neural networks in conjunction with an adversarial network 
 to _disentangle_ a sensitive attribute's effect on other features. 
 We then generate samples that are neutral with respect to a sensitive attribute, using these neutral images as our 
@@ -143,9 +143,9 @@ at [Conference on Data Science and Optimization](http://www.fields.utoronto.ca/t
 
 ## 2020 onwards: Continuing Work
 
-- Expand the CVPR '19 paper to a journal entry (see [thesis structure section](./structure.md#discovering-fair-representations-in-the-data-domain)).
+- Expand the CVPR '19 paper to a journal entry (see [thesis structure section](structure.md#discovering-fair-representations-in-the-data-domain)).
 - Imagined examples paper.
-- Depending on choice of chapter 3 (see [thesis structure](./structure.md#chapter-3)).
+- Depending on choice of chapter 3 (see [thesis structure](structure.md#chapter-3)).
     - Investigating the use of Active Learning to model changing demographics.
     - Characterising the relationship between fair learnt representations and counterfactual samples.
 - Writing Introduction and Background for thesis. 

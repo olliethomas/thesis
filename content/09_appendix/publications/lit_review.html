@@ -134,13 +134,13 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Annual Review 2020
+  Annual Review
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../10_annual_review/summary.html">
-   Summary
+  <a class="reference internal" href="../../10_annual_review/ar_21.html">
+   Annual Review 2021
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -149,21 +149,21 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../10_annual_review/area.html">
+    <a class="reference internal" href="../../10_annual_review/2021/area.html">
      Research Area &amp; Question
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../10_annual_review/2021/activities_to_date.html">
+     Activities to date
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../10_annual_review/2021/structure.html">
+     Thesis Structure
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../10_annual_review/activities_to_date.html">
-   Activities to date
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../10_annual_review/structure.html">
-   Thesis Structure
-  </a>
  </li>
 </ul>
 <p class="caption">
@@ -498,12 +498,12 @@ This is followed by <a class="reference internal" href="#impl"><span class="std 
 <p>The predominant discussion in this review is around fairness, as this has received the most attention within the machine
 learning community.
 The other areas, interpretability and accountability, which comprise the greater ‘ethical’ category have received far
-less attention<a class="footnote-reference brackets" href="#id236" id="id11">1</a>.
+less attention<a class="footnote-reference brackets" href="#id238" id="id11">1</a>.
 Although, we’ll discuss them briefly in the related work section <a class="reference internal" href="#background"><span class="std std-ref">Initial Experiments in Fairness and Related Work</span></a>.</p>
 <p>One area that has received little exploration, is the difference between
 transparency and interpretability. These terms are often used as
 synonyms, however that leads to confusion. A system can be transparent,
-but that doesn’t mean we are capable of interpreting the results<a class="footnote-reference brackets" href="#id237" id="id12">2</a>.
+but that doesn’t mean we are capable of interpreting the results<a class="footnote-reference brackets" href="#id239" id="id12">2</a>.
 Similar to the idea of a transparent system is one where we can see an
 intermediate representation. This is the concept of learned “fair”
 representations which have proved to be a popular approach to remove
@@ -587,7 +587,7 @@ discriminatory. In general, later work has adopted that both sensitive
 attributes and potentially discriminatory attributes are both referred
 to as sensitive attributes, though more recent works, such as
 “Path-Specific Counterfactual
-Fairness”<span id="id20">[<a class="reference internal" href="../../bib.html#id73">Chi19</a>]</span><a class="footnote-reference brackets" href="#id238" id="id21">3</a> go back to this
+Fairness”<span id="id20">[<a class="reference internal" href="../../bib.html#id73">Chi19</a>]</span><a class="footnote-reference brackets" href="#id240" id="id21">3</a> go back to this
 original view that they are different. The predominant take-away from
 this paper is that it is simply not enough to not directly capture a
 sensitive attribute. The reason for this is that a sensitive attribute
@@ -720,7 +720,7 @@ characteristic, and <em>Disparate Impact</em> is the result of a seemingly fair
 decision affecting a protected group unfairly. Essentially, disparate
 treatment is in the measuring of the effect of <span class="math notranslate nohighlight">\(s\)</span> on <span class="math notranslate nohighlight">\(\hat{y}\)</span>.
 Disparate impact is found in measuring the difference between
-<span class="math notranslate nohighlight">\(p(\hat{y}|s=0)\)</span> and <span class="math notranslate nohighlight">\(p(\hat{y}|s=1)\)</span><a class="footnote-reference brackets" href="#id239" id="id36">4</a>.</p>
+<span class="math notranslate nohighlight">\(p(\hat{y}|s=0)\)</span> and <span class="math notranslate nohighlight">\(p(\hat{y}|s=1)\)</span><a class="footnote-reference brackets" href="#id241" id="id36">4</a>.</p>
 <p>Clearly these definitions are not mutually exclusive. You could choose a
 decision rule that treated groups disparately and it may or may not show
 disparate impact. Similarly regardless of whether there is disparate
@@ -959,7 +959,7 @@ the suggestion that maybe we should be using statistical models to
 underpin moral assumptions.</p>
 <p>A recent paper “Evaluating Fairness Metrics in the Presence of Dataset
 Bias” <span id="id49">[<a class="reference internal" href="../../bib.html#id45">HCMD18</a>]</span> looked into the problem of
-determining which fairness criteria to apply. They look at a dataset<a class="footnote-reference brackets" href="#id240" id="id50">5</a>
+determining which fairness criteria to apply. They look at a dataset<a class="footnote-reference brackets" href="#id242" id="id50">5</a>
 which they use to create 4 datasets, with combinations of Sample Bias,
 No Sample Bias, Label Bias and No Label Bias. They consider a binary
 race attribute (Black, White) where White race is <span class="math notranslate nohighlight">\(s=0\)</span> and Black race
@@ -1147,10 +1147,10 @@ generating data. Fairness is applied by making the generated data fair
 to a specific attribute. “FairGAN” <span id="id65">[<a class="reference internal" href="../../bib.html#id13">XYZW18</a>]</span> use a regular
 GAN set-up, but have an additional discriminator to not just determine
 if the data is real or not, but to also query whether the data generated
-is fair<a class="footnote-reference brackets" href="#id241" id="id66">6</a>. A second paper, “FairnessGAN” <span id="id67">[<a class="reference internal" href="../../bib.html#id12">SHCV19</a>]</span> use a
+is fair<a class="footnote-reference brackets" href="#id243" id="id66">6</a>. A second paper, “FairnessGAN” <span id="id67">[<a class="reference internal" href="../../bib.html#id12">SHCV19</a>]</span> use a
 similar approach, but instead of the UCI Adult dataset (which is
 commonly used in nearly all fairness literature), they use use images
-<a class="footnote-reference brackets" href="#id242" id="id68">7</a> and achieve “generally positive” <span id="id69">[<a class="reference internal" href="../../bib.html#id12">SHCV19</a>]</span> results.</p>
+<a class="footnote-reference brackets" href="#id244" id="id68">7</a> and achieve “generally positive” <span id="id69">[<a class="reference internal" href="../../bib.html#id12">SHCV19</a>]</span> results.</p>
 </div>
 </div>
 <div class="section" id="fair-representations">
@@ -1320,7 +1320,7 @@ constraints on collaborative filtering.</p></li>
 <ul class="simple">
 <li><p>“FA*IR: A Fair Top-k Ranking Algorithm”
 <span id="id90">[<a class="reference internal" href="../../bib.html#id46">ZBC+17</a>]</span>: A ranking algorithm that aims to
-preserve utility whilst maintaining group fairness.<a class="footnote-reference brackets" href="#id243" id="id91">8</a></p></li>
+preserve utility whilst maintaining group fairness.<a class="footnote-reference brackets" href="#id245" id="id91">8</a></p></li>
 </ul>
 </div>
 <div class="section" id="resource-allocation">
@@ -1354,7 +1354,7 @@ wish to be fair with regard to <em>religion</em>, a feature which is not been
 captured in this dataset (though could be inferred using prior knowledge
 and the nationality feature), you will not be able to claim fairness
 with regard to that non-captured attribute, despite Freedom of
-Religion<a class="footnote-reference brackets" href="#id244" id="id93">9</a> being enshrined in most modern democratic countries. There
+Religion<a class="footnote-reference brackets" href="#id246" id="id93">9</a> being enshrined in most modern democratic countries. There
 has been an attempt to address this problem in the paper Proxy
 Fairness <span id="id94">[<a class="reference internal" href="../../bib.html#id55">GCFW18</a>]</span> which finds potential proxy groups
 that could potentially be discriminated against, though this is a first
@@ -1560,31 +1560,31 @@ our field to subjective areas.</p>
 </p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id236"><span class="brackets"><a class="fn-backref" href="#id11">1</a></span></dt>
+<dt class="label" id="id238"><span class="brackets"><a class="fn-backref" href="#id11">1</a></span></dt>
 <dd><p>Certainly from the ethical perspective, although interpretability of machine learning models is a research area in it’s own right.</p>
 </dd>
-<dt class="label" id="id237"><span class="brackets"><a class="fn-backref" href="#id12">2</a></span></dt>
+<dt class="label" id="id239"><span class="brackets"><a class="fn-backref" href="#id12">2</a></span></dt>
 <dd><p>And alternatively, we may be able to interpret some stages of the decision making process but the process to obtain these may be opaque to us.</p>
 </dd>
-<dt class="label" id="id238"><span class="brackets"><a class="fn-backref" href="#id21">3</a></span></dt>
+<dt class="label" id="id240"><span class="brackets"><a class="fn-backref" href="#id21">3</a></span></dt>
 <dd><p>For more on this paper, see <a class="reference internal" href="#causal"><span class="std std-ref">Causal Inference</span></a>.</p>
 </dd>
-<dt class="label" id="id239"><span class="brackets"><a class="fn-backref" href="#id36">4</a></span></dt>
+<dt class="label" id="id241"><span class="brackets"><a class="fn-backref" href="#id36">4</a></span></dt>
 <dd><p>Throughout this section we consider a binary sensitive attribute, though all definitions can be extended to accommodate a sensitive attribute with <span class="math notranslate nohighlight">\(n\)</span> categories.</p>
 </dd>
-<dt class="label" id="id240"><span class="brackets"><a class="fn-backref" href="#id50">5</a></span></dt>
+<dt class="label" id="id242"><span class="brackets"><a class="fn-backref" href="#id50">5</a></span></dt>
 <dd><p>Which due to contractual reasons they are unable to release.</p>
 </dd>
-<dt class="label" id="id241"><span class="brackets"><a class="fn-backref" href="#id66">6</a></span></dt>
+<dt class="label" id="id243"><span class="brackets"><a class="fn-backref" href="#id66">6</a></span></dt>
 <dd><p>In this case, with regard to demographic parity.</p>
 </dd>
-<dt class="label" id="id242"><span class="brackets"><a class="fn-backref" href="#id68">7</a></span></dt>
+<dt class="label" id="id244"><span class="brackets"><a class="fn-backref" href="#id68">7</a></span></dt>
 <dd><p>The CelebA, Soccer Player and Quickdraw datasets were used.</p>
 </dd>
-<dt class="label" id="id243"><span class="brackets"><a class="fn-backref" href="#id91">8</a></span></dt>
+<dt class="label" id="id245"><span class="brackets"><a class="fn-backref" href="#id91">8</a></span></dt>
 <dd><p>Given the arbitrariness of many ‘fairness’ rules in the U.S. that have led to claims of disparate treatment (i.e. Ricci vs DeStefano or Texas House Bill 588) this objective may have a large impact.</p>
 </dd>
-<dt class="label" id="id244"><span class="brackets"><a class="fn-backref" href="#id93">9</a></span></dt>
+<dt class="label" id="id246"><span class="brackets"><a class="fn-backref" href="#id93">9</a></span></dt>
 <dd><p>And consequently the expectation to be free of discrimination based on that religion.</p>
 </dd>
 </dl>
