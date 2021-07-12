@@ -30,7 +30,7 @@ Fair Representations of Biased Data
    How certain is a model that the representation learned is fair?   
 
    Papers
-   1. Re(presentation)-Mixup for Uncertainty Quantification (**WIP**)
+   1. Fair Uncertainty Quantification of Learned Representation (**WIP**)
 6. Conclusion
 
 ## Introduction
