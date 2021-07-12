@@ -1,7 +1,7 @@
 # Thesis Structure
 
 ## Title
-Fair Representations of Data
+Fair Representations of Biased Data
 
 ## Table of Contents
 1. Introduction
@@ -115,6 +115,7 @@ This chapter will extend the conference paper by providing more analysis of the 
 
 This chapter consists of the paper ["An Algorithmic Framework for Positive Action"](../../03_identifying/intro.md), 
 submitted to Data Mining and Knowledge Discovery Special issue on Bias and Fairness in AI.[^dami2021]
+A shorter version is also under review at the inaugural ACM conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO).
 
 In this work I try to determine, at inference time, individuals who are at risk of receiving a biased decision.
 I do this using a relaxed form of Counterfactual Fairness. 
@@ -137,6 +138,7 @@ In this work I was responsible for:
   - Writing code
   - Running experiments
   - Writing sections of the text
+
 
 ## Chapter 3
 
