@@ -11,13 +11,18 @@ parts:
   - file: content/03_identifying/intro
   - file: content/08_conclusion/conclusion
   - file: content/bib
-- caption: Annual Review 2020
+- caption: Annual Review
   chapters:
-  - file: content/10_annual_review/summary
+#  - file: content/10_annual_review/ar_20
+#    sections:
+#    - file: content/10_annual_review/2020/area
+#    - file: content/10_annual_review/2020/activities_to_date
+#    - file: content/10_annual_review/2020/structure
+  - file: content/10_annual_review/ar_21
     sections:
-    - file: content/10_annual_review/area
-  - file: content/10_annual_review/activities_to_date
-  - file: content/10_annual_review/structure
+    - file: content/10_annual_review/2021/area
+    - file: content/10_annual_review/2021/activities_to_date
+    - file: content/10_annual_review/2021/structure
 - caption: Appendix
   chapters:
   - file: content/09_appendix/published
