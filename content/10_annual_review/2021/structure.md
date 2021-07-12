@@ -88,7 +88,6 @@ In this paper we decompose an image into a fair component ($\hat{x}$) and an unf
 We assume a decomposition of $\phi(x) = \phi(\hat{x}) + \phi(\tilde{x})$, where $\phi$ is a pre-trained feature map.
 
 For this paper I was responsible for:
-   - framing the solution as a method of interpretability
    - writing code
    - writing sections of the text
    - experiments on the tabular data
@@ -122,11 +121,11 @@ I do this using a relaxed form of Counterfactual Fairness.
 In this definition of fairness, I ask if the decision would have been affected if the individual had a different value
 for their protected attribute (i.e. they had been born of a different race or gender). 
 To 'properly' perform counterfactual modeling requires access to a data-generation procedure called a Structural Causal Model.
-As these are difficult to obtain, I make use of the excellect performance that models such as StarGAN {cite}`ChoChoKimHaKimCho18`
+As these are difficult to obtain, I make use of the excellent performance that models such as StarGAN {cite}`ChoChoKimHaKimCho18`
 and Cycle-Gan {cite}`ZhuParIsoEfr17` achieve in unsupervised image-to-image domain translation, where domains include, 
 gender, hair colour, race, or other visible differences.
 
-In this work I make use of fair representations which, in the laguage of the above models, encourages invariance to a specific domain
+In this work I make use of fair representations which, in the language of the above models, encourages invariance to a specific domain
 using additional data as opposed to inferring this from a large amount of data.
 Because of this additional data, fewer samples are required to produce a similar result.
 
