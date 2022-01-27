@@ -112,7 +112,7 @@ This chapter will extend the conference paper by providing more analysis of the 
 
 ## Chapter 2
 
-This chapter consists of the paper ["An Algorithmic Framework for Positive Action"](../../03_identifying/intro.md), 
+This chapter consists of the paper ["An Algorithmic Framework for Positive Action"](../../03_positive_action/intro.md), 
 submitted to Data Mining and Knowledge Discovery Special issue on Bias and Fairness in AI.[^dami2021]
 A shorter version is also under review at the inaugural ACM conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO).
 

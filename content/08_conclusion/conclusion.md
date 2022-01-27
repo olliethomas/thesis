@@ -1,4 +1,4 @@
-# Conclusion
+# Chapter 7: Conclusion
 
 A concern with following any purely statistical route in knowing in
 advance some attribute that you wish to be fair to. If we consider the

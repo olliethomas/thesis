@@ -1,32 +1,47 @@
-format: jb-book
 root: content/index
+format: jb-book
+defaults:
+  numbered: false
 parts:
-- caption: Overview
-  chapters:
-  - file: content/content
+#- caption: Overview
+#  chapters:
+#  - file: content/content
 - caption: Thesis
   chapters:
-  - file: content/01_introduction/intro
-  - file: content/02_data_domain_fairness/intro
-  - file: content/03_identifying/intro
-  - file: content/08_conclusion/conclusion
-  - file: content/bib
-- caption: Annual Review
-  chapters:
+  - file: content/00_thesis_pages/front_page
+  - file: content/00_thesis_pages/preliminaries
+    sections:
+      - file: content/01_introduction/intro
+      - file: content/02_background/background
+      - file: content/00_thesis_pages/content
+  - file: content/00_thesis_pages/publications
+    sections:
+      - file: content/03_positive_action/intro
+      - file: content/04_data_domain_fairness/intro
+      - file: content/05_null_sampling/intro
+  - file: content/00_thesis_pages/conclusion
+    sections:
+      - file: content/08_conclusion/conclusion
+  - file: content/00_thesis_pages/appendix
+    sections:
+      - file: content/bib
+#- caption: Annual Review
+#  chapters:
 #  - file: content/10_annual_review/ar_20
 #    sections:
 #    - file: content/10_annual_review/2020/area
 #    - file: content/10_annual_review/2020/activities_to_date
 #    - file: content/10_annual_review/2020/structure
-  - file: content/10_annual_review/ar_21
-    sections:
-    - file: content/10_annual_review/2021/area
-    - file: content/10_annual_review/2021/activities_to_date
-    - file: content/10_annual_review/2021/structure
+#  - file: content/10_annual_review/ar_21
+#    sections:
+#    - file: content/10_annual_review/2021/area
+#    - file: content/10_annual_review/2021/activities_to_date
+#    - file: content/10_annual_review/2021/structure
 - caption: Appendix
   chapters:
   - file: content/09_appendix/published
     sections:
+    - file: content/09_appendix/publications/positive_action
     - file: content/09_appendix/publications/dfritdd
     - file: content/09_appendix/publications/nosinn
     - file: content/09_appendix/publications/lit_review
@@ -34,4 +49,4 @@ parts:
     sections:
     - file: content/09_appendix/software/ethicml
     - file: content/09_appendix/software/intervene
-    - file: content/09_appendix/software/fair_bolts
+    - file: content/09_appendix/software/conduit

@@ -6,15 +6,13 @@ authors = ["Oliver Thomas <1835492+olliethomas@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-EthicML = "*"
-jupyter-book = "*"
-matplotlib = "*"
-numpy = "*"
-scikit-learn = "*"
-sphinx-tabs = "*"
-plotly = "*"
-pyppeteer = "*"
-jupyterbook-latex = "*"
+jupyter-book = "^0.12.1"
+matplotlib = "^3.5.1"
+numpy = "^1.22.1"
+scikit-learn = "^1.0.2"
+plotly = "^5.5.0"
+pyppeteer = "^1.0.2"
+ethicml = "^0.5.1"
 
 [tool.poetry.dev-dependencies]
 
