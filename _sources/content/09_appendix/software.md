@@ -4,4 +4,4 @@
 
 [Causal Discovery Tool](software/intervene.md)
 
-[Fair Bolts](software/fair_bolts.md)
+[Conduit](software/conduit.md)

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>An Algorithmic Framework for Positive Action &#8212; Fair Representations of Biased Data</title>
+    <title>Chapter 4: An Algorithmic Framework for Positive Action &#8212; Fair Representations in the Data Domain</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,46 +22,59 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <link rel="canonical" href="oliverthomas.ml/content/03_identifying/intro.html" />
+    <link rel="canonical" href="oliverthomas.ml/content/03_positive_action/intro.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Conclusion" href="../08_conclusion/conclusion.html" />
-    <link rel="prev" title="Data Domain Fairness" href="../02_data_domain_fairness/intro.html" />
+    <link rel="next" title="Chapter 5: Data Domain Fairness" href="../04_data_domain_fairness/intro.html" />
+    <link rel="prev" title="Publications" href="../00_thesis_pages/publications.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-170288604-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -77,70 +90,35 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../../_static/pal-logo.svg" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Fair Representations of Biased Data</h1>
+      <h1 class="site-logo" id="site-title">Fair Representations in the Data Domain</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
- <span class="caption-text">
-  Overview
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../content.html">
-   Content
-  </a>
- </li>
-</ul>
-<p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Thesis
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../01_introduction/intro.html">
-   Introduction
+  <a class="reference internal" href="../00_thesis_pages/front_page.html">
+   Front Matter
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_data_domain_fairness/intro.html">
-   Data Domain Fairness
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   An Algorithmic Framework for Positive Action
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../08_conclusion/conclusion.html">
-   Conclusion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../bib.html">
-   Bibliography
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Annual Review
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../10_annual_review/ar_21.html">
-   Annual Review 2021
+  <a class="reference internal" href="../00_thesis_pages/preliminaries.html">
+   Preliminaries
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -149,24 +127,85 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10_annual_review/2021/area.html">
-     Research Area &amp; Question
+    <a class="reference internal" href="../01_introduction/intro.html">
+     Chapter 1: Introduction
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10_annual_review/2021/activities_to_date.html">
-     Activities to date
+    <a class="reference internal" href="../02_background/background.html">
+     Chapter 2: Related Work
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10_annual_review/2021/structure.html">
-     Thesis Structure
+    <a class="reference internal" href="../00_thesis_pages/content.html">
+     Chapter 3: Content
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../00_thesis_pages/publications.html">
+   Publications
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Chapter 4: An Algorithmic Framework for Positive Action
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_domain_fairness/intro.html">
+     Chapter 5: Data Domain Fairness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_null_sampling/intro.html">
+     Chapter 6: Null-sampling for Fair and Invariant Representations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../00_thesis_pages/conclusion.html">
+   Conclusion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_conclusion/conclusion.html">
+     Chapter 7: Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../00_thesis_pages/appendix.html">
+   Appendix
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../bib.html">
+     Bibliography
     </a>
    </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -176,12 +215,17 @@
   <a class="reference internal" href="../09_appendix/published.html">
    Publications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_appendix/publications/positive_action.html">
+     An Algorithmic Framework for Positive Action
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_appendix/publications/dfritdd.html">
      Discovering Fair Representations in the Data Domain
@@ -203,8 +247,8 @@
   <a class="reference internal" href="../09_appendix/software.html">
    Software
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -220,8 +264,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../09_appendix/software/fair_bolts.html">
-     FairBolts
+    <a class="reference internal" href="../09_appendix/software/conduit.html">
+     Conduit
     </a>
    </li>
   </ul>
@@ -263,12 +307,12 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/03_identifying/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/03_positive_action/intro.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -280,10 +324,10 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/olliethomas/thesis/issues/new?title=Issue%20on%20page%20%2Fcontent/03_identifying/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/olliethomas/thesis/issues/new?title=Issue%20on%20page%20%2Fcontent/03_positive_action/intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/olliethomas/thesis/edit/master/content/03_identifying/intro.md"><button
+        <a class="edit-button" href="https://github.com/olliethomas/thesis/edit/master/content/03_positive_action/intro.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -301,12 +345,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#abstract">
@@ -496,11 +540,209 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 4: An Algorithmic Framework for Positive Action</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     Definitions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counterfactual-modelling">
+     Counterfactual Modelling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#related-works">
+     Related Works
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deferral">
+       Deferral
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#actionable-recourse">
+       Actionable Recourse
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auditing-systems">
+       Auditing Systems
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach">
+   Approach
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#positive-action-framework">
+     Positive Action Framework
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fairness-worldview">
+       Fairness Worldview
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#underlying-mechanisms-and-bias">
+       Underlying mechanisms and bias
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#positive-action-candidates">
+     Positive Action Candidates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quantifying-the-difference-between-wae-and-wysiwyg">
+       Quantifying the difference between WAE and WYSIWYG
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#choosing-the-right-positive-action-candidates">
+       Choosing the right positive action candidates
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation">
+     Implementation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#building-a-group-classifier">
+       Building a group classifier.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model">
+       Model
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiments">
+   Experiments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#synthetic-data-generation">
+       Synthetic Data Generation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uci-adult-income-data">
+       UCI Adult Income Data
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results-discussion">
+   Results &amp; Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-the-baseline-synthetic-data">
+     Analysing the baseline synthetic data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#demographic-parity-oracle">
+       Demographic Parity Oracle
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logistic-regression-model">
+       Logistic Regression model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#positive-action-framework-model">
+       Positive Action Framework Model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#auditing-the-uci-adult-income-for-bias">
+     Auditing the UCI Adult Income for Bias
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitations-and-intended-use">
+     Limitations and Intended Use
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="an-algorithmic-framework-for-positive-action">
-<h1>An Algorithmic Framework for Positive Action<a class="headerlink" href="#an-algorithmic-framework-for-positive-action" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-4-an-algorithmic-framework-for-positive-action">
+<span id="ch-paper1"></span><h1>Chapter 4: An Algorithmic Framework for Positive Action<a class="headerlink" href="#chapter-4-an-algorithmic-framework-for-positive-action" title="Permalink to this headline">¶</a></h1>
 <p>In previous work we have identified characteristics that are overly relied on and lead to unfair decisions.
 This work amends this problem statement to instead of identifying characteristics and mitigating them, identify idividuals who are at risk of receivingan unfair decision.</p>
 <div class="section" id="abstract">
@@ -519,12 +761,12 @@ We use counterfactual fairness to assign candidates to one of three groups:</p>
 <span id="sec-intro"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Allocating resources amongst individuals, for example, jobs or university placements, requires us to evaluate an individual’s suitability for the task.
 We also want to ensure the selection process is fair and that positive outcomes are fairly distributed within the population.
-Machine Learning (ML) systems are increasingly being used to inform, support, or even directly make decisions within these consequential domains, affecting millions of lives <span id="id1">[<a class="reference internal" href="../bib.html#id83">BS16</a>]</span>.
-It is therefore necessary to consider how the notions of fair process and fair outcomes translate into algorithmic decision support frameworks <span id="id2">[<a class="reference internal" href="../bib.html#id92">WMR20</a>, <a class="reference internal" href="../bib.html#id125">Xia21</a>]</span>.</p>
-<p>Anti-discrimination legislation in the E.U., U.S. and U.K. among others, indicate that a fair selection process requires equal treatment in the sense that protected attributes, for example, gender and race, should not be considered within the decision making process without a good reason <span id="id3">[<a class="reference internal" href="../bib.html#id49">DHP+12</a>, <a class="reference internal" href="../bib.html#id130">Ben19</a>]</span>.
-Ignoring the protected attributes within an algorithmic approach, however, guarantees neither fair process nor fair outcome <span id="id4">[<a class="reference internal" href="../bib.html#id89">PRT08</a>, <a class="reference internal" href="../bib.html#id131">HW19</a>, <a class="reference internal" href="../bib.html#id127">SBW21</a>, <a class="reference internal" href="../bib.html#id92">WMR20</a>, <a class="reference internal" href="../bib.html#id125">Xia21</a>]</span>.</p>
+Machine Learning (ML) systems are increasingly being used to inform, support, or even directly make decisions within these consequential domains, affecting millions of lives <span id="id1">[<a class="reference internal" href="../bib.html#id11">Barocas and Selbst, 2016</a>]</span>.
+It is therefore necessary to consider how the notions of fair process and fair outcomes translate into algorithmic decision support frameworks <span id="id2">[<a class="reference internal" href="../bib.html#id161">Wachter <em>et al.</em>, 2020</a>, <a class="reference internal" href="../bib.html#id166">Xiang, 2021</a>]</span>.</p>
+<p>Anti-discrimination legislation in the E.U., U.S. and U.K. among others, indicate that a fair selection process requires equal treatment in the sense that protected attributes, for example, gender and race, should not be considered within the decision making process without a good reason <span id="id3">[<a class="reference internal" href="../bib.html#id12">Bent, 2019</a>, <a class="reference internal" href="../bib.html#id42">Dwork <em>et al.</em>, 2012</a>]</span>.
+Ignoring the protected attributes within an algorithmic approach, however, guarantees neither fair process nor fair outcome <span id="id4">[<a class="reference internal" href="../bib.html#id69">Harned and Wallach, 2019</a>, <a class="reference internal" href="../bib.html#id130">Pedreshi <em>et al.</em>, 2008</a>, <a class="reference internal" href="../bib.html#id148">Simons <em>et al.</em>, 2021</a>, <a class="reference internal" href="../bib.html#id161">Wachter <em>et al.</em>, 2020</a>, <a class="reference internal" href="../bib.html#id166">Xiang, 2021</a>]</span>.</p>
 <p>Decision support algorithms are commonly trained on a dataset of past decisions.
-The resulting model may disproportionately predict positive outcomes in favour of the majority over historically under-represented groups <span id="id5">[<a class="reference internal" href="../bib.html#id88">KZ18</a>, <a class="reference internal" href="../bib.html#id10">KC12</a>]</span>.
+The resulting model may disproportionately predict positive outcomes in favour of the majority over historically under-represented groups <span id="id5">[<a class="reference internal" href="../bib.html#id87">Kallus and Zhou, 2018</a>, <a class="reference internal" href="../bib.html#id90">Kamiran and Calders, 2012</a>]</span>.
 These statistical disparities could arise from two distinct mechanisms:
 (i) unequal treatment;<br />
 or (ii) equal treatment when the status quo itself is not neutral.
@@ -533,7 +775,7 @@ The latter, when historically under-represented groups struggle to compete with 
 Often, the statistical disparity in the training data, and as a result, in the model’s prediction is a combination of both.</p>
 <p>Enforcing <em>Demographic Parity</em> (DP) – an equal fraction of positive outcomes across subgroups – is usually impractical.
 In addition to hindering the accuracy of the model’s predictions, this approach will not typically align with anti-discrimination legislation.
-A common alternative is to impose an algorithmic fairness constraint that better aligns with the notion of equal treatment, and maintain a disparity in the positive outcome rates <span id="id6">[<a class="reference internal" href="../bib.html#id68">HPS16</a>, <a class="reference internal" href="../bib.html#id92">WMR20</a>]</span>.</p>
+A common alternative is to impose an algorithmic fairness constraint that better aligns with the notion of equal treatment, and maintain a disparity in the positive outcome rates <span id="id6">[<a class="reference internal" href="../bib.html#id68">Hardt <em>et al.</em>, 2016</a>, <a class="reference internal" href="../bib.html#id161">Wachter <em>et al.</em>, 2020</a>]</span>.</p>
 <p>Anti-discrimination legislation acknowledges the need to bridge the gap between equal treatment and equal representation.
 The Equality Act 2010 (UK) defines <em>positive action</em> as “lawful measures taken to encourage and train people from under-represented groups to help them overcome disadvantages in competing with other applicants”.</p>
 <div class="margin sidebar">
@@ -578,20 +820,20 @@ This can be as a result of the model being trained on past discriminatory decisi
 In this work, we define bias as a mechanism by which statistical disparity between a protected subgroup and the majority emerges or is exacerbated.
 Bias within the decision making process will affect the decision outcome.
 Bias that occurred prior may affect the features.
-To expand the discussion on bias, it is useful to briefly refer to the framework presented in <span id="id7">[<a class="reference internal" href="../bib.html#id67">FSV16</a>]</span>, which defines three spaces – the <em>construct space</em>, <em>observed space</em> and <em>decision space</em> – and uses the mappings between them to formalise several definitions of bias.</p>
+To expand the discussion on bias, it is useful to briefly refer to the framework presented in <span id="id7">[]</span>, which defines three spaces – the <em>construct space</em>, <em>observed space</em> and <em>decision space</em> – and uses the mappings between them to formalise several definitions of bias.</p>
 <p>The <em>construct space</em> represents the <em>‘ground truth’</em> – an unobserved space that correctly captures differences between individuals with respect to a task;
-the <em>observed space</em> represents the measurable features for consideration, and the <em>decision space</em> the outcome <span id="id8">[<a class="reference internal" href="../bib.html#id67">FSV16</a>]</span>.
+the <em>observed space</em> represents the measurable features for consideration, and the <em>decision space</em> the outcome <span id="id8">[]</span>.
 For example, intelligence resides in the construct space, measured IQ resides in the observed space, and acceptance or rejection from the International Mensa club resides in the decision space.</p>
 <p>As the observed space is an estimate of the construct space, we can make certain assumptions regarding the mapping between these spaces.
 These assumptions can be referred to as <em>worldviews</em>.
-Prior work <span id="id9">[<a class="reference internal" href="../bib.html#id67">FSV16</a>]</span> established the worldviews WAE (“we’re all equal”) and WYSIWYG (“what you see is what you get”), that are considered to be in tension with each other.
+Prior work <span id="id9">[]</span> established the worldviews WAE (“we’re all equal”) and WYSIWYG (“what you see is what you get”), that are considered to be in tension with each other.
 WAE assumes that we are all the same in construct space.
 If that is not the case in the observed space, this disparity is attributed to structural bias — an incorrect mapping between the construct and the observed space.
 WYSIWYG, on the other hand, allows for a disparity between protected subgroups, assuming the observed discrepancies are a true reflection of disparities in the construct space.</p>
 <p>To better understand the statistical disparity we may observe in the data, we discuss specific types of bias.
-<em>Sample selection bias</em> originates from training on a non-representative sample of the population <span id="id10">[<a class="reference internal" href="../bib.html#id103">Tol19</a>]</span>.
-<em>Label bias</em> occurs when the dataset contains past discriminatory decisions <span id="id11">[<a class="reference internal" href="../bib.html#id87">JN20</a>, <a class="reference internal" href="../bib.html#id70">WPT19</a>]</span>.
-Mitigation efforts that consider selection bias <span id="id12">[<a class="reference internal" href="../bib.html#id10">KC12</a>, <a class="reference internal" href="../bib.html#id90">ABD+18b</a>]</span>, or label bias <span id="id13">[<a class="reference internal" href="../bib.html#id86">CV10</a>, <a class="reference internal" href="../bib.html#id87">JN20</a>, <a class="reference internal" href="../bib.html#id126">KCQ20</a>]</span> independently are available.
+<em>Sample selection bias</em> originates from training on a non-representative sample of the population <span id="id10">[<a class="reference internal" href="../bib.html#id154">Tolan, 2019</a>]</span>.
+<em>Label bias</em> occurs when the dataset contains past discriminatory decisions <span id="id11">[<a class="reference internal" href="../bib.html#id83">Jiang and Nachum, 2020</a>, <a class="reference internal" href="../bib.html#id165">Wick <em>et al.</em>, 2019</a>]</span>.
+Mitigation efforts that consider selection bias <span id="id12">[<a class="reference internal" href="../bib.html#id90">Kamiran and Calders, 2012</a>]</span>, or label bias <span id="id13">[<a class="reference internal" href="../bib.html#id23">Calders and Verwer, 2010</a>, <a class="reference internal" href="../bib.html#id83">Jiang and Nachum, 2020</a>, <a class="reference internal" href="../bib.html#id96">Kehrenberg <em>et al.</em>, 2020</a>]</span> independently are available.
 Bias can also be introduced outside of the environment which we can control, i.e. outside the training population, measurements and learning algorithm.
 The identification of positive action candidates within decision support systems using the framework presented in this paper aims to acknowledge and mitigate a broader range of biases.
 This includes bias that cannot normally be mitigated by an automated rejection / acceptance model while respecting anti-discrimination legislation and the right for equal-treatment.</p>
@@ -599,21 +841,21 @@ This includes bias that cannot normally be mitigated by an automated rejection /
 <div class="section" id="counterfactual-modelling">
 <h3>Counterfactual Modelling<a class="headerlink" href="#counterfactual-modelling" title="Permalink to this headline">¶</a></h3>
 <p>To identify positive action candidates, we take a counterfactual approach.
-A counterfactual outcome is a hypothetical outcome for a scenario that is identical in all respects except for a specific, well-defined change and its causal consequences <span id="id14">[<a class="reference internal" href="../bib.html#id94">Mil19</a>, <a class="reference internal" href="../bib.html#id95">Hum00</a>]</span>.
+A counterfactual outcome is a hypothetical outcome for a scenario that is identical in all respects except for a specific, well-defined change and its causal consequences <span id="id14">[<a class="reference internal" href="../bib.html#id76">Hume, 2000</a>, <a class="reference internal" href="../bib.html#id120">Miller, 2019</a>]</span>.
 In the context of this work, we focus on counterfactual scenarios with respect to a change in a protected attribute, and distinguish between two types of counterfactual questions:</p>
 <ol class="simple">
 <li><p>Would the outcome change if \textbf{only} the protected attribute was different?</p></li>
 <li><p>Would the outcome change if the protected attributed and its \textbf{causal consequences} were different?</p></li>
 </ol>
-<p>For example, if a female applicant is not invited for a job interview, we can ask the following two questions: if her CV was identical, but the application <em>appeared</em> to be from a male applicant, would she be invited to interview? <span id="id15">[<a class="reference internal" href="../bib.html#id141">BM04</a>]</span>
+<p>For example, if a female applicant is not invited for a job interview, we can ask the following two questions: if her CV was identical, but the application <em>appeared</em> to be from a male applicant, would she be invited to interview? <span id="id15">[<a class="reference internal" href="../bib.html#id13">Bertrand and Mullainathan, 2004</a>]</span>
 If she had been <em>born</em> male, experienced life as a male, and then applied for the same job, would she have been invited for an interview?</p>
 <p>The second counterfactual question is critical to our approach, as it is used to identify positive action candidates.
 We use the first counterfactual question to detect and mitigate label bias.</p>
-<p>To evaluate counterfactual outcomes, ideally, we would rely on a Structural Causal Model (SCM) — a graphical model whose vertices represent features and whose edges  represent the <em>causal</em> pathway between them <span id="id16">[<a class="reference internal" href="../bib.html#id31">Pea09</a>]</span>.
+<p>To evaluate counterfactual outcomes, ideally, we would rely on a Structural Causal Model (SCM) — a graphical model whose vertices represent features and whose edges  represent the <em>causal</em> pathway between them <span id="id16">[<a class="reference internal" href="../bib.html#id129">Pearl, 2009</a>]</span>.
 The first type of counterfactual question, for example, will manifest in a SCM as a direct pathway between the protected attribute and the outcome.
-This SCM-based approach is taken in works related to fairness such as <span id="id17">[<a class="reference internal" href="../bib.html#id73">Chi19</a>, <a class="reference internal" href="../bib.html#id69">KLRS17</a>]</span>.
+This SCM-based approach is taken in works related to fairness such as <span id="id17">[<a class="reference internal" href="../bib.html#id26">Chiappa, 2019</a>, <a class="reference internal" href="../bib.html#id104">Kusner <em>et al.</em>, 2017</a>]</span>.
 However, a complete structural model, is challenging to obtain — they are application specific and require specification by domain experts.
-In practice, we can find two as-close-as-possible individuals (differing by the protected attribute) within the data (e.g. <span id="id18">[<a class="reference internal" href="../bib.html#id101">RR83</a>, <a class="reference internal" href="../bib.html#id91">Rub90</a>]</span>) or by creating the counterfactual representations using an adversarial learning model (e.g. <span id="id19">[<a class="reference internal" href="../bib.html#id100">GGLRe20</a>, <a class="reference internal" href="../bib.html#id75">MCPZ18b</a>, <a class="reference internal" href="../bib.html#id99">SHDQ20</a>]</span>).
+In practice, we can find two as-close-as-possible individuals (differing by the protected attribute) within the data (e.g. <span id="id18">[<a class="reference internal" href="../bib.html#id135">Rosenbaum and Rubin, 1983</a>, <a class="reference internal" href="../bib.html#id138">Rubin, 1990</a>]</span>) or by creating the counterfactual representations using an adversarial learning model (e.g. <span id="id19">[<a class="reference internal" href="../bib.html#id145">Sharmanska <em>et al.</em>, 2020</a>]</span>).
 In this paper, we employ the latter approach.</p>
 <div class="figure align-default" id="fig-compare">
 <a class="reference internal image-reference" href="../../_images/compare_figure.png"><img alt="../../_images/compare_figure.png" src="../../_images/compare_figure.png" style="height: 300px;" /></a>
@@ -630,14 +872,14 @@ We briefly describe the most relevant ones to place the problem of determining p
 <div class="section" id="deferral">
 <h4>Deferral<a class="headerlink" href="#deferral" title="Permalink to this headline">¶</a></h4>
 <p>The challenge in learning to defer is identifying which candidates the model is uncertain about.
-Once identified, these candidates are referred to a human decision-maker which comes at some cost <span id="id20">[<a class="reference internal" href="../bib.html#id93">MPZ18</a>, <a class="reference internal" href="../bib.html#id132">MS20</a>]</span>.
+Once identified, these candidates are referred to a human decision-maker which comes at some cost <span id="id20">[<a class="reference internal" href="../bib.html#id117">Madras <em>et al.</em>, 2018</a>, <a class="reference internal" href="../bib.html#id124">Mozannar and Sontag, 2020</a>]</span>.
 This poses interesting questions about the practical quantification of uncertainty, and would be a potential extension to our framework.
 However, deferment differs from identifying  positive action candidates, as the system we are adapting may be confident in it’s assessment that a candidate who would be suitable for positive action should be rejected.</p>
 </div>
 <div class="section" id="actionable-recourse">
 <h4>Actionable Recourse<a class="headerlink" href="#actionable-recourse" title="Permalink to this headline">¶</a></h4>
 <p>Another related field is that of recourse.
-Works in this area, such as <span id="id21">[<a class="reference internal" href="../bib.html#id133">JKV+19</a>, <a class="reference internal" href="../bib.html#id135">KScholkopfV21</a>, <a class="reference internal" href="../bib.html#id134">USL19</a>]</span> aim to determine how the world would have had to be different for an alternative outcome to occur.
+Works in this area, such as <span id="id21">[<a class="reference internal" href="../bib.html#id86">Joshi, 2019</a>, <a class="reference internal" href="../bib.html#id93">Karimi <em>et al.</em>, 2021</a>, <a class="reference internal" href="../bib.html#id158">Ustun <em>et al.</em>, 2019</a>]</span> aim to determine how the world would have had to be different for an alternative outcome to occur.
 They aim to explain what would need to change about a rejected candidate for them to be accepted.
 Our framework instead asks more direct questions:
 If a candidate were perceived to have an alternative protected attribute value, would the outcome be different?
@@ -645,8 +887,8 @@ And, would the outcome change if the protected attribute and its causal conseque
 </div>
 <div class="section" id="auditing-systems">
 <h4>Auditing Systems<a class="headerlink" href="#auditing-systems" title="Permalink to this headline">¶</a></h4>
-<p>This is a multi-faceted, broad area, but in general auditing aims to evaluate either a dataset <span id="id22">[<a class="reference internal" href="../bib.html#id139">SKS+18</a>]</span>, or a system <span id="id23">[<a class="reference internal" href="../bib.html#id138">KNRW18</a>]</span> for potential bias.
-Examples of auditing systems that are similar to ours include <span id="id24">[<a class="reference internal" href="../bib.html#id136">BYF20</a>]</span>.
+<p>This is a multi-faceted, broad area, but in general auditing aims to evaluate either a dataset <span id="id22">[<a class="reference internal" href="../bib.html#id139">Saleiro, 2018</a>]</span>, or a system <span id="id23">[<a class="reference internal" href="../bib.html#id94">Kearns <em>et al.</em>, 2018</a>]</span> for potential bias.
+Examples of auditing systems that are similar to ours include <span id="id24">[<a class="reference internal" href="../bib.html#id15">Black <em>et al.</em>, 2020</a>]</span>.
 In their work the authors take an alternative counterfactual approach based on finding the nearest datapoint in the data with a different protected attribute and compare outcomes.
 These works differ in motivation as they use their auditing method to look at which <em>groups</em> are most affected, whereas we evaluate which <em>individuals</em> are likely to be affected.</p>
 </div>
@@ -677,8 +919,8 @@ We assume equality was true at some stage, but is not necessarily so at the time
 We therefore align with WYSIWYG at the point of measurement, and assume that statistical disparity observed within the observed space is, at least partly, due to disparity within the construct space. Positive action is aimed at addressing the disparities within the construct space as we  assume those occur due to imbalance of opportunity or disadvantage affecting individuals belonging to the under-represented group.</p>
 <p>To illustrate this, consider a set of measurable features <span class="math notranslate nohighlight">\(X\)</span> within the observed space <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, where <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> represents the space of all potential feature values.
 Each individual sample <span class="math notranslate nohighlight">\(x \in X\)</span> is an approximation to its non-measurable construct-counterpart <span class="math notranslate nohighlight">\(\tilde{x} \in \tilde{X}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ee5df01-c901-4bdd-bdfc-d2953ce06260">
-<span class="eqno">(4)<a class="headerlink" href="#equation-1ee5df01-c901-4bdd-bdfc-d2953ce06260" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-42ac2c97-e19e-4d8f-9a9e-62bfbce8f224">
+<span class="eqno">(1)<a class="headerlink" href="#equation-42ac2c97-e19e-4d8f-9a9e-62bfbce8f224" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   X\approx\tilde{X}=\alpha\cdot\tilde{X}_{apt}+\beta\cdot\Delta\tilde{X}
 \end{equation}\]</div>
 <p>where</p>
@@ -771,7 +1013,7 @@ This subgroup may be interpreted as individuals who were negatively impacted by 
 We cannot accept these applicants while aligning with anti-discrimination legislation.
 We can highlight them as candidates for positive action — high-potential applicants from an under-represented group whom targeted positive action can help succeed under a equal-treatment selection process.</p>
 <table class="colwidths-auto table" id="table-1">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Selection rules for mapping from the groups represented in Figure~\ref{fig:gcm_redux} and Figure~\ref{fig:wae_wys_thirdoption} to a decision. As <span class="math notranslate nohighlight">\(s=0\)</span> represents an disadvantaged group, we identify those in group 3 to be suitable for \emph{positive action}. These are candidates who would have been accepted had a counterfactual version of themselves been considered. N.b. Combinations not listed are identified and the outcome reverts to the outcome from an unconstrained model.</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Selection rules for mapping from the groups represented in Figure~\ref{fig:gcm_redux} and Figure~\ref{fig:wae_wys_thirdoption} to a decision. As <span class="math notranslate nohighlight">\(s=0\)</span> represents an disadvantaged group, we identify those in group 3 to be suitable for \emph{positive action}. These are candidates who would have been accepted had a counterfactual version of themselves been considered. N.b. Combinations not listed are identified and the outcome reverts to the outcome from an unconstrained model.</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Selection Rule</p></th>
 <th class="text-align:center head"><p><span class="math notranslate nohighlight">\(s\)</span></p></th>
@@ -924,7 +1166,7 @@ A classifier can use this value directly if it is indeed the basis of a decision
 We then feed in the counterfactuals and get a corresponding set of outputs:
 <span class="math notranslate nohighlight">\(y_{s_x=0,s_y=0}\)</span>, <span class="math notranslate nohighlight">\(y_{s_x=0,s_y=1}\)</span>, <span class="math notranslate nohighlight">\(y_{s_x=1,s_y=0}\)</span> and <span class="math notranslate nohighlight">\(y_{s_x=1,s_x=1}\)</span>.
 With this knowledge, the Outcome Comparator then sorts the set of original datapoints <span class="math notranslate nohighlight">\(X\)</span> into one of six subgroups <span class="math notranslate nohighlight">\(G_{1-6}\)</span>.
-The full selection rules are presented in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 3</span></a>, but we give some intuition:</p>
+The full selection rules are presented in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 1</span></a>, but we give some intuition:</p>
 <p>Groups 1 &amp; 2 (<span class="math notranslate nohighlight">\(G_{1,2}\)</span>) consist of candidates whose outcomes were either unanimously accepted across all counterfactual inputs (selection rule 1), or differed due to <span class="math notranslate nohighlight">\(S_y\)</span>, the concatenated <em>perceived</em> protected attribute, changing (selection rules 2 &amp; 8).
 Unanimous <em>negative</em> outcomes for all counterfactual inputs are assigned to groups <span class="math notranslate nohighlight">\(G_{5,6}\)</span> (selection rule 9).
 Lastly, applicants who receive a disagreement amongst the outcomes, i.e. their outcome depends on the value of <span class="math notranslate nohighlight">\(S_x\)</span>, are assigned to groups <span class="math notranslate nohighlight">\(G_{3,4}\)</span> (selection rules 3-7).
@@ -934,7 +1176,7 @@ Members of group <span class="math notranslate nohighlight">\(G_{3}\)</span> are
 <div class="section" id="model">
 <h4>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h4>
 <p>Our model is implemented as two successive neural networks representing distinct phases as mentioned above.</p>
-<p>The adversarial autoencoder has a similar architecture to <span id="id25">[<a class="reference internal" href="../bib.html#id52">MCPZ18a</a>]</span>, with multiple decoders <span id="id26">[<a class="reference internal" href="../bib.html#id129">PCC+21</a>, <a class="reference internal" href="../bib.html#id128">SJS17</a>]</span>, and comprises:</p>
+<p>The adversarial autoencoder has a similar architecture to <span id="id25">[<a class="reference internal" href="../bib.html#id115">Madras <em>et al.</em>, 2018</a>]</span>, with multiple decoders <span id="id26">[<a class="reference internal" href="../bib.html#id128">Park <em>et al.</em>, 2021</a>, <a class="reference internal" href="../bib.html#id146">Shalit <em>et al.</em>, 2017</a>]</span>, and comprises:</p>
 <ol class="simple">
 <li><p>An encoder function <span class="math notranslate nohighlight">\(g: (\mathcal{X}, \mathcal{S}) \to \mathcal{Z}\)</span> to map the input <span class="math notranslate nohighlight">\(x\)</span> to a more malleable representation <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
 <li><p>An Adversary function <span class="math notranslate nohighlight">\(h:\mathcal{Z} \to \mathcal{S} \)</span> to encourage the representation in the latent space to \emph{not} be predictive of <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
@@ -953,7 +1195,7 @@ Then, we have one decoder-head per possible <span class="math notranslate nohigh
 <p>This could be performed with a conditional decoder that additionally accepts the protected attribute as input, but in practice, we found our approach to work more consistently.</p>
 </div>
 </div>
-<p>We train this model by optimising the objective function in Equation <span class="xref std std-ref">eq:ae_loss</span>, where <span class="math notranslate nohighlight">\(\ell_{\textrm{recon}}\)</span> is an appropriate loss between the reconstructions and the features, and <span class="math notranslate nohighlight">\(\ell_{\textrm{adv}}\)</span> is the adversarial loss realised as cross-entropy between the predicted and target <span class="math notranslate nohighlight">\(S\)</span> coupled with a supplementary non-parametric measure (Maximum Mean Discrepancy <span id="id27">[<a class="reference internal" href="../bib.html#id81">GBR+07</a>]</span>) with a linear kernel between the embeddings per group (i.e. <span class="math notranslate nohighlight">\(\textrm{MMD}(Z_{s=0}, Z_{s=1})\)</span> ).
+<p>We train this model by optimising the objective function in Equation <span class="xref std std-ref">eq:ae_loss</span>, where <span class="math notranslate nohighlight">\(\ell_{\textrm{recon}}\)</span> is an appropriate loss between the reconstructions and the features, and <span class="math notranslate nohighlight">\(\ell_{\textrm{adv}}\)</span> is the adversarial loss realised as cross-entropy between the predicted and target <span class="math notranslate nohighlight">\(S\)</span> coupled with a supplementary non-parametric measure (Maximum Mean Discrepancy <span id="id27">[<a class="reference internal" href="../bib.html#id64">Gretton <em>et al.</em>, 2007</a>]</span>) with a linear kernel between the embeddings per group (i.e. <span class="math notranslate nohighlight">\(\textrm{MMD}(Z_{s=0}, Z_{s=1})\)</span> ).
 A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is incorporated to allow for a trade-off between the two competing losses.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -962,8 +1204,8 @@ A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> 
 <p>In our experiments, we use <span class="math notranslate nohighlight">\(\lambda = 1.0\)</span></p>
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-c7509252-62be-45ea-897d-65d65e0cc476">
-<span class="eqno">(5)<a class="headerlink" href="#equation-c7509252-62be-45ea-897d-65d65e0cc476" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-9e27b26c-0452-4dc6-b250-848b3049c199">
+<span class="eqno">(2)<a class="headerlink" href="#equation-9e27b26c-0452-4dc6-b250-848b3049c199" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
     \mathcal{L}_{\mathrm{AE}} = &amp; \min_{\theta, \pi}\max_{\phi} \mathbb{E}_{x \sim X} [ \ell_{\textrm{recon}}(k_{\pi}(g_{\theta}(x), s)_s; x) \nonumber \\
     &amp;\qquad\qquad\qquad\quad - \lambda \ell_{\textrm{adv}}(h_{\phi}(g_{\theta}(x)), s)] 
 \end{align}\]</div>
@@ -972,8 +1214,8 @@ This is to capture any potential direct discrimination that the model determines
 For the classification model the task is to produce an ensemble of predictions of the class label <span class="math notranslate nohighlight">\(y_s\)</span> from <span class="math notranslate nohighlight">\(x\)</span> and is defined as <span class="math notranslate nohighlight">\(f_s: (\mathcal{X}) \rightarrow \mathcal{Y}_s \quad \forall ~ s \in \mathcal{S}\)</span>.
 As with the autoencoder, only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true protected label is used for training.
 The objective is shown in the following equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5a6047a-6b4a-4e7e-bb77-ba5b641891c8">
-<span class="eqno">(6)<a class="headerlink" href="#equation-e5a6047a-6b4a-4e7e-bb77-ba5b641891c8" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-c07739e0-c453-4b31-b4aa-faa73abc0024">
+<span class="eqno">(3)<a class="headerlink" href="#equation-c07739e0-c453-4b31-b4aa-faa73abc0024" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
     \mathcal{L}_{\mathrm{Clf}} = \min_{\omega, \xi} \mathbb{E}_{x \sim X}[ \ell_{\textrm{pred}}(f_{\omega}(x)_s; y) ]
 \end{equation}\]</div>
 <p>At inference time, the autoencoder model produces one reconstruction per <span class="math notranslate nohighlight">\(S\)</span>-label, per sample, and likewise for the classification model.
@@ -1060,7 +1302,7 @@ Our positive action framework model (\texttt{PAF}) captures 97% (see TCP|G row) 
 This high TCP value is achieved while maintaining low FID (as per WYSIWYG worldview).
 }</p>
 <table class="colwidths-auto table" id="table-results">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">Comparison table for the synthetic data results. Oracle values show the desired values for the WAE worldview (\texttt{DemPar}). The best result (excluding oracle values) is highlighted in \textbf{boldface}. Our positive action framework model (\texttt{PAF}) captures 97% (see TCP|G row) of the green applicants capable of graduating: they are either accepted or flagged as positive action candidates. This high TCP value is achieved while maintaining low FID (as per WYSIWYG worldview).</span><a class="headerlink" href="#table-results" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Comparison table for the synthetic data results. Oracle values show the desired values for the WAE worldview (\texttt{DemPar}). The best result (excluding oracle values) is highlighted in \textbf{boldface}. Our positive action framework model (\texttt{PAF}) captures 97% (see TCP|G row) of the green applicants capable of graduating: they are either accepted or flagged as positive action candidates. This high TCP value is achieved while maintaining low FID (as per WYSIWYG worldview). </span><a class="headerlink" href="#table-results" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p></p></th>
 <th class="text-align:center head"><p>Theoretical Values</p></th>
@@ -1145,7 +1387,7 @@ This high TCP value is achieved while maintaining low FID (as per WYSIWYG worldv
 <span id="sec-conclusion"></span><h2>Results &amp; Discussion<a class="headerlink" href="#results-discussion" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="analysing-the-baseline-synthetic-data">
 <h3>Analysing the baseline synthetic data<a class="headerlink" href="#analysing-the-baseline-synthetic-data" title="Permalink to this headline">¶</a></h3>
-<p>Results comparing the models found in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 4</span></a>.</p>
+<p>Results comparing the models found in Table <a class="reference internal" href="#table-results"><span class="std std-numref">Table 2</span></a>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -1175,14 +1417,14 @@ Similar to the DP oracle, however, the additional green applicants who get accep
 <h4>Positive Action Framework Model<a class="headerlink" href="#positive-action-framework-model" title="Permalink to this headline">¶</a></h4>
 <p>Our <code class="docutils literal notranslate"><span class="pre">PAF</span></code> model shows a <span class="math notranslate nohighlight">\(40\%\)</span> improvement in the acceptance rate of green applicants, compared to the engineered baseline data.
 These additional candidates were flagged by our model as falling victim to label bias, i.e. they would have been accepted if they were <em>perceived</em> as blue.
-They are reassigned to ‘accept’ by the group classifier (selection rule 8 in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 3</span></a>).
+They are reassigned to ‘accept’ by the group classifier (selection rule 8 in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 1</span></a>).
 Unlike the DP oracle (<code class="docutils literal notranslate"><span class="pre">DemPar</span></code>) and <code class="docutils literal notranslate"><span class="pre">FairLearn</span></code>, the FID remains under <span class="math notranslate nohighlight">\(1\%\)</span>, as these additional accepted green applicants are capable of graduating.
 A more notable success, in comparison to the other models, is the high TCP combined with a low FID.
 The addition of the positive action candidate outcome increases the percentage of applicants capable of graduating that are not rejected from <span class="math notranslate nohighlight">\(53\%\)</span> to <span class="math notranslate nohighlight">\(97\%\)</span>.
 This outcome does not come at the expense of equality of opportunity, as the accepted applicants have a similar chance of graduating with a good grade if they were accepted.</p>
 <p>The positive action candidate outcome enables us to not simply reject high-potential candidates from under-represented groups, even if we are not able to accept them under an equal-treatment selection process.
 Equal treatment and equality of opportunity are both maintained for accepted applicants.</p>
-<p>Table <a class="reference internal" href="#table-subgroups"><span class="std std-numref">Table 5</span></a> shows the breakdown of the outcome groups, in respect to all the candidates, produced by our <code class="docutils literal notranslate"><span class="pre">PAF</span></code> model.
+<p>Table <a class="reference internal" href="#table-subgroups"><span class="std std-numref">Table 3</span></a> shows the breakdown of the outcome groups, in respect to all the candidates, produced by our <code class="docutils literal notranslate"><span class="pre">PAF</span></code> model.
 This is compared to the outcome groups of a ‘perfect’ counterfactual (<code class="docutils literal notranslate"><span class="pre">PCF</span></code>).
 The <code class="docutils literal notranslate"><span class="pre">PCF</span></code> is the values we expect if both the encoder and classifier performed without error.</p>
 <div class="margin sidebar">
@@ -1196,7 +1438,7 @@ The <code class="docutils literal notranslate"><span class="pre">PCF</span></cod
 <code class="docutils literal notranslate"><span class="pre">PAF</span></code> underestimates the consensus by an overall <span class="math notranslate nohighlight">\(7\%\)</span> when compared to the <code class="docutils literal notranslate"><span class="pre">PCF</span></code>, having larger <span class="math notranslate nohighlight">\(G_3\)</span> and <span class="math notranslate nohighlight">\(G_4\)</span> at the expense of the consensus subgroups.
 In this example, this means the <code class="docutils literal notranslate"><span class="pre">PCF</span></code> assigns rejection for <span class="math notranslate nohighlight">\(3\%\)</span> more candidates then the <code class="docutils literal notranslate"><span class="pre">PAF</span></code>.</p>
 <table class="colwidths-auto table" id="table-subgroups">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Comparison of the number of samples allocated to each group for a ground truth Perfect Counterfactual (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>) in comparison to the Learned Counterfactuals of our Positive Action Framework (<span class="math notranslate nohighlight">\(\texttt{PAF}\)</span>). We are able to make this comparison only because we know the ground truth for the synthetic data. Our learned model (\texttt{PAF}) is, in general, in agreement with the ground truth (\texttt{PCF}).</span><a class="headerlink" href="#table-subgroups" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Comparison of the number of samples allocated to each group for a ground truth Perfect Counterfactual (<span class="math notranslate nohighlight">\(\texttt{PCF}\)</span>) in comparison to the Learned Counterfactuals of our Positive Action Framework (<span class="math notranslate nohighlight">\(\texttt{PAF}\)</span>). We are able to make this comparison only because we know the ground truth for the synthetic data. Our learned model (\texttt{PAF}) is, in general, in agreement with the ground truth (\texttt{PCF}). </span><a class="headerlink" href="#table-subgroups" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Subgroup</p></th>
 <th class="text-align:center head"><p>Outcome</p></th>
@@ -1244,7 +1486,7 @@ In this example, this means the <code class="docutils literal notranslate"><span
 <em>Middle</em>: The ‘race’ feature binarised to membership of the majority group (white).
 <em>Right</em>: The ‘marital status’ feature binarised to whether currently married.
 In all cases, the x-axis represents the percentage of the data that belongs to each protected attribute, while the y-axis represents the percentage of the population assigned each outcome.
-Group membership is defined in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 3</span></a>.
+Group membership is defined in Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 1</span></a>.
 For all attributes, subgroups <span class="math notranslate nohighlight">\(G_{3}\)</span> and <span class="math notranslate nohighlight">\(G_{4}\)</span> highlight the proportion of the population for which intervening on the protected attribute will result in the outcome changing as well.
 In <span class="math notranslate nohighlight">\(G_{3}\)</span> the outcome changes from negative to positive when <span class="math notranslate nohighlight">\(S\)</span> changes, while changes in <span class="math notranslate nohighlight">\(G_{4}\)</span> result in the opposite outcome.
 Although an intriguing visualisation of the effect of the different attributes, conclusions should be drawn carefully as the attributes can act as a proxy to hidden patterns in the data.
@@ -1267,16 +1509,16 @@ The effect of race may seem to be the least influential of the <span class="math
 Protected attributes may be correlated to other attributes that are relevant to the task.
 These can add proxy effects and mask the direct effect of the protected attribute.
 We can choose to leave the re-calibration of features unrestricted or to keep some features as they were originally.
-The latter may impact the quality of counterfactual representations we can achieve <span id="id28">[<a class="reference internal" href="../bib.html#id89">PRT08</a>]</span>.</p>
+The latter may impact the quality of counterfactual representations we can achieve <span id="id28">[<a class="reference internal" href="../bib.html#id130">Pedreshi <em>et al.</em>, 2008</a>]</span>.</p>
 <p>There can be some disparity in the opposite direction to what we expect.
 When comparing males to females in the adult dataset, overall, the direction of bias is in favour of males.
 We do detect, however, females earning above the <span class="math notranslate nohighlight">\(\$50,000\)</span> threshold, whose male counterparts would be under the threshold.
 This ‘reversed’ bias could be present in a subset of occupations.</p>
 <p>Under-represented groups can be separated from the majority by a combination of protected attributes.
-Analysing each protected attribute separately does not capture any compounding effects that might be experienced by a specific under-represented group, for example, unmarried, not-white women <span id="id29">[<a class="reference internal" href="../bib.html#id18">FIKP20</a>, <a class="reference internal" href="../bib.html#id140">BG18</a>]</span>.
+Analysing each protected attribute separately does not capture any compounding effects that might be experienced by a specific under-represented group, for example, unmarried, not-white women <span id="id29">[<a class="reference internal" href="../bib.html#id21">Buolamwini and Gebru, 2018</a>, <a class="reference internal" href="../bib.html#id51">Foulds <em>et al.</em>, 2020</a>]</span>.
 Considering every possible combination, however, will significantly increase the size of the feature space and as a result, the required size of training data.</p>
 <table class="colwidths-auto table" id="table-g1">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Breakdown of the <span class="math notranslate nohighlight">\(G1\)</span> group, comprising individuals funnelled into this group due to different selection rules. Consensus corresponds to selection rule 1 in Table {numref}table:1. Direct bias corresponds to selection rules 2 and 8 in Table~\ref{table:1}. Fallback indicates bias was detected in the opposite direction and the decision reverted to the original outcome.</span><a class="headerlink" href="#table-g1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Breakdown of the <span class="math notranslate nohighlight">\(G1\)</span> group, comprising individuals funnelled into this group due to different selection rules. Consensus corresponds to selection rule 1 in Table {numref}table:1. Direct bias corresponds to selection rules 2 and 8 in Table~\ref{table:1}. Fallback indicates bias was detected in the opposite direction and the decision reverted to the original outcome.</span><a class="headerlink" href="#table-g1" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Selection Rule</p></th>
 <th class="text-align:right head"><p>Gender</p></th>
@@ -1309,7 +1551,7 @@ Considering every possible combination, however, will significantly increase the
 an aggravation of an existing disparity within the training data caused directly by the use of ML, for example, through over-fitting the training data;
 bias we can successfully intervene on by mitigating, or even completely removing, label bias from the training data and the learnt model;
 and, a disparity we can detect, but cannot directly intervene on without employing positive discrimination, which is opposed to anti-discrimination legislation.</p>
-<p>In this work, we assume we are required to enforce the mapping between the observed and the decision space to be independent of the protected attribute, i.e., we assume it is a requirement to mitigate for label bias (selection rules <span class="math notranslate nohighlight">\(2\)</span> &amp; <span class="math notranslate nohighlight">\(8\)</span>, Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 3</span></a>).
+<p>In this work, we assume we are required to enforce the mapping between the observed and the decision space to be independent of the protected attribute, i.e., we assume it is a requirement to mitigate for label bias (selection rules <span class="math notranslate nohighlight">\(2\)</span> &amp; <span class="math notranslate nohighlight">\(8\)</span>, Table <a class="reference internal" href="#table-1"><span class="std std-numref">Table 1</span></a>).
 This is the only bias that is mitigated at the accept / reject level.
 The inclusion of the positive action candidate outcome and the <span class="math notranslate nohighlight">\(G_{3}\)</span> subgroup enables us to audit and mitigate, in the form of recommending candidates for positive action, any additional effects that may cause disparity, i.e. selection bias and imbalance of opportunities.</p>
 <p>We choose to adopt a no-detriment, or positive-corrective approach.
@@ -1335,133 +1577,121 @@ Through this framework we overcome potential challenges in the real-world deploy
 <div class="section" id="bibliography">
 <h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <p id="id30"><dl class="citation">
-<dt class="label" id="id119"><span class="brackets"><a class="fn-backref" href="#id12">ABD+18</a></span></dt>
-<dd><p>Alekh Agarwal, Alina Beygelzimer, Miroslav Dudik, John Langford, and Hanna Wallach. A reductions approach to fair classification. In Jennifer Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning</em>, volume 80 of Proceedings of Machine Learning Research, 60–69. Stockholmsmässan, Stockholm Sweden, 10–15 Jul 2018. PMLR. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/agarwal18a.html">http://proceedings.mlr.press/v80/agarwal18a.html</a>.</p>
-</dd>
-<dt class="label" id="id112"><span class="brackets"><a class="fn-backref" href="#id1">BS16</a></span></dt>
+<dt class="label" id="id40"><span class="brackets"><a class="fn-backref" href="#id1">BS16</a></span></dt>
 <dd><p>S. Barocas and A. Selbst. Big data's disparate impact. <em>California Law Review</em>, 104(3):671–732, 2016.</p>
 </dd>
-<dt class="label" id="id159"><span class="brackets"><a class="fn-backref" href="#id3">Ben19</a></span></dt>
-<dd><p>Jason R Bent. Is algorithmic affirmative action legal. <em>THE GEORGETOWN LAW JOURNAL</em>, 108:803, 2019.</p>
+<dt class="label" id="id41"><span class="brackets"><a class="fn-backref" href="#id3">Ben19</a></span></dt>
+<dd><p>Jason R Bent. Is algorithmic affirmative action legal. <em>The Georgetown Law Journal</em>, 108:803, 2019.</p>
 </dd>
-<dt class="label" id="id170"><span class="brackets"><a class="fn-backref" href="#id15">BM04</a></span></dt>
+<dt class="label" id="id42"><span class="brackets"><a class="fn-backref" href="#id15">BM04</a></span></dt>
 <dd><p>Marianne Bertrand and Sendhil Mullainathan. Are emily and greg more employable than lakisha and jamal? a field experiment on labor market discrimination. <em>American economic review</em>, 94(4):991–1013, 2004.</p>
 </dd>
-<dt class="label" id="id165"><span class="brackets"><a class="fn-backref" href="#id24">BYF20</a></span></dt>
-<dd><p>Emily Black, Samuel Yeom, and Matt Fredrikson. Fliptest: fairness testing via optimal transport. In <em>Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency</em>, FAT* '20, 111–121. New York, NY, USA, 2020. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3351095.3372845">https://doi.org/10.1145/3351095.3372845</a>, <a class="reference external" href="https://doi.org/10.1145/3351095.3372845">doi:10.1145/3351095.3372845</a>.</p>
+<dt class="label" id="id44"><span class="brackets"><a class="fn-backref" href="#id24">BYF20</a></span></dt>
+<dd><p>Emily Black, Samuel Yeom, and Matt Fredrikson. Fliptest: fairness testing via optimal transport. In <em>Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency</em>, Fat* '20, 111–121. New York, NY, USA, 2020. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3351095.3372845">https://doi.org/10.1145/3351095.3372845</a>, <a class="reference external" href="https://doi.org/10.1145/3351095.3372845">doi:10.1145/3351095.3372845</a>.</p>
 </dd>
-<dt class="label" id="id169"><span class="brackets"><a class="fn-backref" href="#id29">BG18</a></span></dt>
-<dd><p>Joy Buolamwini and Timnit Gebru. Gender shades: intersectional accuracy disparities in commercial gender classification. In <em>Conference on fairness, accountability and transparency</em>, 77–91. PMLR, 2018.</p>
+<dt class="label" id="id50"><span class="brackets"><a class="fn-backref" href="#id29">BG18</a></span></dt>
+<dd><p>Joy Buolamwini and Timnit Gebru. Gender shades: intersectional accuracy disparities in commercial gender classification. In <em>Conference on fairness, accountability and transparency</em>, 77–91. Pmlr, 2018.</p>
 </dd>
-<dt class="label" id="id115"><span class="brackets"><a class="fn-backref" href="#id13">CV10</a></span></dt>
-<dd><p>Toon Calders and Sicco Verwer. Three naive bayes approaches for discrimination-free classification. <em>Data Mining and Knowledge Discovery</em>, 21(2):277–292, September 2010. URL: <a class="reference external" href="https://doi.org/10.1007/s10618-010-0190-x">https://doi.org/10.1007/s10618-010-0190-x</a>, <a class="reference external" href="https://doi.org/10.1007/s10618-010-0190-x">doi:10.1007/s10618-010-0190-x</a>.</p>
+<dt class="label" id="id52"><span class="brackets"><a class="fn-backref" href="#id13">CV10</a></span></dt>
+<dd><p>Toon Calders and Sicco Verwer. Three naive bayes approaches for discrimination-free classification. <em>Data Mining and Knowledge Discovery</em>, 21(2):277–292, 2010. URL: <a class="reference external" href="https://doi.org/10.1007/s10618-010-0190-x">https://doi.org/10.1007/s10618-010-0190-x</a>, <a class="reference external" href="https://doi.org/10.1007/s10618-010-0190-x">doi:10.1007/s10618-010-0190-x</a>.</p>
 </dd>
-<dt class="label" id="id102"><span class="brackets"><a class="fn-backref" href="#id17">Chi19</a></span></dt>
-<dd><p>Silvia Chiappa. Path-specific counterfactual fairness. In <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, volume 33, 7801–7808. 2019.</p>
+<dt class="label" id="id55"><span class="brackets"><a class="fn-backref" href="#id17">Chi19</a></span></dt>
+<dd><p>Silvia Chiappa. Path-specific counterfactual fairness. In <em>AAAI Conference on Artificial Intelligence</em>, 7801–7808. AAAI Press, 2019. URL: <a class="reference external" href="https://doi.org/10.1609/aaai.v33i01.33017801">https://doi.org/10.1609/aaai.v33i01.33017801</a>, <a class="reference external" href="https://doi.org/10.1609/aaai.v33i01.33017801">doi:10.1609/aaai.v33i01.33017801</a>.</p>
 </dd>
-<dt class="label" id="id78"><span class="brackets"><a class="fn-backref" href="#id3">DHP+12</a></span></dt>
-<dd><p>Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. Fairness through awareness. In <em>Proceedings of the 3rd Innovations in Theoretical Computer Science Conference</em>, ITCS '12, 214–226. New York, NY, USA, 2012. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/2090236.2090255">https://doi.org/10.1145/2090236.2090255</a>, <a class="reference external" href="https://doi.org/10.1145/2090236.2090255">doi:10.1145/2090236.2090255</a>.</p>
+<dt class="label" id="id71"><span class="brackets"><a class="fn-backref" href="#id3">DHP+12</a></span></dt>
+<dd><p>Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel. Fairness through awareness. In <em>Proceedings of the 3rd Innovations in Theoretical Computer Science Conference</em>, Itcs '12, 214–226. New York, NY, USA, 2012. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/2090236.2090255">https://doi.org/10.1145/2090236.2090255</a>, <a class="reference external" href="https://doi.org/10.1145/2090236.2090255">doi:10.1145/2090236.2090255</a>.</p>
 </dd>
-<dt class="label" id="id47"><span class="brackets"><a class="fn-backref" href="#id29">FIKP20</a></span></dt>
-<dd><p>James R. Foulds, Rashidul Islam, Kamrun Naher Keya, and Shimei Pan. An intersectional definition of fairness. <em>2020 IEEE 36th International Conference on Data Engineering (ICDE)</em>, April 2020. URL: <a class="reference external" href="http://dx.doi.org/10.1109/ICDE48307.2020.00203">http://dx.doi.org/10.1109/ICDE48307.2020.00203</a>, <a class="reference external" href="https://doi.org/10.1109/icde48307.2020.00203">doi:10.1109/icde48307.2020.00203</a>.</p>
+<dt class="label" id="id80"><span class="brackets"><a class="fn-backref" href="#id29">FIKP20</a></span></dt>
+<dd><p>James R. Foulds, Rashidul Islam, Kamrun Naher Keya, and Shimei Pan. An intersectional definition of fairness. <em>Proc. of ICDE</em>, 2020. URL: <a class="reference external" href="http://dx.doi.org/10.1109/ICDE48307.2020.00203">http://dx.doi.org/10.1109/ICDE48307.2020.00203</a>, <a class="reference external" href="https://doi.org/10.1109/icde48307.2020.00203">doi:10.1109/icde48307.2020.00203</a>.</p>
 </dd>
-<dt class="label" id="id96"><span class="brackets">FSV16</span><span class="fn-backref">(<a href="#id7">1</a>,<a href="#id8">2</a>,<a href="#id9">3</a>)</span></dt>
-<dd><p>Sorelle A. Friedler, Carlos Scheidegger, and Suresh Venkatasubramanian. On the (im)possibility of fairness. <em>CoRR</em>, 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1609.07236">http://arxiv.org/abs/1609.07236</a>.</p>
-</dd>
-<dt class="label" id="id129"><span class="brackets"><a class="fn-backref" href="#id19">GGLRe20</a></span></dt>
-<dd><p>Karan Goel, Albert Gu, Yixuan Li, and Christopher Ré. Model patching: closing the subgroup performance gap with data augmentation. <em>CoRR</em>, 2020.</p>
-</dd>
-<dt class="label" id="id110"><span class="brackets"><a class="fn-backref" href="#id27">GBR+07</a></span></dt>
-<dd><p>Arthur Gretton, Karsten M Borgwardt, Malte Rasch, Bernhard Schölkopf, and Alexander J Smola. A kernel approach to comparing distributions. In <em>Proceedings of the 22. AAAI Conference on Artificial Intelligence</em>, 1637–1641. Menlo Park, CA, USA, July 2007. Max-Planck-Gesellschaft, AAAI Press.</p>
+<dt class="label" id="id93"><span class="brackets"><a class="fn-backref" href="#id27">GBR+07</a></span></dt>
+<dd><p>Arthur Gretton, Karsten M Borgwardt, Malte Rasch, Bernhard Schölkopf, and Alexander J Smola. A kernel approach to comparing distributions. In <em>Proceedings of the 22. AAAI Conference on Artificial Intelligence</em>, 1637–1641. Menlo Park, CA, USA, 2007. Max-Planck-Gesellschaft, AAAI Press.</p>
 </dd>
 <dt class="label" id="id97"><span class="brackets"><a class="fn-backref" href="#id6">HPS16</a></span></dt>
-<dd><p>Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. In D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 29</em>, 3315–3323. Curran Associates, Inc., 2016. URL: <a class="reference external" href="http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf">http://papers.nips.cc/paper/6374-equality-of-opportunity-in-supervised-learning.pdf</a>.</p>
+<dd><p>Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. In Daniel D. Lee, Masashi Sugiyama, Ulrike von Luxburg, Isabelle Guyon, and Roman Garnett, editors, <em>Advances in Neural Information Processing Systems (NIPS)</em>, 3315–3323. 2016. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2016/hash/9d2682367c3935defcb1f9e247a97c0d-Abstract.html">https://proceedings.neurips.cc/paper/2016/hash/9d2682367c3935defcb1f9e247a97c0d-Abstract.html</a>.</p>
 </dd>
-<dt class="label" id="id160"><span class="brackets"><a class="fn-backref" href="#id4">HW19</a></span></dt>
+<dt class="label" id="id98"><span class="brackets"><a class="fn-backref" href="#id4">HW19</a></span></dt>
 <dd><p>Zach Harned and Hanna Wallach. Stretching human laws to apply to machines: the dangers of a “colorblind” computer. <em>Florida State Univeristy Law Review</em>, 47:617, 2019.</p>
 </dd>
-<dt class="label" id="id124"><span class="brackets"><a class="fn-backref" href="#id14">Hum00</a></span></dt>
+<dt class="label" id="id105"><span class="brackets"><a class="fn-backref" href="#id14">Hum00</a></span></dt>
 <dd><p>David Hume. <em>An enquiry concerning human understanding: A critical edition</em>. Volume 3. Oxford University Press, 2000.</p>
 </dd>
-<dt class="label" id="id116"><span class="brackets">JN20</span><span class="fn-backref">(<a href="#id11">1</a>,<a href="#id13">2</a>)</span></dt>
-<dd><p>Heinrich Jiang and Ofir Nachum. Identifying and correcting label bias in machine learning. In Silvia Chiappa and Roberto Calandra, editors, <em>The 23rd International Conference on Artificial Intelligence and Statistics, AISTATS 2020, 26-28 August 2020, Online [Palermo, Sicily, Italy]</em>, volume 108 of Proceedings of Machine Learning Research, 702–712. PMLR, 2020.</p>
+<dt class="label" id="id112"><span class="brackets">JN20</span><span class="fn-backref">(<a href="#id11">1</a>,<a href="#id13">2</a>)</span></dt>
+<dd><p>Heinrich Jiang and Ofir Nachum. Identifying and correcting label bias in machine learning. In Silvia Chiappa and Roberto Calandra, editors, <em>The 23rd International Conference on Artificial Intelligence and Statistics, AISTATS 2020, 26-28 August 2020, Online [Palermo, Sicily, Italy]</em>, volume 108 of Proceedings of Machine Learning Research, 702–712. Pmlr, 2020. URL: <a class="reference external" href="http://proceedings.mlr.press/v108/jiang20a.html">http://proceedings.mlr.press/v108/jiang20a.html</a>.</p>
 </dd>
-<dt class="label" id="id162"><span class="brackets"><a class="fn-backref" href="#id21">JKV+19</a></span></dt>
-<dd><p>Shalmali Joshi, Oluwasanmi Koyejo, Warut Vijitbenjaronk, Been Kim, and Joydeep Ghosh. Towards realistic individual recourse and actionable explanations in black-box decision making systems. <em>CoRR</em>, 2019. URL: <a class="reference external" href="http://arxiv.org/abs/1907.09615">http://arxiv.org/abs/1907.09615</a>, <a class="reference external" href="https://arxiv.org/abs/1907.09615">arXiv:1907.09615</a>.</p>
+<dt class="label" id="id115"><span class="brackets"><a class="fn-backref" href="#id21">Jos19</a></span></dt>
+<dd><p>Shalmali an Joshi. Towards realistic individual recourse and actionable explanation. <em>ArXiv preprint</em>, 2019. URL: <a class="reference external" href="https://arxiv.org/abs/1907.09615">https://arxiv.org/abs/1907.09615</a>.</p>
 </dd>
-<dt class="label" id="id117"><span class="brackets"><a class="fn-backref" href="#id5">KZ18</a></span></dt>
-<dd><p>Nathan Kallus and Angela Zhou. Residual unfairness in fair machine learning from prejudiced data. In Jennifer G. Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning, ICML 2018, Stockholmsmässan, Stockholm, Sweden, July 10-15, 2018</em>, volume 80 of Proceedings of Machine Learning Research, 2444–2453. PMLR, 2018.</p>
+<dt class="label" id="id116"><span class="brackets"><a class="fn-backref" href="#id5">KZ18</a></span></dt>
+<dd><p>Nathan Kallus and Angela Zhou. Residual unfairness in fair machine learning from prejudiced data. In Jennifer G. Dy and Andreas Krause, editors, <em>International Conference on Machine Learning (ICML)</em>, volume 80 of Proceedings of Machine Learning Research, 2444–2453. Pmlr, 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/kallus18a.html">http://proceedings.mlr.press/v80/kallus18a.html</a>.</p>
 </dd>
-<dt class="label" id="id39"><span class="brackets">KC12</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id12">2</a>)</span></dt>
+<dt class="label" id="id119"><span class="brackets">KC12</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id12">2</a>)</span></dt>
 <dd><p>Faisal Kamiran and Toon Calders. Data preprocessing techniques for classification without discrimination. <em>Knowledge and Information Systems</em>, 33(1):1–33, 2012. <a class="reference external" href="https://doi.org/10.1007/s10115-011-0463-8">doi:10.1007/s10115-011-0463-8</a>.</p>
 </dd>
-<dt class="label" id="id164"><span class="brackets"><a class="fn-backref" href="#id21">KScholkopfV21</a></span></dt>
+<dt class="label" id="id122"><span class="brackets"><a class="fn-backref" href="#id21">KScholkopfV21</a></span></dt>
 <dd><p>Amir-Hossein Karimi, Bernhard Schölkopf, and Isabel Valera. Algorithmic recourse: from counterfactual explanations to interventions. In <em>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em>, FAccT '21, 353–362. New York, NY, USA, 2021. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3442188.3445899">https://doi.org/10.1145/3442188.3445899</a>, <a class="reference external" href="https://doi.org/10.1145/3442188.3445899">doi:10.1145/3442188.3445899</a>.</p>
 </dd>
-<dt class="label" id="id167"><span class="brackets"><a class="fn-backref" href="#id23">KNRW18</a></span></dt>
-<dd><p>Michael Kearns, Seth Neel, Aaron Roth, and Zhiwei Steven Wu. Preventing fairness gerrymandering: auditing and learning for subgroup fairness. In Jennifer Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning</em>, volume 80 of Proceedings of Machine Learning Research, 2564–2572. PMLR, 10–15 Jul 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/kearns18a.html">http://proceedings.mlr.press/v80/kearns18a.html</a>.</p>
+<dt class="label" id="id123"><span class="brackets"><a class="fn-backref" href="#id23">KNRW18</a></span></dt>
+<dd><p>Michael J. Kearns, Seth Neel, Aaron Roth, and Zhiwei Steven Wu. Preventing fairness gerrymandering: auditing and learning for subgroup fairness. In Jennifer G. Dy and Andreas Krause, editors, <em>International Conference on Machine Learning (ICML)</em>, volume 80 of Proceedings of Machine Learning Research, 2569–2577. Pmlr, 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/kearns18a.html">http://proceedings.mlr.press/v80/kearns18a.html</a>.</p>
 </dd>
-<dt class="label" id="id155"><span class="brackets"><a class="fn-backref" href="#id13">KCQ20</a></span></dt>
+<dt class="label" id="id125"><span class="brackets"><a class="fn-backref" href="#id13">KCQ20</a></span></dt>
 <dd><p>Thomas Kehrenberg, Zexun Chen, and Novi Quadrianto. Tuning fairness by balancing target labels. <em>Frontiers in Artificial Intelligence</em>, 3:33, 2020. URL: <a class="reference external" href="https://www.frontiersin.org/article/10.3389/frai.2020.00033">https://www.frontiersin.org/article/10.3389/frai.2020.00033</a>, <a class="reference external" href="https://doi.org/10.3389/frai.2020.00033">doi:10.3389/frai.2020.00033</a>.</p>
 </dd>
-<dt class="label" id="id98"><span class="brackets"><a class="fn-backref" href="#id17">KLRS17</a></span></dt>
-<dd><p>Matt J Kusner, Joshua Loftus, Chris Russell, and Ricardo Silva. Counterfactual fairness. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 30</em>, pages 4066–4076. Curran Associates, Inc., 2017. URL: <a class="reference external" href="http://papers.nips.cc/paper/6995-counterfactual-fairness.pdf">http://papers.nips.cc/paper/6995-counterfactual-fairness.pdf</a>.</p>
+<dt class="label" id="id133"><span class="brackets"><a class="fn-backref" href="#id17">KLRS17</a></span></dt>
+<dd><p>Matt J. Kusner, Joshua R. Loftus, Chris Russell, and Ricardo Silva. Counterfactual fairness. In Isabelle Guyon, Ulrike von Luxburg, Samy Bengio, Hanna M. Wallach, Rob Fergus, S. V. N. Vishwanathan, and Roman Garnett, editors, <em>Advances in Neural Information Processing Systems (NIPS)</em>, 4066–4076. 2017. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2017/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html">https://proceedings.neurips.cc/paper/2017/hash/a486cd07e4ac3d270571622f4f316ec5-Abstract.html</a>.</p>
 </dd>
-<dt class="label" id="id81"><span class="brackets"><a class="fn-backref" href="#id25">MCPZ18a</a></span></dt>
-<dd><p>David Madras, Elliot Creager, Toniann Pitassi, and Richard Zemel. Learning adversarially fair and transferable representations. In Jennifer Dy and Andreas Krause, editors, <em>Proceedings of the 35th International Conference on Machine Learning</em>, volume 80 of Proceedings of Machine Learning Research, 3384–3393. PMLR, 10–15 Jul 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/madras18a.html">http://proceedings.mlr.press/v80/madras18a.html</a>.</p>
+<dt class="label" id="id144"><span class="brackets"><a class="fn-backref" href="#id25">MCPZ18</a></span></dt>
+<dd><p>David Madras, Elliot Creager, Toniann Pitassi, and Richard S. Zemel. Learning adversarially fair and transferable representations. In Jennifer G. Dy and Andreas Krause, editors, <em>International Conference on Machine Learning (ICML)</em>, volume 80 of Proceedings of Machine Learning Research, 3381–3390. Pmlr, 2018. URL: <a class="reference external" href="http://proceedings.mlr.press/v80/madras18a.html">http://proceedings.mlr.press/v80/madras18a.html</a>.</p>
 </dd>
-<dt class="label" id="id104"><span class="brackets"><a class="fn-backref" href="#id19">MCPZ18b</a></span></dt>
-<dd><p>David Madras, Elliot Creager, Toniann Pitassi, and Richard S. Zemel. Fairness through causal awareness: learning latent-variable models for biased data. <em>CoRR</em>, 2018. URL: <a class="reference external" href="http://arxiv.org/abs/1809.02519">http://arxiv.org/abs/1809.02519</a>, <a class="reference external" href="https://arxiv.org/abs/1809.02519">arXiv:1809.02519</a>.</p>
+<dt class="label" id="id146"><span class="brackets"><a class="fn-backref" href="#id20">MPZ18</a></span></dt>
+<dd><p>David Madras, Toniann Pitassi, and Richard S. Zemel. Predict responsibly: improving fairness and accuracy by learning to defer. In Samy Bengio, Hanna M. Wallach, Hugo Larochelle, Kristen Grauman, Nicolò Cesa-Bianchi, and Roman Garnett, editors, <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 6150–6160. 2018. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2018/hash/09d37c08f7b129e96277388757530c72-Abstract.html">https://proceedings.neurips.cc/paper/2018/hash/09d37c08f7b129e96277388757530c72-Abstract.html</a>.</p>
 </dd>
-<dt class="label" id="id122"><span class="brackets"><a class="fn-backref" href="#id20">MPZ18</a></span></dt>
-<dd><p>David Madras, Toni Pitassi, and Richard Zemel. Predict responsibly: improving fairness and accuracy by learning to defer. In S. Bengio, H. Wallach, H. Larochelle, K. Grauman, N. Cesa-Bianchi, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems</em>, volume 31, 6147–6157. Curran Associates, Inc., 2018. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2018/file/09d37c08f7b129e96277388757530c72-Paper.pdf">https://proceedings.neurips.cc/paper/2018/file/09d37c08f7b129e96277388757530c72-Paper.pdf</a>.</p>
-</dd>
-<dt class="label" id="id123"><span class="brackets"><a class="fn-backref" href="#id14">Mil19</a></span></dt>
+<dt class="label" id="id149"><span class="brackets"><a class="fn-backref" href="#id14">Mil19</a></span></dt>
 <dd><p>Tim Miller. Explanation in artificial intelligence: insights from the social sciences. <em>Artificial Intelligence</em>, 267:1–38, 2019. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0004370218305988">http://www.sciencedirect.com/science/article/pii/S0004370218305988</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.artint.2018.07.007">doi:https://doi.org/10.1016/j.artint.2018.07.007</a>.</p>
 </dd>
-<dt class="label" id="id161"><span class="brackets"><a class="fn-backref" href="#id20">MS20</a></span></dt>
-<dd><p>Hussein Mozannar and David Sontag. Consistent estimators for learning to defer to an expert. In Hal Daumé III and Aarti Singh, editors, <em>Proceedings of the 37th International Conference on Machine Learning</em>, volume 119 of Proceedings of Machine Learning Research, 7076–7087. PMLR, 13–18 Jul 2020. URL: <a class="reference external" href="http://proceedings.mlr.press/v119/mozannar20b.html">http://proceedings.mlr.press/v119/mozannar20b.html</a>.</p>
+<dt class="label" id="id153"><span class="brackets"><a class="fn-backref" href="#id20">MS20</a></span></dt>
+<dd><p>Hussein Mozannar and David A. Sontag. Consistent estimators for learning to defer to an expert. In <em>International Conference on Machine Learning (ICML)</em>, volume 119 of Proceedings of Machine Learning Research, 7076–7087. Pmlr, 2020. URL: <a class="reference external" href="http://proceedings.mlr.press/v119/mozannar20b.html">http://proceedings.mlr.press/v119/mozannar20b.html</a>.</p>
 </dd>
-<dt class="label" id="id158"><span class="brackets"><a class="fn-backref" href="#id26">PCC+21</a></span></dt>
+<dt class="label" id="id157"><span class="brackets"><a class="fn-backref" href="#id26">PCC+21</a></span></dt>
 <dd><p>Song Park, Sanghyuk Chun, Junbum Cha, Bado Lee, and Hyunjung Shim. Multiple heads are better than one: few-shot font generation with multiple localized experts. 2021. <a class="reference external" href="https://arxiv.org/abs/2104.00887">arXiv:2104.00887</a>.</p>
 </dd>
-<dt class="label" id="id60"><span class="brackets"><a class="fn-backref" href="#id16">Pea09</a></span></dt>
-<dd><p>Judea Pearl. <em>Causality: Models, Reasoning and Inference</em>. Cambridge University Press, New York, NY, USA, 2nd edition, 2009. ISBN 052189560X, 9780521895606.</p>
+<dt class="label" id="id158"><span class="brackets"><a class="fn-backref" href="#id16">Pea09</a></span></dt>
+<dd><p>Judea Pearl. <em>Causality</em>. Cambridge University Press, Cambridge, 2 edition, 2009. <a class="reference external" href="https://doi.org/10.1017/cbo9780511803161">doi:10.1017/cbo9780511803161</a>.</p>
 </dd>
-<dt class="label" id="id118"><span class="brackets">PRT08</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id28">2</a>)</span></dt>
-<dd><p>Dino Pedreschi, Salvatore Ruggieri, and Franco Turini. Discrimination-aware data mining. In Ying Li, Bing Liu, and Sunita Sarawagi, editors, <em>Proceedings of the 14th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, Las Vegas, Nevada, USA, August 24-27, 2008</em>, 560–568. ACM, 2008. <a class="reference external" href="https://doi.org/10.1145/1401890.1401959">doi:10.1145/1401890.1401959</a>.</p>
+<dt class="label" id="id159"><span class="brackets">PRT08</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id28">2</a>)</span></dt>
+<dd><p>Dino Pedreshi, Salvatore Ruggieri, and Franco Turini. Discrimination-aware data mining. In Ying Li, Bing Liu, and Sunita Sarawagi, editors, <em>Proceeding of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD 08</em>, 560–568. Acm, 2008. <a class="reference external" href="https://doi.org/10.1145/1401890.1401959">doi:10.1145/1401890.1401959</a>.</p>
 </dd>
-<dt class="label" id="id130"><span class="brackets"><a class="fn-backref" href="#id18">RR83</a></span></dt>
+<dt class="label" id="id164"><span class="brackets"><a class="fn-backref" href="#id18">RR83</a></span></dt>
 <dd><p>Paul R Rosenbaum and Donald B Rubin. The central role of the propensity score in observational studies for causal effects. <em>Biometrika</em>, 70(1):41–55, 1983.</p>
 </dd>
-<dt class="label" id="id120"><span class="brackets"><a class="fn-backref" href="#id18">Rub90</a></span></dt>
+<dt class="label" id="id167"><span class="brackets"><a class="fn-backref" href="#id18">Rub90</a></span></dt>
 <dd><p>Donald B Rubin. Formal mode of statistical inference for causal effects. <em>Journal of statistical planning and inference</em>, 25(3):279–292, 1990.</p>
 </dd>
-<dt class="label" id="id168"><span class="brackets"><a class="fn-backref" href="#id22">SKS+18</a></span></dt>
-<dd><p>Pedro Saleiro, Benedict Kuester, Abby Stevens, Ari Anisfeld, Loren Hinkson, Jesse London, and Rayid Ghani. Aequitas: a bias and fairness audit toolkit. <em>arXiv preprint arXiv:1811.05577</em>, 2018.</p>
+<dt class="label" id="id168"><span class="brackets"><a class="fn-backref" href="#id22">Sal18</a></span></dt>
+<dd><p>Pedro an Saleiro. Aequitas: a bias and fairness audit toolkit. <em>ArXiv preprint</em>, 2018. URL: <a class="reference external" href="https://arxiv.org/abs/1811.05577">https://arxiv.org/abs/1811.05577</a>.</p>
 </dd>
-<dt class="label" id="id157"><span class="brackets"><a class="fn-backref" href="#id26">SJS17</a></span></dt>
-<dd><p>Uri Shalit, Fredrik D. Johansson, and David Sontag. Estimating individual treatment effect: generalization bounds and algorithms. In Doina Precup and Yee Whye Teh, editors, <em>Proceedings of the 34th International Conference on Machine Learning</em>, volume 70 of Proceedings of Machine Learning Research, 3076–3085. PMLR, 06–11 Aug 2017. URL: <a class="reference external" href="http://proceedings.mlr.press/v70/shalit17a.html">http://proceedings.mlr.press/v70/shalit17a.html</a>.</p>
+<dt class="label" id="id175"><span class="brackets"><a class="fn-backref" href="#id26">SJS17</a></span></dt>
+<dd><p>Uri Shalit, Fredrik D. Johansson, and David A. Sontag. Estimating individual treatment effect: generalization bounds and algorithms. In Doina Precup and Yee Whye Teh, editors, <em>International Conference on Machine Learning (ICML)</em>, volume 70 of Proceedings of Machine Learning Research, 3076–3085. Pmlr, 2017. URL: <a class="reference external" href="http://proceedings.mlr.press/v70/shalit17a.html">http://proceedings.mlr.press/v70/shalit17a.html</a>.</p>
 </dd>
-<dt class="label" id="id128"><span class="brackets"><a class="fn-backref" href="#id19">SHDQ20</a></span></dt>
-<dd><p>Viktoriia Sharmanska, Lisa Anne Hendricks, Trevor Darrell, and Novi Quadrianto. Contrastive examples for addressing the tyranny of the majority. <em>CoRR</em>, 2020.</p>
+<dt class="label" id="id174"><span class="brackets"><a class="fn-backref" href="#id19">SHDQ20</a></span></dt>
+<dd><p>Viktoriia Sharmanska, Lisa Anne Hendricks, Trevor Darrell, and Novi Quadrianto. Contrastive examples for addressing the tyranny of the majority. <em>ArXiv preprint</em>, 2020. URL: <a class="reference external" href="https://arxiv.org/abs/2004.06524">https://arxiv.org/abs/2004.06524</a>.</p>
 </dd>
-<dt class="label" id="id156"><span class="brackets"><a class="fn-backref" href="#id4">SBW21</a></span></dt>
-<dd><p>Joshua Simons, Sophia Adams Bhatti, and Adrian Weller. Machine learning and the meaning of equal treatment. <em>AIES</em>, 2021.</p>
+<dt class="label" id="id177"><span class="brackets"><a class="fn-backref" href="#id4">SBW21</a></span></dt>
+<dd><p>Joshua Simons, Sophia Adams Bhatti, and Adrian Weller. Machine learning and the meaning of equal treatment. <em>Aies</em>, 2021.</p>
 </dd>
-<dt class="label" id="id132"><span class="brackets"><a class="fn-backref" href="#id10">Tol19</a></span></dt>
-<dd><p>Songül Tolan. Fair and unbiased algorithmic decision making: current state and future challenges. <em>CoRR</em>, 2019. URL: <a class="reference external" href="http://arxiv.org/abs/1901.04730">http://arxiv.org/abs/1901.04730</a>, <a class="reference external" href="https://arxiv.org/abs/1901.04730">arXiv:1901.04730</a>.</p>
+<dt class="label" id="id183"><span class="brackets"><a class="fn-backref" href="#id10">Tol19</a></span></dt>
+<dd><p>Songül Tolan. Fair and unbiased algorithmic decision making: current state and future challenges. <em>ArXiv preprint</em>, 2019. URL: <a class="reference external" href="https://arxiv.org/abs/1901.04730">https://arxiv.org/abs/1901.04730</a>.</p>
 </dd>
-<dt class="label" id="id163"><span class="brackets"><a class="fn-backref" href="#id21">USL19</a></span></dt>
-<dd><p>Berk Ustun, Alexander Spangher, and Yang Liu. Actionable recourse in linear classification. In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>, FAT* '19, 10–19. New York, NY, USA, 2019. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3287560.3287566">https://doi.org/10.1145/3287560.3287566</a>, <a class="reference external" href="https://doi.org/10.1145/3287560.3287566">doi:10.1145/3287560.3287566</a>.</p>
+<dt class="label" id="id187"><span class="brackets"><a class="fn-backref" href="#id21">USL19</a></span></dt>
+<dd><p>Berk Ustun, Alexander Spangher, and Yang Liu. Actionable recourse in linear classification. In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>, Fat\textasteriskcentered '19, 10–19. New York, NY, USA, 2019. Association for Computing Machinery. URL: <a class="reference external" href="https://doi.org/10.1145/3287560.3287566">https://doi.org/10.1145/3287560.3287566</a>, <a class="reference external" href="https://doi.org/10.1145/3287560.3287566">doi:10.1145/3287560.3287566</a>.</p>
 </dd>
-<dt class="label" id="id121"><span class="brackets">WMR20</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>,<a href="#id6">3</a>)</span></dt>
+<dt class="label" id="id190"><span class="brackets">WMR20</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>,<a href="#id6">3</a>)</span></dt>
 <dd><p>Sandra Wachter, Brent Mittelstadt, and Chris Russell. Why fairness cannot be automated: bridging the gap between eu non-discrimination law and ai. <em>SSRN Electronic Journal</em>, 2020. URL: <a class="reference external" href="http://dx.doi.org/10.2139/ssrn.3547922">http://dx.doi.org/10.2139/ssrn.3547922</a>, <a class="reference external" href="https://doi.org/10.2139/ssrn.3547922">doi:10.2139/ssrn.3547922</a>.</p>
 </dd>
-<dt class="label" id="id99"><span class="brackets"><a class="fn-backref" href="#id11">WPT19</a></span></dt>
-<dd><p>Michael Wick, Swetasudha Panda, and Jean-Baptiste Tristan. Unlocking fairness: a trade-off revisited. In H. Wallach, H. Larochelle, A. Beygelzimer, F. d\textquotesingle  Alché-Buc, E. Fox, and R. Garnett, editors, <em>Advances in Neural Information Processing Systems 32</em>, pages 8783–8792. Curran Associates, Inc., 2019. URL: <a class="reference external" href="http://papers.nips.cc/paper/9082-unlocking-fairness-a-trade-off-revisited.pdf">http://papers.nips.cc/paper/9082-unlocking-fairness-a-trade-off-revisited.pdf</a>.</p>
+<dt class="label" id="id194"><span class="brackets"><a class="fn-backref" href="#id11">WPT19</a></span></dt>
+<dd><p>Michael L. Wick, Swetasudha Panda, and Jean-Baptiste Tristan. Unlocking fairness: a trade-off revisited. In Hanna M. Wallach, Hugo Larochelle, Alina Beygelzimer, Florence d'Alché-Buc, Emily B. Fox, and Roman Garnett, editors, <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 8780–8789. 2019. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2019/hash/373e4c5d8edfa8b74fd4b6791d0cf6dc-Abstract.html">https://proceedings.neurips.cc/paper/2019/hash/373e4c5d8edfa8b74fd4b6791d0cf6dc-Abstract.html</a>.</p>
 </dd>
-<dt class="label" id="id154"><span class="brackets">Xia21</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
+<dt class="label" id="id195"><span class="brackets">Xia21</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
 <dd><p>Alice Xiang. Reconciling legal and technical approaches to algorithmic bias. <em>Tennessee Law Review</em>, 2021. URL: <a class="reference external" href="https://ssrn.com/abstract=3650635">https://ssrn.com/abstract=3650635</a>.</p>
 </dd>
 </dl>
@@ -1482,7 +1712,7 @@ Through this framework we overcome potential challenges in the real-world deploy
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/03_identifying"
+            path: "./content/03_positive_action"
         },
         predefinedOutput: true
     }
@@ -1491,44 +1721,42 @@ Through this framework we overcome potential challenges in the real-world deploy
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../02_data_domain_fairness/intro.html" title="previous page">Data Domain Fairness</a>
-    <a class='right-next' id="next-link" href="../08_conclusion/conclusion.html" title="next page">Conclusion</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../00_thesis_pages/publications.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Publications</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="../04_data_domain_fairness/intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 5: Data Domain Fairness</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Oliver Thomas<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Oliver Thomas<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-170288604-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
