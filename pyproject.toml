@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "thesis"
 version = "0.1.0"
-description = ""
+description = "A web version of my thesis."
 authors = ["Oliver Thomas <1835492+olliethomas@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
