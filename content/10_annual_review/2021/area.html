@@ -37,18 +37,20 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="canonical" href="oliverthomas.ml/content/10_annual_review/2021/area.html" />
@@ -500,7 +502,7 @@ three places in the general learning pipeline.</p>
 </table>
 <div class="figure align-default" id="fairness-taxonomy">
 <a class="reference internal image-reference" href="../../../_images/fairness_taxonomies.png"><img alt="../../../_images/fairness_taxonomies.png" src="../../../_images/fairness_taxonomies.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Taxonomy of fairness methods <span id="id4">[<a class="reference internal" href="../../bib.html#id95">Kehrenberg, 2021</a>]</span></span><a class="headerlink" href="#fairness-taxonomy" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Taxonomy of fairness methods <span id="id4">[<a class="reference internal" href="../../bib.html#id95" title="Thomas Maximilian Kehrenberg. Learning with biased data: invariant representations and target labels. PhD thesis, University of Sussex, September 2021. URL: http://sro.sussex.ac.uk/id/eprint/101574/.">Kehrenberg, 2021</a>]</span></span><a class="headerlink" href="#fairness-taxonomy" title="Permalink to this image">¶</a></p>
 </div>
 <p>In my work I focus on removing bias in the ‘pre-processing’ stage.
 This is an exciting and active research area with spotlight tutorials at top conferences such as NeurIPS<a class="footnote-reference brackets" href="#footnote" id="id5">1</a> <span id="id6">[]</span>.
