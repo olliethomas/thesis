@@ -921,8 +921,8 @@ We assume equality was true at some stage, but is not necessarily so at the time
 We therefore align with WYSIWYG at the point of measurement, and assume that statistical disparity observed within the observed space is, at least partly, due to disparity within the construct space. Positive action is aimed at addressing the disparities within the construct space as we  assume those occur due to imbalance of opportunity or disadvantage affecting individuals belonging to the under-represented group.</p>
 <p>To illustrate this, consider a set of measurable features <span class="math notranslate nohighlight">\(X\)</span> within the observed space <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, where <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> represents the space of all potential feature values.
 Each individual sample <span class="math notranslate nohighlight">\(x \in X\)</span> is an approximation to its non-measurable construct-counterpart <span class="math notranslate nohighlight">\(\tilde{x} \in \tilde{X}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7602c952-98f4-46e2-8a43-4882f615f9b4">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7602c952-98f4-46e2-8a43-4882f615f9b4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c5c4cd9b-c023-4b8a-ba4d-d34302661e7c">
+<span class="eqno">(1)<a class="headerlink" href="#equation-c5c4cd9b-c023-4b8a-ba4d-d34302661e7c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
   X\approx\tilde{X}=\alpha\cdot\tilde{X}_{apt}+\beta\cdot\Delta\tilde{X}
 \end{equation}\]</div>
 <p>where</p>
@@ -1206,8 +1206,8 @@ A hyper-parameter <span class="math notranslate nohighlight">\(\lambda\)</span> 
 <p>In our experiments, we use <span class="math notranslate nohighlight">\(\lambda = 1.0\)</span></p>
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-80cd09bf-5d55-41fd-a2f2-ffe554f7bc0c">
-<span class="eqno">(2)<a class="headerlink" href="#equation-80cd09bf-5d55-41fd-a2f2-ffe554f7bc0c" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-09001124-f5ae-4d86-ad31-a15531055c51">
+<span class="eqno">(2)<a class="headerlink" href="#equation-09001124-f5ae-4d86-ad31-a15531055c51" title="Permalink to this equation">¶</a></span>\[\begin{align} \nonumber \label{eq:ae_loss}
     \mathcal{L}_{\mathrm{AE}} = &amp; \min_{\theta, \pi}\max_{\phi} \mathbb{E}_{x \sim X} [ \ell_{\textrm{recon}}(k_{\pi}(g_{\theta}(x), s)_s; x) \nonumber \\
     &amp;\qquad\qquad\qquad\quad - \lambda \ell_{\textrm{adv}}(h_{\phi}(g_{\theta}(x)), s)] 
 \end{align}\]</div>
@@ -1216,8 +1216,8 @@ This is to capture any potential direct discrimination that the model determines
 For the classification model the task is to produce an ensemble of predictions of the class label <span class="math notranslate nohighlight">\(y_s\)</span> from <span class="math notranslate nohighlight">\(x\)</span> and is defined as <span class="math notranslate nohighlight">\(f_s: (\mathcal{X}) \rightarrow \mathcal{Y}_s \quad \forall ~ s \in \mathcal{S}\)</span>.
 As with the autoencoder, only the <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>-head that corresponds to the true protected label is used for training.
 The objective is shown in the following equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ab5f8e8-964f-487f-967a-cf79eaf44563">
-<span class="eqno">(3)<a class="headerlink" href="#equation-2ab5f8e8-964f-487f-967a-cf79eaf44563" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
+<div class="amsmath math notranslate nohighlight" id="equation-cfe07cb3-9358-4f8c-8c09-169c4f6434e1">
+<span class="eqno">(3)<a class="headerlink" href="#equation-cfe07cb3-9358-4f8c-8c09-169c4f6434e1" title="Permalink to this equation">¶</a></span>\[\begin{equation} \label{eq:clf_loss}
     \mathcal{L}_{\mathrm{Clf}} = \min_{\omega, \xi} \mathbb{E}_{x \sim X}[ \ell_{\textrm{pred}}(f_{\omega}(x)_s; y) ]
 \end{equation}\]</div>
 <p>At inference time, the autoencoder model produces one reconstruction per <span class="math notranslate nohighlight">\(S\)</span>-label, per sample, and likewise for the classification model.
